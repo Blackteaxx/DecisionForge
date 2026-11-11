@@ -1,0 +1,50 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "passed": {
+            "title": "Passed",
+            "type": "boolean"
+        },
+        "reason": {
+            "title": "Reason",
+            "type": "string"
+        },
+        "failed_fields": {
+            "items": {
+                "type": "string"
+            },
+            "title": "Failed Fields",
+            "type": "array"
+        },
+        "repair_instructions": {
+            "items": {
+                "type": "string"
+            },
+            "title": "Repair Instructions",
+            "type": "array"
+        },
+        "modules": {
+            "items": {
+                "enum": [
+                    "context",
+                    "choice",
+                    "noul",
+                    "score",
+                    "source"
+                ],
+                "type": "string"
+            },
+            "title": "Modules",
+            "type": "array"
+        }
+    },
+    "required": [
+        "passed",
+        "reason",
+        "failed_fields",
+        "repair_instructions",
+        "modules"
+    ],
+    "title": "CheckReport",
+    "type": "object"
+}

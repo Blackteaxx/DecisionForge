@@ -1,0 +1,19 @@
+name: Bug / 缺陷
+description: Report a reproducible failure / 报告可复现问题
+title: '[Bug] '
+labels: [bug]
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction / 复现步骤
+      description: Include command, sanitized config, expected and actual behavior. Do not include credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / 环境
+      description: Commit, OS, Python, selected extra and doctor output (redacted).
+    validations:
+      required: true

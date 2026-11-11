@@ -1,0 +1,83 @@
+Case 01
+Mode: choice
+Question: What is the combined active power demand of a 40 MW feeder and a 20 MW feeder?
+Answer: 60 MW
+Context: A training substation supplies two feeders. Their simultaneous active power demands are 40 MW and 20 MW; ignore losses.
+Options:
+- 60 MW
+- 20 MW
+- 40 MW
+- 80 MW
+
+Case 02
+Mode: choice
+Question: How much additional active power is needed to balance 75 MW of generation against 90 MW of demand?
+Answer: 15 MW
+Context: In an isolated training grid, generation is 75 MW and demand is 90 MW. There is no storage, import, or network loss.
+
+Case 03
+Mode: choice
+Question: What is the loading percentage of a 100 MVA transformer carrying 70 MVA?
+Answer: 70%
+Options:
+- 30%
+- 70%
+- 100%
+- 170%
+
+Case 04
+Mode: choice
+Question: How much energy does a feeder deliver at a constant active power of 12 MW for 2 hours?
+Answer: 24 MWh
+
+Case 05
+Mode: choice
+Question: How many megawatts of active power are lost when 50 MW enters a line and 48 MW leaves it?
+Answer: 2 MW
+Context: The sending-end meter reads 50 MW and the receiving-end meter reads 48 MW at the same instant. No branches connect between the meters.
+Options:
+- 2 MW
+- 48 MW
+- 50 MW
+- 98 MW
+
+Case 06
+Mode: choice
+Question: How much additional active power can a generator supply before reaching its 80 MW limit if it currently supplies 55 MW?
+Answer: 25 MW
+Context: A training generator has an active power limit of 80 MW and an operating output of 55 MW. Ignore ramp-rate and other operating constraints.
+Options:
+- 25 MW
+
+Case 07
+Mode: choice
+Question: What is the voltage magnitude in per unit for a measured voltage of 11 kV on a 10 kV voltage base?
+Answer: 1.1 p.u.
+Options:
+- 0.9 p.u.
+- 1.0 p.u.
+- 1.1 p.u.
+- 11.0 p.u.
+
+Case 08
+Mode: choice
+Question: What is the average active power when a meter records 18 MWh delivered over 3 hours?
+Answer: 6 MW
+Options:
+- 6 MW
+
+Case 09
+Mode: choice
+Question: What is the active power demand after a 100 MW load is reduced by 10 MW?
+Answer: 90 MW
+Context: A demand-response exercise starts with a 100 MW load. The exercise removes 10 MW, and all other loads remain unchanged.
+Options:
+- 10 MW
+- 90 MW
+- 100 MW
+- 110 MW
+
+Case 10
+Mode: choice
+Question: What is the total active power output of three generators each producing 15 MW?
+Answer: 45 MW

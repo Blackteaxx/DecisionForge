@@ -1,0 +1,15 @@
+benchmark: typed_decisions
+benchmark_version: 1-single-question
+data:
+  path: ../../data/benchmarks/typed_decisions/processed/test.jsonl
+  splits: [test]
+model:
+  base_url: https://openrouter.ai
+  endpoint_path: /api/alpha/decisions
+  model: typesafe/jev-1.13
+  api_key_env: OPENROUTER_API_KEY
+execution:
+  concurrency: 8
+  timeout: 60
+  max_attempts: 3
+output: ../../outputs/eval/typed-decisions

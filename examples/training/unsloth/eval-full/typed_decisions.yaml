@@ -1,0 +1,18 @@
+# Complete canonical benchmark; no sample limit or catalog reduction.
+benchmark: typed_decisions
+benchmark_version: 1-single-question
+data:
+  path: ../../../../data/benchmarks/typed_decisions/processed/test.jsonl
+model:
+  adapter: unsloth_local
+  path: ../../../../outputs/train/unsloth-typed-decisions-full/model
+  load_in_4bit: false
+  precision: bf16
+  max_seq_length: 32768
+  load_timeout: 900
+  local_files_only: true
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 300.0
+output: ../../../../outputs/eval/unsloth-typed-decisions-full/typed_decisions

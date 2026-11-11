@@ -1,0 +1,37 @@
+.venv/
+.python/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+.env
+.env.*
+outputs/
+/data/benchmarks/*/raw/
+/data/benchmarks/*/processed/
+/data/local/
+/configs/local/
+logs/
+*.sqlite*
+
+.venv-test/
+!.env.example
+unsloth_compiled_cache/
+
+# MinerU parse cache
+.dforge/pdf/
+
+# Local managed training data
+/data/training/
+
+# Local planning and design notes
+/docs/superpowers/
+
+# Downloaded local base models
+/models/
+
+/data/testing/
+
+.DS_Store

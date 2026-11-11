@@ -1,0 +1,98 @@
+{
+  "schema_version": "medical.delivery-identities.v1",
+  "selected_report": "v1",
+  "selected_checkpoint_step": 200,
+  "calibration_records": 595,
+  "backbone": {
+    "name": "Qwen/Qwen3.5-9B",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+  },
+  "model_files": {
+    "adapter_config.json": {
+      "size": 1854,
+      "sha256": "8a9addd4186141982ebc4cea83c1d6307316d3a2532444d171447ab703cfb04b"
+    },
+    "adapter_model.safetensors": {
+      "size": 173188512,
+      "sha256": "470f5e8a01459c9e46921ef3a2b845b2ffa0c5ecb76a0280bf2acf59c4f03491"
+    },
+    "chat_template.jinja": {
+      "size": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "joint_head.safetensors": {
+      "size": 243537950,
+      "sha256": "eccded133a058d89c65cb630372edf8f62cbf9d23c7c837c93205470458891fc"
+    },
+    "joint_head_config.json": {
+      "size": 118,
+      "sha256": "18eda7d9826c0038e1faf0b7061036e6f7eca3b649abcad3a3fe74a52341d621"
+    },
+    "processor_config.json": {
+      "size": 1220,
+      "sha256": "bfbc24af59a3e73a9cd0653b8d4ae758dfaec4e3e6c15dfb1c6c8ee8d5683c85"
+    },
+    "tokenizer.json": {
+      "size": 19989325,
+      "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+    },
+    "tokenizer_config.json": {
+      "size": 7184,
+      "sha256": "490498ee083cd1231edb428ad621829e69d9187a3ff9c4d0ffedfc7d8f95e436"
+    },
+    "unsloth_decision_config.json": {
+      "size": 326,
+      "sha256": "50b708ec8ad6f4588a16961e03b7f573b4cf32ded52cf467a41f0d10b526d3f8"
+    }
+  },
+  "training_data_sha256": "1c60d6d832ead5b11a78e45cc0a64810747548dcf66248121ed0208b7eb0442d",
+  "source_implementation_revision_v1": "35c57dd",
+  "source_implementation_revision_optimization": "f4f7a953cd2246658185ecf9f748c84d4f1e9de5",
+  "historical_report_selection_commit": "33167fe",
+  "weight_distribution": "Not included; retained privately. Recreate from frozen sources and actual training configuration.",
+  "historical_acceptance": {
+    "schema_version": "medical.issue22.acceptance.v1",
+    "status": "passed_with_disclosed_limitations",
+    "checked_at": "2026-10-28T10:31:48.413517+00:00",
+    "issue": "https://github.com/Oscar-dzy/Autojev-data/issues/22",
+    "source_base": "b97cec30ea6bd33697dee8c2ac603cc4723ac368",
+    "data_records": 6065,
+    "data_roles": {
+      "train": 5024,
+      "validation": 446,
+      "calibration": 595
+    },
+    "selected_step": 200,
+    "raw_training_updates": 628,
+    "calibration_questions": 595,
+    "formal_cells": 15,
+    "formal_planned": 12530,
+    "formal_completed": 12530,
+    "formal_strict_valid": 12530,
+    "full_tests": {
+      "care": 135,
+      "synth": 869,
+      "reddit": 1502
+    },
+    "original_attempts_immutable": true,
+    "task_local_physical_benchmark": true,
+    "model_export_hashes_verified": true,
+    "new_environment_model_reload_probability_delta": 0,
+    "code_tests": {
+      "passed": 945,
+      "skipped": 48,
+      "known_baseline_failures": 3
+    },
+    "original_anyjev_failure_preserved": true,
+    "early_llm2jev_sequence_deviation_disclosed": true,
+    "numeric_effect_threshold": null,
+    "h200_job_released": true,
+    "delivery": "Local reviewable branch and shared-storage artifacts; no merge or model publication"
+  },
+  "original_evidence_sha256": {
+    "evaluation/comparison-001/comparison.json": "ace57e24a78d0841a5f8c0662304227b3c8a62f91bdd9cdd8e29ac56ec12062c",
+    "evaluation/comparison-001/RESULTS.md": "fbe42a9e89e577022c09e46603ba765101fad1b101a0a31573e7305d05917561",
+    "optimization-002/results/comparison.json": "ea1290b9fbc6af56b737633a90c9736f53476ced86a65b32e9a5ecc8c31d5215",
+    "REPORT_SELECTION.json": "c0322ea6a80ec88e11229cd8edba53231dee7d06f938d42fefafb8f1ff3ae77b"
+  }
+}

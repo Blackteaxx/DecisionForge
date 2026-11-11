@@ -1,0 +1,8 @@
+input:
+  path: ../examples/custom.json
+  records_path: payload.rows
+  mapping_spec: ../examples/mapping.json
+llm:
+  model: ${OPENAI_MODEL}
+output:
+  directory: ../outputs/flexible_qa

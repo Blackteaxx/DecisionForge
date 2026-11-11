@@ -1,0 +1,12 @@
+{
+  "dataset": "ScienceQA image multiple choice",
+  "source_url": "https://huggingface.co/datasets/derek-thomas/ScienceQA",
+  "source_revision": "f18b0a70359ebfb41f658fd564208d0355b013f4",
+  "upstream_code_url": "https://github.com/lupantech/ScienceQA",
+  "upstream_code_revision": "2cbf8318e07b9ece895bb2ae605e71e38d623264",
+  "license": "CC-BY-NC-SA-4.0",
+  "splits": ["train", "validation", "test"],
+  "image_policy": "one local image per row; SHA-256 recorded in decisionforge.eval.v1 request.images",
+  "target_policy": "gold answer index from the public ScienceQA row",
+  "retrieval": "datasets.load_dataset with the pinned revision; source material is not committed"
+}

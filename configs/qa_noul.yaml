@@ -1,0 +1,15 @@
+input:
+  type: json
+  path: ../examples/minimal.json
+  extract_context: true
+task:
+  modes:
+  - noul
+  difficulty: 0.5
+context:
+  generate_if_missing: true
+  relevance: 0.7
+llm:
+  model: ${OPENAI_MODEL}
+output:
+  directory: ../outputs/qa_noul

@@ -1,0 +1,16 @@
+# Complete canonical benchmark; no sample limit or catalog reduction.
+benchmark: jevbench
+benchmark_version: b6b8fff7e345b98c060ad26c13308860ddc67004
+data:
+  path: ../../../../data/benchmarks/jevbench/processed/public.jsonl
+model:
+  adapter: laya_local
+  path: ../../../../outputs/train/laya-typed-decisions-full/model
+  device: cuda:0
+  precision: fp16
+  load_timeout: 900
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 300.0
+output: ../../../../outputs/eval/laya-typed-decisions-full/jevbench

@@ -1,0 +1,30 @@
+backend: swift
+finetuning: lora
+model:
+  name: startlux-models/StartLux-Decision-v1.1-4B-AutoThink
+  revision: 23dd4c513ef387705bb13fd8caadc2d5c863082f
+  load_in_4bit: false
+  max_seq_length: 4096
+swift:
+  model_type: startlux
+  decision_subsample_options: false
+  usage: noncommercial_research
+data:
+  path: data/multimodal.jsonl
+training:
+  num_train_epochs: 1.0
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001
+  head_learning_rate: 0.0001
+  warmup_steps: 0
+  precision: bf16
+  gradient_checkpointing: true
+calibration:
+  enabled: true
+output:
+  directory: ../../../outputs/train/swift-startlux
+lora:
+  rank: 8
+  alpha: 32
+  dropout: 0.0

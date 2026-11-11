@@ -1,0 +1,36 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "answer": "Paris",
+    "context": "France is a European country.",
+    "mode": "choice",
+    "options": [
+      "Paris",
+      "Rome",
+      "Berlin"
+    ],
+    "split": "train"
+  },
+  {
+    "question": "What is 2+2?",
+    "answer": "4",
+    "context": "Consider addition of whole numbers.",
+    "mode": "noul",
+    "statement": "Two plus two equals four.",
+    "noul_label": 1,
+    "split": "train"
+  },
+  {
+    "question": "How complete is the response that correctly supplies every requested fact?",
+    "answer": "Fully correct and complete",
+    "context": "The response contains every requested fact and no factual errors.",
+    "mode": "score",
+    "ranking_items": [
+      "Incorrect",
+      "Partly correct",
+      "Fully correct and complete"
+    ],
+    "score_index": 2,
+    "split": "train"
+  }
+]

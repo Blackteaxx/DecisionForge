@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dforge-eval-example"
+version = "0.1.0"
+description = "Example benchmark and group metric extension for DecisionForge"
+requires-python = ">=3.11"
+dependencies = ["decisionforge>=0.1.0"]
+
+[project.entry-points."decisionforge.eval.metrics"]
+unanimous_groups = "jev_eval_example:group_metric"
+
+[project.entry-points."decisionforge.eval.benchmarks"]
+custom_groups = "jev_eval_example:benchmark"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jev_eval_example"]

@@ -1,0 +1,83 @@
+{
+  "source": "../typed-decisions-sample.jsonl",
+  "source_sha256": "68da41addae5819c4a204848980c3bcd438e4805ebd20c0a3073e4cb928c8682",
+  "operation": "explicit_fixture_role_assignment_only_public_requests_and_supervision_unchanged",
+  "assignments": [
+    {
+      "record_id": 1,
+      "original_split": "train",
+      "fixture_split": "train"
+    },
+    {
+      "record_id": 2,
+      "original_split": "train",
+      "fixture_split": "train"
+    },
+    {
+      "record_id": 3,
+      "original_split": "train",
+      "fixture_split": "validation"
+    },
+    {
+      "record_id": 4,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 5,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 6,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 7,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 8,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 9,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 10,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 11,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 12,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 13,
+      "original_split": "train",
+      "fixture_split": "calibration"
+    },
+    {
+      "record_id": 101,
+      "original_split": "test",
+      "fixture_split": "test"
+    },
+    {
+      "record_id": 102,
+      "original_split": "test",
+      "fixture_split": "test"
+    }
+  ],
+  "cns_sha256": "934b77648677ba5ae69d32c94b18d5af866d8bea49ed0698ba43115964d4d850"
+}

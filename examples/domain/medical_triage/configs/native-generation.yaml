@@ -1,0 +1,35 @@
+# Native source-grounded QA construction; not the historical v1 patient generator.
+project:
+  name: medical-source-qa
+  language: en
+input:
+  type: txt
+  path: ${MEDICAL_SOURCE_TXT}
+  default_split: ${MEDICAL_SOURCE_SPLIT}
+  extract_context: true
+  generate_qa_from_text: true
+  max_generated_questions: 5
+task:
+  modes: [choice]
+  domain_profile: >-
+    Source-grounded medical action decisions. Use only the supplied evidence;
+    do not invent patient observations, clinical thresholds or urgency rules.
+    Skip questions when the source does not determine a unique answer.
+context:
+  generate_if_missing: false
+choice:
+  target_option_count: 4
+llm:
+  api: chat_completions
+  model: deepseek-flash
+  base_url: ${BOYUE_API_BASE}
+  api_key_env: BOYUE_API_KEY
+  structured_output: json
+verification:
+  max_semantic_repairs: 2
+execution:
+  concurrency: 4
+  llm_concurrency: 8
+output:
+  directory: ${MEDICAL_RUN_DIR}
+  validation_fraction: 0.0

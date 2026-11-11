@@ -1,0 +1,20 @@
+input:
+  path: ../examples/source.txt
+  extract_context: true
+  generate_qa_from_text: true
+  max_generated_questions: 5
+  text_batching:
+    enabled: true
+    threshold_chars: 10000
+    max_batches: 64
+task:
+  modes:
+  - choice
+llm:
+  model: ${OPENAI_MODEL}
+execution:
+  text_batch_concurrency: 4  # TXT batches in parallel
+  concurrency: 4           # Questions per batch in parallel
+  llm_concurrency: 8       # Global API limit across all batches
+output:
+  directory: ../outputs/txt

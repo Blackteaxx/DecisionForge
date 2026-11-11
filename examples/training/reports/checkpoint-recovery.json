@@ -1,0 +1,398 @@
+{
+    "model": "Qwen/Qwen3.5-4B",
+    "data": "data/local/typed-decisions-training.jsonl",
+    "checks": {
+        "real_checkpoint_resume": {
+            "start_step": 1,
+            "end_step": 3,
+            "optimizer_steps": [
+                1,
+                3
+            ],
+            "scheduler_steps": [
+                1,
+                3
+            ],
+            "snapshot_preserved": true,
+            "training": {
+                "raw": {
+                    "train_runtime": 12.6394,
+                    "train_samples_per_second": 0.237,
+                    "train_steps_per_second": 0.237,
+                    "total_flos": 0.0,
+                    "train_loss": 0.7351364294687907,
+                    "epoch": 0.0375
+                },
+                "training_loss": 0.7351364294687907,
+                "global_step": 3,
+                "elapsed_seconds": 14.322289681062102,
+                "parameter_update_probe": {
+                    "lora": true,
+                    "head": true
+                },
+                "selected_checkpoint": "final"
+            },
+            "reload": {
+                "model": {
+                    "types": [
+                        "choice",
+                        "noul",
+                        "score"
+                    ],
+                    "predictions": [
+                        {
+                            "answers": {
+                                "action": {
+                                    "type": "choice",
+                                    "choice": "human_review",
+                                    "confidence": 0.4898,
+                                    "probabilities": {
+                                        "continue": 0.0581,
+                                        "human_review": 0.4898,
+                                        "observe": 0.2537,
+                                        "stop": 0.1984
+                                    },
+                                    "answer": "human_review"
+                                },
+                                "needs_review": {
+                                    "type": "noul",
+                                    "noul": 0.4586,
+                                    "answer": false,
+                                    "probabilities": {
+                                        "true": 0.4586,
+                                        "false": 0.5414
+                                    }
+                                },
+                                "outcome": {
+                                    "type": "choice",
+                                    "choice": "success",
+                                    "confidence": 0.3179,
+                                    "probabilities": {
+                                        "failure": 0.1365,
+                                        "harmful": 0.3083,
+                                        "partial": 0.2374,
+                                        "success": 0.3179
+                                    },
+                                    "answer": "success"
+                                },
+                                "risk": {
+                                    "type": "score",
+                                    "score": 1.7017,
+                                    "confidence": 0.2959,
+                                    "legend": {
+                                        "0": "Benign: read-only or clearly safe actions.",
+                                        "1": "Low: routine writes within scope.",
+                                        "2": "Moderate: irreversible or out-of-scope actions.",
+                                        "3": "High: destructive, security-relevant, or policy-violating actions."
+                                    },
+                                    "probabilities": {
+                                        "0": 0.1682,
+                                        "1": 0.2489,
+                                        "2": 0.2959,
+                                        "3": 0.287
+                                    },
+                                    "answer": 2
+                                },
+                                "urgency": {
+                                    "type": "score",
+                                    "score": 1.743,
+                                    "confidence": 0.3152,
+                                    "legend": {
+                                        "0": "No time pressure; can wait indefinitely.",
+                                        "1": "Routine; handle within the normal queue.",
+                                        "2": "Elevated; should be handled within the same week.",
+                                        "3": "Critical; requires action within the same day."
+                                    },
+                                    "probabilities": {
+                                        "0": 0.125,
+                                        "1": 0.2834,
+                                        "2": 0.3152,
+                                        "3": 0.2764
+                                    },
+                                    "answer": 2
+                                }
+                            }
+                        }
+                    ],
+                    "decision_config": {
+                        "layout": "clef",
+                        "max_len": 4096,
+                        "temperature": [
+                            0.5747619867324829,
+                            1.7104763984680176,
+                            1.0716912746429443
+                        ],
+                        "base_model": "Qwen/Qwen3.5-4B",
+                        "load_in_4bit": true,
+                        "fine_tuned": true,
+                        "folded_temperature": 0.2578210234642029
+                    },
+                    "protocol_valid": true,
+                    "calibration_restored": true
+                },
+                "merged": {
+                    "types": [
+                        "choice",
+                        "noul",
+                        "score"
+                    ],
+                    "predictions": [
+                        {
+                            "answers": {
+                                "action": {
+                                    "type": "choice",
+                                    "choice": "human_review",
+                                    "confidence": 0.4959,
+                                    "probabilities": {
+                                        "continue": 0.0588,
+                                        "human_review": 0.4959,
+                                        "observe": 0.2487,
+                                        "stop": 0.1966
+                                    },
+                                    "answer": "human_review"
+                                },
+                                "needs_review": {
+                                    "type": "noul",
+                                    "noul": 0.457,
+                                    "answer": false,
+                                    "probabilities": {
+                                        "true": 0.457,
+                                        "false": 0.543
+                                    }
+                                },
+                                "outcome": {
+                                    "type": "choice",
+                                    "choice": "harmful",
+                                    "confidence": 0.3159,
+                                    "probabilities": {
+                                        "failure": 0.1339,
+                                        "harmful": 0.3159,
+                                        "partial": 0.239,
+                                        "success": 0.3112
+                                    },
+                                    "answer": "harmful"
+                                },
+                                "risk": {
+                                    "type": "score",
+                                    "score": 1.6959,
+                                    "confidence": 0.2961,
+                                    "legend": {
+                                        "0": "Benign: read-only or clearly safe actions.",
+                                        "1": "Low: routine writes within scope.",
+                                        "2": "Moderate: irreversible or out-of-scope actions.",
+                                        "3": "High: destructive, security-relevant, or policy-violating actions."
+                                    },
+                                    "probabilities": {
+                                        "0": 0.1689,
+                                        "1": 0.2506,
+                                        "2": 0.2961,
+                                        "3": 0.2843
+                                    },
+                                    "answer": 2
+                                },
+                                "urgency": {
+                                    "type": "score",
+                                    "score": 1.7476,
+                                    "confidence": 0.3157,
+                                    "legend": {
+                                        "0": "No time pressure; can wait indefinitely.",
+                                        "1": "Routine; handle within the normal queue.",
+                                        "2": "Elevated; should be handled within the same week.",
+                                        "3": "Critical; requires action within the same day."
+                                    },
+                                    "probabilities": {
+                                        "0": 0.1239,
+                                        "1": 0.2825,
+                                        "2": 0.3157,
+                                        "3": 0.2779
+                                    },
+                                    "answer": 2
+                                }
+                            }
+                        }
+                    ],
+                    "decision_config": {
+                        "layout": "clef",
+                        "max_len": 4096,
+                        "temperature": [
+                            0.5747619867324829,
+                            1.7104763984680176,
+                            1.0716912746429443
+                        ],
+                        "base_model": "outputs/train/gpu-acceptance/results-v3/resume/merged",
+                        "load_in_4bit": true,
+                        "fine_tuned": true,
+                        "folded_temperature": 0.2578210234642029
+                    },
+                    "protocol_valid": true,
+                    "calibration_restored": true
+                }
+            },
+            "report": "outputs/train/gpu-acceptance/results-v3/resume/report.json"
+        },
+        "short_training_final_stage_resume": {
+            "steps": 2,
+            "save_steps": 100,
+            "full_final_checkpoint": true,
+            "head_and_lora_unchanged": true,
+            "optimizer_steps_unchanged": true,
+            "report": "outputs/train/gpu-acceptance/results-v3/final-stage/report.json"
+        },
+        "terminal_checkpoint_resume": {
+            "global_step": 2,
+            "all_checkpoint_states_unchanged": true,
+            "semantic_config_rejected": true,
+            "same_size_json_corruption_rejected": true,
+            "calibration_disabled": true,
+            "report": "outputs/train/gpu-acceptance/results-v3/terminal-stage/report.json"
+        },
+        "unfitted_calibration_preserved": {
+            "questions": 16,
+            "calibration": {
+                "raw": {
+                    "accuracy": 0.4375,
+                    "ece": 0.3032999709248543,
+                    "loss": 1.4711179211735725,
+                    "record_accuracy": 0.5,
+                    "fitted_types": [
+                        0
+                    ]
+                },
+                "relative_temperature_fitted_types": [
+                    "choice"
+                ],
+                "relative_temperature_fallback_types": [
+                    "score",
+                    "noul"
+                ],
+                "head_temperature_fitted": false,
+                "preservation_adjustment": {
+                    "shared_head_temperature_retained": true,
+                    "clamped_fitted_types": [],
+                    "meaning": "preserves effective calibration of unfitted types; fitted relative values may be limited by official serving bounds"
+                },
+                "usable_questions": 16,
+                "upstream_target": "Clef calibration uses modal teacher labels",
+                "meaning": "fitting diagnostics (upstream may report cross-fitted metrics), not independent test"
+            },
+            "unfitted_predictions_unchanged": true,
+            "decision_config": {
+                "layout": "clef",
+                "max_len": 4096,
+                "temperature": [
+                    1.235235623521902,
+                    2.0,
+                    3.0
+                ],
+                "base_model": "Qwen/Qwen3.5-4B",
+                "load_in_4bit": true,
+                "fine_tuned": true,
+                "folded_temperature": 0.2578210234642029,
+                "head_temperature": 0.5,
+                "temperature_by_options": {
+                    "score:3-5": 4.0
+                }
+            }
+        },
+        "sparse_logging_terminal_resume": {
+            "global_step": 2,
+            "all_checkpoint_states_unchanged": true,
+            "semantic_config_rejected": true,
+            "same_size_json_corruption_rejected": true,
+            "calibration_disabled": true,
+            "report": "outputs/train/gpu-acceptance/results-sparse-v2/terminal-stage/report.json",
+            "logging_steps": 100,
+            "max_steps": 2,
+            "last_logged_loss": 1.3291215896606445
+        },
+        "existing_jev_adapter": {
+            "basis": "actual reloaded predictions replayed through HTTPX MockTransport; Studio was not started",
+            "checks": [
+                {
+                    "artifact": "model",
+                    "type": "choice",
+                    "question": "action",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "model",
+                    "type": "noul",
+                    "question": "needs_review",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "model",
+                    "type": "choice",
+                    "question": "outcome",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "model",
+                    "type": "score",
+                    "question": "risk",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "model",
+                    "type": "score",
+                    "question": "urgency",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "merged",
+                    "type": "choice",
+                    "question": "action",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "merged",
+                    "type": "noul",
+                    "question": "needs_review",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "merged",
+                    "type": "choice",
+                    "question": "outcome",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "merged",
+                    "type": "score",
+                    "question": "risk",
+                    "protocol_ok": true
+                },
+                {
+                    "artifact": "merged",
+                    "type": "score",
+                    "question": "urgency",
+                    "protocol_ok": true
+                }
+            ]
+        }
+    },
+    "environment": {
+        "packages": {
+            "unsloth": "2026.10.3",
+            "unsloth_zoo": "2026.10.3",
+            "torch": "2.11.0+cu129",
+            "transformers": "5.17.0",
+            "peft": "0.21.2",
+            "accelerate": "1.13.0",
+            "bitsandbytes": "0.50.2",
+            "safetensors": "0.8.0",
+            "numpy": "1.26.4"
+        },
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-174-generic-x86_64-with-glibc2.39",
+        "cuda": "12.9",
+        "gpu": "NVIDIA H200",
+        "precision": "torch.bfloat16",
+        "visible_devices": 1
+    },
+    "resource": {
+        "gpu_count": 1,
+        "driver": "595.71.05"
+    },
+    "archive_note": "Machine paths are example-relative aliases; measured checks and values are unchanged."
+}

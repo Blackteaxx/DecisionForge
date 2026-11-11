@@ -1,0 +1,4670 @@
+{
+  "schema_version": "medical.public-sources.v1",
+  "created_at": "2026-10-28T09:54:03.881408+00:00",
+  "files": [
+    {
+      "task_relative_path": "data/inputs/benchmarks/care/evaluation_prefixes_public.jsonl",
+      "url": "https://raw.githubusercontent.com/ningkko/CARE-bench/090e84167f23c72d29c3a4d9c4f73e857afe0458/data/public/evaluation_prefixes_public.jsonl",
+      "revision": "090e84167f23c72d29c3a4d9c4f73e857afe0458",
+      "sha256": "6d2850f303d05b8f92035c31a11233f41a965e77b3e878e1425f956a00cff534",
+      "bytes": 1255231,
+      "evaluation_rows": 135,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "task_relative_path": "data/inputs/benchmarks/synth/INBOX_A-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/PortalPal-AI/PMP-Synth-AllPairs-Annotated/resolve/0a0347fdc9cd0639348ffa54fe3988a7b45b2a18/data/INBOX_A-00000-of-00001.parquet",
+      "revision": "0a0347fdc9cd0639348ffa54fe3988a7b45b2a18",
+      "sha256": "f381a6f2ec8e55214086282e7ffe7f7bd94ec737535ccb91dae86db50cdd8dc2",
+      "bytes": 58905,
+      "evaluation_rows": 435,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "task_relative_path": "data/inputs/benchmarks/synth/INBOX_B-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/PortalPal-AI/PMP-Synth-AllPairs-Annotated/resolve/0a0347fdc9cd0639348ffa54fe3988a7b45b2a18/data/INBOX_B-00000-of-00001.parquet",
+      "revision": "0a0347fdc9cd0639348ffa54fe3988a7b45b2a18",
+      "sha256": "f86e0619c6d8355e20ef2054214e639e025a8c6cbb5fcb557bf27477fc6f4a46",
+      "bytes": 60405,
+      "evaluation_rows": 434,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "task_relative_path": "data/inputs/benchmarks/reddit/test-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/PortalPal-AI/PMR-Reddit-Test-Pairs/resolve/f72f5fe3d322397505ebc3bcb216c5f86af14c04/data/test-00000-of-00001.parquet",
+      "revision": "f72f5fe3d322397505ebc3bcb216c5f86af14c04",
+      "sha256": "119bedb8636dc7cc72489c337c7a75c94d89290bffae8fb90efc781f11566202",
+      "bytes": 454779,
+      "evaluation_rows": 1502,
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "task_relative_path": "data/inputs/sources/medlineplus-topics-2026-10-27.xml",
+      "url": "https://medlineplus.gov/xml/mplus_topics_2026-10-27.xml",
+      "revision": "2026-10-27",
+      "sha256": "256eacdbb4dc480cd8a6b299fbebdba99b77e1d400a757c7ecf343b52b8db336",
+      "bytes": 30154036,
+      "usage": "Only NLM-owned English full-summary, with attribution; no linked third-party bodies"
+    }
+  ],
+  "care_revision_verification": {
+    "timing": "Resolved after initial download; GitHub blob matches original archived bytes",
+    "git_blob_sha1": "380bdaaccdce25500c25184d382ef4e264c376cb"
+  },
+  "position_seed": 3407,
+  "source_role_seed": 3407,
+  "frozen_tests": {
+    "care": {
+      "count": 135,
+      "sha256": "3ff922a5755af761de00ff5d6a948cbfd3ddfadd02730889c9c62b4f4a6cdbd6",
+      "groups": 62
+    },
+    "synth": {
+      "count": 869,
+      "sha256": "976aafacf05a0805e6645bc6c585291f2c4ad5536ec3805ae1034257d2053324",
+      "groups": 2
+    },
+    "reddit": {
+      "count": 1502,
+      "sha256": "8542a769ef039e7d7f7507d2eb3c771b338bcfc6443f2e5d1b7be464c3d2ca3b",
+      "groups": 1
+    }
+  },
+  "generation_rounds": [
+    {
+      "id": "construct-001",
+      "cases_per_source": 8,
+      "source_count": 496,
+      "source_ids": [
+        "3061",
+        "122",
+        "5755",
+        "1437",
+        "5622",
+        "1233",
+        "1515",
+        "1558",
+        "120",
+        "6621",
+        "1692",
+        "22",
+        "3791",
+        "137",
+        "6257",
+        "140",
+        "142",
+        "3167",
+        "143",
+        "6252",
+        "222",
+        "4146",
+        "144",
+        "4931",
+        "1212",
+        "1223",
+        "147",
+        "4553",
+        "23",
+        "2",
+        "1507",
+        "5400",
+        "4964",
+        "152",
+        "153",
+        "5435",
+        "157",
+        "5953",
+        "600",
+        "160",
+        "1127",
+        "5402",
+        "164",
+        "6039",
+        "6419",
+        "6076",
+        "6121",
+        "4939",
+        "4861",
+        "5610",
+        "5935",
+        "1557",
+        "3",
+        "474",
+        "175",
+        "1621",
+        "4026",
+        "4617",
+        "1456",
+        "2780",
+        "25",
+        "3192",
+        "464",
+        "6429",
+        "1540",
+        "3670",
+        "7547",
+        "610",
+        "179",
+        "4320",
+        "897",
+        "1227",
+        "180",
+        "111",
+        "6206",
+        "5415",
+        "3159",
+        "3660",
+        "3174",
+        "3162",
+        "305",
+        "5893",
+        "1438",
+        "501",
+        "1307",
+        "6781",
+        "6811",
+        "1433",
+        "1608",
+        "5987",
+        "87",
+        "5624",
+        "5995",
+        "189",
+        "5147",
+        "4916",
+        "196",
+        "5428",
+        "4308",
+        "4867",
+        "198",
+        "200",
+        "27",
+        "4208",
+        "3797",
+        "5833",
+        "202",
+        "1276",
+        "7627",
+        "7647",
+        "3639",
+        "119",
+        "6292",
+        "1591",
+        "4318",
+        "6410",
+        "6051",
+        "5562",
+        "205",
+        "3104",
+        "113",
+        "4",
+        "1408",
+        "4935",
+        "1339",
+        "3048",
+        "1340",
+        "1341",
+        "6011",
+        "1104",
+        "211",
+        "3668",
+        "3538",
+        "29",
+        "530",
+        "6927",
+        "3052",
+        "214",
+        "216",
+        "5603",
+        "30",
+        "4959",
+        "5798",
+        "4270",
+        "1545",
+        "115",
+        "4594",
+        "237",
+        "6202",
+        "5811",
+        "1229",
+        "529",
+        "6280",
+        "3873",
+        "3623",
+        "241",
+        "4316",
+        "243",
+        "6196",
+        "118",
+        "246",
+        "3176",
+        "490",
+        "1530",
+        "6425",
+        "247",
+        "5404",
+        "1481",
+        "5324",
+        "5654",
+        "1300",
+        "511",
+        "1609",
+        "3186",
+        "240",
+        "3054",
+        "4596",
+        "299",
+        "6236",
+        "1256",
+        "1434",
+        "254",
+        "5829",
+        "4291",
+        "3056",
+        "33",
+        "262",
+        "4322",
+        "512",
+        "4182",
+        "42",
+        "6244",
+        "3019",
+        "264",
+        "6681",
+        "3217",
+        "4746",
+        "6785",
+        "272",
+        "273",
+        "4751",
+        "486",
+        "724",
+        "1105",
+        "6543",
+        "5704",
+        "1597",
+        "6469",
+        "5",
+        "4212",
+        "277",
+        "199",
+        "6452",
+        "4119",
+        "279",
+        "6078",
+        "3115",
+        "6263",
+        "1226",
+        "109",
+        "1686",
+        "1687",
+        "1286",
+        "1246",
+        "4370",
+        "6084",
+        "4363",
+        "34",
+        "1508",
+        "6907",
+        "5632",
+        "1",
+        "1470",
+        "4287",
+        "7347",
+        "289",
+        "3536",
+        "1610",
+        "1499",
+        "1355",
+        "6603",
+        "7407",
+        "6809",
+        "6661",
+        "1598",
+        "6450",
+        "1715",
+        "4614",
+        "6125",
+        "6177",
+        "1264",
+        "291",
+        "6175",
+        "292",
+        "4293",
+        "1549",
+        "1548",
+        "3750",
+        "3154",
+        "5668",
+        "298",
+        "250",
+        "6081",
+        "526",
+        "6055",
+        "5275",
+        "514",
+        "5542",
+        "6248",
+        "1511",
+        "3067",
+        "4621",
+        "1292",
+        "481",
+        "4921",
+        "301",
+        "1224",
+        "6382",
+        "3924",
+        "6783",
+        "306",
+        "1526",
+        "5620",
+        "1718",
+        "518",
+        "1502",
+        "86",
+        "82",
+        "84",
+        "315",
+        "5656",
+        "5461",
+        "3752",
+        "4154",
+        "5719",
+        "6005",
+        "1452",
+        "322",
+        "5651",
+        "62",
+        "325",
+        "35",
+        "4014",
+        "3528",
+        "3157",
+        "5741",
+        "515",
+        "4141",
+        "6545",
+        "3229",
+        "3953",
+        "4539",
+        "83",
+        "1707",
+        "335",
+        "89",
+        "336",
+        "489",
+        "1240",
+        "4041",
+        "7107",
+        "3955",
+        "1354",
+        "36",
+        "1616",
+        "61",
+        "4077",
+        "471",
+        "21",
+        "7427",
+        "7109",
+        "7129",
+        "6431",
+        "6427",
+        "331",
+        "1250",
+        "348",
+        "349",
+        "5804",
+        "3799",
+        "5334",
+        "1607",
+        "351",
+        "4059",
+        "601",
+        "4253",
+        "1677",
+        "3044",
+        "6415",
+        "3892",
+        "4117",
+        "3065",
+        "1510",
+        "363",
+        "3878",
+        "364",
+        "365",
+        "5912",
+        "367",
+        "1238",
+        "4455",
+        "5784",
+        "368",
+        "5578",
+        "5984",
+        "7131",
+        "1385",
+        "1519",
+        "3793",
+        "6",
+        "3091",
+        "1706",
+        "6234",
+        "3684",
+        "3609",
+        "112",
+        "6208",
+        "7",
+        "6947",
+        "377",
+        "3634",
+        "5980",
+        "1359",
+        "4598",
+        "379",
+        "208",
+        "381",
+        "6521",
+        "6467",
+        "39",
+        "6016",
+        "3101",
+        "6141",
+        "1681",
+        "385",
+        "5901",
+        "1232",
+        "5932",
+        "3215",
+        "7127",
+        "485",
+        "1213",
+        "389",
+        "1254",
+        "1532",
+        "394",
+        "396",
+        "3210",
+        "380",
+        "5571",
+        "1423",
+        "400",
+        "90",
+        "5717",
+        "918",
+        "5358",
+        "408",
+        "108",
+        "1531",
+        "5959",
+        "5249",
+        "411",
+        "1694",
+        "418",
+        "4909",
+        "6465",
+        "5682",
+        "420",
+        "421",
+        "422",
+        "8",
+        "5914",
+        "3629",
+        "4266",
+        "424",
+        "3073",
+        "6541",
+        "6931",
+        "1587",
+        "3637",
+        "1459",
+        "7467",
+        "1235",
+        "434",
+        "4280",
+        "435",
+        "6322",
+        "1660",
+        "438",
+        "439",
+        "6371",
+        "1645",
+        "5424",
+        "1547",
+        "6440",
+        "4602",
+        "271",
+        "444",
+        "1315",
+        "4606",
+        "41",
+        "5534",
+        "5431",
+        "114",
+        "448",
+        "4889",
+        "449",
+        "477",
+        "1222",
+        "7667",
+        "4875",
+        "494",
+        "6417",
+        "533",
+        "5821",
+        "165",
+        "6288",
+        "5373",
+        "5383",
+        "6448",
+        "5385",
+        "5388",
+        "456",
+        "4600",
+        "4361",
+        "1701",
+        "4550",
+        "5673",
+        "459",
+        "480",
+        "1377",
+        "461",
+        "4604",
+        "4608",
+        "5321",
+        "1657"
+      ],
+      "original_manifest_sha256": "b2d9e299cc4acf87e2d8088a748fb73253c827e310ac7115370b849be5ae08a3",
+      "round": 1
+    },
+    {
+      "id": "construct-002",
+      "cases_per_source": 8,
+      "source_count": 309,
+      "source_ids": [
+        "3061",
+        "5755",
+        "1437",
+        "1233",
+        "1515",
+        "1558",
+        "120",
+        "22",
+        "3791",
+        "6257",
+        "142",
+        "3167",
+        "6252",
+        "222",
+        "4146",
+        "4931",
+        "1212",
+        "1223",
+        "147",
+        "2",
+        "1507",
+        "4964",
+        "157",
+        "5953",
+        "600",
+        "160",
+        "5402",
+        "6039",
+        "6419",
+        "6076",
+        "6121",
+        "4861",
+        "5610",
+        "1557",
+        "474",
+        "175",
+        "1621",
+        "4026",
+        "4617",
+        "1456",
+        "25",
+        "1540",
+        "179",
+        "4320",
+        "111",
+        "5415",
+        "3159",
+        "3660",
+        "3162",
+        "305",
+        "5893",
+        "501",
+        "1307",
+        "6781",
+        "6811",
+        "1608",
+        "189",
+        "5147",
+        "4916",
+        "196",
+        "4867",
+        "198",
+        "200",
+        "27",
+        "3797",
+        "5833",
+        "1276",
+        "3639",
+        "119",
+        "6292",
+        "1591",
+        "4318",
+        "6410",
+        "6051",
+        "5562",
+        "3104",
+        "113",
+        "1408",
+        "1339",
+        "3048",
+        "1340",
+        "6011",
+        "211",
+        "3538",
+        "29",
+        "6927",
+        "3052",
+        "214",
+        "216",
+        "5603",
+        "5798",
+        "115",
+        "237",
+        "5811",
+        "529",
+        "6280",
+        "3873",
+        "3623",
+        "241",
+        "4316",
+        "6196",
+        "118",
+        "246",
+        "490",
+        "6425",
+        "247",
+        "5404",
+        "1481",
+        "5324",
+        "5654",
+        "511",
+        "1609",
+        "240",
+        "299",
+        "6236",
+        "1256",
+        "1434",
+        "254",
+        "5829",
+        "4291",
+        "3056",
+        "4322",
+        "512",
+        "42",
+        "6244",
+        "3019",
+        "264",
+        "3217",
+        "4746",
+        "272",
+        "273",
+        "724",
+        "6469",
+        "5",
+        "4212",
+        "6078",
+        "3115",
+        "6263",
+        "1226",
+        "1686",
+        "1687",
+        "1286",
+        "4370",
+        "6084",
+        "34",
+        "1508",
+        "6907",
+        "5632",
+        "1",
+        "1470",
+        "4287",
+        "7347",
+        "289",
+        "1610",
+        "6661",
+        "6450",
+        "1715",
+        "6125",
+        "1264",
+        "291",
+        "6175",
+        "4293",
+        "1548",
+        "3154",
+        "5668",
+        "298",
+        "250",
+        "526",
+        "6055",
+        "5275",
+        "514",
+        "6248",
+        "1511",
+        "3067",
+        "4621",
+        "4921",
+        "301",
+        "1224",
+        "6382",
+        "6783",
+        "1526",
+        "518",
+        "1502",
+        "82",
+        "84",
+        "5656",
+        "6005",
+        "1452",
+        "5651",
+        "62",
+        "325",
+        "35",
+        "3528",
+        "3157",
+        "4141",
+        "6545",
+        "3229",
+        "3953",
+        "4539",
+        "1707",
+        "89",
+        "336",
+        "489",
+        "61",
+        "471",
+        "7427",
+        "7109",
+        "6431",
+        "6427",
+        "331",
+        "349",
+        "3799",
+        "1607",
+        "4059",
+        "601",
+        "3044",
+        "6415",
+        "3065",
+        "1510",
+        "3878",
+        "364",
+        "365",
+        "367",
+        "1238",
+        "4455",
+        "5784",
+        "368",
+        "5578",
+        "5984",
+        "7131",
+        "1385",
+        "3793",
+        "6",
+        "6234",
+        "112",
+        "7",
+        "6947",
+        "377",
+        "379",
+        "208",
+        "381",
+        "6521",
+        "6467",
+        "6016",
+        "3101",
+        "6141",
+        "1681",
+        "385",
+        "5901",
+        "5932",
+        "3215",
+        "7127",
+        "1254",
+        "396",
+        "3210",
+        "380",
+        "5571",
+        "1423",
+        "90",
+        "5717",
+        "408",
+        "1531",
+        "5959",
+        "5249",
+        "411",
+        "1694",
+        "418",
+        "4909",
+        "6465",
+        "420",
+        "421",
+        "422",
+        "8",
+        "3629",
+        "4266",
+        "424",
+        "6541",
+        "6931",
+        "1587",
+        "3637",
+        "1235",
+        "434",
+        "4280",
+        "435",
+        "6322",
+        "1645",
+        "6440",
+        "271",
+        "444",
+        "41",
+        "5534",
+        "5431",
+        "114",
+        "448",
+        "1222",
+        "4875",
+        "494",
+        "6417",
+        "5821",
+        "6288",
+        "5383",
+        "6448",
+        "5385",
+        "1701",
+        "4550",
+        "459",
+        "480",
+        "1377",
+        "461"
+      ],
+      "original_manifest_sha256": "ae7b7e913a56079babcaabb3a7b26c8c5d8137c4215e901885fd1f5e7020f123",
+      "round": 2
+    },
+    {
+      "id": "construct-003",
+      "cases_per_source": 8,
+      "source_count": 200,
+      "source_ids": [
+        "84",
+        "5385",
+        "7131",
+        "331",
+        "6322",
+        "3019",
+        "291",
+        "6263",
+        "4293",
+        "4320",
+        "3215",
+        "271",
+        "490",
+        "4867",
+        "5833",
+        "6382",
+        "237",
+        "1470",
+        "3538",
+        "480",
+        "1408",
+        "5717",
+        "6196",
+        "6",
+        "368",
+        "41",
+        "381",
+        "526",
+        "418",
+        "6076",
+        "5829",
+        "514",
+        "6931",
+        "299",
+        "246",
+        "1377",
+        "4931",
+        "4746",
+        "6947",
+        "424",
+        "4212",
+        "511",
+        "250",
+        "5415",
+        "222",
+        "367",
+        "6927",
+        "1226",
+        "518",
+        "461",
+        "336",
+        "4964",
+        "3167",
+        "3623",
+        "7127",
+        "6084",
+        "5654",
+        "115",
+        "1264",
+        "365",
+        "5578",
+        "6545",
+        "1",
+        "1531",
+        "5821",
+        "385",
+        "1540",
+        "4291",
+        "6417",
+        "3061",
+        "120",
+        "142",
+        "4455",
+        "305",
+        "6055",
+        "3210",
+        "512",
+        "1707",
+        "1502",
+        "6448",
+        "1645",
+        "448",
+        "1686",
+        "1307",
+        "29",
+        "494",
+        "6781",
+        "1694",
+        "3639",
+        "1286",
+        "289",
+        "62",
+        "4861",
+        "1607",
+        "3873",
+        "1557",
+        "272",
+        "1701",
+        "6051",
+        "5534",
+        "5651",
+        "5383",
+        "6141",
+        "3162",
+        "6280",
+        "600",
+        "8",
+        "3154",
+        "1437",
+        "6410",
+        "1507",
+        "4280",
+        "408",
+        "1526",
+        "175",
+        "1235",
+        "501",
+        "1510",
+        "6288",
+        "1456",
+        "198",
+        "179",
+        "6257",
+        "301",
+        "208",
+        "3229",
+        "3067",
+        "5893",
+        "3797",
+        "4146",
+        "6469",
+        "724",
+        "6440",
+        "529",
+        "2",
+        "364",
+        "3793",
+        "1238",
+        "1423",
+        "379",
+        "4921",
+        "1256",
+        "240",
+        "1481",
+        "5249",
+        "22",
+        "157",
+        "6292",
+        "6236",
+        "298",
+        "1587",
+        "1223",
+        "6252",
+        "396",
+        "4539",
+        "420",
+        "89",
+        "6425",
+        "4370",
+        "5959",
+        "5932",
+        "6415",
+        "1254",
+        "601",
+        "1434",
+        "1681",
+        "1452",
+        "3629",
+        "6016",
+        "6175",
+        "5798",
+        "3052",
+        "3159",
+        "489",
+        "5755",
+        "6427",
+        "5431",
+        "5953",
+        "216",
+        "6078",
+        "411",
+        "5571",
+        "3528",
+        "1621",
+        "377",
+        "6465",
+        "5984",
+        "119",
+        "4266",
+        "34",
+        "214",
+        "1508",
+        "5275",
+        "3878",
+        "4621",
+        "113",
+        "5402",
+        "35",
+        "3065",
+        "5404"
+      ],
+      "original_manifest_sha256": "5f34ef597c156b52e446fdd6a480d12b25d7359361fa9e3da50babd5656ffc02",
+      "round": 3
+    },
+    {
+      "id": "construct-004",
+      "cases_per_source": 8,
+      "source_count": 80,
+      "source_ids": [
+        "4909",
+        "1687",
+        "1408",
+        "6907",
+        "6078",
+        "200",
+        "3067",
+        "3528",
+        "301",
+        "3793",
+        "89",
+        "118",
+        "1256",
+        "6419",
+        "6051",
+        "1233",
+        "1377",
+        "3056",
+        "4550",
+        "1591",
+        "5610",
+        "1307",
+        "1470",
+        "5534",
+        "396",
+        "7427",
+        "529",
+        "4212",
+        "3538",
+        "365",
+        "3044",
+        "5632",
+        "494",
+        "196",
+        "289",
+        "6011",
+        "444",
+        "6947",
+        "6016",
+        "424",
+        "4916",
+        "3873",
+        "6244",
+        "5147",
+        "7347",
+        "5953",
+        "461",
+        "5893",
+        "3797",
+        "6234",
+        "1515",
+        "3953",
+        "4318",
+        "3210",
+        "5249",
+        "4621",
+        "120",
+        "4861",
+        "4746",
+        "1621",
+        "1508",
+        "480",
+        "1707",
+        "29",
+        "142",
+        "1701",
+        "3157",
+        "4266",
+        "5959",
+        "3052",
+        "3799",
+        "1540",
+        "4320",
+        "6196",
+        "1340",
+        "1558",
+        "5984",
+        "5784",
+        "1645",
+        "4322"
+      ],
+      "original_manifest_sha256": "14bf1d77a743bbe4b5d9f04c29bf8d13ebd8d38565ce3de6d6d79bf9ca41fd70",
+      "round": 4
+    }
+  ],
+  "source_summaries": {
+    "3061": {
+      "family_id": "3061",
+      "title": "Abdominal Pain",
+      "url": "https://medlineplus.gov/abdominalpain.html",
+      "sha256": "4064fa9111f0e0af9ecaa8bf9f43a6bc7c642b416497b4f27fc366054cefab27",
+      "split": "train"
+    },
+    "122": {
+      "family_id": "122",
+      "title": "Abortion",
+      "url": "https://medlineplus.gov/abortion.html",
+      "sha256": "a46fdf321d6acdcfde01d8c4b25db7ff66ed6a8f2fdee0ee2f67d5888b06be70",
+      "split": "train"
+    },
+    "5755": {
+      "family_id": "5755",
+      "title": "Acute Bronchitis",
+      "url": "https://medlineplus.gov/acutebronchitis.html",
+      "sha256": "96f5d2e877a070502792a5eff9e7da1d15efe552ef62f3d90c59afc87fd7e7b2",
+      "split": "train"
+    },
+    "1437": {
+      "family_id": "1437",
+      "title": "Acute Lymphocytic Leukemia",
+      "url": "https://medlineplus.gov/acutelymphocyticleukemia.html",
+      "sha256": "3bd7a2e50ae9681ecba5fc7d3056959935912743de8e5bb6ad7d7b007f108101",
+      "split": "train"
+    },
+    "5622": {
+      "family_id": "5622",
+      "title": "Acute Myeloid Leukemia",
+      "url": "https://medlineplus.gov/acutemyeloidleukemia.html",
+      "sha256": "26ab93053886dacd440768b5e563e21928ea6891c029fc6c6f2403617dfd9c1e",
+      "split": "validation"
+    },
+    "1233": {
+      "family_id": "1233",
+      "title": "Addison Disease",
+      "url": "https://medlineplus.gov/addisondisease.html",
+      "sha256": "d264f118150dab9c795590bb4843405c3a7e425791f23470b24d9ec47845343b",
+      "split": "train"
+    },
+    "1515": {
+      "family_id": "1515",
+      "title": "Adenoids",
+      "url": "https://medlineplus.gov/adenoids.html",
+      "sha256": "cc926c1ff91f81a2c1104bf644d1ae150dcccb7dcf8277ca50a21ba555a172ae",
+      "split": "train"
+    },
+    "1558": {
+      "family_id": "1558",
+      "title": "Alcohol",
+      "url": "https://medlineplus.gov/alcohol.html",
+      "sha256": "84e40c6cb7ef36e7ec267caf47302792e176b5922a7c781226e60b8d9b2fbb2a",
+      "split": "calibration"
+    },
+    "120": {
+      "family_id": "120",
+      "title": "Alcohol Use Disorder (AUD)",
+      "url": "https://medlineplus.gov/alcoholusedisorderaud.html",
+      "sha256": "0ab26aad203b64ba77747843d8d3956c1b17153bf752a11b86b974dfd930d77f",
+      "split": "train"
+    },
+    "6621": {
+      "family_id": "6621",
+      "title": "Alcohol Use Disorder (AUD) Treatment",
+      "url": "https://medlineplus.gov/alcoholusedisorderaudtreatment.html",
+      "sha256": "d1250333afa2ab96c71902488bd8afb34ffef99ae7a73cd14b47ff3a7db1881c",
+      "split": "train"
+    },
+    "1692": {
+      "family_id": "1692",
+      "title": "Alpha-1 Antitrypsin Deficiency",
+      "url": "https://medlineplus.gov/alpha1antitrypsindeficiency.html",
+      "sha256": "5d121da9e360e497e5269c1b6a71328e6c80cae665fb124369055a3562af5964",
+      "split": "train"
+    },
+    "22": {
+      "family_id": "22",
+      "title": "Alzheimer's Disease",
+      "url": "https://medlineplus.gov/alzheimersdisease.html",
+      "sha256": "cd2adfd4dbd433937273887e84aea9b68254943f48073fdd4c0abf90c5a18ec5",
+      "split": "train"
+    },
+    "3791": {
+      "family_id": "3791",
+      "title": "Anal Cancer",
+      "url": "https://medlineplus.gov/analcancer.html",
+      "sha256": "79a0979e27b785646755a101cceeebe5b64c3ddd380acffa363c80c54d2a497d",
+      "split": "train"
+    },
+    "137": {
+      "family_id": "137",
+      "title": "Anal Disorders",
+      "url": "https://medlineplus.gov/analdisorders.html",
+      "sha256": "d4029cebe756c2e0a3d16d303eea358eb043bcc73fd195b9178ae2e673490a8c",
+      "split": "validation"
+    },
+    "6257": {
+      "family_id": "6257",
+      "title": "Anaphylaxis",
+      "url": "https://medlineplus.gov/anaphylaxis.html",
+      "sha256": "f110f12aa3d2dc0d1395d2fb4f591cffefeb9790707cc99a1a4868f45c5fa8d1",
+      "split": "train"
+    },
+    "140": {
+      "family_id": "140",
+      "title": "Anesthesia",
+      "url": "https://medlineplus.gov/anesthesia.html",
+      "sha256": "44cddc5c448264763abbddf4a74b54233903ce3a303a656f5560fc92d635e341",
+      "split": "train"
+    },
+    "142": {
+      "family_id": "142",
+      "title": "Angina",
+      "url": "https://medlineplus.gov/angina.html",
+      "sha256": "f8014ef4e2a913105fd89b86b31808511bf3d14a60890a9d54b11d8811906ba6",
+      "split": "validation"
+    },
+    "3167": {
+      "family_id": "3167",
+      "title": "Angioplasty",
+      "url": "https://medlineplus.gov/angioplasty.html",
+      "sha256": "2efdb1761bc2c8ddaa417927750f034cd6d9eede9a605529e4202e9a276b16e1",
+      "split": "train"
+    },
+    "143": {
+      "family_id": "143",
+      "title": "Ankylosing Spondylitis",
+      "url": "https://medlineplus.gov/ankylosingspondylitis.html",
+      "sha256": "9c5f4d9527afeacff497f6a1095be5cf5e39d6e15e9a53965f697d363385753b",
+      "split": "train"
+    },
+    "6252": {
+      "family_id": "6252",
+      "title": "Antibiotic Resistance",
+      "url": "https://medlineplus.gov/antibioticresistance.html",
+      "sha256": "2dd763a518ba868ef7e7b69ef1a710ccc99fe629388e18941c97cfd14d9698e8",
+      "split": "train"
+    },
+    "222": {
+      "family_id": "222",
+      "title": "Antibiotics",
+      "url": "https://medlineplus.gov/antibiotics.html",
+      "sha256": "275df7a9d958e10c1885e5478202d9f99491e5bce30f9ccdb25e70afb7a1d94d",
+      "split": "train"
+    },
+    "4146": {
+      "family_id": "4146",
+      "title": "Antidepressants",
+      "url": "https://medlineplus.gov/antidepressants.html",
+      "sha256": "a9e021da922cf0c80381753a6e614baaaf617c0fac8d4695a1d58ee85e6e6a96",
+      "split": "train"
+    },
+    "144": {
+      "family_id": "144",
+      "title": "Anxiety",
+      "url": "https://medlineplus.gov/anxiety.html",
+      "sha256": "f663867ac997443508bc3aff39c6c4b181a831e763d5503bf0c1bb0b8389837f",
+      "split": "train"
+    },
+    "4931": {
+      "family_id": "4931",
+      "title": "Aortic Aneurysm",
+      "url": "https://medlineplus.gov/aorticaneurysm.html",
+      "sha256": "0478af4474590558cb4a670a494fdf0a1cccea06abcc096f53170c943784eb5b",
+      "split": "train"
+    },
+    "1212": {
+      "family_id": "1212",
+      "title": "Aphasia",
+      "url": "https://medlineplus.gov/aphasia.html",
+      "sha256": "af5276a136d55e94687f922874d337b64ec21e8d936f99015163ead14e99de4d",
+      "split": "train"
+    },
+    "1223": {
+      "family_id": "1223",
+      "title": "Appendicitis",
+      "url": "https://medlineplus.gov/appendicitis.html",
+      "sha256": "02564cac9552ed2337ae5ad2e384877d10c535dd1bc4a106f25a3558079d76ab",
+      "split": "train"
+    },
+    "147": {
+      "family_id": "147",
+      "title": "Arrhythmia",
+      "url": "https://medlineplus.gov/arrhythmia.html",
+      "sha256": "899a16fef8d63016b3bd8ecc328a45bc28b43854cf4617d56e44a538d86e0275",
+      "split": "calibration"
+    },
+    "4553": {
+      "family_id": "4553",
+      "title": "Arteriovenous Malformations",
+      "url": "https://medlineplus.gov/arteriovenousmalformations.html",
+      "sha256": "dc87e64f12dee4c387e6b23f4788134e3b807cdfdd96dfc75963c08a99720173",
+      "split": "train"
+    },
+    "23": {
+      "family_id": "23",
+      "title": "Arthritis",
+      "url": "https://medlineplus.gov/arthritis.html",
+      "sha256": "52def9cdcfb8184b63e238c193e60ed369c64adfefeb46efd731f2a4354312e3",
+      "split": "calibration"
+    },
+    "2": {
+      "family_id": "2",
+      "title": "Asthma",
+      "url": "https://medlineplus.gov/asthma.html",
+      "sha256": "d8dfdfa10a9c57f9586ba6bf10ccd01fb66bb6bd43fd077a83229251110b575e",
+      "split": "calibration"
+    },
+    "1507": {
+      "family_id": "1507",
+      "title": "Asthma in Children",
+      "url": "https://medlineplus.gov/asthmainchildren.html",
+      "sha256": "0435c10560337a4e80866bdd7558aaf8ab9a886509585aaeb1d38c6a5c2662b5",
+      "split": "train"
+    },
+    "5400": {
+      "family_id": "5400",
+      "title": "Atherosclerosis",
+      "url": "https://medlineplus.gov/atherosclerosis.html",
+      "sha256": "b2f7c59d0e9edc3c6f0bfa4d3635ba1fbecadac09cf459b949f200f491ab274e",
+      "split": "train"
+    },
+    "4964": {
+      "family_id": "4964",
+      "title": "Atrial Fibrillation",
+      "url": "https://medlineplus.gov/atrialfibrillation.html",
+      "sha256": "ec4164e5ae9f49bc05d82b8f2057859c1731caa8b6c0835e9a58f0ced4d2ce3a",
+      "split": "validation"
+    },
+    "152": {
+      "family_id": "152",
+      "title": "Attention Deficit Hyperactivity Disorder",
+      "url": "https://medlineplus.gov/attentiondeficithyperactivitydisorder.html",
+      "sha256": "abc535f2613cf1f9148bdcdd243c3677c27252b86c5f3df93b3563ad1d50aef4",
+      "split": "train"
+    },
+    "153": {
+      "family_id": "153",
+      "title": "Autism Spectrum Disorder",
+      "url": "https://medlineplus.gov/autismspectrumdisorder.html",
+      "sha256": "0778837f444fcc8494b6aa0964e13c0c4d47b4ccef99dd7e5cb4b5e55453ac27",
+      "split": "train"
+    },
+    "5435": {
+      "family_id": "5435",
+      "title": "Baby Health Checkup",
+      "url": "https://medlineplus.gov/babyhealthcheckup.html",
+      "sha256": "7bc6a01ea5eeefa9a5ad8c815542930119addbd11e29f5121b24864d99523cb0",
+      "split": "train"
+    },
+    "157": {
+      "family_id": "157",
+      "title": "Back Pain",
+      "url": "https://medlineplus.gov/backpain.html",
+      "sha256": "ca782ca58e5ceeb2978a06dccff81af5caa02e05ac8df7e5cfa1a199cc105e4a",
+      "split": "train"
+    },
+    "5953": {
+      "family_id": "5953",
+      "title": "Balance Problems",
+      "url": "https://medlineplus.gov/balanceproblems.html",
+      "sha256": "8473c60c01e81e4fb2067f5a55aa52795aed59824547b85d3fa64571f2b6f084",
+      "split": "calibration"
+    },
+    "600": {
+      "family_id": "600",
+      "title": "Bipolar Disorder",
+      "url": "https://medlineplus.gov/bipolardisorder.html",
+      "sha256": "f2774cb6e3d1257e50c7b3e82442530095b9db1c6ad4db653aefade603dcd6d9",
+      "split": "train"
+    },
+    "160": {
+      "family_id": "160",
+      "title": "Birth Control",
+      "url": "https://medlineplus.gov/birthcontrol.html",
+      "sha256": "e82b70fbd9fed37298c23dc7f871e3840e7bd2764050fe160d2b5eebf0d2117f",
+      "split": "train"
+    },
+    "1127": {
+      "family_id": "1127",
+      "title": "Birth Defects",
+      "url": "https://medlineplus.gov/birthdefects.html",
+      "sha256": "6c6e837f00725d7cbeb234ca929680ebc662dc7fe9a10c6ed54a366250c15292",
+      "split": "train"
+    },
+    "5402": {
+      "family_id": "5402",
+      "title": "Birthmarks",
+      "url": "https://medlineplus.gov/birthmarks.html",
+      "sha256": "dd77b413865511a2bcde62a2c07170099e763219be3a9e20df65e966b2e331f2",
+      "split": "train"
+    },
+    "164": {
+      "family_id": "164",
+      "title": "Bladder Diseases",
+      "url": "https://medlineplus.gov/bladderdiseases.html",
+      "sha256": "3decfc50c8c04d40793f45396b5bc38e95adb988aa087f5214f75844df8f7ca8",
+      "split": "train"
+    },
+    "6039": {
+      "family_id": "6039",
+      "title": "Bleeding",
+      "url": "https://medlineplus.gov/bleeding.html",
+      "sha256": "aa33de7872a116632d6187d46cd6e8cf363fa6fd4c9b817753c84029d8580d12",
+      "split": "train"
+    },
+    "6419": {
+      "family_id": "6419",
+      "title": "Blisters",
+      "url": "https://medlineplus.gov/blisters.html",
+      "sha256": "5f3c7ffffd36bb33be39213ec9e61a164547490dff48e1fac2a9361461a29361",
+      "split": "calibration"
+    },
+    "6076": {
+      "family_id": "6076",
+      "title": "Blood Clots",
+      "url": "https://medlineplus.gov/bloodclots.html",
+      "sha256": "2c45931aa2ae097d3a21d13d9c2155c70b660cb88b7499f49cc1a2490f708e61",
+      "split": "train"
+    },
+    "6121": {
+      "family_id": "6121",
+      "title": "Blood Glucose",
+      "url": "https://medlineplus.gov/bloodglucose.html",
+      "sha256": "d423544b24a411bad7ac95a48eb2c579f9ca58c89ae4e4400e8f06bbdb9deb3d",
+      "split": "train"
+    },
+    "4939": {
+      "family_id": "4939",
+      "title": "Blood Pressure Medicines",
+      "url": "https://medlineplus.gov/bloodpressuremedicines.html",
+      "sha256": "72de05163b3994b983d6be2f20ca396fc1821891e37eac5ac79c572527ae873c",
+      "split": "validation"
+    },
+    "4861": {
+      "family_id": "4861",
+      "title": "Blood Thinners",
+      "url": "https://medlineplus.gov/bloodthinners.html",
+      "sha256": "7f0160826ae27fae5819b1e7e72c220a5b7e3f35884f746a8bbfb92e04db48a1",
+      "split": "train"
+    },
+    "5610": {
+      "family_id": "5610",
+      "title": "Body Weight",
+      "url": "https://medlineplus.gov/bodyweight.html",
+      "sha256": "83b42cddae69bf9c36956a54e0a60c134b44fa8fcf79fcfbe1ec87e8040d4799",
+      "split": "train"
+    },
+    "5935": {
+      "family_id": "5935",
+      "title": "Bone Density",
+      "url": "https://medlineplus.gov/bonedensity.html",
+      "sha256": "9fc667eb956e65a162c3c9b912d6b3d6b6285e48831224f04929abf6aeef5a0d",
+      "split": "train"
+    },
+    "1557": {
+      "family_id": "1557",
+      "title": "Botulism",
+      "url": "https://medlineplus.gov/botulism.html",
+      "sha256": "9094d4829188e46aa86812b15e8cc63bdc5d4f04b0065743841aaed101ef39a6",
+      "split": "train"
+    },
+    "3": {
+      "family_id": "3",
+      "title": "Breast Cancer",
+      "url": "https://medlineplus.gov/breastcancer.html",
+      "sha256": "b13aebc06f9c7b131659f6cd0119b111b14c1240b9dffd0afaa89efe31b8b034",
+      "split": "train"
+    },
+    "474": {
+      "family_id": "474",
+      "title": "Breast Diseases",
+      "url": "https://medlineplus.gov/breastdiseases.html",
+      "sha256": "390312fd48155dd4cffd2b2a8fc352da94cd6383024aa8e3f4e5297090fc0e8f",
+      "split": "train"
+    },
+    "175": {
+      "family_id": "175",
+      "title": "Breastfeeding",
+      "url": "https://medlineplus.gov/breastfeeding.html",
+      "sha256": "88fde2fffd375336d4c0632ee4fef854215042d0cd8e01b482e99586ef52c134",
+      "split": "train"
+    },
+    "1621": {
+      "family_id": "1621",
+      "title": "Bruises",
+      "url": "https://medlineplus.gov/bruises.html",
+      "sha256": "d6fd6b6d4b0def883f98ec12418f3582bc0a19c665cd0ea05628dcb28f3a3e9b",
+      "split": "train"
+    },
+    "4026": {
+      "family_id": "4026",
+      "title": "Bullying and Cyberbullying",
+      "url": "https://medlineplus.gov/bullyingandcyberbullying.html",
+      "sha256": "f14b83e3c03b5f3642d29b090db226810aa2e305ad73c7086060b64df388e3cf",
+      "split": "train"
+    },
+    "4617": {
+      "family_id": "4617",
+      "title": "C. diff Infections",
+      "url": "https://medlineplus.gov/cdiffinfections.html",
+      "sha256": "4214ae7f06b3027ffc07c3bc4f160e16543a9525cddb7c898def71796b3988e0",
+      "split": "validation"
+    },
+    "1456": {
+      "family_id": "1456",
+      "title": "Caffeine",
+      "url": "https://medlineplus.gov/caffeine.html",
+      "sha256": "8459c1ace19a13c7b3849081f3096cda77087ccc3f6f6f1693e0763e6cf40712",
+      "split": "train"
+    },
+    "2780": {
+      "family_id": "2780",
+      "title": "Calcium",
+      "url": "https://medlineplus.gov/calcium.html",
+      "sha256": "335ea343af1378e18fa5e1109fac3eeebe6120639dc05b983e48132e112c4312",
+      "split": "train"
+    },
+    "25": {
+      "family_id": "25",
+      "title": "Cancer",
+      "url": "https://medlineplus.gov/cancer.html",
+      "sha256": "9f64b55f8afd1d0e00643259ce5e381ccbb4879960699ad3cdfbc81d0e43a22a",
+      "split": "train"
+    },
+    "3192": {
+      "family_id": "3192",
+      "title": "Cancer Alternative Therapies",
+      "url": "https://medlineplus.gov/canceralternativetherapies.html",
+      "sha256": "f6d044c749f5bce2969704116a603a93eeb26c1be7c62c336d9dac1a058dfdb9",
+      "split": "validation"
+    },
+    "464": {
+      "family_id": "464",
+      "title": "Cancer Chemotherapy",
+      "url": "https://medlineplus.gov/cancerchemotherapy.html",
+      "sha256": "dfba3f05604764cd7b2a585ad93bb87b7e85c538a21cab9056b0788c3fe46c53",
+      "split": "train"
+    },
+    "6429": {
+      "family_id": "6429",
+      "title": "Cancer Immunotherapy",
+      "url": "https://medlineplus.gov/cancerimmunotherapy.html",
+      "sha256": "4561fcbbc06cb9bf342d51f612f65231f1dc22ed71768d47f02d58a9c8e10f24",
+      "split": "train"
+    },
+    "1540": {
+      "family_id": "1540",
+      "title": "Cancer--Living with Cancer",
+      "url": "https://medlineplus.gov/cancerlivingwithcancer.html",
+      "sha256": "7949d82d032a9e985dd5e046cb32f47996b148ca47ca07aac65741a2aa4cd746",
+      "split": "calibration"
+    },
+    "3670": {
+      "family_id": "3670",
+      "title": "Carbohydrates",
+      "url": "https://medlineplus.gov/carbohydrates.html",
+      "sha256": "2dbfa86f1c5031bc9ce12338ee79d741c55b28e988de96e004b45f6a676e1870",
+      "split": "calibration"
+    },
+    "7547": {
+      "family_id": "7547",
+      "title": "Caregiver Health",
+      "url": "https://medlineplus.gov/caregiverhealth.html",
+      "sha256": "c3f82e5223e4785559c009c2a1bfd7b3d5485de110585c2ebf20786a580ad5ae",
+      "split": "calibration"
+    },
+    "610": {
+      "family_id": "610",
+      "title": "Caregivers",
+      "url": "https://medlineplus.gov/caregivers.html",
+      "sha256": "f4fb03be245bb641548eb5cc3402fbec4a770984806cad72ee9f21200e14b7d6",
+      "split": "train"
+    },
+    "179": {
+      "family_id": "179",
+      "title": "Carpal Tunnel Syndrome",
+      "url": "https://medlineplus.gov/carpaltunnelsyndrome.html",
+      "sha256": "6a85c0eb703cdb2b06746bf87599defca6c1fce38ac304f308a36add04d38368",
+      "split": "train"
+    },
+    "4320": {
+      "family_id": "4320",
+      "title": "Cat Scratch Disease",
+      "url": "https://medlineplus.gov/catscratchdisease.html",
+      "sha256": "b2a696702808d184b80f32c0f1dfcd054fca23b3f2045e2452cd72deea5cbd1f",
+      "split": "train"
+    },
+    "897": {
+      "family_id": "897",
+      "title": "Celiac Disease",
+      "url": "https://medlineplus.gov/celiacdisease.html",
+      "sha256": "bb8d1307ca7cebc38ff847488e536d7ebe152843f204de57bd08cbd84b19232b",
+      "split": "validation"
+    },
+    "1227": {
+      "family_id": "1227",
+      "title": "Cellulitis",
+      "url": "https://medlineplus.gov/cellulitis.html",
+      "sha256": "e0441b1908b7d5750b0aee837e01bb20a8e37ea5f21c7dbb4b17edb06912b9a9",
+      "split": "train"
+    },
+    "180": {
+      "family_id": "180",
+      "title": "Cerebral Palsy",
+      "url": "https://medlineplus.gov/cerebralpalsy.html",
+      "sha256": "ac30c6ac6f734e6304cc652539506ed193c2153d1a01e1f83c76a97ecfc1aa1a",
+      "split": "train"
+    },
+    "111": {
+      "family_id": "111",
+      "title": "Cervical Cancer",
+      "url": "https://medlineplus.gov/cervicalcancer.html",
+      "sha256": "17d306f8d623cb4e1019a68a275ba87efe596ac4cf26959744ae801024aab599",
+      "split": "validation"
+    },
+    "6206": {
+      "family_id": "6206",
+      "title": "Cervical Cancer Screening",
+      "url": "https://medlineplus.gov/cervicalcancerscreening.html",
+      "sha256": "69705aadf2d16b5335aee3c5960816c7ef2cf6a6b35147f874c5f63b23f3c88a",
+      "split": "train"
+    },
+    "5415": {
+      "family_id": "5415",
+      "title": "Cervix Disorders",
+      "url": "https://medlineplus.gov/cervixdisorders.html",
+      "sha256": "0a6a2fc504c5704cd8c19ec68efa336d1ad6e29571fb8ecd7eaefa9d6f45722e",
+      "split": "train"
+    },
+    "3159": {
+      "family_id": "3159",
+      "title": "Cesarean Delivery",
+      "url": "https://medlineplus.gov/cesareandelivery.html",
+      "sha256": "87f427c237bd9bab139ff504390b8797ff4fcc329613c622ccf7e8667f1fbe2f",
+      "split": "train"
+    },
+    "3660": {
+      "family_id": "3660",
+      "title": "Chagas Disease",
+      "url": "https://medlineplus.gov/chagasdisease.html",
+      "sha256": "3f07c11411af1fb095b4d262cbc9bf93018ce05d84b280ecfe4dfb935b522df7",
+      "split": "train"
+    },
+    "3174": {
+      "family_id": "3174",
+      "title": "Chemical Emergencies",
+      "url": "https://medlineplus.gov/chemicalemergencies.html",
+      "sha256": "2beb8bc9141cc5a2a179e9f89207a372a8bda2b3a9d412edf28cd6a865090f97",
+      "split": "train"
+    },
+    "3162": {
+      "family_id": "3162",
+      "title": "Child Mental Health",
+      "url": "https://medlineplus.gov/childmentalhealth.html",
+      "sha256": "4aa56c6c1a25ffd6587ecb7215043dc2bb1e9e124714cb9f79ab46dc59436a9e",
+      "split": "train"
+    },
+    "305": {
+      "family_id": "305",
+      "title": "Childbirth",
+      "url": "https://medlineplus.gov/childbirth.html",
+      "sha256": "4a38e0cda73957c165e4cacef1b650e1fb05820e6ee11a047388ba59a569cc79",
+      "split": "train"
+    },
+    "5893": {
+      "family_id": "5893",
+      "title": "Childbirth Problems",
+      "url": "https://medlineplus.gov/childbirthproblems.html",
+      "sha256": "50993f67f3bf93441f28a74cee57abc5cc1c4a3b87ec8c0cb1a01817d0a21479",
+      "split": "train"
+    },
+    "1438": {
+      "family_id": "1438",
+      "title": "Childhood Leukemia",
+      "url": "https://medlineplus.gov/childhoodleukemia.html",
+      "sha256": "410001e6c1ca0eca396a9595acb755e4e61e4a16aa503cfa78bdb74daf672e1c",
+      "split": "train"
+    },
+    "501": {
+      "family_id": "501",
+      "title": "Children's Health",
+      "url": "https://medlineplus.gov/childrenshealth.html",
+      "sha256": "1e8df4edf8e2230dd770b6b5c34d204d783fc2c87b80a8859cfecf9a9991ff18",
+      "split": "validation"
+    },
+    "1307": {
+      "family_id": "1307",
+      "title": "Chlamydia Infections",
+      "url": "https://medlineplus.gov/chlamydiainfections.html",
+      "sha256": "a8dd9b38a6b86697b601f21c2c3b148867de6c65a2ed06d8b7bea7509eb5de37",
+      "split": "train"
+    },
+    "6781": {
+      "family_id": "6781",
+      "title": "Cholesterol Levels: What You Need to Know",
+      "url": "https://medlineplus.gov/cholesterollevelswhatyouneedtoknow.html",
+      "sha256": "c426be8195ed2a73596d0062c3783e08f9b06bd2ac4e8f323eea95b347c7b24c",
+      "split": "train"
+    },
+    "6811": {
+      "family_id": "6811",
+      "title": "Cholesterol Medicines",
+      "url": "https://medlineplus.gov/cholesterolmedicines.html",
+      "sha256": "afd0fa9ed7e94559d6fd5871d033b81f54bb5b096f61c132eef34bdf2d5c46cd",
+      "split": "train"
+    },
+    "1433": {
+      "family_id": "1433",
+      "title": "Choosing a Doctor or Health Care Service",
+      "url": "https://medlineplus.gov/choosingadoctororhealthcareservice.html",
+      "sha256": "bda31dd9bebed9a5c775d33bc026d494d64062cb3ca2eaad4ce37a9b274b72c2",
+      "split": "train"
+    },
+    "1608": {
+      "family_id": "1608",
+      "title": "Chronic Bronchitis",
+      "url": "https://medlineplus.gov/chronicbronchitis.html",
+      "sha256": "d6d54e00319b9702922760b29c0b0b9d55a81ec09615a422911ba4791c86dce2",
+      "split": "train"
+    },
+    "5987": {
+      "family_id": "5987",
+      "title": "Chronic Kidney Disease",
+      "url": "https://medlineplus.gov/chronickidneydisease.html",
+      "sha256": "8dea54bbf3faf582982e05e0a29fceaa8fdd9b6c69589cff3092bf454d899965",
+      "split": "calibration"
+    },
+    "87": {
+      "family_id": "87",
+      "title": "Chronic Lymphocytic Leukemia",
+      "url": "https://medlineplus.gov/chroniclymphocyticleukemia.html",
+      "sha256": "e31ac2a8b763a0a7259142d34359d62e340dfbf6dc6c0d907024d054c8da838c",
+      "split": "train"
+    },
+    "5624": {
+      "family_id": "5624",
+      "title": "Chronic Myeloid Leukemia",
+      "url": "https://medlineplus.gov/chronicmyeloidleukemia.html",
+      "sha256": "46ac74dd8269018ca6161984a2dc91f25e7335c7a97a85071257294094f1008b",
+      "split": "validation"
+    },
+    "5995": {
+      "family_id": "5995",
+      "title": "Chronic Pain",
+      "url": "https://medlineplus.gov/chronicpain.html",
+      "sha256": "1593d2848c688a3bd67ab442cc3b33e9d5fab23493378a947d4fa5ee3c506e71",
+      "split": "train"
+    },
+    "189": {
+      "family_id": "189",
+      "title": "Circumcision",
+      "url": "https://medlineplus.gov/circumcision.html",
+      "sha256": "fdf57d21aa15e4e70b88b270ff637a2237946c791083941629c0fab51fa8584c",
+      "split": "train"
+    },
+    "5147": {
+      "family_id": "5147",
+      "title": "Cold Sores",
+      "url": "https://medlineplus.gov/coldsores.html",
+      "sha256": "5752c69edfd9dc13194fa496bf3a26fe638ba82507111171a6502e4902cbcf29",
+      "split": "train"
+    },
+    "4916": {
+      "family_id": "4916",
+      "title": "Colonoscopy",
+      "url": "https://medlineplus.gov/colonoscopy.html",
+      "sha256": "325031d5f1d9f706f7b2fd3a9a0b830a9f7b121efe79cc251657d238955cdc11",
+      "split": "train"
+    },
+    "196": {
+      "family_id": "196",
+      "title": "Common Cold",
+      "url": "https://medlineplus.gov/commoncold.html",
+      "sha256": "c63da7a0a67d05aae0cb23db7184663a2ae0ea7c81efcd7753b7153c15b1a555",
+      "split": "train"
+    },
+    "5428": {
+      "family_id": "5428",
+      "title": "Common Infant and Newborn Problems",
+      "url": "https://medlineplus.gov/commoninfantandnewbornproblems.html",
+      "sha256": "e543db7d7293e9ab288f2552b6b25dde3c8b7c69293ef768b4c613504a1895ee",
+      "split": "train"
+    },
+    "4308": {
+      "family_id": "4308",
+      "title": "Compulsive Gambling",
+      "url": "https://medlineplus.gov/compulsivegambling.html",
+      "sha256": "879d6a9757d58e639b7f933f818098c520ff1c705bdd5fd7ca1c4a12ffb5c70d",
+      "split": "train"
+    },
+    "4867": {
+      "family_id": "4867",
+      "title": "Concussion",
+      "url": "https://medlineplus.gov/concussion.html",
+      "sha256": "9b9588c06fcc4dca52db7a0c1a6186ad15e600e323b2c0089fc7f7b36de94df8",
+      "split": "train"
+    },
+    "198": {
+      "family_id": "198",
+      "title": "Congenital Heart Defects",
+      "url": "https://medlineplus.gov/congenitalheartdefects.html",
+      "sha256": "f47dec2d9779a763b6a3d8a2e0ff6632725c462f2e4ba872fc7727b9c259019a",
+      "split": "validation"
+    },
+    "200": {
+      "family_id": "200",
+      "title": "Constipation",
+      "url": "https://medlineplus.gov/constipation.html",
+      "sha256": "69aa57e6ce55efbc41cdde1187a00e60ab75d59c3d1dd37d107c81985a028785",
+      "split": "validation"
+    },
+    "27": {
+      "family_id": "27",
+      "title": "COPD",
+      "url": "https://medlineplus.gov/copd.html",
+      "sha256": "0b208d2533a9900d2ae285f7e758c54bb70ca3eacfee8b309271e379d69a724f",
+      "split": "train"
+    },
+    "4208": {
+      "family_id": "4208",
+      "title": "Coping with Chronic Illness",
+      "url": "https://medlineplus.gov/copingwithchronicillness.html",
+      "sha256": "6e451eed4fa882b1c216b16ab9cbf6960be26671767e5787687e3f32a48bb44d",
+      "split": "train"
+    },
+    "3797": {
+      "family_id": "3797",
+      "title": "Coping with Disasters",
+      "url": "https://medlineplus.gov/copingwithdisasters.html",
+      "sha256": "a9d776bf4548789ddb0962b03889df734b2532ee97fdf0b137fb3843f5e273dc",
+      "split": "train"
+    },
+    "5833": {
+      "family_id": "5833",
+      "title": "Corns and Calluses",
+      "url": "https://medlineplus.gov/cornsandcalluses.html",
+      "sha256": "88790edaf8548fb15aaa139d190acf06040d71964d68dff7312fe81b83a83af8",
+      "split": "calibration"
+    },
+    "202": {
+      "family_id": "202",
+      "title": "Coronary Artery Bypass Surgery",
+      "url": "https://medlineplus.gov/coronaryarterybypasssurgery.html",
+      "sha256": "d7227122b95ad9fba0095e25e6730e47b35ef39e2ee76ea1326c4f7c0cc64af7",
+      "split": "validation"
+    },
+    "1276": {
+      "family_id": "1276",
+      "title": "Coronary Artery Disease",
+      "url": "https://medlineplus.gov/coronaryarterydisease.html",
+      "sha256": "30ce3e23703cf074762ff068f7d0edfc8637f1e9e350e920ba3079cf3ac15937",
+      "split": "train"
+    },
+    "7627": {
+      "family_id": "7627",
+      "title": "COVID-19 Testing",
+      "url": "https://medlineplus.gov/covid19testing.html",
+      "sha256": "246155e0a742da9f6198ec80a3f850175b19edee66e3f44c84ef5ba58ee67678",
+      "split": "train"
+    },
+    "7647": {
+      "family_id": "7647",
+      "title": "COVID-19 Vaccines",
+      "url": "https://medlineplus.gov/covid19vaccines.html",
+      "sha256": "0dbf4388c4c71d82a879ce077c5b159e50e40aafba8aac0c5aeef034f421df11",
+      "split": "calibration"
+    },
+    "3639": {
+      "family_id": "3639",
+      "title": "CPR",
+      "url": "https://medlineplus.gov/cpr.html",
+      "sha256": "d5f38a3368fd95d8518e4cf2b0028e27f8c80991871e31301f99e70b8bacc614",
+      "split": "validation"
+    },
+    "119": {
+      "family_id": "119",
+      "title": "Crohn's Disease",
+      "url": "https://medlineplus.gov/crohnsdisease.html",
+      "sha256": "4f98af2f5c06d8a7239ca278c6f82d3008ee81a5ac64c373310cddfe48e960ee",
+      "split": "train"
+    },
+    "6292": {
+      "family_id": "6292",
+      "title": "Croup",
+      "url": "https://medlineplus.gov/croup.html",
+      "sha256": "a3ff702db527f189de3facdf48790e4d05d27f2a8314fa121d6fb7079b6446ff",
+      "split": "calibration"
+    },
+    "1591": {
+      "family_id": "1591",
+      "title": "Cryptosporidiosis",
+      "url": "https://medlineplus.gov/cryptosporidiosis.html",
+      "sha256": "c70b18088c06b7ece5c66eef66b85c0bfd135f691d69917aa2947cddb3338fb0",
+      "split": "validation"
+    },
+    "4318": {
+      "family_id": "4318",
+      "title": "Cushing Syndrome",
+      "url": "https://medlineplus.gov/cushingsyndrome.html",
+      "sha256": "f13cb795ddbc7518f732f698a19e4515621b60ea912010f9958293978d9efd2d",
+      "split": "train"
+    },
+    "6410": {
+      "family_id": "6410",
+      "title": "Dandruff, Cradle Cap, and Other Scalp Conditions",
+      "url": "https://medlineplus.gov/dandruffcradlecapandotherscalpconditions.html",
+      "sha256": "8acf9301f53234569f3f8a58a1fabf8356367fabd02384c0e08b85b6b281db9c",
+      "split": "train"
+    },
+    "6051": {
+      "family_id": "6051",
+      "title": "Dehydration",
+      "url": "https://medlineplus.gov/dehydration.html",
+      "sha256": "9621129ea826d58072f42b4f7e15ceaf5df1d791363a4d06fd8c0e7fe235847d",
+      "split": "train"
+    },
+    "5562": {
+      "family_id": "5562",
+      "title": "Delirium",
+      "url": "https://medlineplus.gov/delirium.html",
+      "sha256": "8f1f51168e36c6a0a3211012540659e979ba3c71332b1ed47015bcdd2e414ac1",
+      "split": "train"
+    },
+    "205": {
+      "family_id": "205",
+      "title": "Dementia",
+      "url": "https://medlineplus.gov/dementia.html",
+      "sha256": "27eba245116c6178282db3627f234176c540be115f933babd38ff6c23cc064ca",
+      "split": "validation"
+    },
+    "3104": {
+      "family_id": "3104",
+      "title": "Dengue",
+      "url": "https://medlineplus.gov/dengue.html",
+      "sha256": "22aa1a1984eb9a64428edf8b70661e7209852c6d2eb7c63cfd8012a89590d130",
+      "split": "train"
+    },
+    "113": {
+      "family_id": "113",
+      "title": "Depression",
+      "url": "https://medlineplus.gov/depression.html",
+      "sha256": "c83afbd386c9484183c5b626862bd79c6523fc33bdaf86004b3a7a84e5affd85",
+      "split": "train"
+    },
+    "4": {
+      "family_id": "4",
+      "title": "Diabetes",
+      "url": "https://medlineplus.gov/diabetes.html",
+      "sha256": "b2a678ef798cd723c66b5af964ab7bc4e526d0b50ab62931b4ba06663b376588",
+      "split": "train"
+    },
+    "1408": {
+      "family_id": "1408",
+      "title": "Diabetes and Pregnancy",
+      "url": "https://medlineplus.gov/diabetesandpregnancy.html",
+      "sha256": "10e5c0be316c76b6e7111ee6d72a1d215c07c1eeb6b100e7767db20f35614fbd",
+      "split": "train"
+    },
+    "4935": {
+      "family_id": "4935",
+      "title": "Diabetes Medicines",
+      "url": "https://medlineplus.gov/diabetesmedicines.html",
+      "sha256": "f505e4519b93ad61794c7f9cf36b65436160d76d687bddd4a62387e31bcb85bf",
+      "split": "train"
+    },
+    "1339": {
+      "family_id": "1339",
+      "title": "Diabetes Type 1",
+      "url": "https://medlineplus.gov/diabetestype1.html",
+      "sha256": "b1f32723741641e482a125dcbc98b82eea3f2428ebcdbd61508b43c9fbbb611c",
+      "split": "calibration"
+    },
+    "3048": {
+      "family_id": "3048",
+      "title": "Diabetic Diet",
+      "url": "https://medlineplus.gov/diabeticdiet.html",
+      "sha256": "cc7dc1aa9bab6e002c2045a8aefab78e2c92fd43b74b2db524ed67d50ade1feb",
+      "split": "train"
+    },
+    "1340": {
+      "family_id": "1340",
+      "title": "Diabetic Eye Problems",
+      "url": "https://medlineplus.gov/diabeticeyeproblems.html",
+      "sha256": "68b997f0b330749d458dd7de786a5e75001a4928ee50cd92e98f80210a2e6efe",
+      "split": "train"
+    },
+    "1341": {
+      "family_id": "1341",
+      "title": "Diabetic Foot",
+      "url": "https://medlineplus.gov/diabeticfoot.html",
+      "sha256": "a49f2f5896c28be10e46d3017456c25f0e34f5d9b6fce5c7dc3fc7e24f91b3ca",
+      "split": "calibration"
+    },
+    "6011": {
+      "family_id": "6011",
+      "title": "Diabetic Heart Disease",
+      "url": "https://medlineplus.gov/diabeticheartdisease.html",
+      "sha256": "3c33c8300c7380fee2d7fa79ee389783b67603cca0e6fb40261168e0447f7ef9",
+      "split": "train"
+    },
+    "1104": {
+      "family_id": "1104",
+      "title": "Diagnostic Imaging",
+      "url": "https://medlineplus.gov/diagnosticimaging.html",
+      "sha256": "4bff2b35b3a3842c68d89891df5357c616c967cf63e3af49123c63dbe056fec1",
+      "split": "train"
+    },
+    "211": {
+      "family_id": "211",
+      "title": "Diarrhea",
+      "url": "https://medlineplus.gov/diarrhea.html",
+      "sha256": "ffb8400e54a45aacf3edd9b79b554f90184159a10fa9c092ebcb172b91422470",
+      "split": "train"
+    },
+    "3668": {
+      "family_id": "3668",
+      "title": "Dietary Proteins",
+      "url": "https://medlineplus.gov/dietaryproteins.html",
+      "sha256": "55dc5265c30319677dd1854949f87b33525092ade9756b0b898cd39ebfce58c4",
+      "split": "train"
+    },
+    "3538": {
+      "family_id": "3538",
+      "title": "Dietary Supplements",
+      "url": "https://medlineplus.gov/dietarysupplements.html",
+      "sha256": "51f5e134a56e53f2b3e546ecaab117a629a14d4ebcfc1e2a6a65db9ddcc792e9",
+      "split": "train"
+    },
+    "29": {
+      "family_id": "29",
+      "title": "Digestive Diseases",
+      "url": "https://medlineplus.gov/digestivediseases.html",
+      "sha256": "7a88021bf51d01cd7d0a04c47cbf93a1cdf033d2691a67ee5e830b4e374afcbb",
+      "split": "train"
+    },
+    "530": {
+      "family_id": "530",
+      "title": "Disaster Preparation and Recovery",
+      "url": "https://medlineplus.gov/disasterpreparationandrecovery.html",
+      "sha256": "ad7bb56eb248db2bbb293f161248aa6c2febe37c611349c21baf2d5dfdee1e8f",
+      "split": "train"
+    },
+    "6927": {
+      "family_id": "6927",
+      "title": "Dislocated Shoulder",
+      "url": "https://medlineplus.gov/dislocatedshoulder.html",
+      "sha256": "27b6929ec61a20d7a2b240e3252697fa1dd4a35466b9419af84a27c043c68586",
+      "split": "calibration"
+    },
+    "3052": {
+      "family_id": "3052",
+      "title": "Dislocations",
+      "url": "https://medlineplus.gov/dislocations.html",
+      "sha256": "3147c3775678fd758ea7062fa6039107a9fd978f73558a863e830c1e03aefd57",
+      "split": "calibration"
+    },
+    "214": {
+      "family_id": "214",
+      "title": "Diverticulosis and Diverticulitis",
+      "url": "https://medlineplus.gov/diverticulosisanddiverticulitis.html",
+      "sha256": "ea44df24626810d95c6d230a9bc05e898e5fcea278cbf783d526123d3383affb",
+      "split": "train"
+    },
+    "216": {
+      "family_id": "216",
+      "title": "Dizziness and Vertigo",
+      "url": "https://medlineplus.gov/dizzinessandvertigo.html",
+      "sha256": "0170f841dd0b2e5f1bada37ceef204ca73c969817651d808f33a7f039d5b1008",
+      "split": "train"
+    },
+    "5603": {
+      "family_id": "5603",
+      "title": "Drug Reactions",
+      "url": "https://medlineplus.gov/drugreactions.html",
+      "sha256": "3ab9938152bbfbf3a56827408a51e75b537883b51a68b1b6029fe0b9c91a3673",
+      "split": "train"
+    },
+    "30": {
+      "family_id": "30",
+      "title": "Drug Use and Addiction",
+      "url": "https://medlineplus.gov/druguseandaddiction.html",
+      "sha256": "043a957950ac8daebfcc7c779e54b3e21ce45f63008699ee961829f70eae3142",
+      "split": "train"
+    },
+    "4959": {
+      "family_id": "4959",
+      "title": "Drugs and Young People",
+      "url": "https://medlineplus.gov/drugsandyoungpeople.html",
+      "sha256": "da33f3075b1087405ebfab4e49bf67131c060a666b17793d48d932376cb23066",
+      "split": "train"
+    },
+    "5798": {
+      "family_id": "5798",
+      "title": "Dry Mouth",
+      "url": "https://medlineplus.gov/drymouth.html",
+      "sha256": "0a9c74297326ad39aa2db9c387bc2ff1bb57b57afaebc3ed55f0b2ec1852a9b5",
+      "split": "calibration"
+    },
+    "4270": {
+      "family_id": "4270",
+      "title": "Dual Diagnosis",
+      "url": "https://medlineplus.gov/dualdiagnosis.html",
+      "sha256": "4d9fff3aee4c27e57c0bd3dda16dcb44f1e6a9490644b98c0048b6b12849a8ee",
+      "split": "validation"
+    },
+    "1545": {
+      "family_id": "1545",
+      "title": "Ear Disorders",
+      "url": "https://medlineplus.gov/eardisorders.html",
+      "sha256": "90769862ab9e2fffeb34bedd5a980794bd66d31e9a6eacd3c2140b317a9e387d",
+      "split": "train"
+    },
+    "115": {
+      "family_id": "115",
+      "title": "Ear Infections",
+      "url": "https://medlineplus.gov/earinfections.html",
+      "sha256": "3c08efbc77aa8308125a865222cbbf7996ca61feeb12c85f868bfaf49afd61ad",
+      "split": "train"
+    },
+    "4594": {
+      "family_id": "4594",
+      "title": "Earthquakes",
+      "url": "https://medlineplus.gov/earthquakes.html",
+      "sha256": "c18fc0dd6ea6c22ede40c8f44853b8bd4220c3dac95c725812f8895c4194f2a2",
+      "split": "train"
+    },
+    "237": {
+      "family_id": "237",
+      "title": "Eating Disorders",
+      "url": "https://medlineplus.gov/eatingdisorders.html",
+      "sha256": "df00681a19b8fa4b0641bc551a72117c4992c984054ead24be34fe7f1dc0ac20",
+      "split": "calibration"
+    },
+    "6202": {
+      "family_id": "6202",
+      "title": "Ebola",
+      "url": "https://medlineplus.gov/ebola.html",
+      "sha256": "bc4f7a0639a6c3e8f544ea3e9b9ef1e218143de4dc8befd8bb108b625e7393c4",
+      "split": "train"
+    },
+    "5811": {
+      "family_id": "5811",
+      "title": "Ectopic Pregnancy",
+      "url": "https://medlineplus.gov/ectopicpregnancy.html",
+      "sha256": "72966d3e860ab08840da3f3824078fa32cb8fde1275cfe5af1038684f068fb6c",
+      "split": "train"
+    },
+    "1229": {
+      "family_id": "1229",
+      "title": "Edema",
+      "url": "https://medlineplus.gov/edema.html",
+      "sha256": "da65a0fa613acad8598bfd415bf784b2f33a637da4b83dd4a6e2dabe1a61fc2b",
+      "split": "train"
+    },
+    "529": {
+      "family_id": "529",
+      "title": "Elder Abuse",
+      "url": "https://medlineplus.gov/elderabuse.html",
+      "sha256": "586c0129510134ee4e443e1091e072796b91a4547371b7aa84760437afa42f25",
+      "split": "calibration"
+    },
+    "6280": {
+      "family_id": "6280",
+      "title": "Electrical Injuries",
+      "url": "https://medlineplus.gov/electricalinjuries.html",
+      "sha256": "1092334ad9a32ec47ab87fca130883784f3ca0a9c50ba628c44fa77d028d11ae",
+      "split": "train"
+    },
+    "3873": {
+      "family_id": "3873",
+      "title": "Emergency Medical Services",
+      "url": "https://medlineplus.gov/emergencymedicalservices.html",
+      "sha256": "6a6c0833fc100d77da2b874cafc5143ab3e66f1ad0bb526b6fe3da9ee7f603df",
+      "split": "calibration"
+    },
+    "3623": {
+      "family_id": "3623",
+      "title": "Emphysema",
+      "url": "https://medlineplus.gov/emphysema.html",
+      "sha256": "c8052ea3c0c81b2d618863e5d064999066f4900cc9fa1b300a04b81054142444",
+      "split": "calibration"
+    },
+    "241": {
+      "family_id": "241",
+      "title": "Encephalitis",
+      "url": "https://medlineplus.gov/encephalitis.html",
+      "sha256": "2a2e4b48a0350500982882e3a4cecd4cd996c435a6aca71689e01d6b8ecc6176",
+      "split": "train"
+    },
+    "4316": {
+      "family_id": "4316",
+      "title": "Endocarditis",
+      "url": "https://medlineplus.gov/endocarditis.html",
+      "sha256": "ccf41896c367a1b61bf5dcfa1a4a83fa9ac85218d9a885b4a8607be12d0e3192",
+      "split": "train"
+    },
+    "243": {
+      "family_id": "243",
+      "title": "Endometriosis",
+      "url": "https://medlineplus.gov/endometriosis.html",
+      "sha256": "c3dc9c0a82fb7c7166f2282df70091a05ebc819975aca45f92e59cbe1e47da73",
+      "split": "train"
+    },
+    "6196": {
+      "family_id": "6196",
+      "title": "Enlarged Prostate (BPH)",
+      "url": "https://medlineplus.gov/enlargedprostatebph.html",
+      "sha256": "e38b1b744dbb67a3f4e0a397d29cd8c3eaaa6bc5eba2354952759b95b2cdb0e0",
+      "split": "validation"
+    },
+    "118": {
+      "family_id": "118",
+      "title": "Erectile Dysfunction",
+      "url": "https://medlineplus.gov/erectiledysfunction.html",
+      "sha256": "cf2f845b615188e3853ca0322b6cd84816535f993c261eebec8d4abd8f60cdf8",
+      "split": "train"
+    },
+    "246": {
+      "family_id": "246",
+      "title": "Esophagus Disorders",
+      "url": "https://medlineplus.gov/esophagusdisorders.html",
+      "sha256": "d1ba44efdd021b0398678b11fdcfe40ff45ddaf102538176b4487d5859bd906d",
+      "split": "train"
+    },
+    "3176": {
+      "family_id": "3176",
+      "title": "Evaluating Health Information",
+      "url": "https://medlineplus.gov/evaluatinghealthinformation.html",
+      "sha256": "4bb799867f02cee4904c6bd2f22326a38f01f4710a776e33edb6f032358b4fd4",
+      "split": "train"
+    },
+    "490": {
+      "family_id": "490",
+      "title": "Exercise and Physical Fitness",
+      "url": "https://medlineplus.gov/exerciseandphysicalfitness.html",
+      "sha256": "0a99ca82142c63ce99e731f798a98390545961b86eeb081721c326d8dd0821a1",
+      "split": "validation"
+    },
+    "1530": {
+      "family_id": "1530",
+      "title": "Exercise for Older Adults",
+      "url": "https://medlineplus.gov/exerciseforolderadults.html",
+      "sha256": "199bfef2b4166920c04a597e3e9cd5fde00a29e600e8791504db5a71a751dd3e",
+      "split": "train"
+    },
+    "6425": {
+      "family_id": "6425",
+      "title": "Eye Care",
+      "url": "https://medlineplus.gov/eyecare.html",
+      "sha256": "9dbfdb165dfffe51e242f6fc1b19b1ac261a08c8351907413e4cd96a020bea8b",
+      "split": "train"
+    },
+    "247": {
+      "family_id": "247",
+      "title": "Eye Diseases",
+      "url": "https://medlineplus.gov/eyediseases.html",
+      "sha256": "0b029ddc42926ae501baf3e23de9dbf677d0d8933e9c90e286f984892fde3089",
+      "split": "train"
+    },
+    "5404": {
+      "family_id": "5404",
+      "title": "Eyelid Disorders",
+      "url": "https://medlineplus.gov/eyeliddisorders.html",
+      "sha256": "768e84a2dae1ab0f16fdb54e805ca649f8edbcb2e1a9567ca1e01e78f3860656",
+      "split": "train"
+    },
+    "1481": {
+      "family_id": "1481",
+      "title": "Fainting",
+      "url": "https://medlineplus.gov/fainting.html",
+      "sha256": "fe14b9c23421caf7096fd7b90f216bf4419cce5e9884859f25f5347d261d4c26",
+      "split": "train"
+    },
+    "5324": {
+      "family_id": "5324",
+      "title": "Fatigue",
+      "url": "https://medlineplus.gov/fatigue.html",
+      "sha256": "16113c0712e7780a6c79a450d0c6ed3ae7082df4df5795624078c97c7b9c7a59",
+      "split": "train"
+    },
+    "5654": {
+      "family_id": "5654",
+      "title": "Female Infertility",
+      "url": "https://medlineplus.gov/femaleinfertility.html",
+      "sha256": "d7cc0c8a65e1d7534dc8e4a147931046503eb9479cfdde23d4e86849d6ed5c56",
+      "split": "train"
+    },
+    "1300": {
+      "family_id": "1300",
+      "title": "Fetal Alcohol Spectrum Disorders",
+      "url": "https://medlineplus.gov/fetalalcoholspectrumdisorders.html",
+      "sha256": "d01ac92f804e10858da0c17d8f346ac2ae128e305c51e4791b7a89f5948aa6fa",
+      "split": "calibration"
+    },
+    "511": {
+      "family_id": "511",
+      "title": "Fever",
+      "url": "https://medlineplus.gov/fever.html",
+      "sha256": "e73c169f4056627da74eb500c1356ca52db0ed0b62bf5f9ca590bbe56287a8cc",
+      "split": "train"
+    },
+    "1609": {
+      "family_id": "1609",
+      "title": "Fifth Disease",
+      "url": "https://medlineplus.gov/fifthdisease.html",
+      "sha256": "023bbc32ac1a0842baf82784264cd45515f507d34c9ca47ba9a462233fce1297",
+      "split": "train"
+    },
+    "3186": {
+      "family_id": "3186",
+      "title": "Financial Assistance",
+      "url": "https://medlineplus.gov/financialassistance.html",
+      "sha256": "8bcfaf608959bc4008f53fb5844c454c4e08754b907d48ba0a5ce06df2b25d17",
+      "split": "train"
+    },
+    "240": {
+      "family_id": "240",
+      "title": "First Aid",
+      "url": "https://medlineplus.gov/firstaid.html",
+      "sha256": "4dee98653074c875e86b89f439477cc4d8c0b1e1aabf645ba91a53c4495d4c3f",
+      "split": "train"
+    },
+    "3054": {
+      "family_id": "3054",
+      "title": "Fistulas",
+      "url": "https://medlineplus.gov/fistulas.html",
+      "sha256": "2b27e90f42ba0d47ee333479c8577a72bf9b543c64b92022512d270ef14fddf6",
+      "split": "calibration"
+    },
+    "4596": {
+      "family_id": "4596",
+      "title": "Floods",
+      "url": "https://medlineplus.gov/floods.html",
+      "sha256": "9cd1f5f3282a572ecaa1a35eec2b671d3994bc73bff9c8f60f243624249921bd",
+      "split": "train"
+    },
+    "299": {
+      "family_id": "299",
+      "title": "Flu",
+      "url": "https://medlineplus.gov/flu.html",
+      "sha256": "4f33feefc611ee8b7cdf3d855da2ada35ed74e3ddabd0e9b9af74f41dc003fb3",
+      "split": "train"
+    },
+    "6236": {
+      "family_id": "6236",
+      "title": "Flu Shot",
+      "url": "https://medlineplus.gov/flushot.html",
+      "sha256": "9fa0d3c503b373ddeb50d922eb5e9c9b9e015619e8de034aff8e73559cf9280c",
+      "split": "train"
+    },
+    "1256": {
+      "family_id": "1256",
+      "title": "Food Allergy",
+      "url": "https://medlineplus.gov/foodallergy.html",
+      "sha256": "97a7d023b1f83f3f6fce51c0597b5c60f6bc86c00b771952c661008d5f2fe1b9",
+      "split": "train"
+    },
+    "1434": {
+      "family_id": "1434",
+      "title": "Food Safety",
+      "url": "https://medlineplus.gov/foodsafety.html",
+      "sha256": "5241097f8cc7b55b6b293fb64aa48410bfb6d8873a3e3f4b6a670636d0500f61",
+      "split": "calibration"
+    },
+    "254": {
+      "family_id": "254",
+      "title": "Foodborne Illness",
+      "url": "https://medlineplus.gov/foodborneillness.html",
+      "sha256": "85ef184265a9cdc4a738c40b2eefa6a0215510af409fc5fda042b4de12e2ddf8",
+      "split": "train"
+    },
+    "5829": {
+      "family_id": "5829",
+      "title": "Frostbite",
+      "url": "https://medlineplus.gov/frostbite.html",
+      "sha256": "e3263ce6897e1814b1e686562d1888f8a8f1f4ffa90a5d48a5f1bbaf313bc39d",
+      "split": "train"
+    },
+    "4291": {
+      "family_id": "4291",
+      "title": "Gas",
+      "url": "https://medlineplus.gov/gas.html",
+      "sha256": "421426e34ece1b66bc4495dff16aeef66cf1d44ac0a6f0754cc07c05c22e1f65",
+      "split": "calibration"
+    },
+    "3056": {
+      "family_id": "3056",
+      "title": "Gastroenteritis",
+      "url": "https://medlineplus.gov/gastroenteritis.html",
+      "sha256": "ac8a59fc3f0f52dfe0a7e15bcb8b3d634cecd7a4c17555f54bc42bcc0b91dd98",
+      "split": "train"
+    },
+    "33": {
+      "family_id": "33",
+      "title": "Genetic Disorders",
+      "url": "https://medlineplus.gov/geneticdisorders.html",
+      "sha256": "ea129e4007d2ada2ccb8f393c93874bcad2ea879d91051d49bb6bb0c736f1654",
+      "split": "calibration"
+    },
+    "262": {
+      "family_id": "262",
+      "title": "Genetic Testing",
+      "url": "https://medlineplus.gov/genetictesting.html",
+      "sha256": "d48468259a81e73a3b566fa7eb93829b2a766886c85cbba37e4799adc8beeac6",
+      "split": "validation"
+    },
+    "4322": {
+      "family_id": "4322",
+      "title": "Genital Warts",
+      "url": "https://medlineplus.gov/genitalwarts.html",
+      "sha256": "48e5bd824715c1b82b6472d33e6d05fba8d2dfa19039a182ef46daf7390233c1",
+      "split": "validation"
+    },
+    "512": {
+      "family_id": "512",
+      "title": "GERD",
+      "url": "https://medlineplus.gov/gerd.html",
+      "sha256": "29373cea695329a345a42e924e96f9c15e6aa336e902a4dae5c7c3a977b4a284",
+      "split": "train"
+    },
+    "4182": {
+      "family_id": "4182",
+      "title": "Germs and Hygiene",
+      "url": "https://medlineplus.gov/germsandhygiene.html",
+      "sha256": "d5cd3a12e19d012d74b0d6ceb97935002048ffd2fdf66974f33f75c548673ece",
+      "split": "validation"
+    },
+    "42": {
+      "family_id": "42",
+      "title": "Glaucoma",
+      "url": "https://medlineplus.gov/glaucoma.html",
+      "sha256": "113d7ed1c749684a671c2cf7fa02750ccf232206d2a4f78a4adea8106466a27d",
+      "split": "train"
+    },
+    "6244": {
+      "family_id": "6244",
+      "title": "Gluten Sensitivity",
+      "url": "https://medlineplus.gov/glutensensitivity.html",
+      "sha256": "59421160db8cc7ea8811c7e769d56ef89ca5360db5e2ed0c9ec2a80fe1bb82ae",
+      "split": "train"
+    },
+    "3019": {
+      "family_id": "3019",
+      "title": "Gonorrhea",
+      "url": "https://medlineplus.gov/gonorrhea.html",
+      "sha256": "9b5affbca6b7bb93ff3a08c62ea9f6618afd4c1991c29bc88dd9cd891f31e976",
+      "split": "train"
+    },
+    "264": {
+      "family_id": "264",
+      "title": "Gout",
+      "url": "https://medlineplus.gov/gout.html",
+      "sha256": "1bf17caf52382c82f0bf35e3179873da1e17e0986601abb275b90df9d6a3f7ce",
+      "split": "train"
+    },
+    "6681": {
+      "family_id": "6681",
+      "title": "Guide to Good Posture",
+      "url": "https://medlineplus.gov/guidetogoodposture.html",
+      "sha256": "d4633a599fae245e9fc2c79d10b552eb06a90f41ce591b9915bf64ba3755358b",
+      "split": "train"
+    },
+    "3217": {
+      "family_id": "3217",
+      "title": "Hantavirus Infections",
+      "url": "https://medlineplus.gov/hantavirusinfections.html",
+      "sha256": "b4a95004ae4b7eb2e4a0c2eb4abf7af83a624b91219c01ecab56e66b59fa0ead",
+      "split": "train"
+    },
+    "4746": {
+      "family_id": "4746",
+      "title": "Hay Fever",
+      "url": "https://medlineplus.gov/hayfever.html",
+      "sha256": "d97133ef1f266b85ba077db554f5b92b811f77b26ed447e6434e920d2ceb8596",
+      "split": "train"
+    },
+    "6785": {
+      "family_id": "6785",
+      "title": "HDL: The \"Good\" Cholesterol",
+      "url": "https://medlineplus.gov/hdlthegoodcholesterol.html",
+      "sha256": "a9c53d8983af351a1fe1c84777c629eaa85d0b9abce46e213679c87c2f139b2a",
+      "split": "calibration"
+    },
+    "272": {
+      "family_id": "272",
+      "title": "Head Lice",
+      "url": "https://medlineplus.gov/headlice.html",
+      "sha256": "e3d459147c958bd75648ffbc9c4fc429a211f9ce93e54c3f394b1d3cb4fe5a1e",
+      "split": "train"
+    },
+    "273": {
+      "family_id": "273",
+      "title": "Headache",
+      "url": "https://medlineplus.gov/headache.html",
+      "sha256": "f17278300f93910c8e4b6fb2280185136d36d1cfd95f473041159fac470a5b5b",
+      "split": "validation"
+    },
+    "4751": {
+      "family_id": "4751",
+      "title": "Health Checkup",
+      "url": "https://medlineplus.gov/healthcheckup.html",
+      "sha256": "fcb0c8a0c4097318ad9fac3eb55ff1c6be4ca511514ee24629f3fec7f48bc453",
+      "split": "train"
+    },
+    "486": {
+      "family_id": "486",
+      "title": "Health Facilities",
+      "url": "https://medlineplus.gov/healthfacilities.html",
+      "sha256": "990eec9b4a7f4a033b975bdfffae556f3e83a7ee7bcb6f8878a467f29be1ba70",
+      "split": "train"
+    },
+    "724": {
+      "family_id": "724",
+      "title": "Health Fraud",
+      "url": "https://medlineplus.gov/healthfraud.html",
+      "sha256": "50d1caa4684e40600eba219044e9c10ee41d4408e39400db3f8698d4d079bbd1",
+      "split": "train"
+    },
+    "1105": {
+      "family_id": "1105",
+      "title": "Health Problems in Pregnancy",
+      "url": "https://medlineplus.gov/healthproblemsinpregnancy.html",
+      "sha256": "7c6c4f5cc6099f1d85802d3793eae26b8c642d6ead93f44b16df36e295d356ac",
+      "split": "train"
+    },
+    "6543": {
+      "family_id": "6543",
+      "title": "Health Risks of an Inactive Lifestyle",
+      "url": "https://medlineplus.gov/healthrisksofaninactivelifestyle.html",
+      "sha256": "d9db1ac38bcee4f4c0cb80ac9cc071cdae1cf83eedc7a913fd06c64d6f9754f8",
+      "split": "train"
+    },
+    "5704": {
+      "family_id": "5704",
+      "title": "Healthy Aging",
+      "url": "https://medlineplus.gov/healthyaging.html",
+      "sha256": "178d7d87923582645dcf062135a401b038e23246a3255711448f5f49dd31063b",
+      "split": "train"
+    },
+    "1597": {
+      "family_id": "1597",
+      "title": "Healthy Living",
+      "url": "https://medlineplus.gov/healthyliving.html",
+      "sha256": "75c322ffc6bce389405e75f0230bdfc07dace789e4c297d12af39b36b4cd37a6",
+      "split": "validation"
+    },
+    "6469": {
+      "family_id": "6469",
+      "title": "Healthy Sleep",
+      "url": "https://medlineplus.gov/healthysleep.html",
+      "sha256": "4f938af87db264dcfffe111c87f13b6d6b21cb4a07f5465e0f215e090af166b2",
+      "split": "calibration"
+    },
+    "5": {
+      "family_id": "5",
+      "title": "Heart Attack",
+      "url": "https://medlineplus.gov/heartattack.html",
+      "sha256": "2496df3dd459a85ecd811e57fb27831c0dc67c8cec4699ac95e84659dce3330c",
+      "split": "train"
+    },
+    "4212": {
+      "family_id": "4212",
+      "title": "Heart Disease in Women",
+      "url": "https://medlineplus.gov/heartdiseaseinwomen.html",
+      "sha256": "3f1dd1f831dd5cb619d9fcb32a482bc3d12c25842b277ef615f92111b1208071",
+      "split": "validation"
+    },
+    "277": {
+      "family_id": "277",
+      "title": "Heart Diseases",
+      "url": "https://medlineplus.gov/heartdiseases.html",
+      "sha256": "be501c1d1e8a48f8076ddf57ad3fdb5f30887c8fab8c4e8b35163db6e62cb0d9",
+      "split": "train"
+    },
+    "199": {
+      "family_id": "199",
+      "title": "Heart Failure",
+      "url": "https://medlineplus.gov/heartfailure.html",
+      "sha256": "1b42604f836cf84614e9d1c99616bdd3987e357f299b4e8be2e3b5b8f47711b9",
+      "split": "train"
+    },
+    "6452": {
+      "family_id": "6452",
+      "title": "Heart Health Tests",
+      "url": "https://medlineplus.gov/hearthealthtests.html",
+      "sha256": "4a630382726576723f418562cfb86168a2eb369d9e5bc8a514df7c337b34c0f4",
+      "split": "train"
+    },
+    "4119": {
+      "family_id": "4119",
+      "title": "Heart Surgery",
+      "url": "https://medlineplus.gov/heartsurgery.html",
+      "sha256": "5feb3232e955fce7bd72f275eae3ae6de162cc76beca821f583309471b5d5b6f",
+      "split": "validation"
+    },
+    "279": {
+      "family_id": "279",
+      "title": "Heart Valve Diseases",
+      "url": "https://medlineplus.gov/heartvalvediseases.html",
+      "sha256": "4983e620b33cce7d358118af020c7bf32cbe5c81b04c380b1793d64d91ea340c",
+      "split": "validation"
+    },
+    "6078": {
+      "family_id": "6078",
+      "title": "Helicobacter pylori Infections",
+      "url": "https://medlineplus.gov/helicobacterpyloriinfections.html",
+      "sha256": "e18289b931db94bfa9db69abe21774e6dc416d7cca0d3bdd7cbef35942133690",
+      "split": "train"
+    },
+    "3115": {
+      "family_id": "3115",
+      "title": "Hemophilia",
+      "url": "https://medlineplus.gov/hemophilia.html",
+      "sha256": "f31c1bf4e5c67803c6a327a3e01d6ae0e25a88cee6df91610caac728264dc36f",
+      "split": "train"
+    },
+    "6263": {
+      "family_id": "6263",
+      "title": "Hemorrhagic Stroke",
+      "url": "https://medlineplus.gov/hemorrhagicstroke.html",
+      "sha256": "bcb680b01a90d316a90d4388e2ecb64649c855db4118801f9673e17e04741f9e",
+      "split": "train"
+    },
+    "1226": {
+      "family_id": "1226",
+      "title": "Hemorrhoids",
+      "url": "https://medlineplus.gov/hemorrhoids.html",
+      "sha256": "3523c2b98584210eb025fa5f36f1c0b953fa7dc5c2811bf85b0117495aaf3add",
+      "split": "train"
+    },
+    "109": {
+      "family_id": "109",
+      "title": "Hepatitis",
+      "url": "https://medlineplus.gov/hepatitis.html",
+      "sha256": "fe88e2f3df74f493ee1ad17d91dcde0b41fbae1bde49aef25053c5c4c51e1c09",
+      "split": "train"
+    },
+    "1686": {
+      "family_id": "1686",
+      "title": "Hepatitis A",
+      "url": "https://medlineplus.gov/hepatitisa.html",
+      "sha256": "7549f216fa7998128d211cdab6e56e8f02930bd0bbab6b73e9f7f85bdc253c4b",
+      "split": "train"
+    },
+    "1687": {
+      "family_id": "1687",
+      "title": "Hepatitis B",
+      "url": "https://medlineplus.gov/hepatitisb.html",
+      "sha256": "cec98d27dfaf4be7f6b7284ba099b28c8e62dde01d805d127100ba5e8900f5c0",
+      "split": "train"
+    },
+    "1286": {
+      "family_id": "1286",
+      "title": "Hepatitis C",
+      "url": "https://medlineplus.gov/hepatitisc.html",
+      "sha256": "50f08367e3f6c633f7913da6f8b06064d1d4dc54d8b73279166c9551bb743a08",
+      "split": "calibration"
+    },
+    "1246": {
+      "family_id": "1246",
+      "title": "Herbal Medicine",
+      "url": "https://medlineplus.gov/herbalmedicine.html",
+      "sha256": "321f99ccaceb449614151e3109f58eba198eeb8cde952ed33393429aa08dbbe0",
+      "split": "train"
+    },
+    "4370": {
+      "family_id": "4370",
+      "title": "Hiatal Hernia",
+      "url": "https://medlineplus.gov/hiatalhernia.html",
+      "sha256": "67949e655fa232146ebcb527264622260cf221dcbe7c37be805da4f6d0e7003f",
+      "split": "train"
+    },
+    "6084": {
+      "family_id": "6084",
+      "title": "Hiccups",
+      "url": "https://medlineplus.gov/hiccups.html",
+      "sha256": "ab46d1400a93dd67ebca0990aa5f20db6a4d42ca3a1cab1ab475012df8aacfb5",
+      "split": "train"
+    },
+    "4363": {
+      "family_id": "4363",
+      "title": "Hidradenitis Suppurativa",
+      "url": "https://medlineplus.gov/hidradenitissuppurativa.html",
+      "sha256": "9f49eede4c7c7c9229fa4a6afe9836f61714b1b12d00b082dca712ef6bd06621",
+      "split": "train"
+    },
+    "34": {
+      "family_id": "34",
+      "title": "High Blood Pressure",
+      "url": "https://medlineplus.gov/highbloodpressure.html",
+      "sha256": "f56bf712ff42f966f7d95e3898fb842fbe7db1e0dad76eada2b0c6fbc1c3769b",
+      "split": "train"
+    },
+    "1508": {
+      "family_id": "1508",
+      "title": "High Blood Pressure in Pregnancy",
+      "url": "https://medlineplus.gov/highbloodpressureinpregnancy.html",
+      "sha256": "64c296dfe1316b1d23c2d9a6b6fc59df1a3e334fe2a4608263333af511f98fa3",
+      "split": "train"
+    },
+    "6907": {
+      "family_id": "6907",
+      "title": "High Cholesterol in Children and Teens",
+      "url": "https://medlineplus.gov/highcholesterolinchildrenandteens.html",
+      "sha256": "267333953043a9f7c61c7a771c48d563efd38056b382c715e096989df6a8175e",
+      "split": "train"
+    },
+    "5632": {
+      "family_id": "5632",
+      "title": "Histoplasmosis",
+      "url": "https://medlineplus.gov/histoplasmosis.html",
+      "sha256": "a8f94632e366a413eaeaaa7f351e06786879b757dcbcf45c089ccf8b5206a154",
+      "split": "train"
+    },
+    "1": {
+      "family_id": "1",
+      "title": "HIV",
+      "url": "https://medlineplus.gov/hiv.html",
+      "sha256": "15c8fc5af0534d65db1bf75a11ded85afeeea5c17a7d393f880523ee289c6a3d",
+      "split": "train"
+    },
+    "1470": {
+      "family_id": "1470",
+      "title": "HIV and Pregnancy",
+      "url": "https://medlineplus.gov/hivandpregnancy.html",
+      "sha256": "bc7a30d48e2378c7fd3861dda9bc70866e5bcbacccb18193d92811ab70e5331d",
+      "split": "train"
+    },
+    "4287": {
+      "family_id": "4287",
+      "title": "HIV Medicines",
+      "url": "https://medlineplus.gov/hivmedicines.html",
+      "sha256": "42e04cd39d984aeabc5e90922c7cc665789d22d9214121881bbd8eefe84cc655",
+      "split": "train"
+    },
+    "7347": {
+      "family_id": "7347",
+      "title": "HIV: PrEP and PEP",
+      "url": "https://medlineplus.gov/hivprepandpep.html",
+      "sha256": "b4a910effdec5dfedcaf482abb200b3428c821967419207a153e5030426efce6",
+      "split": "train"
+    },
+    "289": {
+      "family_id": "289",
+      "title": "Hives",
+      "url": "https://medlineplus.gov/hives.html",
+      "sha256": "85917f57e53a98c3e8f842e1ae11227b2c82ce4a4c6c7a0c3bfe9984999ace70",
+      "split": "train"
+    },
+    "3536": {
+      "family_id": "3536",
+      "title": "Homelessness and Health",
+      "url": "https://medlineplus.gov/homelessnessandhealth.html",
+      "sha256": "c67312fcfd1d7bae7c21eb5f95e4c2cd3ee1530e0f8ffee918e8a0815e8afbfe",
+      "split": "train"
+    },
+    "1610": {
+      "family_id": "1610",
+      "title": "Hormone Therapy for Menopause",
+      "url": "https://medlineplus.gov/hormonetherapyformenopause.html",
+      "sha256": "ebf060d2183f304deb14e64646f279b07457515355cd607c75ea5ae070bd541a",
+      "split": "train"
+    },
+    "1499": {
+      "family_id": "1499",
+      "title": "Hormones",
+      "url": "https://medlineplus.gov/hormones.html",
+      "sha256": "40b835a97123414ac2a609eee9edec48abbe37fa3d4729c43f393eb264b30d05",
+      "split": "calibration"
+    },
+    "1355": {
+      "family_id": "1355",
+      "title": "Hospice Care",
+      "url": "https://medlineplus.gov/hospicecare.html",
+      "sha256": "2e780daaccb4bd206a76b205a6db2c80296724c897fb3a2d90af82f31d5903d7",
+      "split": "train"
+    },
+    "6603": {
+      "family_id": "6603",
+      "title": "How Much Exercise Do I Need?",
+      "url": "https://medlineplus.gov/howmuchexercisedoineed.html",
+      "sha256": "00696f64843ed97fc4b00295f4d988374543451cbf1523a75512bb896bf92c1f",
+      "split": "train"
+    },
+    "7407": {
+      "family_id": "7407",
+      "title": "How to Improve Mental Health",
+      "url": "https://medlineplus.gov/howtoimprovementalhealth.html",
+      "sha256": "0dca60b22163725bd28de9ec5757838672b65c85223ede8e3c6e62dfd7f7c228",
+      "split": "train"
+    },
+    "6809": {
+      "family_id": "6809",
+      "title": "How to Lower Cholesterol",
+      "url": "https://medlineplus.gov/howtolowercholesterol.html",
+      "sha256": "be2efae2c324c22323cb2494ef317af48fcebcac06d645a2d2b3bfa279ba293b",
+      "split": "train"
+    },
+    "6661": {
+      "family_id": "6661",
+      "title": "How to Prevent Diabetes",
+      "url": "https://medlineplus.gov/howtopreventdiabetes.html",
+      "sha256": "cd19fd19a7735c84b1295b946e289f569d169df1cf5743775b87e064bbf23f8f",
+      "split": "train"
+    },
+    "1598": {
+      "family_id": "1598",
+      "title": "How to Prevent Heart Disease",
+      "url": "https://medlineplus.gov/howtopreventheartdisease.html",
+      "sha256": "42180ad646a01b64379df4b345ad4ac84919afe720dc5dec5d4ccdb239edcbb1",
+      "split": "calibration"
+    },
+    "6450": {
+      "family_id": "6450",
+      "title": "How to Prevent High Blood Pressure",
+      "url": "https://medlineplus.gov/howtopreventhighbloodpressure.html",
+      "sha256": "eabd2fb5fc92baacb7267e7d8d629085386562302ac7ec415eb53ca1dbdfe877",
+      "split": "train"
+    },
+    "1715": {
+      "family_id": "1715",
+      "title": "HPV",
+      "url": "https://medlineplus.gov/hpv.html",
+      "sha256": "d0b2daa7f33476b7845bef026d980be86d9410f13e5988a1eb17e50063c86a88",
+      "split": "train"
+    },
+    "4614": {
+      "family_id": "4614",
+      "title": "Hurricanes",
+      "url": "https://medlineplus.gov/hurricanes.html",
+      "sha256": "ce594c6e3872710708a4a49e2ae905d0002c6d03e35f2650153264d6aecc755f",
+      "split": "train"
+    },
+    "6125": {
+      "family_id": "6125",
+      "title": "Hyperglycemia",
+      "url": "https://medlineplus.gov/hyperglycemia.html",
+      "sha256": "420b15c4e1534091c158de9ed7def37b562839915242da6bad1fd4cdf526a180",
+      "split": "train"
+    },
+    "6177": {
+      "family_id": "6177",
+      "title": "Hyperthyroidism",
+      "url": "https://medlineplus.gov/hyperthyroidism.html",
+      "sha256": "0db2018064971cc8f077218580772ab1faab525faeb4b6dacba712e1412a1364",
+      "split": "validation"
+    },
+    "1264": {
+      "family_id": "1264",
+      "title": "Hypoglycemia",
+      "url": "https://medlineplus.gov/hypoglycemia.html",
+      "sha256": "68e6dc656029f1bc2af78636db9deeb2401cd6247151ade8575643c214e3affa",
+      "split": "train"
+    },
+    "291": {
+      "family_id": "291",
+      "title": "Hypothermia",
+      "url": "https://medlineplus.gov/hypothermia.html",
+      "sha256": "54610d53a7f8011b8413d74a5c24e9a81de69bcc763062fc62fa1a6fc3bdeac4",
+      "split": "calibration"
+    },
+    "6175": {
+      "family_id": "6175",
+      "title": "Hypothyroidism",
+      "url": "https://medlineplus.gov/hypothyroidism.html",
+      "sha256": "e349ee92717192284b453b6fbebc768ee9541e2bced45152a140c50d27e4f9b3",
+      "split": "train"
+    },
+    "292": {
+      "family_id": "292",
+      "title": "Hysterectomy",
+      "url": "https://medlineplus.gov/hysterectomy.html",
+      "sha256": "2aa547a6fb9cc8046dff59ded7638c7a9aaaf2596d07a6f4bd8599dcf66c5b17",
+      "split": "train"
+    },
+    "4293": {
+      "family_id": "4293",
+      "title": "Indigestion",
+      "url": "https://medlineplus.gov/indigestion.html",
+      "sha256": "1134a17dd6ec2a7428cadc9ad2df672db56e59f373e0c88d472da9fd553de73e",
+      "split": "train"
+    },
+    "1549": {
+      "family_id": "1549",
+      "title": "Infant and Newborn Care",
+      "url": "https://medlineplus.gov/infantandnewborncare.html",
+      "sha256": "1d27a3dfee10b6ee6827c46464c406a9bd00edf791706975863dff5c1f3dae0d",
+      "split": "train"
+    },
+    "1548": {
+      "family_id": "1548",
+      "title": "Infant and Newborn Development",
+      "url": "https://medlineplus.gov/infantandnewborndevelopment.html",
+      "sha256": "ef64a36ac746112c4a3551d184e7334c0e7116cd98a303b3090896328296b441",
+      "split": "train"
+    },
+    "3750": {
+      "family_id": "3750",
+      "title": "Infant and Newborn Nutrition",
+      "url": "https://medlineplus.gov/infantandnewbornnutrition.html",
+      "sha256": "7d520432794a4497ccf4d5ed4202f1c3558e568fd27310d48d4ec9bb8ef53423",
+      "split": "train"
+    },
+    "3154": {
+      "family_id": "3154",
+      "title": "Infections and Pregnancy",
+      "url": "https://medlineplus.gov/infectionsandpregnancy.html",
+      "sha256": "5cc0de3234faf0e5bc1bfc7b30197c6bbf762f48dfd571ec66013f9708be2d14",
+      "split": "validation"
+    },
+    "5668": {
+      "family_id": "5668",
+      "title": "Infectious Arthritis",
+      "url": "https://medlineplus.gov/infectiousarthritis.html",
+      "sha256": "74628043dd184e2a4ca840a0d047add37db582099d3b34738fa8c4f7427d5a0c",
+      "split": "train"
+    },
+    "298": {
+      "family_id": "298",
+      "title": "Infectious Mononucleosis",
+      "url": "https://medlineplus.gov/infectiousmononucleosis.html",
+      "sha256": "8df90c0590c0e672cee1e66fa5590472f99d65679b07c3aaaaa6698e0a848335",
+      "split": "train"
+    },
+    "250": {
+      "family_id": "250",
+      "title": "Infertility",
+      "url": "https://medlineplus.gov/infertility.html",
+      "sha256": "faa9c18e01b8c99376a029b7aa2182d838f72cc1e60ebe79d0fc9b54acddc5ac",
+      "split": "train"
+    },
+    "6081": {
+      "family_id": "6081",
+      "title": "Inhalation Injuries",
+      "url": "https://medlineplus.gov/inhalationinjuries.html",
+      "sha256": "2cf08ce957bc07bd855f14f3cee86128717c6cbb573c1cf01ced60e5dec6129a",
+      "split": "train"
+    },
+    "526": {
+      "family_id": "526",
+      "title": "Insect Bites and Stings",
+      "url": "https://medlineplus.gov/insectbitesandstings.html",
+      "sha256": "47e65091b654057a8d8e4be7ee3c04cfcb5e734279ce16569820fa00d79a8e35",
+      "split": "train"
+    },
+    "6055": {
+      "family_id": "6055",
+      "title": "Insomnia",
+      "url": "https://medlineplus.gov/insomnia.html",
+      "sha256": "1b0b7e11449677062c820881d326418dde1c561dbc9891334a60531957b607e1",
+      "split": "train"
+    },
+    "5275": {
+      "family_id": "5275",
+      "title": "Intestinal Obstruction",
+      "url": "https://medlineplus.gov/intestinalobstruction.html",
+      "sha256": "5ec995a9e4449e673f63b5b82228cf2e5820092442afcc530ada2f03fd14e33a",
+      "split": "train"
+    },
+    "514": {
+      "family_id": "514",
+      "title": "Intimate Partner Violence",
+      "url": "https://medlineplus.gov/intimatepartnerviolence.html",
+      "sha256": "bbf036653f4802a94d64247cae6b6f6e51a401f2a9e3b6072db9871659365936",
+      "split": "train"
+    },
+    "5542": {
+      "family_id": "5542",
+      "title": "Iron",
+      "url": "https://medlineplus.gov/iron.html",
+      "sha256": "336531287dd34828c310485668336117163e2315a3ccb856497d4ac06d480021",
+      "split": "train"
+    },
+    "6248": {
+      "family_id": "6248",
+      "title": "Ischemic Stroke",
+      "url": "https://medlineplus.gov/ischemicstroke.html",
+      "sha256": "26929dd04a2c6af77155263abe3cdf8b6185a90000ac4aa4528e5262916d39e4",
+      "split": "train"
+    },
+    "1511": {
+      "family_id": "1511",
+      "title": "Islet Cell Transplantation",
+      "url": "https://medlineplus.gov/isletcelltransplantation.html",
+      "sha256": "4aab8e16bff72df99714157f48c9a248325ebf2e774621df7ae352d0ecf195c7",
+      "split": "train"
+    },
+    "3067": {
+      "family_id": "3067",
+      "title": "Itching",
+      "url": "https://medlineplus.gov/itching.html",
+      "sha256": "777811eae46e3607af835293870f597a06f229638d67ead9c9b56ce2a6ba3f48",
+      "split": "train"
+    },
+    "4621": {
+      "family_id": "4621",
+      "title": "Joint Disorders",
+      "url": "https://medlineplus.gov/jointdisorders.html",
+      "sha256": "eadedb9a950f6db7ac9148b950c4b3a0ca22f9ccbc953b7b0335847d30ca1465",
+      "split": "train"
+    },
+    "1292": {
+      "family_id": "1292",
+      "title": "Juvenile Arthritis",
+      "url": "https://medlineplus.gov/juvenilearthritis.html",
+      "sha256": "8f84053f441525e3ddcf700e4b0827bb178d11c6d709dc638555f613dc71c09d",
+      "split": "train"
+    },
+    "481": {
+      "family_id": "481",
+      "title": "Kaposi Sarcoma",
+      "url": "https://medlineplus.gov/kaposisarcoma.html",
+      "sha256": "6f9d141c93264f6a03877bba98c4584ab1a86b15279adf64b35f4683662b15c4",
+      "split": "calibration"
+    },
+    "4921": {
+      "family_id": "4921",
+      "title": "Kawasaki Disease",
+      "url": "https://medlineplus.gov/kawasakidisease.html",
+      "sha256": "dc7cd8068d77042613dff914c3eba8c14fd49e4dcdb57f48b5b18102cac422b8",
+      "split": "train"
+    },
+    "301": {
+      "family_id": "301",
+      "title": "Kidney Cancer",
+      "url": "https://medlineplus.gov/kidneycancer.html",
+      "sha256": "75756c131072daa260a5f199d05562316f44dc68305a1226d726d6632a83f6eb",
+      "split": "train"
+    },
+    "1224": {
+      "family_id": "1224",
+      "title": "Kidney Stones",
+      "url": "https://medlineplus.gov/kidneystones.html",
+      "sha256": "763a4e2d41b14b11cb8f51bb5ff0ba9f5da185a94e2c0f0929ec66e27e07e5f7",
+      "split": "train"
+    },
+    "6382": {
+      "family_id": "6382",
+      "title": "Kidney Tests",
+      "url": "https://medlineplus.gov/kidneytests.html",
+      "sha256": "94d1048ebc46370178a6ec355fc1860b50d78193e46024435f88608b57c395f0",
+      "split": "train"
+    },
+    "3924": {
+      "family_id": "3924",
+      "title": "Knee Replacement",
+      "url": "https://medlineplus.gov/kneereplacement.html",
+      "sha256": "9e8dadc48b08211c7f00744daaf3b14d4eb7d529c7d8a21f99f10bf0190b798b",
+      "split": "train"
+    },
+    "6783": {
+      "family_id": "6783",
+      "title": "LDL: The \"Bad\" Cholesterol",
+      "url": "https://medlineplus.gov/ldlthebadcholesterol.html",
+      "sha256": "ab059b4d246bb67f16091c6c3ccfedbf8fdf969c141a048a2de9446f55dfef86",
+      "split": "train"
+    },
+    "306": {
+      "family_id": "306",
+      "title": "Learning Disabilities",
+      "url": "https://medlineplus.gov/learningdisabilities.html",
+      "sha256": "b6be131cbac3d343643daf50a6b8c2348a82f3c49ab255e1d25b6224b6e5707f",
+      "split": "train"
+    },
+    "1526": {
+      "family_id": "1526",
+      "title": "Legionnaires' Disease",
+      "url": "https://medlineplus.gov/legionnairesdisease.html",
+      "sha256": "a49c5f5c96b83664273a4c9f824f5f7807a7480bef7244c86e955c5fc9707da2",
+      "split": "train"
+    },
+    "5620": {
+      "family_id": "5620",
+      "title": "Leukemia",
+      "url": "https://medlineplus.gov/leukemia.html",
+      "sha256": "eca3adee1c5690055211e4200c93583ebd37f0f5e35af107b01bd40736c57663",
+      "split": "train"
+    },
+    "1718": {
+      "family_id": "1718",
+      "title": "Leukodystrophies",
+      "url": "https://medlineplus.gov/leukodystrophies.html",
+      "sha256": "c030e35e9481d365002e13a117f34b2f3a7dd767aeb90e305f2f9368a5ecd2c9",
+      "split": "validation"
+    },
+    "518": {
+      "family_id": "518",
+      "title": "Limb Loss",
+      "url": "https://medlineplus.gov/limbloss.html",
+      "sha256": "83d48e4493cd399ce8a30fee2d853c6afc20cfff1a1c8e165eaa60d406977c39",
+      "split": "train"
+    },
+    "1502": {
+      "family_id": "1502",
+      "title": "Living with HIV",
+      "url": "https://medlineplus.gov/livingwithhiv.html",
+      "sha256": "76c6db611c6fc5ea9c41214dc5ee963efc9ae48eb45e46277a1e77affa4a206f",
+      "split": "train"
+    },
+    "86": {
+      "family_id": "86",
+      "title": "Lung Cancer",
+      "url": "https://medlineplus.gov/lungcancer.html",
+      "sha256": "5ddb37720bf63c66e4fdb1a30aa1985df6957b40b8fe9c5d87752222c8863339",
+      "split": "calibration"
+    },
+    "82": {
+      "family_id": "82",
+      "title": "Lupus",
+      "url": "https://medlineplus.gov/lupus.html",
+      "sha256": "64556d14adc75a35603cd2b2b2a40d38f4f3530ad4439597bcdab79a951870b7",
+      "split": "train"
+    },
+    "84": {
+      "family_id": "84",
+      "title": "Lyme Disease",
+      "url": "https://medlineplus.gov/lymedisease.html",
+      "sha256": "a6f8c17cf3be372640e5af8fdd0283c2591d399ebabbdf053bf4a4309fb10e2d",
+      "split": "train"
+    },
+    "315": {
+      "family_id": "315",
+      "title": "Malaria",
+      "url": "https://medlineplus.gov/malaria.html",
+      "sha256": "b95bc568d4eeb707477b04afacb9ba55b012bbf125d7d71f2b6959efae6229b3",
+      "split": "train"
+    },
+    "5656": {
+      "family_id": "5656",
+      "title": "Male Infertility",
+      "url": "https://medlineplus.gov/maleinfertility.html",
+      "sha256": "26d6e557fefbcd67aae7cef69b609db8b7bfb39db0d539744fae3d378c1b607d",
+      "split": "train"
+    },
+    "5461": {
+      "family_id": "5461",
+      "title": "Malnutrition",
+      "url": "https://medlineplus.gov/malnutrition.html",
+      "sha256": "b4e51b4fb515498602f1e287c870ceb32b575435d2c71769247da7006b726367",
+      "split": "train"
+    },
+    "3752": {
+      "family_id": "3752",
+      "title": "Mastectomy",
+      "url": "https://medlineplus.gov/mastectomy.html",
+      "sha256": "7d933b803488dcdf607a75e73493af402c81266cc940e1a40a1de3c6ca1368d2",
+      "split": "train"
+    },
+    "4154": {
+      "family_id": "4154",
+      "title": "Medical Device Safety",
+      "url": "https://medlineplus.gov/medicaldevicesafety.html",
+      "sha256": "52c1a84d73dae1d052797e65c76f8af01d85c055d92b6664608eabc3046339a0",
+      "split": "train"
+    },
+    "5719": {
+      "family_id": "5719",
+      "title": "Medication Errors",
+      "url": "https://medlineplus.gov/medicationerrors.html",
+      "sha256": "48d820a8fd7a570113e9f68535a9eda91161110a9ea1007bd59d448fe3fac52d",
+      "split": "train"
+    },
+    "6005": {
+      "family_id": "6005",
+      "title": "Medicines and Children",
+      "url": "https://medlineplus.gov/medicinesandchildren.html",
+      "sha256": "e7b288b52aa035a537212d5a673a39b2910df50c46cce11f9dd0e657973d188b",
+      "split": "train"
+    },
+    "1452": {
+      "family_id": "1452",
+      "title": "Memory",
+      "url": "https://medlineplus.gov/memory.html",
+      "sha256": "61be7d5bcc085bc31f02cef942afeee5f3adc09c7f2aaf2fa81ac0e5856836f9",
+      "split": "train"
+    },
+    "322": {
+      "family_id": "322",
+      "title": "Men's Health",
+      "url": "https://medlineplus.gov/menshealth.html",
+      "sha256": "7fe168f2db0bfe3e665f2f447e69ece78ff9bfaa19ed211e3f35756ebd00df21",
+      "split": "train"
+    },
+    "5651": {
+      "family_id": "5651",
+      "title": "Meningococcal Disease",
+      "url": "https://medlineplus.gov/meningococcaldisease.html",
+      "sha256": "53aef44e60abdad04278c72ab174a722e6589269e9be22f37d123712d34ef752",
+      "split": "train"
+    },
+    "62": {
+      "family_id": "62",
+      "title": "Menopause",
+      "url": "https://medlineplus.gov/menopause.html",
+      "sha256": "5119435f72efd465ab56b439cd1920e45e6b5f34cbd58375dbf57091dbe7a7e5",
+      "split": "train"
+    },
+    "325": {
+      "family_id": "325",
+      "title": "Menstruation",
+      "url": "https://medlineplus.gov/menstruation.html",
+      "sha256": "3e8262f67809149474411a09b3a3eadf5a31dd7c637de5bd9e05ffd0f6606a9c",
+      "split": "validation"
+    },
+    "35": {
+      "family_id": "35",
+      "title": "Mental Health",
+      "url": "https://medlineplus.gov/mentalhealth.html",
+      "sha256": "d54b58fb49f506cb96e6f8895b4fd7dcdd0edf5b30bbad61b92a056f6cdaeea8",
+      "split": "train"
+    },
+    "4014": {
+      "family_id": "4014",
+      "title": "Mesothelioma",
+      "url": "https://medlineplus.gov/mesothelioma.html",
+      "sha256": "3aab9cd4742c2ce96638e31b8debeb11f4ebbcf4ad70d3d66983de0266d3f6e6",
+      "split": "calibration"
+    },
+    "3528": {
+      "family_id": "3528",
+      "title": "Metabolic Syndrome",
+      "url": "https://medlineplus.gov/metabolicsyndrome.html",
+      "sha256": "66b9173b15334664d189cd1c0d51569461e6fdb54561dc839125751133194191",
+      "split": "train"
+    },
+    "3157": {
+      "family_id": "3157",
+      "title": "Migraine",
+      "url": "https://medlineplus.gov/migraine.html",
+      "sha256": "00e56885738f94fc284f04633a7fee2e2efcfd71067b894f5eaf283dc9b7a7ce",
+      "split": "train"
+    },
+    "5741": {
+      "family_id": "5741",
+      "title": "Mild Cognitive Impairment",
+      "url": "https://medlineplus.gov/mildcognitiveimpairment.html",
+      "sha256": "5d49df286a8dc07b7deddfa76f0e7fd0f542727f2c167441a0bbe7ccae61b9fc",
+      "split": "train"
+    },
+    "515": {
+      "family_id": "515",
+      "title": "Miscarriage",
+      "url": "https://medlineplus.gov/miscarriage.html",
+      "sha256": "40a83eb42382d6ed470e3335440f47ff8b5603fb23807e292cbbc4f012ca7c32",
+      "split": "train"
+    },
+    "4141": {
+      "family_id": "4141",
+      "title": "Mobility Aids",
+      "url": "https://medlineplus.gov/mobilityaids.html",
+      "sha256": "f7c5ce6bba8e2b955667d78e831c37cb3a22598f1b7180766aff1db303e9c99e",
+      "split": "train"
+    },
+    "6545": {
+      "family_id": "6545",
+      "title": "Mosquito Bites",
+      "url": "https://medlineplus.gov/mosquitobites.html",
+      "sha256": "77679d210e526bb816c7874840b006f178d22b783b3772e6fe4441c7c3c0bc14",
+      "split": "train"
+    },
+    "3229": {
+      "family_id": "3229",
+      "title": "Mpox",
+      "url": "https://medlineplus.gov/mpox.html",
+      "sha256": "fd5492fb151a2afcead8b4722b08c45ef61a3d55bd4f32aa3313438922a0c54d",
+      "split": "train"
+    },
+    "3953": {
+      "family_id": "3953",
+      "title": "MRI Scans",
+      "url": "https://medlineplus.gov/mriscans.html",
+      "sha256": "c1352ea2fcc8767c5acf1e7e6ee9eec1d48862e28ce67992daf405e7bdfeeed9",
+      "split": "train"
+    },
+    "4539": {
+      "family_id": "4539",
+      "title": "MRSA",
+      "url": "https://medlineplus.gov/mrsa.html",
+      "sha256": "bb9ac8947aa5d681fe70daaada42824c58a011c429ac2ebfe5b75bc4689a541f",
+      "split": "train"
+    },
+    "83": {
+      "family_id": "83",
+      "title": "Multiple Sclerosis",
+      "url": "https://medlineplus.gov/multiplesclerosis.html",
+      "sha256": "7e4547765d9d9efcc7fc5513d4012d137bb83ce7a13bb96dacefd6d3231e4739",
+      "split": "train"
+    },
+    "1707": {
+      "family_id": "1707",
+      "title": "Muscle Cramps",
+      "url": "https://medlineplus.gov/musclecramps.html",
+      "sha256": "3d93042c4a241d09256d1eff8b7aa43cb942b3af4713894490323b925370f2a0",
+      "split": "train"
+    },
+    "335": {
+      "family_id": "335",
+      "title": "Muscular Dystrophy",
+      "url": "https://medlineplus.gov/musculardystrophy.html",
+      "sha256": "636e623a5d61b3791ce5f7af1e3b79d1af244c1d90fd96435a75fc7c9515a733",
+      "split": "train"
+    },
+    "89": {
+      "family_id": "89",
+      "title": "Myalgic Encephalomyelitis/Chronic Fatigue Syndrome",
+      "url": "https://medlineplus.gov/myalgicencephalomyelitischronicfatiguesyndrome.html",
+      "sha256": "64e905f34d1253279dce8c7ee658a2d270574b2767e274c82ea7f7091045e5e6",
+      "split": "train"
+    },
+    "336": {
+      "family_id": "336",
+      "title": "Myasthenia Gravis",
+      "url": "https://medlineplus.gov/myastheniagravis.html",
+      "sha256": "3c8c3f1873ebd949183eecfe9fe53c42571ed3a12cafcf8f7a8bc34c6bce2d88",
+      "split": "train"
+    },
+    "489": {
+      "family_id": "489",
+      "title": "Nausea and Vomiting",
+      "url": "https://medlineplus.gov/nauseaandvomiting.html",
+      "sha256": "e04afc773c12da75788ec3a2ee67a21bfc53b9bc8f5eecafc97d326c4380f5d5",
+      "split": "train"
+    },
+    "1240": {
+      "family_id": "1240",
+      "title": "Neuroblastoma",
+      "url": "https://medlineplus.gov/neuroblastoma.html",
+      "sha256": "29d26fe284381c73ec495849eee2263a337abb32ae9fc10b59c26d96f741c48a",
+      "split": "validation"
+    },
+    "4041": {
+      "family_id": "4041",
+      "title": "Newborn Screening",
+      "url": "https://medlineplus.gov/newbornscreening.html",
+      "sha256": "afc64b50ccb8d6f43ace4ad2192b29f9dbd13454f2110d19bc3a3e9af85a3be1",
+      "split": "train"
+    },
+    "7107": {
+      "family_id": "7107",
+      "title": "Non-Drug Pain Management",
+      "url": "https://medlineplus.gov/nondrugpainmanagement.html",
+      "sha256": "23f2e17c66b1029c2798301aa4f74e1d0938fc5cbf41fb77e9c158ceee28f84d",
+      "split": "train"
+    },
+    "3955": {
+      "family_id": "3955",
+      "title": "Nuclear Scans",
+      "url": "https://medlineplus.gov/nuclearscans.html",
+      "sha256": "6cd1994666f248c665e2f33bf021277c0e80b137aa4f4fb49f70e2da8cadc0ac",
+      "split": "train"
+    },
+    "1354": {
+      "family_id": "1354",
+      "title": "Nursing Homes",
+      "url": "https://medlineplus.gov/nursinghomes.html",
+      "sha256": "e4987d09bceb5484a83b603e8654c4714b50fd7ac2b724e7793c576bbfff9965",
+      "split": "validation"
+    },
+    "36": {
+      "family_id": "36",
+      "title": "Nutrition",
+      "url": "https://medlineplus.gov/nutrition.html",
+      "sha256": "6b9ef70364c8952ccaa3963c59e35e03c286801c1640bd5481eeef2b8e08b0f5",
+      "split": "train"
+    },
+    "1616": {
+      "family_id": "1616",
+      "title": "Nutrition for Older Adults",
+      "url": "https://medlineplus.gov/nutritionforolderadults.html",
+      "sha256": "90408df1e7a84368712aefc7d1d3d6cd70b880d8bb24994db426b061696a8925",
+      "split": "validation"
+    },
+    "61": {
+      "family_id": "61",
+      "title": "Obesity",
+      "url": "https://medlineplus.gov/obesity.html",
+      "sha256": "053801cfb95726f458bf2fa7f7d40af3db92e2c072352bb7b5145458aa1cc24b",
+      "split": "train"
+    },
+    "4077": {
+      "family_id": "4077",
+      "title": "Obesity in Children",
+      "url": "https://medlineplus.gov/obesityinchildren.html",
+      "sha256": "904d9a4f286823d54f7c2b27d826c2e773a7feab51b829fbb4bc5f52c31b6b19",
+      "split": "train"
+    },
+    "471": {
+      "family_id": "471",
+      "title": "Obsessive-Compulsive Disorder",
+      "url": "https://medlineplus.gov/obsessivecompulsivedisorder.html",
+      "sha256": "c3f55f057dde1e171278db4c8f72b72efbd219a41e1f841fa5ce8fc107991134",
+      "split": "train"
+    },
+    "21": {
+      "family_id": "21",
+      "title": "Older Adult Health",
+      "url": "https://medlineplus.gov/olderadulthealth.html",
+      "sha256": "bc7ec6f1fb9f96aefe1328d8d7950defcf381d5b7aca57c2b08f3f64e01d70fd",
+      "split": "validation"
+    },
+    "7427": {
+      "family_id": "7427",
+      "title": "Older Adult Mental Health",
+      "url": "https://medlineplus.gov/olderadultmentalhealth.html",
+      "sha256": "6d9a0faedb74f1c0ecac193d4937cad065d6e191a5cd14e358798c1734a1ca43",
+      "split": "train"
+    },
+    "7109": {
+      "family_id": "7109",
+      "title": "Opioid Overdose",
+      "url": "https://medlineplus.gov/opioidoverdose.html",
+      "sha256": "aa782c4ee63aba63998e6222009ec4fd5a185084b26c94af60a8ff76dda6775b",
+      "split": "train"
+    },
+    "7129": {
+      "family_id": "7129",
+      "title": "Opioid Use Disorder (OUD) Treatment",
+      "url": "https://medlineplus.gov/opioidusedisorderoudtreatment.html",
+      "sha256": "86bffc37c3ad21c273ac2798571e199d13e10bd14e64a0ef1965039778a92feb",
+      "split": "calibration"
+    },
+    "6431": {
+      "family_id": "6431",
+      "title": "Opioids and Opioid Use Disorder (OUD)",
+      "url": "https://medlineplus.gov/opioidsandopioidusedisorderoud.html",
+      "sha256": "fc388139303c169efff17075b05133f500495175b9cd575aa17e94bb158ff5f5",
+      "split": "train"
+    },
+    "6427": {
+      "family_id": "6427",
+      "title": "Optic Nerve Disorders",
+      "url": "https://medlineplus.gov/opticnervedisorders.html",
+      "sha256": "a282f10e2f7d24dea4d2e9ce8880e158fc296a1b38c1fedac5e79a3dae36ac21",
+      "split": "train"
+    },
+    "331": {
+      "family_id": "331",
+      "title": "Oral Cancer",
+      "url": "https://medlineplus.gov/oralcancer.html",
+      "sha256": "ac3cf5e8777d8aad474924f8769865107685e74d58eb7ec317002edc19ee07a1",
+      "split": "train"
+    },
+    "1250": {
+      "family_id": "1250",
+      "title": "Osteoarthritis",
+      "url": "https://medlineplus.gov/osteoarthritis.html",
+      "sha256": "be4e23f76ef11e16627ac3479f041aedea133618ba299623c767b601a680c827",
+      "split": "train"
+    },
+    "348": {
+      "family_id": "348",
+      "title": "Ovarian Cancer",
+      "url": "https://medlineplus.gov/ovariancancer.html",
+      "sha256": "801cfae1226c64e3d2fef3469da6d7c0e94a23f3165ea2502c9ee894d0e04d1b",
+      "split": "validation"
+    },
+    "349": {
+      "family_id": "349",
+      "title": "Ovarian Cysts",
+      "url": "https://medlineplus.gov/ovariancysts.html",
+      "sha256": "c0b20e2af464c8b95366b0765b3a426f1c51ca1dd00f1068d11c634c26389d5a",
+      "split": "train"
+    },
+    "5804": {
+      "family_id": "5804",
+      "title": "Ovarian Disorders",
+      "url": "https://medlineplus.gov/ovariandisorders.html",
+      "sha256": "5cc3c6f33a87a78b7b4c42c0dbf8ac9313605fdbcaef32e3b986e915dec20212",
+      "split": "train"
+    },
+    "3799": {
+      "family_id": "3799",
+      "title": "Over-the-Counter Medicines",
+      "url": "https://medlineplus.gov/overthecountermedicines.html",
+      "sha256": "1033092aba943d678258bfb20d4aac382de39e4ebac27dafdaeed8778a2fdeb0",
+      "split": "calibration"
+    },
+    "5334": {
+      "family_id": "5334",
+      "title": "Oxygen Therapy",
+      "url": "https://medlineplus.gov/oxygentherapy.html",
+      "sha256": "12cd4cfd51ca31ee50fa634e16319c38cc727b108e7b15a41f200cb931d39b3d",
+      "split": "calibration"
+    },
+    "1607": {
+      "family_id": "1607",
+      "title": "Paget's Disease of Bone",
+      "url": "https://medlineplus.gov/pagetsdiseaseofbone.html",
+      "sha256": "a8ddaedc4d245c75d531caa6e76f2a4872d544ba566d3fee83675f2d59eda599",
+      "split": "train"
+    },
+    "351": {
+      "family_id": "351",
+      "title": "Pain",
+      "url": "https://medlineplus.gov/pain.html",
+      "sha256": "e7cc72d6d6c4f39b5c65c0cf9d3bf68d9ef56102cb1e6adfda8e3ecd64747dd7",
+      "split": "train"
+    },
+    "4059": {
+      "family_id": "4059",
+      "title": "Pain Relievers",
+      "url": "https://medlineplus.gov/painrelievers.html",
+      "sha256": "4e909129d51cb903abd88a1af562762657ea91c7a227c878814f3bb40b697c3d",
+      "split": "train"
+    },
+    "601": {
+      "family_id": "601",
+      "title": "Panic Disorder",
+      "url": "https://medlineplus.gov/panicdisorder.html",
+      "sha256": "dd055ea07aad31e35e868fe1bd556f701838c5ff8792ff3a8b0c631de9b4efc2",
+      "split": "train"
+    },
+    "4253": {
+      "family_id": "4253",
+      "title": "Patient Rights",
+      "url": "https://medlineplus.gov/patientrights.html",
+      "sha256": "89e955a67c4eaffe1e97e72f244a870bdb1a21c5f835347ac1085352897132f8",
+      "split": "train"
+    },
+    "1677": {
+      "family_id": "1677",
+      "title": "Pelvic Floor Disorders",
+      "url": "https://medlineplus.gov/pelvicfloordisorders.html",
+      "sha256": "5e6040815457e48bf70fb076986c24f17879f47ec2bf6fa3d03630328e78368f",
+      "split": "train"
+    },
+    "3044": {
+      "family_id": "3044",
+      "title": "Pelvic Inflammatory Disease",
+      "url": "https://medlineplus.gov/pelvicinflammatorydisease.html",
+      "sha256": "d4227cf090bf60a9023907aa5621ce37deae8f0ad1ad252bf0eacb2a562f3b2f",
+      "split": "train"
+    },
+    "6415": {
+      "family_id": "6415",
+      "title": "Period Pain",
+      "url": "https://medlineplus.gov/periodpain.html",
+      "sha256": "8b9b753a227a9885bb3a953a1d34648eea8fca811a0aade144e5056a23a3d2d2",
+      "split": "train"
+    },
+    "3892": {
+      "family_id": "3892",
+      "title": "Personal Health Records",
+      "url": "https://medlineplus.gov/personalhealthrecords.html",
+      "sha256": "b9009f11f6c419e2cae879894173290ee37ca86f997e497e71f1f75a7f06bb35",
+      "split": "train"
+    },
+    "4117": {
+      "family_id": "4117",
+      "title": "Personality Disorders",
+      "url": "https://medlineplus.gov/personalitydisorders.html",
+      "sha256": "3cfe750a0e2cff5621ec3980b5c9aef10f47008359415e0d951e5f0cba494a5d",
+      "split": "train"
+    },
+    "3065": {
+      "family_id": "3065",
+      "title": "Pinworms",
+      "url": "https://medlineplus.gov/pinworms.html",
+      "sha256": "717291e861ecdc2f0946d43d45af51355fae32398289be01eb0c11c6031d0278",
+      "split": "train"
+    },
+    "1510": {
+      "family_id": "1510",
+      "title": "Pneumocystis Infections",
+      "url": "https://medlineplus.gov/pneumocystisinfections.html",
+      "sha256": "004881517a36638dd6d002a8afe728fe53c9d1bb1ed334f5cdca87d40fdca520",
+      "split": "train"
+    },
+    "363": {
+      "family_id": "363",
+      "title": "Pneumonia",
+      "url": "https://medlineplus.gov/pneumonia.html",
+      "sha256": "b6cb66ba4229c91a3cb9c1f7f0499f9efed8bafbfde09197a01cbc8eba106c26",
+      "split": "train"
+    },
+    "3878": {
+      "family_id": "3878",
+      "title": "Poison Ivy, Oak, and Sumac",
+      "url": "https://medlineplus.gov/poisonivyoakandsumac.html",
+      "sha256": "c6596759eb6fc62a727e0c2a3fffd3bda61c8097c59780afda637365bd081a6b",
+      "split": "train"
+    },
+    "364": {
+      "family_id": "364",
+      "title": "Poisoning",
+      "url": "https://medlineplus.gov/poisoning.html",
+      "sha256": "552908d4fc20ae3028770f996253711cf185137f3991bba5b7cfcc2df02f386d",
+      "split": "train"
+    },
+    "365": {
+      "family_id": "365",
+      "title": "Polio and Post-Polio Syndrome",
+      "url": "https://medlineplus.gov/polioandpostpoliosyndrome.html",
+      "sha256": "431cf2b45126c2b9d9cc481e00258619807c4a2e1584752dc46a34e2029a3329",
+      "split": "train"
+    },
+    "5912": {
+      "family_id": "5912",
+      "title": "Polycystic Ovary Syndrome",
+      "url": "https://medlineplus.gov/polycysticovarysyndrome.html",
+      "sha256": "5b06c86b986aed6944e31fc654d69af418238c683dd62621aaac6e3bd77fbdc5",
+      "split": "validation"
+    },
+    "367": {
+      "family_id": "367",
+      "title": "Post-Traumatic Stress Disorder",
+      "url": "https://medlineplus.gov/posttraumaticstressdisorder.html",
+      "sha256": "e423bc7ff711bf6bd362a73db12462df24824f6b7c126ee8878db00f3e45c057",
+      "split": "train"
+    },
+    "1238": {
+      "family_id": "1238",
+      "title": "Postpartum Depression",
+      "url": "https://medlineplus.gov/postpartumdepression.html",
+      "sha256": "7a752936d9c0a63a84bda08d6b6c4d5c4ecccc5812fdd91178c7003e85d61d82",
+      "split": "train"
+    },
+    "4455": {
+      "family_id": "4455",
+      "title": "Preconception Care",
+      "url": "https://medlineplus.gov/preconceptioncare.html",
+      "sha256": "7ea83c0af8a6aaf5e3516558cecb9c23271858f16d19b347043d22b7b94bafca",
+      "split": "train"
+    },
+    "5784": {
+      "family_id": "5784",
+      "title": "Prediabetes",
+      "url": "https://medlineplus.gov/prediabetes.html",
+      "sha256": "fcc680b1a7ffeb11bb69c0ef1b65fd00e2d6bf088b0914fa97870bceaa830638",
+      "split": "train"
+    },
+    "368": {
+      "family_id": "368",
+      "title": "Pregnancy",
+      "url": "https://medlineplus.gov/pregnancy.html",
+      "sha256": "6670c66e2be27481d0e98efcccca1d84f35c0cd2e19bd0c2649d40dc87ea2403",
+      "split": "validation"
+    },
+    "5578": {
+      "family_id": "5578",
+      "title": "Pregnancy and Medicines",
+      "url": "https://medlineplus.gov/pregnancyandmedicines.html",
+      "sha256": "dd77890bfa0454c1ba58de2a33757017a1ea31c67cf09a59d889a76219c7c853",
+      "split": "calibration"
+    },
+    "5984": {
+      "family_id": "5984",
+      "title": "Pregnancy and Nutrition",
+      "url": "https://medlineplus.gov/pregnancyandnutrition.html",
+      "sha256": "780a5f7d0f7a55c4fb634a9f7f733795e3a30ff31ca6bfecc005adbc8d7be187",
+      "split": "train"
+    },
+    "7131": {
+      "family_id": "7131",
+      "title": "Pregnancy and Opioids",
+      "url": "https://medlineplus.gov/pregnancyandopioids.html",
+      "sha256": "61063d3c26a2de92178c73fcbd60150ed8e5e616fd867dcd2606d792b6e05323",
+      "split": "calibration"
+    },
+    "1385": {
+      "family_id": "1385",
+      "title": "Pregnancy and Substance Use",
+      "url": "https://medlineplus.gov/pregnancyandsubstanceuse.html",
+      "sha256": "f653953f9ccefe2d5c75592032fdc1020c6c43eef32deed57edd7dd5e553eda1",
+      "split": "train"
+    },
+    "1519": {
+      "family_id": "1519",
+      "title": "Premature Babies",
+      "url": "https://medlineplus.gov/prematurebabies.html",
+      "sha256": "2885c264d6966eeb0c663e8706a0621c28a755607a2e6d5e32ff16b744e2f6ce",
+      "split": "train"
+    },
+    "3793": {
+      "family_id": "3793",
+      "title": "Premenstrual Syndrome",
+      "url": "https://medlineplus.gov/premenstrualsyndrome.html",
+      "sha256": "2ec75636d432fbe24d9bcec4ee251a27b37ea0b38608da70a723d225675f4d89",
+      "split": "train"
+    },
+    "6": {
+      "family_id": "6",
+      "title": "Prenatal Care",
+      "url": "https://medlineplus.gov/prenatalcare.html",
+      "sha256": "32121fa2cbd30aa96cab6fae7b1d9623dccaee0c6a5d12ee79ebc2427a3b5b1e",
+      "split": "train"
+    },
+    "3091": {
+      "family_id": "3091",
+      "title": "Prenatal Testing",
+      "url": "https://medlineplus.gov/prenataltesting.html",
+      "sha256": "d53e16699b8a712df4ccbffa5cc81f750fc50de6ca1d2db762eefdc446345edd",
+      "split": "train"
+    },
+    "1706": {
+      "family_id": "1706",
+      "title": "Prescription Drug Misuse",
+      "url": "https://medlineplus.gov/prescriptiondrugmisuse.html",
+      "sha256": "74be6fe1c66850aa566267f927f62b521aa6073f6345e94cf0f0b9992fe93550",
+      "split": "calibration"
+    },
+    "6234": {
+      "family_id": "6234",
+      "title": "Preterm Labor",
+      "url": "https://medlineplus.gov/pretermlabor.html",
+      "sha256": "822c4df6082bf0a170d0eb730791c43187c28e531d9be33bf34e18a8144f0a89",
+      "split": "train"
+    },
+    "3684": {
+      "family_id": "3684",
+      "title": "Primary Ovarian Insufficiency",
+      "url": "https://medlineplus.gov/primaryovarianinsufficiency.html",
+      "sha256": "a3adba992e6150b0096288b1d0ebd6239d87e95d11ff970790b88208aa61cf46",
+      "split": "calibration"
+    },
+    "3609": {
+      "family_id": "3609",
+      "title": "Progressive Supranuclear Palsy",
+      "url": "https://medlineplus.gov/progressivesupranuclearpalsy.html",
+      "sha256": "b2be4b8461c97965e51739816e8ce51f551387d55facebcd189f869e9d5e1a54",
+      "split": "train"
+    },
+    "112": {
+      "family_id": "112",
+      "title": "Prostate Cancer",
+      "url": "https://medlineplus.gov/prostatecancer.html",
+      "sha256": "e11d3a1b9ef297e8a057e0522de867a2477eb45bc3b0348c400f90ea3d5f6cc0",
+      "split": "train"
+    },
+    "6208": {
+      "family_id": "6208",
+      "title": "Prostate Cancer Screening",
+      "url": "https://medlineplus.gov/prostatecancerscreening.html",
+      "sha256": "3872a909b44b490020cae5aa8478ee60d62501dd9db1ba75ff6dc3f7726184c2",
+      "split": "train"
+    },
+    "7": {
+      "family_id": "7",
+      "title": "Prostate Diseases",
+      "url": "https://medlineplus.gov/prostatediseases.html",
+      "sha256": "c77852c8119affe33cfd96a751f944c6105a318e13388108c78209d922f678c8",
+      "split": "validation"
+    },
+    "6947": {
+      "family_id": "6947",
+      "title": "Pubic Lice",
+      "url": "https://medlineplus.gov/pubiclice.html",
+      "sha256": "3f62cdde39dcd55faed903f9eeaf0227984f33e14c531e09e29134ca06dfcb42",
+      "split": "train"
+    },
+    "377": {
+      "family_id": "377",
+      "title": "Pulmonary Embolism",
+      "url": "https://medlineplus.gov/pulmonaryembolism.html",
+      "sha256": "843ff0352f629a891fa30d031b3bb84dd53dddecc17ad23dcc968b5df820d9d5",
+      "split": "train"
+    },
+    "3634": {
+      "family_id": "3634",
+      "title": "Pulmonary Hypertension",
+      "url": "https://medlineplus.gov/pulmonaryhypertension.html",
+      "sha256": "8c74fe70a915053ca8919400a5cb7091976a958e156c4a455a621d25b9b2ebef",
+      "split": "train"
+    },
+    "5980": {
+      "family_id": "5980",
+      "title": "Pulmonary Rehabilitation",
+      "url": "https://medlineplus.gov/pulmonaryrehabilitation.html",
+      "sha256": "373e429a33a6c2532d85aa227b55b24264136d6035f199a147530a1e68a4abc8",
+      "split": "calibration"
+    },
+    "1359": {
+      "family_id": "1359",
+      "title": "Quitting Smoking",
+      "url": "https://medlineplus.gov/quittingsmoking.html",
+      "sha256": "f99a480b8db5167017217f31f4ba45eb5984bb7f93d0d72a70c52f158e7398d6",
+      "split": "train"
+    },
+    "4598": {
+      "family_id": "4598",
+      "title": "Radiation Emergencies",
+      "url": "https://medlineplus.gov/radiationemergencies.html",
+      "sha256": "f368a6ee40a1c22ec2b61c243220ee49c3ee1d72d1e21bb3482488a8afeb1595",
+      "split": "train"
+    },
+    "379": {
+      "family_id": "379",
+      "title": "Radiation Exposure",
+      "url": "https://medlineplus.gov/radiationexposure.html",
+      "sha256": "1a0c8484ce7a8ad9dae645751bd6b9f088d96c1f5bf53f45d88f9165b4751206",
+      "split": "train"
+    },
+    "208": {
+      "family_id": "208",
+      "title": "Rashes",
+      "url": "https://medlineplus.gov/rashes.html",
+      "sha256": "f78e6397c101980e2b37dc9ae495e9535fbedbf18ee5619ee0d747b5a97ea88d",
+      "split": "train"
+    },
+    "381": {
+      "family_id": "381",
+      "title": "Raynaud Phenomenon",
+      "url": "https://medlineplus.gov/raynaudphenomenon.html",
+      "sha256": "ca65e3922372d80b9329b1e570944552d8034b7ab77658769a2181b6ade58730",
+      "split": "train"
+    },
+    "6521": {
+      "family_id": "6521",
+      "title": "Reflux in Children",
+      "url": "https://medlineplus.gov/refluxinchildren.html",
+      "sha256": "10e5ffbf6df2ec5d203b3ea061e6ef05cf7b7fb0995945f214e411204b6f0051",
+      "split": "train"
+    },
+    "6467": {
+      "family_id": "6467",
+      "title": "Reflux in Infants",
+      "url": "https://medlineplus.gov/refluxininfants.html",
+      "sha256": "25078b1fac228ba32e03a27d902216268f136ebbfd5db069ccc45db68a93deee",
+      "split": "train"
+    },
+    "39": {
+      "family_id": "39",
+      "title": "Reproductive Hazards",
+      "url": "https://medlineplus.gov/reproductivehazards.html",
+      "sha256": "a99215240b5c5f1cefc4afafcd35fdddcddc131d0335e01142bd48671b235960",
+      "split": "train"
+    },
+    "6016": {
+      "family_id": "6016",
+      "title": "Respiratory Failure",
+      "url": "https://medlineplus.gov/respiratoryfailure.html",
+      "sha256": "4a0c24b9d9b4e476001a547abce87ed36e3cc5afdc4b94428a5313cd3ff44e58",
+      "split": "train"
+    },
+    "3101": {
+      "family_id": "3101",
+      "title": "Respiratory Syncytial Virus Infections",
+      "url": "https://medlineplus.gov/respiratorysyncytialvirusinfections.html",
+      "sha256": "cdd017038e0a8dc69afdec0753e2774f71ec9bc4770a8222a55c5d8c50891570",
+      "split": "train"
+    },
+    "6141": {
+      "family_id": "6141",
+      "title": "Retinal Detachment",
+      "url": "https://medlineplus.gov/retinaldetachment.html",
+      "sha256": "91e2830e48f9529f915e2b1645151a2e75ce2cfa384b5433f2a6388d42dc60b4",
+      "split": "train"
+    },
+    "1681": {
+      "family_id": "1681",
+      "title": "Retinal Disorders",
+      "url": "https://medlineplus.gov/retinaldisorders.html",
+      "sha256": "6dead072c5816667a050140f955809c07e12ded92fcf7b4b4b45653640ee7598",
+      "split": "train"
+    },
+    "385": {
+      "family_id": "385",
+      "title": "Reye Syndrome",
+      "url": "https://medlineplus.gov/reyesyndrome.html",
+      "sha256": "144d607fc021bb949d022eb396165a8698a1c9ccd99536aecb825387c5930cc5",
+      "split": "train"
+    },
+    "5901": {
+      "family_id": "5901",
+      "title": "Rh Incompatibility",
+      "url": "https://medlineplus.gov/rhincompatibility.html",
+      "sha256": "5c57f0fae6da36302cf7a64ef449d239d1c56051b6fd78412bd41e0ee630abe7",
+      "split": "train"
+    },
+    "1232": {
+      "family_id": "1232",
+      "title": "Rheumatoid Arthritis",
+      "url": "https://medlineplus.gov/rheumatoidarthritis.html",
+      "sha256": "1991c317b1fec0de355156c09fbe4ccf413783d0b80c3a5ed0db1cd51d6b9499",
+      "split": "train"
+    },
+    "5932": {
+      "family_id": "5932",
+      "title": "Rotator Cuff Injuries",
+      "url": "https://medlineplus.gov/rotatorcuffinjuries.html",
+      "sha256": "aba6465057ca4733f2446a27a92f2a5db0258873e348bcb8f2ca3edf7f527cb1",
+      "split": "train"
+    },
+    "3215": {
+      "family_id": "3215",
+      "title": "Rotavirus Infections",
+      "url": "https://medlineplus.gov/rotavirusinfections.html",
+      "sha256": "a820e1fafa42446df96003d3f4fc941a16b4a29aa768dc13adb5de0f55fbb8e0",
+      "split": "train"
+    },
+    "7127": {
+      "family_id": "7127",
+      "title": "Safe Opioid Use",
+      "url": "https://medlineplus.gov/safeopioiduse.html",
+      "sha256": "768aad45ecb1566c873e9515497b40bdfb5353d23eb427c69a410b190d214a0d",
+      "split": "train"
+    },
+    "485": {
+      "family_id": "485",
+      "title": "Safety",
+      "url": "https://medlineplus.gov/safety.html",
+      "sha256": "92c5203fced16b56ea3643d7d11503b990a2140bbb2c674d1a1457cfc26ca957",
+      "split": "train"
+    },
+    "1213": {
+      "family_id": "1213",
+      "title": "Salmonella Infections",
+      "url": "https://medlineplus.gov/salmonellainfections.html",
+      "sha256": "ec6ef38da6e81b1058b98f87636d4cfc42046d17a900dec28f469e238eee92cf",
+      "split": "calibration"
+    },
+    "389": {
+      "family_id": "389",
+      "title": "Sarcoidosis",
+      "url": "https://medlineplus.gov/sarcoidosis.html",
+      "sha256": "55f495d934913b94ef249c24b046e64d83a981b5947069b41f01c1ae5706e508",
+      "split": "calibration"
+    },
+    "1254": {
+      "family_id": "1254",
+      "title": "Scabies",
+      "url": "https://medlineplus.gov/scabies.html",
+      "sha256": "51c0e3f8860f92122bbe42d852ee1587b96303d8b67aeca5e099f498398801c8",
+      "split": "validation"
+    },
+    "1532": {
+      "family_id": "1532",
+      "title": "Sciatica",
+      "url": "https://medlineplus.gov/sciatica.html",
+      "sha256": "b89ade544ad044d6bfc66747f82804442e16d69a79283f39878a786a22d76d03",
+      "split": "train"
+    },
+    "394": {
+      "family_id": "394",
+      "title": "Scleroderma",
+      "url": "https://medlineplus.gov/scleroderma.html",
+      "sha256": "310db19f8548445fcd22f177ad2ba467e4268ec6409b8e2f632b906970625926",
+      "split": "train"
+    },
+    "396": {
+      "family_id": "396",
+      "title": "Seizures",
+      "url": "https://medlineplus.gov/seizures.html",
+      "sha256": "7f858e8ee720d63f8bbf981d7d0004a0f4b5ee299a282c6fc0934a8715b990b4",
+      "split": "train"
+    },
+    "3210": {
+      "family_id": "3210",
+      "title": "Sepsis",
+      "url": "https://medlineplus.gov/sepsis.html",
+      "sha256": "6431f1fa82ab11f33b957c7a4d7283189a9b7c2acdb4621f67334e65b38ccd5a",
+      "split": "calibration"
+    },
+    "380": {
+      "family_id": "380",
+      "title": "Sexual Assault",
+      "url": "https://medlineplus.gov/sexualassault.html",
+      "sha256": "da0b0e6b6d4b2e29087b174f2e3e222acd1bc7f9ff5a9b51be337d9b1a0b028c",
+      "split": "validation"
+    },
+    "5571": {
+      "family_id": "5571",
+      "title": "Sexual Problems in Men",
+      "url": "https://medlineplus.gov/sexualproblemsinmen.html",
+      "sha256": "4afd1dd019a3c91605c5154d896c6a2dd890d100a576ce1abb650a3dad278c51",
+      "split": "train"
+    },
+    "1423": {
+      "family_id": "1423",
+      "title": "Sexual Problems in Women",
+      "url": "https://medlineplus.gov/sexualproblemsinwomen.html",
+      "sha256": "9bc8a6932391c7ad8fdb2b96465ac05b324930da1c04b59aef4daf78f756bcb1",
+      "split": "train"
+    },
+    "400": {
+      "family_id": "400",
+      "title": "Sexually Transmitted Infections",
+      "url": "https://medlineplus.gov/sexuallytransmittedinfections.html",
+      "sha256": "355897afb3b06735ff12a13022aa5a703e0ca067710074a0118826fb545be68e",
+      "split": "train"
+    },
+    "90": {
+      "family_id": "90",
+      "title": "Shingles",
+      "url": "https://medlineplus.gov/shingles.html",
+      "sha256": "7e9a70870c33f54c153a13bcc8fb6a4aaf7541e865e34fbbf5ed68a880141926",
+      "split": "train"
+    },
+    "5717": {
+      "family_id": "5717",
+      "title": "Shock",
+      "url": "https://medlineplus.gov/shock.html",
+      "sha256": "fe2aadc71e06384a1df0fb1a08bd0461b66532a058cda3520f8b0dc6590e0ff5",
+      "split": "calibration"
+    },
+    "918": {
+      "family_id": "918",
+      "title": "Sjögren's Disease",
+      "url": "https://medlineplus.gov/sjogrensdisease.html",
+      "sha256": "842232294287a092f3cf45593d4dd910e43989ac1b9b0e21fa371b4d9bf5c154",
+      "split": "train"
+    },
+    "5358": {
+      "family_id": "5358",
+      "title": "Skin Infections",
+      "url": "https://medlineplus.gov/skininfections.html",
+      "sha256": "a8328cd74eb2041c49064d5a7c60a34d5a42a841ddc3a5b17529b31caae0c212",
+      "split": "train"
+    },
+    "408": {
+      "family_id": "408",
+      "title": "Sleep Disorders",
+      "url": "https://medlineplus.gov/sleepdisorders.html",
+      "sha256": "b5da19425af7e7b5cdd03243249c95599fb1ed073f3da0166f345513aafbe028",
+      "split": "train"
+    },
+    "108": {
+      "family_id": "108",
+      "title": "Smoking",
+      "url": "https://medlineplus.gov/smoking.html",
+      "sha256": "3dacff9d0c79bf55d73aef3d65fff4b3f7c9d763e70adee4f2643f701f4400ef",
+      "split": "train"
+    },
+    "1531": {
+      "family_id": "1531",
+      "title": "Snoring",
+      "url": "https://medlineplus.gov/snoring.html",
+      "sha256": "a678d9d9c83c14bb2f6cc4d9cfe25383a504ba7aaf84240a1a005d37acce4635",
+      "split": "train"
+    },
+    "5959": {
+      "family_id": "5959",
+      "title": "Speech and Language Problems in Children",
+      "url": "https://medlineplus.gov/speechandlanguageproblemsinchildren.html",
+      "sha256": "5e685baa992403d488bedd8d5b12bd5f33a9c0fdc03b514cce94af6951913c3e",
+      "split": "train"
+    },
+    "5249": {
+      "family_id": "5249",
+      "title": "Spider Bites",
+      "url": "https://medlineplus.gov/spiderbites.html",
+      "sha256": "90facb7a35879a9ae4e5051158d153f262f22a56161d9978bf28bafc7e6667fc",
+      "split": "train"
+    },
+    "411": {
+      "family_id": "411",
+      "title": "Spinal Cord Injuries",
+      "url": "https://medlineplus.gov/spinalcordinjuries.html",
+      "sha256": "d8995cc8f288f70c36c0a3c5e2346bc93b872d98f167a27dbc771cf3f24c5531",
+      "split": "train"
+    },
+    "1694": {
+      "family_id": "1694",
+      "title": "Spinal Muscular Atrophy",
+      "url": "https://medlineplus.gov/spinalmuscularatrophy.html",
+      "sha256": "28e097ff28d7187a292fff52f5eb42543394d807262c9da037277ad62526a392",
+      "split": "train"
+    },
+    "418": {
+      "family_id": "418",
+      "title": "Staphylococcal Infections",
+      "url": "https://medlineplus.gov/staphylococcalinfections.html",
+      "sha256": "67e88385393e16c18c988c641d86d837aa81b78d617a30d5cbe02872203df4c8",
+      "split": "train"
+    },
+    "4909": {
+      "family_id": "4909",
+      "title": "Statins",
+      "url": "https://medlineplus.gov/statins.html",
+      "sha256": "2cdafbe83f725aaa768ee73da2bb28a94f110f31f3fcce51419e85ab9f209e23",
+      "split": "train"
+    },
+    "6465": {
+      "family_id": "6465",
+      "title": "Steatotic Liver Disease",
+      "url": "https://medlineplus.gov/steatoticliverdisease.html",
+      "sha256": "ba4abc7b2ad5a81614e81091fe49285f8cfcd60e79b95d708bbe073ba829156e",
+      "split": "train"
+    },
+    "5682": {
+      "family_id": "5682",
+      "title": "Stillbirth",
+      "url": "https://medlineplus.gov/stillbirth.html",
+      "sha256": "fc97a43d560bb724befb0712b50facabaff6ae0253370a5a4b23192ad033c342",
+      "split": "train"
+    },
+    "420": {
+      "family_id": "420",
+      "title": "Stomach Disorders",
+      "url": "https://medlineplus.gov/stomachdisorders.html",
+      "sha256": "077bc221bc5c952d8dbdacf315b1ba7ad05021f780264810cd89d3d6a1412f05",
+      "split": "train"
+    },
+    "421": {
+      "family_id": "421",
+      "title": "Streptococcal Infections",
+      "url": "https://medlineplus.gov/streptococcalinfections.html",
+      "sha256": "683042eaeab7edb6fa117fd10b8d4749da2d11c8595948e00c3c03a043083e28",
+      "split": "train"
+    },
+    "422": {
+      "family_id": "422",
+      "title": "Stress",
+      "url": "https://medlineplus.gov/stress.html",
+      "sha256": "5673631c0f6820ed34f9756205eae324b6a9ce23c386c6b6d8455ade6a9e8abd",
+      "split": "calibration"
+    },
+    "8": {
+      "family_id": "8",
+      "title": "Stroke",
+      "url": "https://medlineplus.gov/stroke.html",
+      "sha256": "e4a0212893ddddeaba342ae364c37ef2017ebff3d53281a70f60f3ce6f7e71de",
+      "split": "train"
+    },
+    "5914": {
+      "family_id": "5914",
+      "title": "Stroke Rehabilitation",
+      "url": "https://medlineplus.gov/strokerehabilitation.html",
+      "sha256": "0a9300aa3bd0fff2e98edb296c9e211bb8ce4ed56e964c07cdcccfb45f4db7e2",
+      "split": "train"
+    },
+    "3629": {
+      "family_id": "3629",
+      "title": "Stuttering",
+      "url": "https://medlineplus.gov/stuttering.html",
+      "sha256": "6717c98505a8deedf7be63b0f40c78f7cb661384b381eb8a6ef4e6be78dff124",
+      "split": "train"
+    },
+    "4266": {
+      "family_id": "4266",
+      "title": "Sudden Cardiac Arrest",
+      "url": "https://medlineplus.gov/suddencardiacarrest.html",
+      "sha256": "d2599381d87aaa8b46c41daf733e2d33ae81ec5bcb253d92176ddc0998987015",
+      "split": "train"
+    },
+    "424": {
+      "family_id": "424",
+      "title": "Suicide",
+      "url": "https://medlineplus.gov/suicide.html",
+      "sha256": "34d7364c2b358e368ae963c750fb1b10ccb825ee11864aeb708f0b2621a151f0",
+      "split": "train"
+    },
+    "3073": {
+      "family_id": "3073",
+      "title": "Talking With Your Doctor",
+      "url": "https://medlineplus.gov/talkingwithyourdoctor.html",
+      "sha256": "b3e0f0914b8da31d0c655dc338ada6cc76bfe6f905106dac548399462f996b3b",
+      "split": "train"
+    },
+    "6541": {
+      "family_id": "6541",
+      "title": "Tanning",
+      "url": "https://medlineplus.gov/tanning.html",
+      "sha256": "3c6118b021b7ed025949edb5c367b3c647d15cdcf67da899e13ee876ef76423a",
+      "split": "train"
+    },
+    "6931": {
+      "family_id": "6931",
+      "title": "Teen Depression",
+      "url": "https://medlineplus.gov/teendepression.html",
+      "sha256": "895c7493dcb21c468f975f368e031be00964526b1e97cb58d6047383e743d4fb",
+      "split": "train"
+    },
+    "1587": {
+      "family_id": "1587",
+      "title": "Teen Development",
+      "url": "https://medlineplus.gov/teendevelopment.html",
+      "sha256": "91a658ef4342428c9daae45900bf0fe2ea365593fae9ebb6ce53334d04372a91",
+      "split": "calibration"
+    },
+    "3637": {
+      "family_id": "3637",
+      "title": "Teen Mental Health",
+      "url": "https://medlineplus.gov/teenmentalhealth.html",
+      "sha256": "c9d6e774eadffd127483a1106af3875e38a7e0dadaeb88227c937cafe71145c0",
+      "split": "train"
+    },
+    "1459": {
+      "family_id": "1459",
+      "title": "Teen Sexual Health",
+      "url": "https://medlineplus.gov/teensexualhealth.html",
+      "sha256": "f09c7b9b447ae2f4b67483fb7411c3af8a26ef5d710139d77df376f1338b40cb",
+      "split": "train"
+    },
+    "7467": {
+      "family_id": "7467",
+      "title": "Telehealth",
+      "url": "https://medlineplus.gov/telehealth.html",
+      "sha256": "1e9735a0ce772e434995a65aeeb2b1c74912d0348f7a0597a3f1528a5bae08aa",
+      "split": "train"
+    },
+    "1235": {
+      "family_id": "1235",
+      "title": "Temporomandibular Disorders",
+      "url": "https://medlineplus.gov/temporomandibulardisorders.html",
+      "sha256": "3bed1ef83db294c103766727136d4a518305dc49e725be4870ad24931df2db65",
+      "split": "train"
+    },
+    "434": {
+      "family_id": "434",
+      "title": "Testicular Cancer",
+      "url": "https://medlineplus.gov/testicularcancer.html",
+      "sha256": "bd62ccf94388e70b4866d74e7ec22121fbc93c3601dc423c8fa5e1da20e7951c",
+      "split": "train"
+    },
+    "4280": {
+      "family_id": "4280",
+      "title": "Testicular Disorders",
+      "url": "https://medlineplus.gov/testiculardisorders.html",
+      "sha256": "fa4ba8a9b2ad4ab47e34c835e4e04b5b5b38abb5e95d4ffbfab10f95b77fcb85",
+      "split": "train"
+    },
+    "435": {
+      "family_id": "435",
+      "title": "Tetanus",
+      "url": "https://medlineplus.gov/tetanus.html",
+      "sha256": "570c089cafed2542bc32eacaa26879d98294512e44c4dfd5c3d981b3735f340f",
+      "split": "train"
+    },
+    "6322": {
+      "family_id": "6322",
+      "title": "Tetanus, Diphtheria, and Pertussis Vaccines",
+      "url": "https://medlineplus.gov/tetanusdiphtheriaandpertussisvaccines.html",
+      "sha256": "9840f36a2df5a6b46f5273c3fedc2ca692eeae040e6faaf1024d8f3204c3f0f5",
+      "split": "train"
+    },
+    "1660": {
+      "family_id": "1660",
+      "title": "Throat Disorders",
+      "url": "https://medlineplus.gov/throatdisorders.html",
+      "sha256": "8f062f39209c89ffe0ab26cc3b332749b8411015b51f260b46539a7e82dca16e",
+      "split": "train"
+    },
+    "438": {
+      "family_id": "438",
+      "title": "Thyroid Cancer",
+      "url": "https://medlineplus.gov/thyroidcancer.html",
+      "sha256": "198e943129d0d5357653f49a66615ebf31bf49e6ca443b5f82c4979ff8f2c58e",
+      "split": "train"
+    },
+    "439": {
+      "family_id": "439",
+      "title": "Thyroid Diseases",
+      "url": "https://medlineplus.gov/thyroiddiseases.html",
+      "sha256": "96648259ab1cde0dfb30ed0f527782ce900ce0c2d80f4112e93f107f07199b3e",
+      "split": "train"
+    },
+    "6371": {
+      "family_id": "6371",
+      "title": "Thyroid Tests",
+      "url": "https://medlineplus.gov/thyroidtests.html",
+      "sha256": "0f4ae9f25b208823b118663ce007ec5209818f39129b5fa1b4d975e52a678a4e",
+      "split": "validation"
+    },
+    "1645": {
+      "family_id": "1645",
+      "title": "Tick Bites",
+      "url": "https://medlineplus.gov/tickbites.html",
+      "sha256": "fabae31e2ea07d3d0e54f2e55c7927489852700eefccf290b06b919cf4a0738b",
+      "split": "calibration"
+    },
+    "5424": {
+      "family_id": "5424",
+      "title": "Toddler Development",
+      "url": "https://medlineplus.gov/toddlerdevelopment.html",
+      "sha256": "acb3cceaeb51bce6c89c460e2c5e8934dfefb56e3d87b33d47ee069c751ea005",
+      "split": "train"
+    },
+    "1547": {
+      "family_id": "1547",
+      "title": "Toddler Health",
+      "url": "https://medlineplus.gov/toddlerhealth.html",
+      "sha256": "4205962ecabbe922c3b8c3c1963a2b44423237c73f5a6cc0f1d8f11ced4b3286",
+      "split": "train"
+    },
+    "6440": {
+      "family_id": "6440",
+      "title": "Tonsillitis",
+      "url": "https://medlineplus.gov/tonsillitis.html",
+      "sha256": "190fc42730933371126dc2e24157c346fca714c50f122e3c9c4b814ebfb7dcc3",
+      "split": "train"
+    },
+    "4602": {
+      "family_id": "4602",
+      "title": "Tornadoes",
+      "url": "https://medlineplus.gov/tornadoes.html",
+      "sha256": "58ead824c7c32f0e9fd5c0b5998b4f015ebbff4157df0564720055c306686f86",
+      "split": "train"
+    },
+    "271": {
+      "family_id": "271",
+      "title": "Traumatic Brain Injury",
+      "url": "https://medlineplus.gov/traumaticbraininjury.html",
+      "sha256": "de9408b446550fedaf45faa762fd6cd9b703188655e40ce2d124121fa31fe35a",
+      "split": "train"
+    },
+    "444": {
+      "family_id": "444",
+      "title": "Traveler's Health",
+      "url": "https://medlineplus.gov/travelershealth.html",
+      "sha256": "87af09b2f1d27e94792729b3e90fe0ac4be825820598d8f898ebc41e2f9067fc",
+      "split": "validation"
+    },
+    "1315": {
+      "family_id": "1315",
+      "title": "Tremor",
+      "url": "https://medlineplus.gov/tremor.html",
+      "sha256": "4175ef06dc29b4df11d4dca528ff9a99a8bba71dd12a5834a0a090b23261b572",
+      "split": "train"
+    },
+    "4606": {
+      "family_id": "4606",
+      "title": "Tsunamis",
+      "url": "https://medlineplus.gov/tsunamis.html",
+      "sha256": "38043b07b3d2b70365d4ba827be8c11105517ecef36eb8f55c4e1c0a7fa81522",
+      "split": "train"
+    },
+    "41": {
+      "family_id": "41",
+      "title": "Tuberculosis",
+      "url": "https://medlineplus.gov/tuberculosis.html",
+      "sha256": "f101904647fa66e0bdf2c0c13e663478e85cdd7e118b35197a46faa1a2e65094",
+      "split": "train"
+    },
+    "5534": {
+      "family_id": "5534",
+      "title": "Tumors and Pregnancy",
+      "url": "https://medlineplus.gov/tumorsandpregnancy.html",
+      "sha256": "9b7a9ee8791e6dd71870c06c7cfc17d5c02bf2addea67846920a2b8da3906681",
+      "split": "train"
+    },
+    "5431": {
+      "family_id": "5431",
+      "title": "Uncommon Infant and Newborn Problems",
+      "url": "https://medlineplus.gov/uncommoninfantandnewbornproblems.html",
+      "sha256": "b48c319ae5b0f04593b893c8d2221a2ce68bcaec8ae4b43c41cc2c516a468d14",
+      "split": "train"
+    },
+    "114": {
+      "family_id": "114",
+      "title": "Urinary Incontinence",
+      "url": "https://medlineplus.gov/urinaryincontinence.html",
+      "sha256": "c72165accbe797f832f272caef971244e4d0c5662aa80ed68d9b7db1b186c77a",
+      "split": "train"
+    },
+    "448": {
+      "family_id": "448",
+      "title": "Urinary Tract Infections",
+      "url": "https://medlineplus.gov/urinarytractinfections.html",
+      "sha256": "534495f8bb558fe68e0f29e15d602c00107dd2c8a8c94c095158fdd32922c085",
+      "split": "train"
+    },
+    "4889": {
+      "family_id": "4889",
+      "title": "Urine and Urination",
+      "url": "https://medlineplus.gov/urineandurination.html",
+      "sha256": "a8c57b4d99ee6e74cbfe6d1437c46e478be8f4f5da07c883c49d83be2aafc3a7",
+      "split": "validation"
+    },
+    "449": {
+      "family_id": "449",
+      "title": "Uterine Cancer",
+      "url": "https://medlineplus.gov/uterinecancer.html",
+      "sha256": "59e156e581117dafa4b2603e65cd1526d4ea4c261137858ad6b463a075989c11",
+      "split": "validation"
+    },
+    "477": {
+      "family_id": "477",
+      "title": "Uterine Diseases",
+      "url": "https://medlineplus.gov/uterinediseases.html",
+      "sha256": "15f1072eb235b4e2ac02179ec75dacb7e1dbe41623b199c2171162ceb63167e4",
+      "split": "train"
+    },
+    "1222": {
+      "family_id": "1222",
+      "title": "Uterine Fibroids",
+      "url": "https://medlineplus.gov/uterinefibroids.html",
+      "sha256": "a173b7116938e191336ec09aa3134ee043367adb4ae2532aac1d431be1c48b41",
+      "split": "train"
+    },
+    "7667": {
+      "family_id": "7667",
+      "title": "Vaccine Safety",
+      "url": "https://medlineplus.gov/vaccinesafety.html",
+      "sha256": "acd87630fcd11ac73ef0e29ac70969694156a196251921f7cc42c4bb83778952",
+      "split": "train"
+    },
+    "4875": {
+      "family_id": "4875",
+      "title": "Vaginal Bleeding",
+      "url": "https://medlineplus.gov/vaginalbleeding.html",
+      "sha256": "7d8946a7fd0b0fb26ce3c4a6b5a57e86e9d252b5709c1291656261f9c91064a8",
+      "split": "train"
+    },
+    "494": {
+      "family_id": "494",
+      "title": "Vaginal Cancer",
+      "url": "https://medlineplus.gov/vaginalcancer.html",
+      "sha256": "43ed4713d30849ad90cbc1242cd76fb8e420570caba2163909682c3bf0fd89f8",
+      "split": "train"
+    },
+    "6417": {
+      "family_id": "6417",
+      "title": "Vaginitis",
+      "url": "https://medlineplus.gov/vaginitis.html",
+      "sha256": "89667056a11499816870efb2dc2c254e2b91f699ab5319fd62f4b28619db6311",
+      "split": "train"
+    },
+    "533": {
+      "family_id": "533",
+      "title": "Vascular Diseases",
+      "url": "https://medlineplus.gov/vasculardiseases.html",
+      "sha256": "c443ec2472ee6e0118393fb4abc62ca61461f14d7681cebabb9e714d20ea6e81",
+      "split": "train"
+    },
+    "5821": {
+      "family_id": "5821",
+      "title": "Vasectomy",
+      "url": "https://medlineplus.gov/vasectomy.html",
+      "sha256": "25fa745c53f570efe376d715c904fcda285028f89e611b6d8cdff63cc5642b05",
+      "split": "validation"
+    },
+    "165": {
+      "family_id": "165",
+      "title": "Vision Impairment and Blindness",
+      "url": "https://medlineplus.gov/visionimpairmentandblindness.html",
+      "sha256": "51347f156542dfafb1e1fe4e2a66101b010bb6a7136b214bab5e847e6aa70fdf",
+      "split": "train"
+    },
+    "6288": {
+      "family_id": "6288",
+      "title": "Vital Signs",
+      "url": "https://medlineplus.gov/vitalsigns.html",
+      "sha256": "d7e7020929b9fac5ac8899e3b9377a3e90b4562bd0540550d7d2d80dd50d1e7e",
+      "split": "train"
+    },
+    "5373": {
+      "family_id": "5373",
+      "title": "Vitamin A",
+      "url": "https://medlineplus.gov/vitamina.html",
+      "sha256": "7b32c634acab71c4364278886d0567e575463b0db69433c9c5dcdb1c96c1cbe1",
+      "split": "train"
+    },
+    "5383": {
+      "family_id": "5383",
+      "title": "Vitamin D",
+      "url": "https://medlineplus.gov/vitamind.html",
+      "sha256": "04b1e790b5068c86c71675debbccd121e1ffec8d0c5a0ff246de17e377b9a1ed",
+      "split": "train"
+    },
+    "6448": {
+      "family_id": "6448",
+      "title": "Vitamin D Deficiency",
+      "url": "https://medlineplus.gov/vitaminddeficiency.html",
+      "sha256": "0c5b7bcd7c34c7edca512e5281cc01cdae92cd1e0eca2719fc418d6dc4a80376",
+      "split": "train"
+    },
+    "5385": {
+      "family_id": "5385",
+      "title": "Vitamin E",
+      "url": "https://medlineplus.gov/vitamine.html",
+      "sha256": "c0991e210f5c9fe4e461ca84e842769630ce9ff0b7ae56e717c7a2380c6b9439",
+      "split": "train"
+    },
+    "5388": {
+      "family_id": "5388",
+      "title": "Vitamin K",
+      "url": "https://medlineplus.gov/vitamink.html",
+      "sha256": "f9b73c46a13c1ae1f3a381c783fc0795f39b20c3e9c3930402626074e4a0f513",
+      "split": "train"
+    },
+    "456": {
+      "family_id": "456",
+      "title": "Vitamins",
+      "url": "https://medlineplus.gov/vitamins.html",
+      "sha256": "74634131308bacf3007bdfab41739788d635d41a23248e752588a5f2c0c662bb",
+      "split": "train"
+    },
+    "4600": {
+      "family_id": "4600",
+      "title": "Volcanoes",
+      "url": "https://medlineplus.gov/volcanoes.html",
+      "sha256": "ee146b2eeaf2a617180f619ee7ad5c4388a07d312efa2fab664a170696d1180e",
+      "split": "train"
+    },
+    "4361": {
+      "family_id": "4361",
+      "title": "Von Hippel-Lindau Syndrome",
+      "url": "https://medlineplus.gov/vonhippellindausyndrome.html",
+      "sha256": "97e95ddf00f0b210132eea465d4cabb8169ff8f6cb3802f623d04ded3b6230d5",
+      "split": "train"
+    },
+    "1701": {
+      "family_id": "1701",
+      "title": "Vulvar Cancer",
+      "url": "https://medlineplus.gov/vulvarcancer.html",
+      "sha256": "4de0dd6e673d7560d8a2b74c8e914ef2ab619cd8002f8bc3c618475b318766b5",
+      "split": "train"
+    },
+    "4550": {
+      "family_id": "4550",
+      "title": "Vulvar Disorders",
+      "url": "https://medlineplus.gov/vulvardisorders.html",
+      "sha256": "bacf99a448c7640fad34a92722c4f03440d32bf9157ab8916419e8689458711c",
+      "split": "train"
+    },
+    "5673": {
+      "family_id": "5673",
+      "title": "Walking Problems",
+      "url": "https://medlineplus.gov/walkingproblems.html",
+      "sha256": "c88821770ac6f52bdcb3e8cb62a1fc27be72afa7c543323a6a415175658a6212",
+      "split": "train"
+    },
+    "459": {
+      "family_id": "459",
+      "title": "Warts",
+      "url": "https://medlineplus.gov/warts.html",
+      "sha256": "87c49c21d5e7640cda71db15c049dfe570bc5884b5831330154fec9cab3b5c10",
+      "split": "train"
+    },
+    "480": {
+      "family_id": "480",
+      "title": "Weight Control",
+      "url": "https://medlineplus.gov/weightcontrol.html",
+      "sha256": "cf368fa4444242dfe2a884f77bf6607ca19dc7950182f613b44da00c6674c1c5",
+      "split": "train"
+    },
+    "1377": {
+      "family_id": "1377",
+      "title": "West Nile Virus",
+      "url": "https://medlineplus.gov/westnilevirus.html",
+      "sha256": "275ffc0f596ff663b726c8df1cf8930f4c887fb360bf99cbceef25606399ef91",
+      "split": "validation"
+    },
+    "461": {
+      "family_id": "461",
+      "title": "Whooping Cough",
+      "url": "https://medlineplus.gov/whoopingcough.html",
+      "sha256": "4c20bbb9e18ad7abb33c4c1ae561ba85038cdc315c86981ef9e4813ece2d3b92",
+      "split": "train"
+    },
+    "4604": {
+      "family_id": "4604",
+      "title": "Wildfires",
+      "url": "https://medlineplus.gov/wildfires.html",
+      "sha256": "3f2ebbb9a7c93eb08ef6948ec41f2de6e2e4ef34457f5ae8254f6a933bf21da6",
+      "split": "train"
+    },
+    "4608": {
+      "family_id": "4608",
+      "title": "Winter Weather Emergencies",
+      "url": "https://medlineplus.gov/winterweatheremergencies.html",
+      "sha256": "b2d7f79a2ee88d049046861a5947634fdd404b5e9128f2dd7ed7013ecd7026bb",
+      "split": "train"
+    },
+    "5321": {
+      "family_id": "5321",
+      "title": "Women's Health Checkup",
+      "url": "https://medlineplus.gov/womenshealthcheckup.html",
+      "sha256": "c8fd0faadec212c21009f4f8cff5e6cef58d6c330ee96cf7a30930eb5741a2af",
+      "split": "train"
+    },
+    "1657": {
+      "family_id": "1657",
+      "title": "Wrist Injuries and Disorders",
+      "url": "https://medlineplus.gov/wristinjuriesanddisorders.html",
+      "sha256": "75710e6a801492c8624821aa42b05c29449f2d547cc3b61ad1091e6af17af14a",
+      "split": "train"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "checked_on": "2026-11-02",
+  "upstream_repository": "https://github.com/tinnel123666888/OmniJev",
+  "adapter": "tinnel123/OmniJev",
+  "adapter_revision": "91248107b7f5230bd5715db2e62e83c9a72fcd81",
+  "mirror": "AI-ModelScope/OmniJev",
+  "mirror_revision": "c93c92e235723b300d4c315bd185b0264666a98d",
+  "adapter_and_code_license": "Apache-2.0",
+  "license_source": "https://github.com/tinnel123666888/OmniJev/blob/main/LICENSE",
+  "license_sha256": "c35d34d2a8cc22ca043ecaf7989586960c9305d45a9ec81ff839b736a3ffbd21",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "base_license": "Apache-2.0",
+  "ms_swift_revision": "680df5c670d7e8add906ac49381d603869410612",
+  "source_limitations": [
+    "The official card identifies Beijing Zhongguancun Academy, Institute of Automation CAS, and Zevo as developers.",
+    "The official card says the original training manifest remains under audit; source families and row-level holdouts do not establish episode-level isolation.",
+    "LICENSE contains a stale Qwen3-VL backbone name; README, release_manifest.json and adapter_config.json consistently identify Qwen3.5-4B.",
+    "No claim is made that upstream's historical evaluation tables are matched-sample benchmark comparisons."
+  ],
+  "use_decision": "The published Apache-2.0 license permits integration and continued training; preserve required notices. Benchmark dataset licensing is recorded separately."
+}

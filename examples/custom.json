@@ -1,0 +1,16 @@
+{
+  "payload": {
+    "rows": [
+      {
+        "query": {
+          "text": "What is 2+2?"
+        },
+        "gold": "B",
+        "choices": {
+          "A": "3",
+          "B": "4"
+        }
+      }
+    ]
+  }
+}

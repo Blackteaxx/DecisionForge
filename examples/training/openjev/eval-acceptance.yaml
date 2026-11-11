@@ -1,0 +1,13 @@
+benchmark: generic
+data:
+  path: ../../../outputs/acceptance/openjev/data/test.jsonl
+model:
+  adapter: openjev_local
+  path: ../../../outputs/acceptance/openjev/model
+  device: cuda:0
+  precision: bf16
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 300
+output: ../../../outputs/acceptance/openjev-eval

@@ -1,0 +1,196 @@
+{
+    "$defs": {
+        "JEVQuestion": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "enum": [
+                        "choice",
+                        "noul",
+                        "score"
+                    ],
+                    "title": "Type",
+                    "type": "string"
+                },
+                "instructions": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        }
+                    ],
+                    "title": "Instructions"
+                },
+                "criteria": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "additionalProperties": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "object"
+                                    },
+                                    {
+                                        "items": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "array"
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "additionalProperties": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "object"
+                                    },
+                                    {
+                                        "items": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "array"
+                                    }
+                                ]
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Criteria"
+                }
+            },
+            "required": [
+                "type",
+                "instructions"
+            ],
+            "title": "JEVQuestion",
+            "type": "object"
+        },
+        "JEVRequest": {
+            "additionalProperties": false,
+            "properties": {
+                "model": {
+                    "title": "Model",
+                    "type": "string"
+                },
+                "state": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        }
+                    ],
+                    "title": "State"
+                },
+                "questions": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/JEVQuestion"
+                    },
+                    "minProperties": 1,
+                    "title": "Questions",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "model",
+                "state",
+                "questions"
+            ],
+            "title": "JEVRequest",
+            "type": "object"
+        },
+        "JsonValue": {}
+    },
+    "additionalProperties": false,
+    "description": "Compact training export; detailed provenance stays in the checkpoint.",
+    "properties": {
+        "schema_version": {
+            "const": "decisionforge.training.v2",
+            "default": "decisionforge.training.v2",
+            "title": "Schema Version",
+            "type": "string"
+        },
+        "record_id": {
+            "minLength": 1,
+            "title": "Record Id",
+            "type": "string"
+        },
+        "group_id": {
+            "minLength": 1,
+            "title": "Group Id",
+            "type": "string"
+        },
+        "split": {
+            "minLength": 1,
+            "title": "Split",
+            "type": "string"
+        },
+        "request": {
+            "$ref": "#/$defs/JEVRequest"
+        },
+        "supervision": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "integer"
+                    }
+                ]
+            },
+            "title": "Supervision",
+            "type": "object"
+        }
+    },
+    "required": [
+        "record_id",
+        "group_id",
+        "split",
+        "request",
+        "supervision"
+    ],
+    "title": "LegacyTrainingExample",
+    "type": "object"
+}

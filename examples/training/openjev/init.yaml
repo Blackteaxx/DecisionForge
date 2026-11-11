@@ -1,0 +1,18 @@
+# New run with fresh AdamW state; complete-state --resume remains unsupported.
+backend: openjev
+data:
+  path: ../../../data/local/openjev/typed-decisions-cn.v3.jsonl
+openjev:
+  init_checkpoint: ../../../outputs/train/openjev-single/model
+  reinforce_steps: 2
+  m: 2
+  max_new_tokens: 32
+  dev_cap: 2
+  test_cap: 2
+model:
+  max_seq_length: 4096
+training:
+  max_steps: 2
+  batch_size: 1
+output:
+  directory: ../../../outputs/train/openjev-init

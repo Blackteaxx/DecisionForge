@@ -1,0 +1,15 @@
+benchmark: jevbench
+benchmark_version: b6b8fff7e345b98c060ad26c13308860ddc67004
+data:
+  path: ../../data/benchmarks/jevbench/processed/public.jsonl
+  splits: [public]
+model:
+  base_url: https://openrouter.ai
+  endpoint_path: /api/alpha/decisions
+  model: typesafe/jev-1.13
+  api_key_env: OPENROUTER_API_KEY
+execution:
+  concurrency: 8
+  timeout: 60
+  max_attempts: 3
+output: ../../outputs/eval/jevbench-public

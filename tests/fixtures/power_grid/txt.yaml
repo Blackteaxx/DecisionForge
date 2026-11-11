@@ -1,0 +1,24 @@
+project:
+  language: en
+input:
+  type: txt
+  path: source.txt
+  extract_context: true
+task:
+  domain_profile: power_grid
+  modes: [choice]
+  difficulty: 0.6
+context:
+  generate_if_missing: true
+  relevance: 0.7
+choice:
+  target_option_count: 4
+llm:
+  model: ${OPENAI_MODEL}
+verification:
+  max_semantic_repairs: 2
+execution:
+  concurrency: 4
+  llm_concurrency: 8
+output:
+  directory: ../../../outputs/domain/power_grid/txt

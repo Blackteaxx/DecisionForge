@@ -1,0 +1,325 @@
+{
+  "schema_version": "medical.data-quality-and-usage.v1",
+  "created_at": "2026-10-28T08:00:51.819136+00:00",
+  "runs": [
+    {
+      "id": "construct-001",
+      "teacher": {
+        "request_identities_with_responses": 487,
+        "attempts": 502,
+        "http_statuses": {
+          "200": 495,
+          "0": 7
+        },
+        "response_models": {
+          "deepseek-flash": 495
+        },
+        "known_usage_attempts": 495,
+        "missing_usage_attempts": 7,
+        "input_tokens": 640344,
+        "output_tokens": 2127339,
+        "unknown_outcomes": 7,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown outcomes may also have been charged"
+      },
+      "native_checker": {
+        "attempts": 2330,
+        "known_usage_attempts": 2312,
+        "missing_usage_attempts": 18,
+        "input_tokens": 5556418,
+        "output_tokens": 1770750,
+        "configured_models": {
+          "deepseek-flash": 2330
+        },
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified",
+        "summary": {
+          "accepted": 2299,
+          "failed": 15,
+          "input_failures": 0,
+          "review": 15,
+          "rejected": 0,
+          "status": "complete",
+          "modes": {
+            "choice": 2299
+          },
+          "splits": {
+            "calibration": 219,
+            "train": 1911,
+            "validation": 169
+          },
+          "performance": {
+            "elapsed_seconds": 1240.1991928219795,
+            "llm_concurrency": 12,
+            "qa_concurrency": 12,
+            "text_batch_concurrency": 4,
+            "llm_api_attempts": 2330
+          },
+          "recorded_or_reserved_cost_usd": null
+        }
+      },
+      "source_failures": 9,
+      "generator_rejected_items": 304,
+      "constructor_quarantine": 4
+    },
+    {
+      "id": "construct-002",
+      "teacher": {
+        "request_identities_with_responses": 304,
+        "attempts": 312,
+        "http_statuses": {
+          "200": 309,
+          "0": 3
+        },
+        "response_models": {
+          "deepseek-flash": 309
+        },
+        "known_usage_attempts": 309,
+        "missing_usage_attempts": 3,
+        "input_tokens": 408786,
+        "output_tokens": 1855550,
+        "unknown_outcomes": 3,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown outcomes may also have been charged"
+      },
+      "native_checker": {
+        "attempts": 2016,
+        "known_usage_attempts": 2004,
+        "missing_usage_attempts": 12,
+        "input_tokens": 4840189,
+        "output_tokens": 1559753,
+        "configured_models": {
+          "deepseek-flash": 2016
+        },
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified",
+        "summary": {
+          "accepted": 1996,
+          "failed": 9,
+          "input_failures": 0,
+          "review": 9,
+          "rejected": 0,
+          "status": "complete",
+          "modes": {
+            "choice": 1996
+          },
+          "splits": {
+            "train": 1658,
+            "calibration": 174,
+            "validation": 164
+          },
+          "performance": {
+            "elapsed_seconds": 1155.8869772376493,
+            "llm_concurrency": 12,
+            "qa_concurrency": 12,
+            "text_batch_concurrency": 4,
+            "llm_api_attempts": 2016
+          },
+          "recorded_or_reserved_cost_usd": null
+        }
+      },
+      "source_failures": 5,
+      "generator_rejected_items": 174,
+      "constructor_quarantine": 1
+    },
+    {
+      "id": "construct-003",
+      "teacher": {
+        "request_identities_with_responses": 195,
+        "attempts": 205,
+        "http_statuses": {
+          "200": 198,
+          "0": 7
+        },
+        "response_models": {
+          "deepseek-flash": 198
+        },
+        "known_usage_attempts": 198,
+        "missing_usage_attempts": 7,
+        "input_tokens": 255372,
+        "output_tokens": 1162322,
+        "unknown_outcomes": 7,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown outcomes may also have been charged"
+      },
+      "native_checker": {
+        "attempts": 1279,
+        "known_usage_attempts": 1257,
+        "missing_usage_attempts": 22,
+        "input_tokens": 2968130,
+        "output_tokens": 975590,
+        "configured_models": {
+          "deepseek-flash": 1279
+        },
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified",
+        "summary": {
+          "accepted": 1253,
+          "failed": 6,
+          "input_failures": 0,
+          "review": 6,
+          "rejected": 0,
+          "status": "complete",
+          "modes": {
+            "choice": 1253
+          },
+          "splits": {
+            "train": 1039,
+            "validation": 80,
+            "calibration": 134
+          },
+          "performance": {
+            "elapsed_seconds": 785.3240050571039,
+            "llm_concurrency": 12,
+            "qa_concurrency": 12,
+            "text_batch_concurrency": 4,
+            "llm_api_attempts": 1279
+          },
+          "recorded_or_reserved_cost_usd": null
+        }
+      },
+      "source_failures": 5,
+      "generator_rejected_items": 114,
+      "constructor_quarantine": 2
+    },
+    {
+      "id": "construct-004",
+      "teacher": {
+        "request_identities_with_responses": 77,
+        "attempts": 90,
+        "http_statuses": {
+          "200": 78,
+          "0": 12
+        },
+        "response_models": {
+          "deepseek-flash": 78
+        },
+        "known_usage_attempts": 78,
+        "missing_usage_attempts": 12,
+        "input_tokens": 99637,
+        "output_tokens": 486503,
+        "unknown_outcomes": 12,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown outcomes may also have been charged"
+      },
+      "native_checker": {
+        "attempts": 564,
+        "known_usage_attempts": 544,
+        "missing_usage_attempts": 20,
+        "input_tokens": 1278715,
+        "output_tokens": 432725,
+        "configured_models": {
+          "deepseek-flash": 564
+        },
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified",
+        "summary": {
+          "accepted": 540,
+          "failed": 7,
+          "input_failures": 0,
+          "review": 7,
+          "rejected": 0,
+          "status": "complete",
+          "modes": {
+            "choice": 540
+          },
+          "splits": {
+            "calibration": 71,
+            "validation": 33,
+            "train": 436
+          },
+          "performance": {
+            "elapsed_seconds": 432.5479759578593,
+            "llm_concurrency": 12,
+            "qa_concurrency": 12,
+            "text_batch_concurrency": 4,
+            "llm_api_attempts": 564
+          },
+          "recorded_or_reserved_cost_usd": null
+        }
+      },
+      "source_failures": 3,
+      "generator_rejected_items": 34,
+      "constructor_quarantine": 0
+    }
+  ],
+  "admitted_dataset": {
+    "status": "passed",
+    "admitted_at": "2026-10-28T07:47:34.803847+00:00",
+    "training_sha256": "1c60d6d832ead5b11a78e45cc0a64810747548dcf66248121ed0208b7eb0442d",
+    "roles": {
+      "train": {
+        "records": 5024,
+        "groups": 218,
+        "tasks": {
+          "message_priority": 2374,
+          "triage_action": 2650
+        }
+      },
+      "validation": {
+        "records": 446,
+        "groups": 23,
+        "tasks": {
+          "message_priority": 208,
+          "triage_action": 238
+        }
+      },
+      "calibration": {
+        "records": 595,
+        "groups": 28,
+        "tasks": {
+          "message_priority": 266,
+          "triage_action": 329
+        }
+      }
+    },
+    "source_checker_runs": 4,
+    "checker_accepted_before_global_quarantine": 6088,
+    "after_global_quarantine": 6065,
+    "quarantine_count": 23,
+    "overlap_audit": "historical-task/data/prepared/joint-001-overlap-audit.json",
+    "public_test_matches": 0,
+    "uses_public_targets": false,
+    "label_changes": 0,
+    "role_reassignments": 0,
+    "model_selection_role": "validation",
+    "temperature_fitting_role": "calibration"
+  },
+  "source_families": 309,
+  "by_role_semantic_labels": {
+    "train": {
+      "message_priority: Prioritize the first patient.": 1283,
+      "message_priority: Prioritize the second patient.": 1091,
+      "triage_action: Ask the smallest necessary clarification; current information is insufficient.": 683,
+      "triage_action: Recommend current nonurgent professional evaluation or care.": 893,
+      "triage_action: Offer self-care, monitoring, reassurance, or conditional safety-netting.": 669,
+      "triage_action: Recommend urgent or emergency-level evaluation now.": 405
+    },
+    "validation": {
+      "message_priority: Prioritize the first patient.": 114,
+      "triage_action: Recommend urgent or emergency-level evaluation now.": 42,
+      "message_priority: Prioritize the second patient.": 94,
+      "triage_action: Recommend current nonurgent professional evaluation or care.": 75,
+      "triage_action: Offer self-care, monitoring, reassurance, or conditional safety-netting.": 62,
+      "triage_action: Ask the smallest necessary clarification; current information is insufficient.": 59
+    },
+    "calibration": {
+      "message_priority: Prioritize the first patient.": 142,
+      "triage_action: Offer self-care, monitoring, reassurance, or conditional safety-netting.": 80,
+      "triage_action: Recommend urgent or emergency-level evaluation now.": 59,
+      "triage_action: Recommend current nonurgent professional evaluation or care.": 105,
+      "triage_action: Ask the smallest necessary clarification; current information is insufficient.": 85,
+      "message_priority: Prioritize the second patient.": 124
+    }
+  },
+  "teacher_usage_source": "every durable HTTP attempt, not just successful cached response identities",
+  "checker_usage_source": "native meta.events with api field; includes all recorded attempts",
+  "total_reported_input_tokens": 16047591,
+  "total_reported_output_tokens": 10370532,
+  "cost_usd": null,
+  "cost_basis": "boyue generation/checking rates not verified; never impute zero",
+  "training_targets": "synthetic teacher hard labels grounded in NLM summaries, not clinician-confirmed probabilities",
+  "adjudication": "data/prepared/overlap-adjudication.md",
+  "overlap_audit": "data/prepared/joint-001-overlap-audit.json",
+  "artifact_store": "historical-store/data/prepared/joint-001"
+}

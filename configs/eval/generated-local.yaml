@@ -1,0 +1,16 @@
+benchmark: generic
+data:
+  path: ../../outputs/train/generated/data/validation.jsonl
+  splits: [validation]
+model:
+  adapter: unsloth_local
+  path: ../../outputs/train/generated/model
+  max_seq_length: 2048
+  load_in_4bit: true
+  precision: auto
+  local_files_only: true
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 300
+output: ../../outputs/eval/generated-local

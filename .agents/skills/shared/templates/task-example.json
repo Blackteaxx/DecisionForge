@@ -1,0 +1,41 @@
+{
+  "schema_version": "decisionforge.agent-task.v1",
+  "task_id": "train-launch-example",
+  "goal": "在用户指定的 train-a 上启动已确认训练，启动后交接",
+  "created_at": "2026-10-21T10:00:00+08:00",
+  "updated_at": "2026-10-21T10:03:00+08:00",
+  "request": {
+    "stages": [{"stage": "train", "endpoint": "launch"}],
+    "status": "fulfilled",
+    "fulfilled_at": "2026-10-21T10:03:00+08:00"
+  },
+  "outcome": {"status": "not_applicable", "criteria": [], "evidence": []},
+  "repository": {"path": "/work/DecisionForge-data", "revision": "857cff14614b4ba553de7902f7af79c478020c49"},
+  "decisions": [{"id": "d1", "decision": "使用 train-a GPU 0 与既定 train.yaml，仅启动", "basis": "用户指令", "confirmed_at": "2026-10-21T10:00:00+08:00"}],
+  "authorizations": {"actions": ["启动既定配置", "处理环境与执行故障"], "decision_refs": ["d1"]},
+  "constraints": {"resource_refs": ["train-a"], "budget_usd": null, "other": ["GPU 0"]},
+  "resources": [
+    {"id": "train-a", "kind": "ssh", "locator": "ssh://train-a", "version": null, "access_method": "用户已有 SSH 配置，不保存私钥", "checked_at": "2026-10-21T10:03:00+08:00"}
+  ],
+  "stages": {
+    "train": {"status": "running", "run_ids": ["train-001"], "artifact_ids": ["train-config", "launch-log", "base-model", "trained-model"], "blocked_on": []}
+  },
+  "runs": [
+    {
+      "id": "train-001", "stage": "train", "resource_id": "train-a",
+      "repository_revision": "857cff14614b4ba553de7902f7af79c478020c49",
+      "config_artifact_id": "train-config", "status": "running",
+      "run_directory": "ssh://train-a/work/tasks/train-launch-example/training/train-001/run",
+      "job_id": "pid:3187", "checked_at": "2026-10-21T10:03:00+08:00",
+      "evidence": [{"observed_at": "2026-10-21T10:03:00+08:00", "observation": "演示观测：进程存活，模型正在加载；尚无最终模型", "artifact_id": "launch-log"}]
+    }
+  ],
+  "artifacts": [
+    {"id": "train-config", "stage": "train", "kind": "config", "storage": "archived", "path": "training/train-001/config.yaml", "resource_id": null, "version": null, "retrieval": null, "checked_at": "2026-10-21T10:02:00+08:00"},
+    {"id": "launch-log", "stage": "train", "kind": "log_summary", "storage": "archived", "path": "training/train-001/launch.md", "resource_id": null, "version": null, "retrieval": null, "checked_at": "2026-10-21T10:03:00+08:00"},
+    {"id": "base-model", "stage": "train", "kind": "base_model", "storage": "external", "path": "ssh://train-a/models/base-v2", "resource_id": "train-a", "version": "base-v2", "retrieval": "使用已有 SSH 配置读取 train-a:/models/base-v2；需要归档时再按用户要求复制", "checked_at": "2026-10-21T10:02:00+08:00"},
+    {"id": "trained-model", "stage": "train", "kind": "model", "storage": "pending", "path": "ssh://train-a/work/tasks/train-launch-example/training/train-001/run/model", "resource_id": "train-a", "version": null, "retrieval": "训练终态核查后再登记为 external 或取回归档", "checked_at": "2026-10-21T10:03:00+08:00"}
+  ],
+  "pending_decisions": [],
+  "events": [{"at": "2026-10-21T10:03:00+08:00", "stage": "train", "action": "确认启动并交接", "result": "启动请求已交付，训练仍在运行", "evidence_refs": ["launch-log"]}]
+}

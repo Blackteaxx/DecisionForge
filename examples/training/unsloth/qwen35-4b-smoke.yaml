@@ -1,0 +1,34 @@
+# Self-contained 20-step demo: the data ships alongside this configuration.
+backend: unsloth
+data:
+  path: ../data/typed-decisions-sample.jsonl
+  split_map: {train: train, validation: validation, calibration: calibration, test: test}
+  auto_holdout: {validation_fraction: 0.1, calibration_fraction: 0.1}
+  on_skipped: error
+  on_truncated: error
+model:
+  # Hugging Face model ID; a local path is resolved relative to this YAML.
+  name: Qwen/Qwen3.5-4B
+  revision: null
+  max_seq_length: 2048
+  load_in_4bit: true
+lora: {rank: 8, alpha: 8, dropout: 0.0}
+training:
+  seed: 3407
+  num_train_epochs: null
+  max_steps: 20
+  batch_size: 1
+  gradient_accumulation_steps: 1
+  learning_rate: 0.0002
+  head_learning_rate: 0.0001
+  warmup_steps: 0
+  weight_decay: 0.01
+  lr_scheduler_type: cosine
+  precision: auto
+  gradient_checkpointing: true
+  logging_steps: 5
+  save_steps: 10
+calibration: {enabled: true}
+output:
+  directory: ../../../outputs/train/qwen35-4b-smoke
+  save_merged: true

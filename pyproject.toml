@@ -1,0 +1,169 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "decisionforge"
+version = "0.1.0"
+description = "Auditable JEV data generation and native decision model evaluation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "DecisionForge contributors" }]
+dependencies = [
+  "openai>=2.0,<3", "pydantic>=2.11,<3", "PyYAML>=6.0,<7",
+  "python-dotenv>=1.1,<2", "filelock>=3.18,<4",
+  "httpx>=0.28,<1",
+  "Pillow>=12,<13", "typer>=0.15,<1", "click>=8.1,<9",
+]
+
+[project.optional-dependencies]
+pdf = []
+eval-data = ["pyarrow>=19"]
+eval-anyjev = [
+  "anyjev[hf] @ git+https://github.com/nokia-applied-research/AnyJev.git@35311c58955716cb8955ce1368a665988bc63735 ; sys_platform == 'linux' and python_version < '3.13'",
+  "numpy==1.26.4; sys_platform == 'linux' and python_version < '3.13'",
+  "torch==2.11.0; sys_platform == 'linux' and python_version < '3.13'",
+  "transformers==5.17.0; sys_platform == 'linux' and python_version < '3.13'",
+  "safetensors==0.8.0; sys_platform == 'linux' and python_version < '3.13'",
+]
+eval-llm2jev = [
+  "llm2jev @ git+https://github.com/Yinsongxu/LLM2Jev.git@f2bdad648e7a34bfce64401fb0f7c44bc13209ae ; sys_platform == 'linux' and python_version < '3.13'",
+  "sglang==0.5.12.post1; sys_platform == 'linux' and python_version < '3.13'",
+  "flash-attn-4==4.0.0b9; sys_platform == 'linux' and python_version < '3.13'",
+]
+
+train-unsloth = [
+  "unsloth==2026.10.3; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "unsloth_zoo==2026.10.3; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "transformers==5.17.0; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "torch==2.11.0; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "torchvision==0.26.0; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "xformers==0.0.35; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "peft==0.21.2; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "bitsandbytes==0.50.2; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "accelerate==1.13.0; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "safetensors==0.8.0; (sys_platform == 'linux' or sys_platform == 'win32') and python_version < '3.13'",
+  "numpy==1.26.4; sys_platform == 'linux' and python_version < '3.13'",
+  "triton-windows>=3.6,<3.7; (sys_platform == 'win32') and python_version < '3.13'",
+  "numpy>=2,<3; (sys_platform == 'win32') and python_version < '3.13'",
+]
+train-laya = [
+  "laya @ git+https://github.com/NandhaKishorM/laya.git@b9fe351ce81e2d974bca2bf219c1e4030c0a05ea ; sys_platform == 'linux' and python_version < '3.13'",
+  "torch==2.11.0; sys_platform == 'linux' and python_version < '3.13'",
+  "transformers==5.17.0; sys_platform == 'linux' and python_version < '3.13'",
+  "safetensors==0.8.0; sys_platform == 'linux' and python_version < '3.13'",
+  "numpy==1.26.4; sys_platform == 'linux' and python_version < '3.13'",
+  "huggingface_hub==1.33.0; sys_platform == 'linux' and python_version < '3.13'",
+  "tokenizers==0.23.3; sys_platform == 'linux' and python_version < '3.13'",
+]
+
+train-openjev = [
+  "openjev-rlcd @ git+https://github.com/ZimmyGao/openjev-rlcd.git@22db40ad3333f5cf0bc5139097da70e0f8c05018 ; sys_platform == 'linux' and python_version < '3.13'",
+  "torch==2.11.0; sys_platform == 'linux' and python_version < '3.13'",
+  "transformers==5.17.0; sys_platform == 'linux' and python_version < '3.13'",
+  "datasets==5.1.0; sys_platform == 'linux' and python_version < '3.13'",
+  "numpy==1.26.4; sys_platform == 'linux' and python_version < '3.13'",
+  "pyarrow==21.0.0; sys_platform == 'linux' and python_version < '3.13'",
+  "pandas==3.0.6; sys_platform == 'linux' and python_version < '3.13'",
+  "safetensors==0.8.0; sys_platform == 'linux' and python_version < '3.13'",
+  "huggingface_hub==1.33.0; sys_platform == 'linux' and python_version < '3.13'",
+  "tokenizers==0.23.3; sys_platform == 'linux' and python_version < '3.13'",
+]
+
+train-unsloth-full = [
+  "unsloth @ git+https://github.com/unslothai/unsloth.git@94a00e95a75d380da6b8477f1d42710d2d54e58f ; sys_platform == 'linux' and python_version < '3.13'",
+  "transformers==5.17.0; sys_platform == 'linux' and python_version < '3.13'",
+  "torch==2.11.0; sys_platform == 'linux' and python_version < '3.13'",
+  "torchvision==0.26.0; sys_platform == 'linux' and python_version < '3.13'",
+  "xformers==0.0.35; sys_platform == 'linux' and python_version < '3.13'",
+  "peft==0.21.2; sys_platform == 'linux' and python_version < '3.13'",
+  "bitsandbytes==0.50.2; sys_platform == 'linux' and python_version < '3.13'",
+  "accelerate==1.13.0; sys_platform == 'linux' and python_version < '3.13'",
+  "safetensors==0.8.0; sys_platform == 'linux' and python_version < '3.13'",
+  "numpy==1.26.4; sys_platform == 'linux' and python_version < '3.13'",
+  "pyarrow==21.0.0; sys_platform == 'linux' and python_version < '3.13'",
+]
+
+train-swift = [
+  "ms-swift @ git+https://github.com/modelscope/ms-swift.git@680df5c670d7e8add906ac49381d603869410612 ; sys_platform == 'linux' and python_version < '3.13'",
+  "transformers==5.17.0; sys_platform == 'linux' and python_version < '3.13'",
+  "torch==2.11.0; sys_platform == 'linux' and python_version < '3.13'",
+  "torchvision==0.26.0; sys_platform == 'linux' and python_version < '3.13'",
+  "peft==0.20.0; sys_platform == 'linux' and python_version < '3.13'",
+  "datasets==4.8.4; sys_platform == 'linux' and python_version < '3.13'",
+  "accelerate==1.13.0; sys_platform == 'linux' and python_version < '3.13'",
+  "qwen-vl-utils==0.0.14; sys_platform == 'linux' and python_version < '3.13'",
+  "decord==0.6.0; sys_platform == 'linux' and python_version < '3.13'",
+  "safetensors==0.8.0; sys_platform == 'linux' and python_version < '3.13'",
+]
+
+
+[project.scripts]
+dforge = "decisionforge.cli:main"
+decisionforge = "decisionforge.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Oscar-dzy/Autojev-data"
+Repository = "https://github.com/Oscar-dzy/Autojev-data"
+
+[dependency-groups]
+dev = ["pytest>=8.3,<10", "pytest-asyncio>=1,<2", "ruff>=0.11,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/decisionforge"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["tests/fixtures/jevbench_oracle"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP"]
+
+# Native Windows CUDA wheels; Linux retains the existing package sources.
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130", marker = "sys_platform == 'win32'" }]
+torchvision = [{ index = "pytorch-cu130", marker = "sys_platform == 'win32'" }]
+
+[tool.uv]
+# Q6: keep the validated NumPy 1.26 / Arrow 21 overlay despite datasets 5.1 metadata.
+override-dependencies = [
+  "pyarrow==21.0.0",
+  "triton>=3.0.0; sys_platform == 'linux'",
+]
+environments = ["python_version < '3.13'"]
+conflicts = [
+  [{ extra = "eval-llm2jev" }, { extra = "eval-anyjev" }],
+  [{ extra = "eval-llm2jev" }, { extra = "train-unsloth" }],
+  [{ extra = "eval-llm2jev" }, { extra = "train-unsloth-full" }],
+  [{ extra = "eval-llm2jev" }, { extra = "train-laya" }],
+  [{ extra = "eval-llm2jev" }, { extra = "train-openjev" }],
+  [{ extra = "eval-llm2jev" }, { extra = "train-swift" }],
+  [{ extra = "eval-anyjev" }, { extra = "train-unsloth" }],
+  [{ extra = "eval-anyjev" }, { extra = "train-unsloth-full" }],
+  [{ extra = "eval-anyjev" }, { extra = "train-swift" }],
+  [{ extra = "train-unsloth" }, { extra = "train-laya" }],
+  [{ extra = "train-unsloth" }, { extra = "train-openjev" }],
+  [{ extra = "train-unsloth" }, { extra = "train-swift" }],
+  [{ extra = "train-unsloth" }, { extra = "train-unsloth-full" }],
+  [{ extra = "train-unsloth-full" }, { extra = "train-laya" }],
+  [{ extra = "train-unsloth-full" }, { extra = "train-openjev" }],
+  [{ extra = "train-unsloth-full" }, { extra = "train-swift" }],
+  [{ extra = "train-laya" }, { extra = "train-openjev" }],
+  [{ extra = "train-openjev" }, { extra = "train-swift" }],
+  [{ extra = "train-laya" }, { extra = "train-swift" }],
+]

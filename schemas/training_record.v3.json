@@ -1,0 +1,444 @@
+{
+    "$defs": {
+        "ChoiceAnswer": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "choice",
+                    "default": "choice",
+                    "title": "Type",
+                    "type": "string"
+                },
+                "choice": {
+                    "title": "Choice",
+                    "type": "string"
+                },
+                "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "title": "Confidence",
+                    "type": "number"
+                },
+                "probabilities": {
+                    "additionalProperties": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                    },
+                    "title": "Probabilities",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "choice",
+                "confidence",
+                "probabilities"
+            ],
+            "title": "ChoiceAnswer",
+            "type": "object"
+        },
+        "JEVAnswers": {
+            "additionalProperties": false,
+            "properties": {
+                "answers": {
+                    "additionalProperties": {
+                        "discriminator": {
+                            "mapping": {
+                                "choice": "#/$defs/ChoiceAnswer",
+                                "noul": "#/$defs/NoulAnswer",
+                                "score": "#/$defs/ScoreAnswer"
+                            },
+                            "propertyName": "type"
+                        },
+                        "oneOf": [
+                            {
+                                "$ref": "#/$defs/ChoiceAnswer"
+                            },
+                            {
+                                "$ref": "#/$defs/ScoreAnswer"
+                            },
+                            {
+                                "$ref": "#/$defs/NoulAnswer"
+                            }
+                        ]
+                    },
+                    "minProperties": 1,
+                    "title": "Answers",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "answers"
+            ],
+            "title": "JEVAnswers",
+            "type": "object"
+        },
+        "JEVInput": {
+            "additionalProperties": false,
+            "properties": {
+                "images": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "$ref": "#/$defs/MediaAsset"
+                            },
+                            "minItems": 1,
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Images"
+                },
+                "videos": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "$ref": "#/$defs/VideoMosaic"
+                            },
+                            "maxItems": 1,
+                            "minItems": 1,
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Videos"
+                },
+                "state": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        }
+                    ],
+                    "title": "State"
+                },
+                "questions": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/JEVQuestion"
+                    },
+                    "minProperties": 1,
+                    "title": "Questions",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "state",
+                "questions"
+            ],
+            "title": "JEVInput",
+            "type": "object"
+        },
+        "JEVQuestion": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "enum": [
+                        "choice",
+                        "noul",
+                        "score"
+                    ],
+                    "title": "Type",
+                    "type": "string"
+                },
+                "instructions": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        }
+                    ],
+                    "title": "Instructions"
+                },
+                "criteria": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "additionalProperties": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "object"
+                                    },
+                                    {
+                                        "items": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "array"
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "additionalProperties": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "object"
+                                    },
+                                    {
+                                        "items": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "array"
+                                    }
+                                ]
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Criteria"
+                }
+            },
+            "required": [
+                "type",
+                "instructions"
+            ],
+            "title": "JEVQuestion",
+            "type": "object"
+        },
+        "JsonValue": {},
+        "MediaAsset": {
+            "additionalProperties": false,
+            "properties": {
+                "path": {
+                    "minLength": 1,
+                    "title": "Path",
+                    "type": "string"
+                },
+                "sha256": {
+                    "pattern": "^[0-9a-f]{64}$",
+                    "title": "Sha256",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "path",
+                "sha256"
+            ],
+            "title": "MediaAsset",
+            "type": "object"
+        },
+        "NoulAnswer": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "noul",
+                    "default": "noul",
+                    "title": "Type",
+                    "type": "string"
+                },
+                "noul": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "title": "Noul",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "noul"
+            ],
+            "title": "NoulAnswer",
+            "type": "object"
+        },
+        "ScoreAnswer": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "score",
+                    "default": "score",
+                    "title": "Type",
+                    "type": "string"
+                },
+                "score": {
+                    "minimum": 0,
+                    "title": "Score",
+                    "type": "number"
+                },
+                "confidence": {
+                    "maximum": 1,
+                    "minimum": 0,
+                    "title": "Confidence",
+                    "type": "number"
+                },
+                "legend": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "additionalProperties": {
+                                    "$ref": "#/$defs/JsonValue"
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "items": {
+                                    "$ref": "#/$defs/JsonValue"
+                                },
+                                "type": "array"
+                            }
+                        ]
+                    },
+                    "title": "Legend",
+                    "type": "object"
+                },
+                "probabilities": {
+                    "additionalProperties": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number"
+                    },
+                    "title": "Probabilities",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "score",
+                "confidence",
+                "legend",
+                "probabilities"
+            ],
+            "title": "ScoreAnswer",
+            "type": "object"
+        },
+        "VideoMosaic": {
+            "additionalProperties": false,
+            "properties": {
+                "mosaic": {
+                    "$ref": "#/$defs/MediaAsset"
+                },
+                "n_frames": {
+                    "const": 16,
+                    "default": 16,
+                    "title": "N Frames",
+                    "type": "integer"
+                },
+                "cols": {
+                    "const": 4,
+                    "default": 4,
+                    "title": "Cols",
+                    "type": "integer"
+                },
+                "tile": {
+                    "const": 384,
+                    "default": 384,
+                    "title": "Tile",
+                    "type": "integer"
+                },
+                "timestamps": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "maxItems": 16,
+                    "minItems": 16,
+                    "title": "Timestamps",
+                    "type": "array"
+                },
+                "duration": {
+                    "minimum": 1,
+                    "title": "Duration",
+                    "type": "number"
+                },
+                "source_sha256": {
+                    "pattern": "^[0-9a-f]{64}$",
+                    "title": "Source Sha256",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "mosaic",
+                "timestamps",
+                "duration",
+                "source_sha256"
+            ],
+            "title": "VideoMosaic",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "description": "Model-independent JEV input and answer-shaped training target.",
+    "properties": {
+        "schema_version": {
+            "const": "decisionforge.training.v3",
+            "default": "decisionforge.training.v3",
+            "title": "Schema Version",
+            "type": "string"
+        },
+        "record_id": {
+            "minimum": 1,
+            "title": "Record Id",
+            "type": "integer"
+        },
+        "group_id": {
+            "minimum": 1,
+            "title": "Group Id",
+            "type": "integer"
+        },
+        "split": {
+            "minLength": 1,
+            "title": "Split",
+            "type": "string"
+        },
+        "request": {
+            "$ref": "#/$defs/JEVInput"
+        },
+        "supervision": {
+            "$ref": "#/$defs/JEVAnswers"
+        }
+    },
+    "required": [
+        "record_id",
+        "group_id",
+        "split",
+        "request",
+        "supervision"
+    ],
+    "title": "TrainingExample",
+    "type": "object"
+}

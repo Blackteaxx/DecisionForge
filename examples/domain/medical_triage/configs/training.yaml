@@ -1,0 +1,35 @@
+# Frozen v1 input, including the original train/validation/calibration roles.
+backend: unsloth
+finetuning: lora
+data:
+  path: ../data/v1/training.json
+  split_map: {train: train, validation: validation, calibration: calibration, test: test}
+  auto_holdout: {validation_fraction: 0.0, calibration_fraction: 0.0}
+  on_skipped: error
+  on_truncated: error
+model:
+  name: Qwen/Qwen3.5-9B
+  revision: c202236235762e1c871ad0ccb60c8ee5ba337b9a
+  max_seq_length: 8192
+  load_in_4bit: false
+lora: {rank: 16, alpha: 16, dropout: 0.0}
+training:
+  seed: 3407
+  num_train_epochs: 2
+  max_steps: null
+  batch_size: 2
+  gradient_accumulation_steps: 8
+  learning_rate: 0.0002
+  head_learning_rate: 0.0001
+  warmup_steps: 10
+  weight_decay: 0.01
+  lr_scheduler_type: cosine
+  precision: bf16
+  gradient_checkpointing: true
+  logging_steps: 100
+  save_steps: 100
+# Select the raw checkpoint on independent validation, then run calibrate.py.
+calibration: {enabled: false}
+output:
+  directory: ../../../../outputs/tasks/medical-triage-v1/training/run
+  save_merged: false

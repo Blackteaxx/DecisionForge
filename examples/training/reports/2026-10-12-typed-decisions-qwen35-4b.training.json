@@ -1,0 +1,515 @@
+{
+    "diagnostics": [
+        {
+            "role": "validation",
+            "phase": "uncalibrated",
+            "source": "Unsloth FastDecisionModel.evaluate",
+            "types": {
+                "choice": 181,
+                "noul": 179,
+                "score": 240
+            },
+            "questions": 600,
+            "items": 120,
+            "raw": {
+                "accuracy": 0.8183333333333334,
+                "ece": 0.19096372480193777,
+                "loss": 0.8290143547269205,
+                "record_accuracy": 0.43333333333333335
+            },
+            "by_type": {
+                "choice": {
+                    "questions": 181,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.7955801104972375,
+                        "ece": 0.2016948813891542,
+                        "loss": 0.965084697989469,
+                        "record_accuracy": 0.7083333333333334
+                    }
+                },
+                "noul": {
+                    "questions": 179,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.8435754189944135,
+                        "ece": 0.1250155588102074,
+                        "loss": 0.5010936282387826,
+                        "record_accuracy": 0.8083333333333333
+                    }
+                },
+                "score": {
+                    "questions": 240,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.8166666666666667,
+                        "ece": 0.24250309802591805,
+                        "loss": 0.9709729290567338,
+                        "record_accuracy": 0.6666666666666666
+                    }
+                }
+            },
+            "meaning": "teacher target agreement; not human correctness"
+        },
+        {
+            "role": "test",
+            "phase": "uncalibrated",
+            "source": "Unsloth FastDecisionModel.evaluate",
+            "types": {
+                "choice": 600,
+                "noul": 600,
+                "score": 800
+            },
+            "questions": 2000,
+            "items": 400,
+            "raw": {
+                "accuracy": 0.7965,
+                "ece": 0.1584027109891176,
+                "loss": 0.8432464410718531,
+                "record_accuracy": 0.3825
+            },
+            "by_type": {
+                "choice": {
+                    "questions": 600,
+                    "items": 400,
+                    "raw": {
+                        "accuracy": 0.7516666666666667,
+                        "ece": 0.1583346657951673,
+                        "loss": 0.9688527438106637,
+                        "record_accuracy": 0.6675
+                    }
+                },
+                "noul": {
+                    "questions": 600,
+                    "items": 400,
+                    "raw": {
+                        "accuracy": 0.8583333333333333,
+                        "ece": 0.10950079431136447,
+                        "loss": 0.49375090677912037,
+                        "record_accuracy": 0.8125
+                    }
+                },
+                "score": {
+                    "questions": 800,
+                    "items": 400,
+                    "raw": {
+                        "accuracy": 0.785,
+                        "ece": 0.20776654567569497,
+                        "loss": 1.0109903396014124,
+                        "record_accuracy": 0.625
+                    }
+                }
+            },
+            "meaning": "teacher target agreement; not human correctness"
+        },
+        {
+            "role": "calibration",
+            "phase": "uncalibrated",
+            "source": "Unsloth FastDecisionModel.evaluate",
+            "types": {
+                "choice": 182,
+                "noul": 178,
+                "score": 240
+            },
+            "questions": 600,
+            "items": 120,
+            "raw": {
+                "accuracy": 0.8066666666666666,
+                "ece": 0.1565523580710093,
+                "loss": 0.7890066721724968,
+                "record_accuracy": 0.4166666666666667
+            },
+            "by_type": {
+                "choice": {
+                    "questions": 182,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.8021978021978022,
+                        "ece": 0.17297842492769053,
+                        "loss": 0.8971285008221537,
+                        "record_accuracy": 0.7
+                    }
+                },
+                "noul": {
+                    "questions": 178,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.8314606741573034,
+                        "ece": 0.08733635069279189,
+                        "loss": 0.4638715015326658,
+                        "record_accuracy": 0.775
+                    }
+                },
+                "score": {
+                    "questions": 240,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.7916666666666666,
+                        "ece": 0.20702964663505555,
+                        "loss": 0.9481415382431199,
+                        "record_accuracy": 0.65
+                    }
+                }
+            },
+            "meaning": "teacher target agreement; not human correctness"
+        },
+        {
+            "role": "calibration",
+            "phase": "calibrated",
+            "source": "Unsloth FastDecisionModel.evaluate",
+            "types": {
+                "choice": 182,
+                "noul": 178,
+                "score": 240
+            },
+            "questions": 600,
+            "items": 120,
+            "raw": {
+                "accuracy": 0.8066666666666666,
+                "ece": 0.03669788122177124,
+                "loss": 1.0480562396999449,
+                "record_accuracy": 0.4166666666666667
+            },
+            "by_type": {
+                "choice": {
+                    "questions": 182,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.8021978021978022,
+                        "ece": 0.029359395359898618,
+                        "loss": 1.1807282506846464,
+                        "record_accuracy": 0.7
+                    }
+                },
+                "noul": {
+                    "questions": 178,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.8314606741573034,
+                        "ece": 0.047027830662352325,
+                        "loss": 0.5433652468831436,
+                        "record_accuracy": 0.775
+                    }
+                },
+                "score": {
+                    "questions": 240,
+                    "items": 120,
+                    "raw": {
+                        "accuracy": 0.7916666666666666,
+                        "ece": 0.06337084968884787,
+                        "loss": 1.3202521612014,
+                        "record_accuracy": 0.65
+                    }
+                }
+            },
+            "meaning": "teacher target agreement; not human correctness"
+        },
+        {
+            "role": "test",
+            "phase": "calibrated",
+            "source": "Unsloth FastDecisionModel.evaluate",
+            "types": {
+                "choice": 600,
+                "noul": 600,
+                "score": 800
+            },
+            "questions": 2000,
+            "items": 400,
+            "raw": {
+                "accuracy": 0.7965,
+                "ece": 0.024999819904565818,
+                "loss": 1.1644713457762554,
+                "record_accuracy": 0.3825
+            },
+            "by_type": {
+                "choice": {
+                    "questions": 600,
+                    "items": 400,
+                    "raw": {
+                        "accuracy": 0.7516666666666667,
+                        "ece": 0.04920561065276464,
+                        "loss": 1.3069232052376265,
+                        "record_accuracy": 0.6675
+                    }
+                },
+                "noul": {
+                    "questions": 600,
+                    "items": 400,
+                    "raw": {
+                        "accuracy": 0.8583333333333333,
+                        "ece": 0.04960112184286117,
+                        "loss": 0.5940543412680078,
+                        "record_accuracy": 0.8125
+                    }
+                },
+                "score": {
+                    "questions": 800,
+                    "items": 400,
+                    "raw": {
+                        "accuracy": 0.785,
+                        "ece": 0.026802850104868412,
+                        "loss": 1.4832430748082697,
+                        "record_accuracy": 0.625
+                    }
+                }
+            },
+            "meaning": "teacher target agreement; not human correctness"
+        }
+    ],
+    "calibration": {
+        "enabled": true,
+        "result": {
+            "raw": {
+                "accuracy": 0.8066666666666666,
+                "ece": 0.03323245733976367,
+                "loss": 1.074637291408144,
+                "record_accuracy": 0.4166666666666667,
+                "fitted_types": [
+                    0,
+                    1,
+                    2
+                ]
+            },
+            "relative_temperature_fitted_types": [
+                "choice",
+                "score",
+                "noul"
+            ],
+            "relative_temperature_fallback_types": [],
+            "head_temperature_fitted": true,
+            "preservation_adjustment": {
+                "shared_head_temperature_retained": false,
+                "clamped_fitted_types": []
+            },
+            "usable_questions": 600,
+            "upstream_target": "Clef calibration uses modal teacher labels",
+            "meaning": "fitting diagnostics (upstream may report cross-fitted metrics), not independent test"
+        },
+        "meaning": "fitting diagnostics"
+    },
+    "artifacts": {
+        "model": "model",
+        "final_checkpoint": "checkpoints/checkpoint-240",
+        "merged": "merged"
+    },
+    "status": "completed",
+    "stage": "completed",
+    "started_at": "2026-10-12T05:47:38.419023+00:00",
+    "updated_at": "2026-10-12T06:12:21.312037+00:00",
+    "training": {
+        "raw": {
+            "train_runtime": 611.7,
+            "train_samples_per_second": 3.139,
+            "train_steps_per_second": 0.392,
+            "total_flos": 0.0,
+            "train_loss": 0.8692341124018034,
+            "epoch": 2.0
+        },
+        "training_loss": 0.8692341124018034,
+        "global_step": 240,
+        "elapsed_seconds": 613.4062254019082,
+        "parameter_update_probe": {
+            "lora": true,
+            "head": true
+        },
+        "selected_checkpoint": "final"
+    },
+    "reload": {
+        "model": {
+            "types": [
+                "choice",
+                "noul",
+                "score"
+            ],
+            "predictions": [
+                {
+                    "answers": {
+                        "action": {
+                            "type": "choice",
+                            "choice": "observe",
+                            "confidence": 0.6321,
+                            "probabilities": {
+                                "continue": 0.0958,
+                                "human_review": 0.271,
+                                "observe": 0.6321,
+                                "stop": 0.0011
+                            },
+                            "answer": "observe"
+                        },
+                        "needs_review": {
+                            "type": "noul",
+                            "noul": 0.3696,
+                            "answer": false,
+                            "probabilities": {
+                                "true": 0.3696,
+                                "false": 0.6304
+                            }
+                        },
+                        "outcome": {
+                            "type": "choice",
+                            "choice": "partial",
+                            "confidence": 0.7589,
+                            "probabilities": {
+                                "failure": 0.0827,
+                                "harmful": 0.0002,
+                                "partial": 0.7589,
+                                "success": 0.1582
+                            },
+                            "answer": "partial"
+                        },
+                        "risk": {
+                            "type": "score",
+                            "score": 0.9585,
+                            "confidence": 0.9213,
+                            "legend": {
+                                "0": "Benign: read-only or clearly safe actions.",
+                                "1": "Low: routine writes within scope.",
+                                "2": "Moderate: irreversible or out-of-scope actions.",
+                                "3": "High: destructive, security-relevant, or policy-violating actions."
+                            },
+                            "probabilities": {
+                                "0": 0.0604,
+                                "1": 0.9213,
+                                "2": 0.0176,
+                                "3": 0.0006
+                            },
+                            "answer": 1
+                        },
+                        "urgency": {
+                            "type": "score",
+                            "score": 0.9209,
+                            "confidence": 0.8353,
+                            "legend": {
+                                "0": "No time pressure; can wait indefinitely.",
+                                "1": "Routine; handle within the normal queue.",
+                                "2": "Elevated; should be handled within the same week.",
+                                "3": "Critical; requires action within the same day."
+                            },
+                            "probabilities": {
+                                "0": 0.122,
+                                "1": 0.8353,
+                                "2": 0.0424,
+                                "3": 0.0003
+                            },
+                            "answer": 1
+                        }
+                    }
+                }
+            ],
+            "decision_config": {
+                "layout": "clef",
+                "max_len": 4096,
+                "temperature": [
+                    1.0635044574737549,
+                    0.9010578989982605,
+                    1.146814227104187
+                ],
+                "base_model": "Qwen/Qwen3.5-4B",
+                "load_in_4bit": true,
+                "fine_tuned": true,
+                "folded_temperature": 0.3913933336734772
+            },
+            "protocol_valid": true,
+            "calibration_restored": true
+        },
+        "merged": {
+            "types": [
+                "choice",
+                "noul",
+                "score"
+            ],
+            "predictions": [
+                {
+                    "answers": {
+                        "action": {
+                            "type": "choice",
+                            "choice": "observe",
+                            "confidence": 0.6287,
+                            "probabilities": {
+                                "continue": 0.1005,
+                                "human_review": 0.2697,
+                                "observe": 0.6287,
+                                "stop": 0.001
+                            },
+                            "answer": "observe"
+                        },
+                        "needs_review": {
+                            "type": "noul",
+                            "noul": 0.3629,
+                            "answer": false,
+                            "probabilities": {
+                                "true": 0.3629,
+                                "false": 0.6371
+                            }
+                        },
+                        "outcome": {
+                            "type": "choice",
+                            "choice": "partial",
+                            "confidence": 0.742,
+                            "probabilities": {
+                                "failure": 0.0957,
+                                "harmful": 0.0002,
+                                "partial": 0.742,
+                                "success": 0.162
+                            },
+                            "answer": "partial"
+                        },
+                        "risk": {
+                            "type": "score",
+                            "score": 0.9568,
+                            "confidence": 0.9141,
+                            "legend": {
+                                "0": "Benign: read-only or clearly safe actions.",
+                                "1": "Low: routine writes within scope.",
+                                "2": "Moderate: irreversible or out-of-scope actions.",
+                                "3": "High: destructive, security-relevant, or policy-violating actions."
+                            },
+                            "probabilities": {
+                                "0": 0.0651,
+                                "1": 0.9141,
+                                "2": 0.0197,
+                                "3": 0.0011
+                            },
+                            "answer": 1
+                        },
+                        "urgency": {
+                            "type": "score",
+                            "score": 0.9072,
+                            "confidence": 0.8297,
+                            "legend": {
+                                "0": "No time pressure; can wait indefinitely.",
+                                "1": "Routine; handle within the normal queue.",
+                                "2": "Elevated; should be handled within the same week.",
+                                "3": "Critical; requires action within the same day."
+                            },
+                            "probabilities": {
+                                "0": 0.1316,
+                                "1": 0.8297,
+                                "2": 0.0385,
+                                "3": 0.0002
+                            },
+                            "answer": 1
+                        }
+                    }
+                }
+            ],
+            "decision_config": {
+                "layout": "clef",
+                "max_len": 4096,
+                "temperature": [
+                    1.0635044574737549,
+                    0.9010578989982605,
+                    1.146814227104187
+                ],
+                "base_model": "outputs/train/qwen35-4b-full/merged",
+                "load_in_4bit": true,
+                "fine_tuned": true,
+                "folded_temperature": 0.3913933336734772
+            },
+            "protocol_valid": true,
+            "calibration_restored": true
+        }
+    },
+    "ended_at": "2026-10-12T06:12:21.312019+00:00",
+    "archive_note": "Machine-specific paths are replaced with example-relative locations; measured values are unchanged."
+}

@@ -1,0 +1,160 @@
+{
+    "$defs": {
+        "TextOrigin": {
+            "additionalProperties": false,
+            "description": "Evidence and reasons for a QA constructed from narrative TXT.",
+            "properties": {
+                "evidence": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "title": "Evidence",
+                    "type": "array"
+                },
+                "assessment_reason": {
+                    "minLength": 1,
+                    "title": "Assessment Reason",
+                    "type": "string"
+                },
+                "construction_reason": {
+                    "minLength": 1,
+                    "title": "Construction Reason",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "evidence",
+                "assessment_reason",
+                "construction_reason"
+            ],
+            "title": "TextOrigin",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "description": "Normalized QA; text_origin identifies questions constructed from narrative TXT.",
+    "properties": {
+        "question": {
+            "minLength": 1,
+            "title": "Question",
+            "type": "string"
+        },
+        "answer": {
+            "minLength": 1,
+            "title": "Answer",
+            "type": "string"
+        },
+        "context": {
+            "default": "",
+            "title": "Context",
+            "type": "string"
+        },
+        "mode": {
+            "anyOf": [
+                {
+                    "enum": [
+                        "choice",
+                        "noul",
+                        "score"
+                    ],
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Mode"
+        },
+        "options": {
+            "items": {
+                "type": "string"
+            },
+            "title": "Options",
+            "type": "array"
+        },
+        "statement": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Statement"
+        },
+        "noul_label": {
+            "anyOf": [
+                {
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Noul Label"
+        },
+        "ranking_items": {
+            "items": {
+                "type": "string"
+            },
+            "title": "Ranking Items",
+            "type": "array"
+        },
+        "score_index": {
+            "anyOf": [
+                {
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Score Index"
+        },
+        "split": {
+            "default": "train",
+            "title": "Split",
+            "type": "string"
+        },
+        "group_id": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Group Id"
+        },
+        "text_origin": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/TextOrigin"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        }
+    },
+    "required": [
+        "question",
+        "answer"
+    ],
+    "title": "StandardRecord",
+    "type": "object"
+}

@@ -1,0 +1,15 @@
+# A new run: weights only, with a fresh optimizer and scheduler.
+backend: laya
+data:
+  path: ../data/typed-decisions-sample.jsonl
+model:
+  max_seq_length: 2048
+laya:
+  init_checkpoint: ../../../outputs/train/laya-single/model
+  head_max_length: 512
+training:
+  num_train_epochs: 1.0
+  batch_size: 2
+  gradient_accumulation_steps: 4
+output:
+  directory: ../../../outputs/train/laya-init

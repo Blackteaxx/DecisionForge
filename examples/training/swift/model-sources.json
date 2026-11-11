@@ -1,0 +1,228 @@
+{
+  "checked_on": "2026-11-03",
+  "ms_swift_revision": "680df5c670d7e8add906ac49381d603869410612",
+  "routes": {
+    "clef": {
+      "enabled": true,
+      "status": "code_and_cpu_only_no_real_training",
+      "model": "Cloudflare/clef",
+      "revision": "cfddda043dd190ef3b01cff449d5ee8cff1e8ec6",
+      "adapter": null,
+      "adapter_revision": null,
+      "adapter_subdirectory": "",
+      "license": "Apache-2.0",
+      "usage": "upstream_license_and_notice_requirements",
+      "license_evidence": [
+        {
+          "file": "sources/clef/README.md",
+          "sha256": "16ee04d296b1ef5edcdb3c4d3d3cd369acdc627fb5d255b34264a73e224d821a",
+          "url": "https://huggingface.co/Cloudflare/clef/resolve/cfddda043dd190ef3b01cff449d5ee8cff1e8ec6/README.md"
+        },
+        {
+          "file": "sources/clef/LICENSE",
+          "sha256": "689f0c220c9b4e857f35ca7d0dca51397e5a545dc4ad3987438c023e24ff0ab6",
+          "url": "https://huggingface.co/Cloudflare/clef/resolve/cfddda043dd190ef3b01cff449d5ee8cff1e8ec6/LICENSE",
+          "upstream_sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        },
+        {
+          "file": "sources/clef/config.json",
+          "sha256": "c42e88892bd3fd84e8276b2ad90df58c1c3b797676ea161035006a72ad468c58",
+          "url": "https://huggingface.co/Cloudflare/clef/resolve/cfddda043dd190ef3b01cff449d5ee8cff1e8ec6/config.json"
+        }
+      ],
+      "loader_assets": [
+        {
+          "owner": "model",
+          "source_path": "joint_head.safetensors",
+          "exported_path": "joint_head.safetensors",
+          "environment": "CLEF_JOINT_HEAD_WEIGHTS"
+        },
+        {
+          "owner": "model",
+          "source_path": "joint_head_config.json",
+          "exported_path": "joint_head_config.json",
+          "environment": "CLEF_JOINT_HEAD_CONFIG"
+        }
+      ],
+      "upstream_base": "Qwen/Qwen3.8-27B, as identified by this pinned model card; Qwen3_5ForConditionalGeneration/model_type=qwen3_5 per pinned config"
+    },
+    "kev": {
+      "enabled": true,
+      "status": "code_and_cpu_only_no_real_training",
+      "model": "Qwen/Qwen3.5-0.8B-Base",
+      "revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "adapter": "jaredpalmer/kev-0.8b",
+      "adapter_revision": "bf75a6a8848ea6960ff2ed108d9ed44c2941174f",
+      "adapter_subdirectory": "",
+      "license": "Apache-2.0",
+      "usage": "upstream_license_and_notice_requirements",
+      "license_evidence": [
+        {
+          "file": "sources/kev/README.md",
+          "sha256": "96df0121af5e6097916920c1c3a119600cddfe0af8cd0d90b2f16de7d1f2e185",
+          "url": "https://huggingface.co/jaredpalmer/kev-0.8b/resolve/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/README.md"
+        },
+        {
+          "file": "sources/kev/adapter_config.json",
+          "sha256": "6536f62a9ecb7f38d0991d7c76ef18c9252da9f7e0b962e9329602f9adab3111",
+          "url": "https://huggingface.co/jaredpalmer/kev-0.8b/resolve/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/adapter_config.json",
+          "upstream_sha256": "748acb2cda88454cb1ba69d745ba336f3fcb5486eac349e90960c8b8d8d3e854",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        },
+        {
+          "file": "sources/kev/CODE_LICENSE",
+          "url": "https://github.com/jaredpalmer/kev/blob/main/LICENSE",
+          "sha256": "6b08bb37982c233aa12bcbdf19106da12f3f4fcf800773ea42e28ebeddd34fb8"
+        },
+        {
+          "file": "sources/kev/base-LICENSE",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-0.8B-Base/resolve/dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68/LICENSE",
+          "sha256": "689f0c220c9b4e857f35ca7d0dca51397e5a545dc4ad3987438c023e24ff0ab6",
+          "upstream_sha256": "50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        },
+        {
+          "file": "sources/kev/base-config.json",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-0.8B-Base/resolve/dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68/config.json",
+          "sha256": "7d3fbd6396c7cbf6d836afb0f7f750ad2e410123b0f79f965dc0a57276578b03",
+          "upstream_sha256": "b90b86f35c8e6925ef74ee04d0e758f0a845c83a42089ad82bbaa948de9b4204",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        }
+      ],
+      "loader_assets": [
+        {
+          "owner": "adapter",
+          "source_path": "head.pt",
+          "exported_path": "head.pt",
+          "environment": "KEV_HEAD"
+        }
+      ],
+      "base_license": "Apache-2.0",
+      "base_license_source": "https://huggingface.co/Qwen/Qwen3.5-0.8B-Base/blob/dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68/LICENSE",
+      "weight_license_evidence": "Pinned adapter README explicitly states Apache-2.0 for weights; CODE_LICENSE records the separate code license."
+    },
+    "jev": {
+      "enabled": true,
+      "status": "code_and_cpu_only_no_real_training",
+      "model": "autotrust/JEV-27B-VL",
+      "revision": "9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a",
+      "adapter": "autotrust/JEV-27B-VL",
+      "adapter_revision": "9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a",
+      "adapter_subdirectory": "adapter_vllm",
+      "license": "Apache-2.0",
+      "usage": "upstream_license_and_notice_requirements",
+      "license_evidence": [
+        {
+          "file": "sources/jev/MODEL_CARD.txt",
+          "sha256": "6ab09a4c6114895a112812826c5df3cacbe5c13812893ed8fe75659a46ffc35a",
+          "url": "https://huggingface.co/autotrust/JEV-27B-VL/resolve/9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a/README.md",
+          "upstream_sha256": "383a5432d39804ce451ab6b1edf0033f2d305e5cbbd1a6f757f543192a5cc819",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        },
+        {
+          "file": "sources/jev/LICENSE",
+          "sha256": "689f0c220c9b4e857f35ca7d0dca51397e5a545dc4ad3987438c023e24ff0ab6",
+          "url": "https://huggingface.co/autotrust/JEV-27B-VL/resolve/9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a/LICENSE",
+          "upstream_sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        },
+        {
+          "file": "sources/jev/config.json",
+          "sha256": "9a719fad1e0b19b2379bf7cb293fe5984ce52608b80d737fd49bfb91f8887209",
+          "url": "https://huggingface.co/autotrust/JEV-27B-VL/resolve/9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a/config.json",
+          "upstream_sha256": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        },
+        {
+          "file": "sources/jev/adapter_vllm/adapter_config.json",
+          "url": "https://huggingface.co/autotrust/JEV-27B-VL/resolve/9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a/adapter_vllm/adapter_config.json",
+          "sha256": "ba9f8c3b86e07bb87cfa0149088061e100c97effddf9961f46828d4dad66bf4e",
+          "upstream_sha256": "5ae16c5e11f37c5a67ec0e3b16d871fcc19c069090c1e42a6289f63c8067f6b6",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        }
+      ],
+      "loader_assets": [
+        {
+          "owner": "adapter",
+          "source_path": "decision_head.json",
+          "exported_path": "decision_head.json",
+          "environment": "JEV_DECISION_HEAD"
+        },
+        {
+          "owner": "model",
+          "source_path": "calibration.json",
+          "exported_path": "calibration.json",
+          "environment": "JEV_DECIDE_CALIBRATION"
+        }
+      ],
+      "upstream_base": "Qwen/Qwen3.8-27B, as identified by this pinned model card; Qwen3_5ForConditionalGeneration/model_type=qwen3_5 per pinned config"
+    },
+    "startlux": {
+      "enabled": true,
+      "status": "code_and_cpu_only_no_real_training",
+      "model": "startlux-models/StartLux-Decision-v1.1-4B-AutoThink",
+      "revision": "23dd4c513ef387705bb13fd8caadc2d5c863082f",
+      "adapter": null,
+      "adapter_revision": null,
+      "adapter_subdirectory": "",
+      "license": "CC-BY-NC-4.0",
+      "usage": "noncommercial_research_only_explicit_configuration_required",
+      "license_evidence": [
+        {
+          "file": "sources/startlux/README.md",
+          "sha256": "b2ce5d6f96b2c9fecd072ed797c39952183f601b6947d6341f85d1bf32cce463",
+          "url": "https://huggingface.co/startlux-models/StartLux-Decision-v1.1-4B-AutoThink/resolve/23dd4c513ef387705bb13fd8caadc2d5c863082f/README.md"
+        },
+        {
+          "file": "sources/startlux/LICENSE",
+          "sha256": "3711f963c05d0be80d53e5923308a6dee31b203da23435c9cfb7c7b6e4dd5e19",
+          "url": "https://huggingface.co/startlux-models/StartLux-Decision-v1.1-4B-AutoThink/resolve/23dd4c513ef387705bb13fd8caadc2d5c863082f/LICENSE",
+          "upstream_sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+          "archive_normalization": "UTF-8 text; CRLF to LF, trim line-end whitespace and blank EOF lines; content retained"
+        },
+        {
+          "file": "sources/startlux/config.json",
+          "sha256": "fc3771ddad313eb032230470104d4b551b1d729f029b77252e15fdea6d9053f9",
+          "url": "https://huggingface.co/startlux-models/StartLux-Decision-v1.1-4B-AutoThink/resolve/23dd4c513ef387705bb13fd8caadc2d5c863082f/config.json"
+        }
+      ],
+      "loader_assets": [
+        {
+          "owner": "model",
+          "source_path": "decision_config.json",
+          "exported_path": "decision_config.json",
+          "environment": "STARTLUX_DECISION_CONFIG"
+        }
+      ],
+      "use_decision": "User explicitly confirmed noncommercial research integration on 2026-11-03. Commercial use requires separate authorization from rightsholder."
+    },
+    "omnijev": {
+      "enabled": true,
+      "status": "real_training_acceptance_from_PR28",
+      "source_card": "model-source.json",
+      "model": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "adapter": "tinnel123/OmniJev",
+      "adapter_revision": "91248107b7f5230bd5715db2e62e83c9a72fcd81",
+      "license": "Apache-2.0"
+    },
+    "thx02": {
+      "enabled": false,
+      "status": "source_license_unconfirmed",
+      "revision": null,
+      "license": null,
+      "attempted_sources": [
+        {
+          "url": "https://huggingface.co/api/models/HAL-X-AI/THX-02",
+          "http_status": 401
+        },
+        {
+          "url": "https://modelscope.cn/api/v1/models/HAL-X/THX-02",
+          "http_status": 404
+        }
+      ],
+      "use_decision": "Not integrated. Official checkpoint, immutable revision and applicable weight license could not be verified. No invented source, replacement checkpoint or template proof."
+    }
+  }
+}

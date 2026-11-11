@@ -1,0 +1,94 @@
+{
+    "$defs": {
+        "BatchQuestionQuota": {
+            "additionalProperties": false,
+            "properties": {
+                "mode": {
+                    "enum": [
+                        "choice",
+                        "noul",
+                        "score"
+                    ],
+                    "title": "Mode",
+                    "type": "string"
+                },
+                "count": {
+                    "maximum": 50,
+                    "minimum": 1,
+                    "title": "Count",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "mode",
+                "count"
+            ],
+            "title": "BatchQuestionQuota",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "schema_version": {
+            "const": "decisionforge.text-batch.v1",
+            "default": "decisionforge.text-batch.v1",
+            "title": "Schema Version",
+            "type": "string"
+        },
+        "original_source": {
+            "title": "Original Source",
+            "type": "string"
+        },
+        "original_sha256": {
+            "title": "Original Sha256",
+            "type": "string"
+        },
+        "group_id": {
+            "title": "Group Id",
+            "type": "string"
+        },
+        "batch_index": {
+            "minimum": 1,
+            "title": "Batch Index",
+            "type": "integer"
+        },
+        "char_start": {
+            "minimum": 0,
+            "title": "Char Start",
+            "type": "integer"
+        },
+        "char_end": {
+            "exclusiveMinimum": 0,
+            "title": "Char End",
+            "type": "integer"
+        },
+        "text_sha256": {
+            "title": "Text Sha256",
+            "type": "string"
+        },
+        "questions": {
+            "items": {
+                "$ref": "#/$defs/BatchQuestionQuota"
+            },
+            "title": "Questions",
+            "type": "array"
+        },
+        "reason": {
+            "title": "Reason",
+            "type": "string"
+        }
+    },
+    "required": [
+        "original_source",
+        "original_sha256",
+        "group_id",
+        "batch_index",
+        "char_start",
+        "char_end",
+        "text_sha256",
+        "questions",
+        "reason"
+    ],
+    "title": "TextBatchContext",
+    "type": "object"
+}

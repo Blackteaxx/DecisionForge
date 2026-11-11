@@ -1,0 +1,13 @@
+benchmark: generic
+data:
+  path: ../../../outputs/train/laya-single/data/test.jsonl
+model:
+  adapter: laya_local
+  path: ../../../outputs/train/laya-single/model
+  device: cuda:0
+  precision: auto
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 60
+output: ../../../outputs/eval/laya-local

@@ -1,0 +1,19 @@
+backend: laya
+data:
+  path: ../data/typed-decisions-sample.jsonl
+  on_skipped: error
+  on_truncated: error
+model:
+  name: convaiinnovations/laya
+  revision: 7b928d828b7b0e022f929d9bd2e44165aa270148
+  max_seq_length: 2048
+laya:
+  head_max_length: 512
+training:
+  num_train_epochs: 1.0
+  batch_size: 2
+  gradient_accumulation_steps: 4
+calibration:
+  enabled: true
+output:
+  directory: ../../../outputs/train/laya-single

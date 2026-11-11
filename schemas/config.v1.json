@@ -1,0 +1,1204 @@
+{
+    "$defs": {
+        "Capabilities": {
+            "additionalProperties": false,
+            "properties": {
+                "structured_outputs": {
+                    "default": true,
+                    "title": "Structured Outputs",
+                    "type": "boolean"
+                },
+                "temperature": {
+                    "default": false,
+                    "title": "Temperature",
+                    "type": "boolean"
+                },
+                "reasoning_effort": {
+                    "default": false,
+                    "title": "Reasoning Effort",
+                    "type": "boolean"
+                }
+            },
+            "title": "Capabilities",
+            "type": "object"
+        },
+        "ChoiceConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "target_option_count": {
+                    "default": 4,
+                    "maximum": 255,
+                    "minimum": 2,
+                    "title": "Target Option Count",
+                    "type": "integer"
+                }
+            },
+            "title": "ChoiceConfig",
+            "type": "object"
+        },
+        "ContextConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "generate_if_missing": {
+                    "default": false,
+                    "title": "Generate If Missing",
+                    "type": "boolean"
+                },
+                "relevance": {
+                    "default": 0.5,
+                    "maximum": 1,
+                    "minimum": 0,
+                    "title": "Relevance",
+                    "type": "number"
+                }
+            },
+            "title": "ContextConfig",
+            "type": "object"
+        },
+        "DeepSearchConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "provider": {
+                    "default": "openalex",
+                    "enum": [
+                        "exa",
+                        "openalex"
+                    ],
+                    "title": "Provider",
+                    "type": "string"
+                },
+                "prompt": {
+                    "minLength": 1,
+                    "title": "Prompt",
+                    "type": "string"
+                },
+                "directory": {
+                    "default": "outputs/deep_search",
+                    "minLength": 1,
+                    "title": "Directory",
+                    "type": "string"
+                },
+                "max_papers": {
+                    "default": 20,
+                    "maximum": 1000,
+                    "minimum": 1,
+                    "title": "Max Papers",
+                    "type": "integer"
+                },
+                "results_per_query": {
+                    "default": 50,
+                    "maximum": 1000,
+                    "minimum": 1,
+                    "title": "Results Per Query",
+                    "type": "integer"
+                },
+                "max_queries": {
+                    "default": 3,
+                    "maximum": 10,
+                    "minimum": 1,
+                    "title": "Max Queries",
+                    "type": "integer"
+                },
+                "timeout_seconds": {
+                    "default": 120,
+                    "exclusiveMinimum": 0,
+                    "title": "Timeout Seconds",
+                    "type": "number"
+                },
+                "max_attempts": {
+                    "default": 3,
+                    "maximum": 10,
+                    "minimum": 1,
+                    "title": "Max Attempts",
+                    "type": "integer"
+                },
+                "retry_delay_seconds": {
+                    "default": 1,
+                    "maximum": 60,
+                    "minimum": 0,
+                    "title": "Retry Delay Seconds",
+                    "type": "number"
+                },
+                "plan": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SearchPlan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null
+                },
+                "exa": {
+                    "$ref": "#/$defs/ExaConfig"
+                },
+                "openalex": {
+                    "$ref": "#/$defs/OpenAlexConfig"
+                },
+                "download": {
+                    "$ref": "#/$defs/DownloadConfig"
+                }
+            },
+            "required": [
+                "prompt"
+            ],
+            "title": "DeepSearchConfig",
+            "type": "object"
+        },
+        "DownloadConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "concurrency": {
+                    "default": 4,
+                    "maximum": 16,
+                    "minimum": 1,
+                    "title": "Concurrency",
+                    "type": "integer"
+                },
+                "timeout_seconds": {
+                    "default": 120,
+                    "exclusiveMinimum": 0,
+                    "title": "Timeout Seconds",
+                    "type": "number"
+                },
+                "total_timeout_seconds": {
+                    "default": 300,
+                    "exclusiveMinimum": 0,
+                    "title": "Total Timeout Seconds",
+                    "type": "number"
+                },
+                "progress_interval_seconds": {
+                    "default": 0.2,
+                    "exclusiveMinimum": 0,
+                    "title": "Progress Interval Seconds",
+                    "type": "number"
+                },
+                "max_pdf_mb": {
+                    "default": 100,
+                    "maximum": 200,
+                    "minimum": 1,
+                    "title": "Max Pdf Mb",
+                    "type": "integer"
+                },
+                "max_html_mb": {
+                    "default": 2,
+                    "maximum": 10,
+                    "minimum": 1,
+                    "title": "Max Html Mb",
+                    "type": "integer"
+                },
+                "max_redirects": {
+                    "default": 5,
+                    "maximum": 10,
+                    "minimum": 0,
+                    "title": "Max Redirects",
+                    "type": "integer"
+                }
+            },
+            "title": "DownloadConfig",
+            "type": "object"
+        },
+        "ExaConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "api_key_env": {
+                    "default": "EXA_API_KEY",
+                    "minLength": 1,
+                    "title": "Api Key Env",
+                    "type": "string"
+                },
+                "search_type": {
+                    "default": "deep",
+                    "enum": [
+                        "auto",
+                        "deep",
+                        "deep-lite"
+                    ],
+                    "title": "Search Type",
+                    "type": "string"
+                },
+                "include_domains": {
+                    "items": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "title": "Include Domains",
+                    "type": "array"
+                },
+                "exclude_domains": {
+                    "items": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "title": "Exclude Domains",
+                    "type": "array"
+                }
+            },
+            "title": "ExaConfig",
+            "type": "object"
+        },
+        "ExecutionConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "text_batch_concurrency": {
+                    "default": 4,
+                    "maximum": 64,
+                    "minimum": 1,
+                    "title": "Text Batch Concurrency",
+                    "type": "integer"
+                },
+                "concurrency": {
+                    "default": 4,
+                    "maximum": 64,
+                    "minimum": 1,
+                    "title": "Concurrency",
+                    "type": "integer"
+                },
+                "llm_concurrency": {
+                    "default": 8,
+                    "maximum": 128,
+                    "minimum": 1,
+                    "title": "Llm Concurrency",
+                    "type": "integer"
+                },
+                "max_transport_attempts": {
+                    "default": 3,
+                    "maximum": 10,
+                    "minimum": 1,
+                    "title": "Max Transport Attempts",
+                    "type": "integer"
+                },
+                "max_llm_calls_per_record": {
+                    "default": 24,
+                    "minimum": 1,
+                    "title": "Max Llm Calls Per Record",
+                    "type": "integer"
+                },
+                "budget_limit_usd": {
+                    "anyOf": [
+                        {
+                            "minimum": 0,
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Budget Limit Usd"
+                },
+                "on_budget_exhausted": {
+                    "const": "checkpoint_and_stop",
+                    "default": "checkpoint_and_stop",
+                    "title": "On Budget Exhausted",
+                    "type": "string"
+                },
+                "cache": {
+                    "default": true,
+                    "title": "Cache",
+                    "type": "boolean"
+                },
+                "resume": {
+                    "default": true,
+                    "title": "Resume",
+                    "type": "boolean"
+                },
+                "seed": {
+                    "default": 42,
+                    "title": "Seed",
+                    "type": "integer"
+                }
+            },
+            "title": "ExecutionConfig",
+            "type": "object"
+        },
+        "InputConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "default": "auto",
+                    "enum": [
+                        "auto",
+                        "json",
+                        "txt",
+                        "pdf",
+                        "deep_search"
+                    ],
+                    "title": "Type",
+                    "type": "string"
+                },
+                "path": {
+                    "default": "",
+                    "title": "Path",
+                    "type": "string"
+                },
+                "paths": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Paths",
+                    "type": "array"
+                },
+                "records_path": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Records Path"
+                },
+                "mapping_spec": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Mapping Spec"
+                },
+                "extract_context": {
+                    "default": true,
+                    "title": "Extract Context",
+                    "type": "boolean"
+                },
+                "generate_qa_from_text": {
+                    "default": true,
+                    "title": "Generate Qa From Text",
+                    "type": "boolean"
+                },
+                "max_generated_questions": {
+                    "default": 5,
+                    "maximum": 50,
+                    "minimum": 1,
+                    "title": "Max Generated Questions",
+                    "type": "integer"
+                },
+                "text_batching": {
+                    "$ref": "#/$defs/TextBatchingConfig"
+                },
+                "preserve_source_split": {
+                    "default": true,
+                    "title": "Preserve Source Split",
+                    "type": "boolean"
+                },
+                "default_split": {
+                    "default": "train",
+                    "title": "Default Split",
+                    "type": "string"
+                }
+            },
+            "title": "InputConfig",
+            "type": "object"
+        },
+        "LLMConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "provider": {
+                    "const": "openai",
+                    "default": "openai",
+                    "title": "Provider",
+                    "type": "string"
+                },
+                "api": {
+                    "default": "responses",
+                    "enum": [
+                        "responses",
+                        "chat_completions"
+                    ],
+                    "title": "Api",
+                    "type": "string"
+                },
+                "model": {
+                    "default": "gpt-4.1-mini",
+                    "title": "Model",
+                    "type": "string"
+                },
+                "analyzer_model": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Analyzer Model"
+                },
+                "generator_model": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Generator Model"
+                },
+                "verifier_model": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Verifier Model"
+                },
+                "base_url": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Base Url"
+                },
+                "api_key_env": {
+                    "default": "OPENAI_API_KEY",
+                    "title": "Api Key Env",
+                    "type": "string"
+                },
+                "structured_output": {
+                    "default": "json",
+                    "enum": [
+                        "strict",
+                        "json",
+                        "prompt"
+                    ],
+                    "title": "Structured Output",
+                    "type": "string"
+                },
+                "chat_token_limit_param": {
+                    "default": "max_completion_tokens",
+                    "enum": [
+                        "max_completion_tokens",
+                        "max_tokens"
+                    ],
+                    "title": "Chat Token Limit Param",
+                    "type": "string"
+                },
+                "capabilities": {
+                    "$ref": "#/$defs/Capabilities"
+                },
+                "temperature": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Temperature"
+                },
+                "reasoning_effort": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Reasoning Effort"
+                },
+                "max_output_tokens": {
+                    "default": 6000,
+                    "minimum": 256,
+                    "title": "Max Output Tokens",
+                    "type": "integer"
+                },
+                "max_input_chars": {
+                    "default": 100000,
+                    "minimum": 1000,
+                    "title": "Max Input Chars",
+                    "type": "integer"
+                },
+                "timeout_seconds": {
+                    "default": 90,
+                    "exclusiveMinimum": 0,
+                    "title": "Timeout Seconds",
+                    "type": "number"
+                },
+                "pricing": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/Pricing"
+                    },
+                    "title": "Pricing",
+                    "type": "object"
+                },
+                "modules": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/LLMOverride"
+                    },
+                    "propertyNames": {
+                        "enum": [
+                            "search_planner",
+                            "analyzer",
+                            "generator",
+                            "verifier",
+                            "text_batch_planner",
+                            "extractor",
+                            "text_assessor",
+                            "qa_constructor",
+                            "context",
+                            "choice",
+                            "noul",
+                            "score",
+                            "checker"
+                        ]
+                    },
+                    "title": "Modules",
+                    "type": "object"
+                }
+            },
+            "title": "LLMConfig",
+            "type": "object"
+        },
+        "LLMOverride": {
+            "additionalProperties": false,
+            "description": "Unset fields inherit the global configuration; secrets stay in the environment.",
+            "properties": {
+                "model": {
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Model"
+                },
+                "base_url": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Base Url"
+                },
+                "api_key_env": {
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Api Key Env"
+                },
+                "api": {
+                    "anyOf": [
+                        {
+                            "enum": [
+                                "responses",
+                                "chat_completions"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Api"
+                },
+                "structured_output": {
+                    "anyOf": [
+                        {
+                            "enum": [
+                                "strict",
+                                "json",
+                                "prompt"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Structured Output"
+                },
+                "chat_token_limit_param": {
+                    "anyOf": [
+                        {
+                            "enum": [
+                                "max_completion_tokens",
+                                "max_tokens"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Chat Token Limit Param"
+                },
+                "capabilities": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Capabilities"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null
+                },
+                "temperature": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Temperature"
+                },
+                "reasoning_effort": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Reasoning Effort"
+                },
+                "max_output_tokens": {
+                    "anyOf": [
+                        {
+                            "minimum": 256,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Max Output Tokens"
+                },
+                "timeout_seconds": {
+                    "anyOf": [
+                        {
+                            "exclusiveMinimum": 0,
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Timeout Seconds"
+                }
+            },
+            "title": "LLMOverride",
+            "type": "object"
+        },
+        "MinerUConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "base_url": {
+                    "default": "https://mineru.net/api/v4",
+                    "title": "Base Url",
+                    "type": "string"
+                },
+                "api_key_env": {
+                    "default": "MINERU_API_KEY",
+                    "minLength": 1,
+                    "title": "Api Key Env",
+                    "type": "string"
+                },
+                "model_version": {
+                    "default": "vlm",
+                    "enum": [
+                        "pipeline",
+                        "vlm"
+                    ],
+                    "title": "Model Version",
+                    "type": "string"
+                },
+                "language": {
+                    "default": "ch",
+                    "title": "Language",
+                    "type": "string"
+                },
+                "is_ocr": {
+                    "default": false,
+                    "title": "Is Ocr",
+                    "type": "boolean"
+                },
+                "enable_formula": {
+                    "default": true,
+                    "title": "Enable Formula",
+                    "type": "boolean"
+                },
+                "enable_table": {
+                    "default": true,
+                    "title": "Enable Table",
+                    "type": "boolean"
+                },
+                "batch_size": {
+                    "default": 50,
+                    "maximum": 50,
+                    "minimum": 1,
+                    "title": "Batch Size",
+                    "type": "integer"
+                },
+                "timeout_seconds": {
+                    "default": 120,
+                    "exclusiveMinimum": 0,
+                    "title": "Timeout Seconds",
+                    "type": "number"
+                },
+                "poll_interval_seconds": {
+                    "default": 5,
+                    "exclusiveMinimum": 0,
+                    "title": "Poll Interval Seconds",
+                    "type": "number"
+                },
+                "max_wait_seconds": {
+                    "default": 1800,
+                    "exclusiveMinimum": 0,
+                    "title": "Max Wait Seconds",
+                    "type": "number"
+                }
+            },
+            "title": "MinerUConfig",
+            "type": "object"
+        },
+        "NoulConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "labels": {
+                    "default": [
+                        1,
+                        0
+                    ],
+                    "items": {
+                        "enum": [
+                            0,
+                            1
+                        ],
+                        "type": "integer"
+                    },
+                    "title": "Labels",
+                    "type": "array"
+                }
+            },
+            "title": "NoulConfig",
+            "type": "object"
+        },
+        "OpenAlexConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "api_key_env": {
+                    "default": "OPENALEX_API_KEY",
+                    "minLength": 1,
+                    "title": "Api Key Env",
+                    "type": "string"
+                },
+                "search_mode": {
+                    "default": "keyword",
+                    "enum": [
+                        "keyword",
+                        "semantic"
+                    ],
+                    "title": "Search Mode",
+                    "type": "string"
+                },
+                "use_content_api": {
+                    "default": false,
+                    "title": "Use Content Api",
+                    "type": "boolean"
+                }
+            },
+            "title": "OpenAlexConfig",
+            "type": "object"
+        },
+        "OutputConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "directory": {
+                    "default": "outputs/run_001",
+                    "title": "Directory",
+                    "type": "string"
+                },
+                "include_audit": {
+                    "default": false,
+                    "title": "Include Audit",
+                    "type": "boolean"
+                },
+                "export_requests": {
+                    "default": false,
+                    "title": "Export Requests",
+                    "type": "boolean"
+                },
+                "jev_model": {
+                    "default": "jev-latest",
+                    "title": "Jev Model",
+                    "type": "string"
+                },
+                "validation_fraction": {
+                    "default": 0.0,
+                    "exclusiveMaximum": 1,
+                    "minimum": 0,
+                    "title": "Validation Fraction",
+                    "type": "number"
+                },
+                "validation_seed": {
+                    "default": 42,
+                    "minimum": 0,
+                    "title": "Validation Seed",
+                    "type": "integer"
+                }
+            },
+            "title": "OutputConfig",
+            "type": "object"
+        },
+        "Pricing": {
+            "additionalProperties": false,
+            "properties": {
+                "input_per_million": {
+                    "minimum": 0,
+                    "title": "Input Per Million",
+                    "type": "number"
+                },
+                "output_per_million": {
+                    "minimum": 0,
+                    "title": "Output Per Million",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "input_per_million",
+                "output_per_million"
+            ],
+            "title": "Pricing",
+            "type": "object"
+        },
+        "ProjectConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "default": "decisionforge",
+                    "title": "Name",
+                    "type": "string"
+                },
+                "schema_version": {
+                    "const": "decisionforge.training.v1",
+                    "default": "decisionforge.training.v1",
+                    "title": "Schema Version",
+                    "type": "string"
+                },
+                "language": {
+                    "default": "preserve_source",
+                    "title": "Language",
+                    "type": "string"
+                }
+            },
+            "title": "ProjectConfig",
+            "type": "object"
+        },
+        "ScoreConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "default_levels": {
+                    "default": 5,
+                    "maximum": 10,
+                    "minimum": 2,
+                    "title": "Default Levels",
+                    "type": "integer"
+                }
+            },
+            "title": "ScoreConfig",
+            "type": "object"
+        },
+        "SearchPlan": {
+            "additionalProperties": false,
+            "properties": {
+                "domain": {
+                    "minLength": 1,
+                    "title": "Domain",
+                    "type": "string"
+                },
+                "queries": {
+                    "items": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "maxItems": 10,
+                    "minItems": 1,
+                    "title": "Queries",
+                    "type": "array"
+                },
+                "start_date": {
+                    "anyOf": [
+                        {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Start Date"
+                },
+                "end_date": {
+                    "anyOf": [
+                        {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "End Date"
+                },
+                "work_types": {
+                    "items": {
+                        "enum": [
+                            "article",
+                            "review",
+                            "preprint",
+                            "book",
+                            "book-chapter",
+                            "dissertation",
+                            "report",
+                            "dataset",
+                            "other"
+                        ],
+                        "type": "string"
+                    },
+                    "title": "Work Types",
+                    "type": "array"
+                },
+                "language": {
+                    "anyOf": [
+                        {
+                            "pattern": "^[a-z]{2}$",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Language"
+                },
+                "open_access_only": {
+                    "default": false,
+                    "title": "Open Access Only",
+                    "type": "boolean"
+                },
+                "min_citations": {
+                    "anyOf": [
+                        {
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Min Citations"
+                },
+                "requested_papers": {
+                    "anyOf": [
+                        {
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Requested Papers"
+                },
+                "requirements": {
+                    "items": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "title": "Requirements",
+                    "type": "array"
+                }
+            },
+            "required": [
+                "domain",
+                "queries"
+            ],
+            "title": "SearchPlan",
+            "type": "object"
+        },
+        "TaskConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "domain_profile": {
+                    "default": "general_qa",
+                    "title": "Domain Profile",
+                    "type": "string"
+                },
+                "modes": {
+                    "default": [
+                        "auto"
+                    ],
+                    "items": {
+                        "enum": [
+                            "auto",
+                            "choice",
+                            "noul",
+                            "score"
+                        ],
+                        "type": "string"
+                    },
+                    "title": "Modes",
+                    "type": "array"
+                },
+                "difficulty": {
+                    "default": 0.5,
+                    "description": "Target difficulty of generated distractors and erroneous content; 0 easy, 1 hard.",
+                    "maximum": 1,
+                    "minimum": 0,
+                    "title": "Difficulty",
+                    "type": "number"
+                }
+            },
+            "title": "TaskConfig",
+            "type": "object"
+        },
+        "TextBatchingConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "enabled": {
+                    "default": true,
+                    "title": "Enabled",
+                    "type": "boolean"
+                },
+                "threshold_chars": {
+                    "default": 10000,
+                    "minimum": 100,
+                    "title": "Threshold Chars",
+                    "type": "integer"
+                },
+                "max_batches": {
+                    "default": 64,
+                    "maximum": 4096,
+                    "minimum": 2,
+                    "title": "Max Batches",
+                    "type": "integer"
+                }
+            },
+            "title": "TextBatchingConfig",
+            "type": "object"
+        },
+        "VerificationConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "max_semantic_repairs": {
+                    "default": 2,
+                    "maximum": 5,
+                    "minimum": 0,
+                    "title": "Max Semantic Repairs",
+                    "type": "integer"
+                }
+            },
+            "title": "VerificationConfig",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "project": {
+            "$ref": "#/$defs/ProjectConfig"
+        },
+        "input": {
+            "$ref": "#/$defs/InputConfig"
+        },
+        "deep_search": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/DeepSearchConfig"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
+        "task": {
+            "$ref": "#/$defs/TaskConfig"
+        },
+        "llm": {
+            "$ref": "#/$defs/LLMConfig"
+        },
+        "mineru": {
+            "$ref": "#/$defs/MinerUConfig"
+        },
+        "choice": {
+            "$ref": "#/$defs/ChoiceConfig"
+        },
+        "score": {
+            "$ref": "#/$defs/ScoreConfig"
+        },
+        "noul": {
+            "$ref": "#/$defs/NoulConfig"
+        },
+        "context": {
+            "$ref": "#/$defs/ContextConfig"
+        },
+        "verification": {
+            "$ref": "#/$defs/VerificationConfig"
+        },
+        "execution": {
+            "$ref": "#/$defs/ExecutionConfig"
+        },
+        "output": {
+            "$ref": "#/$defs/OutputConfig"
+        }
+    },
+    "required": [
+        "input"
+    ],
+    "title": "Config",
+    "type": "object"
+}

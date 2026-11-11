@@ -1,0 +1,48 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.7'
+          enable-cache: true
+      - run: uv sync --locked --group dev
+      - name: Ruff
+        run: uv run ruff check
+      - name: Full offline test suite
+        if: runner.os == 'Linux'
+        run: uv run pytest
+      - name: Base platform tests
+        if: runner.os != 'Linux'
+        run: uv run pytest tests/test_eval_contracts.py tests/test_typer_cli.py tests/test_cli_overrides.py
+      - name: Public documentation and help smoke
+        run: uv run python tests/acceptance/check_public.py
+      - name: Offline example without credentials
+        run: uv run dforge data inspect --config configs/offline.yaml
+  plugin:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: extensions/dsh-decisionforge
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: extensions/dsh-decisionforge/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: npm test

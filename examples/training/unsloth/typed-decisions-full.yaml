@@ -1,0 +1,47 @@
+# Full canonical Typed Decisions preparation; see ../data/FULL.md.
+backend: unsloth
+finetuning: full
+data:
+  path: ../../../data/local/typed-decisions-frozen-roles.v3.jsonl
+  split_map:
+    train: train
+    validation: validation
+    calibration: calibration
+    test: test
+  auto_holdout:
+    validation_fraction: 0.1
+    calibration_fraction: 0.1
+  on_skipped: error
+  on_truncated: error
+model:
+  name: Qwen/Qwen3-0.6B
+  revision: c1899de289a04d12100db370d81485cdf75e47ca
+  max_seq_length: 8192
+  load_in_4bit: false
+lora: null
+distributed:
+  strategy: single
+  world_size: 1
+  timeout_seconds: 1800
+training:
+  seed: 3407
+  num_train_epochs: 1.0
+  max_steps: null
+  batch_size: 2
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-05
+  head_learning_rate: 0.0001
+  warmup_steps: 10
+  weight_decay: 0.01
+  lr_scheduler_type: cosine
+  precision: bf16
+  gradient_checkpointing: true
+  logging_steps: 10
+  save_steps: 1000000
+calibration:
+  enabled: true
+output:
+  directory: ../../../outputs/train/unsloth-typed-decisions-full
+  save_merged: false
+laya: null
+openjev: null

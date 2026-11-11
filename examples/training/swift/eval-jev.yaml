@@ -1,0 +1,14 @@
+benchmark: generic
+data:
+  path: data/eval-multimodal.jsonl
+  splits:
+  - test
+model:
+  adapter: swift_local
+  model_type: jev
+  path: ../../../outputs/train/swift-jev/model
+execution:
+  concurrency: 1
+  timeout: 300
+  max_attempts: 1
+output: ../../../outputs/eval/swift-jev

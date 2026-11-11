@@ -1,0 +1,29 @@
+backend: swift
+finetuning: lora
+model:
+  name: Cloudflare/clef
+  revision: cfddda043dd190ef3b01cff449d5ee8cff1e8ec6
+  load_in_4bit: false
+  max_seq_length: 4096
+swift:
+  model_type: clef
+  decision_subsample_options: false
+data:
+  path: data/multimodal.jsonl
+training:
+  num_train_epochs: 1.0
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001
+  head_learning_rate: 0.0001
+  warmup_steps: 0
+  precision: bf16
+  gradient_checkpointing: true
+calibration:
+  enabled: false
+output:
+  directory: ../../../outputs/train/swift-clef
+lora:
+  rank: 8
+  alpha: 32
+  dropout: 0.0

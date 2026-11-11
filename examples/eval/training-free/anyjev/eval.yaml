@@ -1,0 +1,17 @@
+benchmark: generic
+data:
+  path: fixture.jsonl
+model:
+  adapter: anyjev_local
+  model: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  precision: bfloat16
+  device: cuda:0
+  batch_size: 8
+  max_seq_length: 8192
+  load_timeout: 600
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 120
+output: ../../../../outputs/eval/training-free/anyjev-fixture

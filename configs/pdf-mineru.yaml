@@ -1,0 +1,36 @@
+# Paths are relative to this YAML file. Credentials are read from environment/.env.
+input:
+  type: pdf
+  path: ../power_full_test/pdf
+  # For selected PDFs, remove path and use paths: [../path/a.pdf, ../path/b.pdf]
+  max_generated_questions: 5
+mineru:
+  base_url: https://mineru.net/api/v4
+  api_key_env: MINERU_API_KEY
+  model_version: vlm
+  language: ch
+  enable_formula: true
+  enable_table: true
+  is_ocr: false
+  batch_size: 50
+  max_wait_seconds: 1800
+llm:
+  api: chat_completions
+  model: ${OPENAI_MODEL}
+  api_key_env: OPENAI_API_KEY
+  structured_output: json
+  # Optional per-module overrides. Unset fields inherit group/global values.
+  # modules:
+  #   extractor:
+  #     model: extraction-model
+  #   choice:
+  #     base_url: https://generation.example.com/v1
+  #     api_key_env: GENERATOR_API_KEY
+  #     model: choice-model
+  #   checker:
+  #     base_url: https://verification.example.com/v1
+  #     api_key_env: CHECKER_API_KEY
+  #     model: reasoning-model
+  #     api: responses
+output:
+  directory: ../outputs/pdf_generation

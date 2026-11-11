@@ -1,0 +1,26 @@
+backend: openjev
+data:
+  # Run prepare_openjev_cn.py first; this is an explicitly audited C/N subset.
+  path: ../../../data/local/openjev/typed-decisions-cn.v3.jsonl
+  on_skipped: error
+  on_truncated: error
+model:
+  name: Qwen/Qwen3-0.6B
+  revision: c1899de289a04d12100db370d81485cdf75e47ca
+  max_seq_length: 4096
+training:
+  seed: 17
+  max_steps: 2  # Calibrate stage only; reinforce has its own budget below.
+  batch_size: 1  # Official items-per-step, not gradient accumulation.
+  learning_rate: 0.000002
+openjev:
+  reinforce_steps: 2
+  reinforce_seed: 1017
+  m: 2
+  m_eval: 1
+  max_new_tokens: 32
+  eval_every: 2
+  dev_cap: 2
+  test_cap: 2
+output:
+  directory: ../../../outputs/train/openjev-single

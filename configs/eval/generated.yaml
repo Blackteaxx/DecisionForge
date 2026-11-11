@@ -1,0 +1,4 @@
+benchmark: generic
+data:
+  path: ../../outputs/run_001/accepted.json
+output: ../../outputs/eval/generated

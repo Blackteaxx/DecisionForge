@@ -1,0 +1,15 @@
+benchmark: generic
+data:
+  path: ../../../outputs/acceptance/full/data/test.jsonl
+model:
+  adapter: unsloth_local
+  path: ../../../outputs/acceptance/full/model
+  precision: bf16
+  load_in_4bit: false
+  max_seq_length: 4096
+  local_files_only: true
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 300
+output: ../../../outputs/acceptance/full-eval

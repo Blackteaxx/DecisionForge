@@ -1,0 +1,16 @@
+benchmark: generic
+data:
+  path: ../../../training/data/acceptance/common-cns.v3.jsonl
+  splits:
+  - test
+model:
+  adapter: anyjev_local
+  model: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  device: cuda:0
+  precision: bfloat16
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 600
+output: ../../../../outputs/acceptance/anyjev-eval

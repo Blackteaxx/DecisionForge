@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DecisionForge · 每个场景，都值得一个决策模型</title>
+  <link rel="icon" href="assets/brand/favicon.svg">
+  <meta name="description" content="每个场景，都值得一个决策模型。通过真实 Agent 会话探索 JEV 数据生成、训练和评测。">
+  <meta property="og:title" content="DecisionForge · Every scenario deserves its own decision model.">
+  <meta property="og:description" content="Explore data generation, training and evaluation through real Agent sessions.">
+  <meta property="og:image" content="https://oscar-dzy.github.io/Autojev-data/assets/brand/social-preview.png">
+  <meta property="og:url" content="https://oscar-dzy.github.io/Autojev-data/">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#top">
+      <img class="wordmark light" src="assets/brand/wordmark.svg" alt="DecisionForge" width="126" height="41">
+      <img class="wordmark dark" src="assets/brand/wordmark-dark.svg" alt="DecisionForge" width="126" height="41">
+    </a>
+    <nav>
+      <a href="#workflow" data-i18n="流程">流程</a>
+      <a href="#gates" data-i18n="确认">确认</a>
+      <a href="#performance" data-i18n="评测">评测</a>
+      <a href="#replay" data-i18n="回放">回放</a>
+      <a href="https://github.com/Oscar-dzy/Autojev-data" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/Oscar-dzy/Autojev-data#readme" data-i18n="快速开始">快速开始</a>
+      <button id="language-toggle" type="button" aria-label="Switch language">English</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============================================================ hero -->
+    <section class="hero">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="kicker" id="hero-eyebrow"></p>
+        <h1 id="hero-title"></h1>
+        <p class="lead" id="hero-lead"></p>
+        <div class="actions">
+          <a class="btn primary" href="#replay" data-open="triage" data-i18n="观看任务回放">观看任务回放</a>
+          <a class="btn link" href="#performance" data-i18n="查看评测结果">查看评测结果</a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#intro"><span data-i18n="向下探索">向下探索</span> <span>↘</span></a>
+    </section>
+
+    <!-- ============================================================ intro + numbers -->
+    <section class="block" id="intro">
+      <div class="split">
+        <h2 id="intro-title"></h2>
+        <p class="body" id="intro-body"></p>
+      </div>
+      <dl class="figures" id="figures"></dl>
+    </section>
+
+    <!-- ============================================================ workflow -->
+    <section class="block" id="workflow">
+      <div class="split">
+        <h2 data-i18n="六个阶段，<br>每一步都可追溯。">六个阶段，<br>每一步都可追溯。</h2>
+        <p class="body" data-i18n="每个阶段对应一个 skill。下面写着它在两次任务里实际做了什么，点任一行可以直接跳到回放中的对应片段。">每个阶段对应一个 skill。下面写着它在两次任务里实际做了什么，点任一行可以直接跳到回放中的对应片段。</p>
+      </div>
+      <div class="steps" id="steps"></div>
+    </section>
+
+    <!-- ============================================================ gates -->
+    <section class="block" id="gates">
+      <div class="split">
+        <h2 id="gates-title"></h2>
+        <p class="body" id="gates-body"></p>
+      </div>
+      <ol class="gate-list" id="gate-list"></ol>
+    </section>
+
+    <!-- ============================================================ performance -->
+    <section class="block" id="performance">
+      <div class="split">
+        <h2 id="perf-title"></h2>
+        <p class="body" id="perf-body"></p>
+      </div>
+      <dl class="figures small" id="perf-figures"></dl>
+      <div class="viz-root" id="perf">
+        <div class="perf-toolbar">
+          <div class="legend" id="perf-legend" role="group" aria-label="方法（点击突出显示）"></div>
+          <div class="toggle" role="group" aria-label="视图">
+            <button class="on" data-view="chart" data-i18n="图表">图表</button>
+            <button data-view="table" data-i18n="表格">表格</button>
+          </div>
+        </div>
+        <div id="perf-chart" class="perf-chart"></div>
+        <div id="perf-table" class="perf-table" hidden></div>
+        <ul class="notes" id="perf-notes"></ul>
+        <div class="tooltip" id="perf-tip" role="tooltip" hidden></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ replay -->
+    <section class="block" id="replay">
+      <div class="split">
+        <h2 id="replay-title"></h2>
+        <p class="body" id="replay-body"></p>
+      </div>
+
+      <p class="replay-notice" data-i18n="回放已按当前命令名替换，内容与原会话一致。">回放已按当前命令名替换，内容与原会话一致。</p>
+      <div class="tabs" role="tablist" id="traj-tabs"></div>
+      <div class="traj-head" id="traj-head"></div>
+
+      <div class="stage" id="stage">
+        <aside class="flow-panel">
+          <div class="panel-label"><span data-i18n="Skills 流程 · 本任务">Skills 流程 · 本任务</span><span class="dag-legend"><i class="lg active"></i>当前<i class="lg visited"></i>已完成<i class="lg off"></i>未经过</span></div>
+          <div class="dag-svg" id="dag"></div>
+          <div class="node-card" id="node-card"></div>
+        </aside>
+
+        <div class="player">
+          <div class="player-bar">
+            <div class="ctrl">
+              <button class="ctl play" id="btn-play" aria-label="播放" data-i18n="播放">播放</button>
+              <button class="ctl" id="btn-next" title="下一条消息（→）" data-i18n="下一条">下一条</button>
+              <button class="ctl" id="btn-stage" title="下一阶段（Shift + →）" data-i18n="下一阶段">下一阶段</button>
+              <button class="ctl" id="btn-end" title="直接显示全部" data-i18n="全部">全部</button>
+              <button class="ctl" id="btn-reset" title="从头开始" data-i18n="重来">重来</button>
+            </div>
+            <div class="speed" id="speed" role="group" aria-label="速度"></div>
+          </div>
+          <div class="scrubber" id="scrubber" title="点击跳转">
+            <div class="scrub-track" id="scrub-track"></div>
+            <div class="scrub-tip" id="scrub-tip" hidden></div>
+          </div>
+          <div class="clock" id="clock"></div>
+          <div class="transcript-wrap">
+            <div class="transcript" id="transcript" aria-live="polite"></div>
+            <button class="follow" id="btn-follow" hidden data-i18n="跟随最新 ↓">跟随最新 ↓</button>
+          </div>
+          <div class="player-foot">
+            <label><input type="checkbox" id="f-tools" checked> 显示命令</label>
+            <label><input type="checkbox" id="f-status" checked> 显示进度更新</label>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-brand"><b>DecisionForge</b><span>Human × Agent</span></div>
+    <p data-i18n="回放来自两次真实会话，已隐去内部路径与凭据，并对用户消息做了文字整理。">回放来自两次真实会话，已隐去内部路径与凭据，并对用户消息做了文字整理。</p>
+  </footer>
+
+  <script src="assets/content.js"></script>
+  <script src="data/trajectory-triage.js"></script>
+  <script src="data/trajectory-materials.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

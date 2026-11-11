@@ -1,0 +1,24 @@
+# Small generated-data example; edit data.path to use the actual generation run directory.
+backend: unsloth
+data:
+  path: ../../outputs/run_001/accepted.json
+  auto_holdout:
+    validation_fraction: 0.2
+    calibration_fraction: 0.0
+model:
+  name: Qwen/Qwen3.5-4B
+  max_seq_length: 2048
+  load_in_4bit: true
+training:
+  num_train_epochs: null
+  max_steps: 20
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  logging_steps: 1
+  save_steps: 10
+# Ten choice cases are insufficient for a separate 10-question calibration split.
+calibration:
+  enabled: false
+output:
+  directory: ../../outputs/train/generated
+  save_merged: false

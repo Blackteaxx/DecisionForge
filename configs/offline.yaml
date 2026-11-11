@@ -1,0 +1,8 @@
+# Offline inspection example: no environment variables or API credentials required.
+input:
+  type: json
+  path: ../examples/standard.json
+llm:
+  model: offline-inspect
+output:
+  directory: ../outputs/offline-example

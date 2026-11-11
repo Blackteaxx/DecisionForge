@@ -1,0 +1,6 @@
+{
+  "question": "query.text",
+  "answer": "gold",
+  "options": "choices",
+  "answer_encoding": "key"
+}

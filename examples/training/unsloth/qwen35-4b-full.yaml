@@ -1,0 +1,33 @@
+# Run prepare_data.sh first. Uses full original train/test splits, not the bundled sample.
+backend: unsloth
+data:
+  path: ../../../data/local/typed-decisions-training.jsonl
+  split_map: {train: train, validation: validation, calibration: calibration, test: test}
+  auto_holdout: {validation_fraction: 0.1, calibration_fraction: 0.1}
+  on_skipped: error
+  on_truncated: error
+model:
+  name: Qwen/Qwen3.5-4B
+  revision: null
+  max_seq_length: 16384
+  load_in_4bit: true
+lora: {rank: 16, alpha: 16, dropout: 0.0}
+training:
+  seed: 3407
+  num_train_epochs: 2
+  max_steps: null
+  batch_size: 2
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0002
+  head_learning_rate: 0.0001
+  warmup_steps: 10
+  weight_decay: 0.01
+  lr_scheduler_type: cosine
+  precision: auto
+  gradient_checkpointing: true
+  logging_steps: 50
+  save_steps: 100
+calibration: {enabled: true}
+output:
+  directory: ../../../outputs/train/qwen35-4b-full
+  save_merged: true

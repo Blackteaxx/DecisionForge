@@ -1,0 +1,70 @@
+[
+  {
+    "schema_version": "decisionforge.training.v3",
+    "record_id": 7,
+    "group_id": 146,
+    "split": "train",
+    "request": {
+      "state": "[{\"role\": \"user\", \"content\": \"My wife feels dizzy. What should we do?\"}]",
+      "questions": {
+        "q1": {
+          "type": "choice",
+          "instructions": "Based only on the information currently available in the conversation, choose the action the medical assistant should take now.",
+          "criteria": {
+            "A": "Ask the smallest necessary clarification; current information is insufficient.",
+            "B": "Offer self-care, monitoring, reassurance, or conditional safety-netting.",
+            "C": "Recommend current nonurgent professional evaluation or care.",
+            "D": "Recommend urgent or emergency-level evaluation now."
+          }
+        }
+      }
+    },
+    "supervision": {
+      "answers": {
+        "q1": {
+          "type": "choice",
+          "choice": "A",
+          "confidence": 1.0,
+          "probabilities": {
+            "A": 1.0,
+            "B": 0.0,
+            "C": 0.0,
+            "D": 0.0
+          }
+        }
+      }
+    }
+  },
+  {
+    "schema_version": "decisionforge.training.v3",
+    "record_id": 1,
+    "group_id": 233,
+    "split": "train",
+    "request": {
+      "state": "{\"patients\": [{\"message\": \"I've been vomiting all morning and feel lightheaded. I can't keep fluids down.\", \"ehr\": \"70-year-old, lives alone.\"}, {\"message\": \"I have mild nausea after a picnic but am eating and drinking normally.\", \"ehr\": \"30-year-old, no chronic conditions.\"}]}",
+      "questions": {
+        "q1": {
+          "type": "choice",
+          "instructions": "Which of the two patient messages should the clinical team address first? Compare clinical urgency using the message and any provided medical history.",
+          "criteria": {
+            "A": "Prioritize the first patient.",
+            "B": "Prioritize the second patient."
+          }
+        }
+      }
+    },
+    "supervision": {
+      "answers": {
+        "q1": {
+          "type": "choice",
+          "choice": "A",
+          "confidence": 1.0,
+          "probabilities": {
+            "A": 1.0,
+            "B": 0.0
+          }
+        }
+      }
+    }
+  }
+]

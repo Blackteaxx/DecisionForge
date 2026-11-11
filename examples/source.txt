@@ -1,0 +1,6 @@
+Question: What is the capital of France?
+Answer: Paris
+Context: France is a country in Europe.
+
+Question: What is 2+2?
+Answer: 4

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">DecisionForge Forked Spark monochrome icon</title>
+  <path d="M256 392V280M256 280L194 173M256 280L342 131" fill="none" stroke="currentColor" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="170" cy="131" r="30" fill="none" stroke="currentColor" stroke-width="16" opacity=".6"/>
+  <circle cx="342" cy="131" r="30" fill="currentColor"/>
+</svg>

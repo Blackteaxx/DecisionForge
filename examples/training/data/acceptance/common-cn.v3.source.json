@@ -1,0 +1,162 @@
+{
+  "schema_version": "decisionforge.openjev.cn_fixture.v1",
+  "source": "common-cns.v3.jsonl",
+  "source_sha256": "934b77648677ba5ae69d32c94b18d5af866d8bea49ed0698ba43115964d4d850",
+  "output_sha256": "502ae85679c7dc5ebc07f746f9e7dc059e12a9852979ee33963781a1c2f1d271",
+  "records": 15,
+  "retained_questions": 45,
+  "excluded_questions": [
+    {
+      "record_id": 1,
+      "question_id": "risk",
+      "type": "score"
+    },
+    {
+      "record_id": 1,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 2,
+      "question_id": "churn_risk",
+      "type": "score"
+    },
+    {
+      "record_id": 2,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 3,
+      "question_id": "discrepancy_severity",
+      "type": "score"
+    },
+    {
+      "record_id": 3,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 4,
+      "question_id": "severity",
+      "type": "score"
+    },
+    {
+      "record_id": 4,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 5,
+      "question_id": "risk",
+      "type": "score"
+    },
+    {
+      "record_id": 5,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 6,
+      "question_id": "churn_risk",
+      "type": "score"
+    },
+    {
+      "record_id": 6,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 7,
+      "question_id": "discrepancy_severity",
+      "type": "score"
+    },
+    {
+      "record_id": 7,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 8,
+      "question_id": "severity",
+      "type": "score"
+    },
+    {
+      "record_id": 8,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 9,
+      "question_id": "risk",
+      "type": "score"
+    },
+    {
+      "record_id": 9,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 10,
+      "question_id": "churn_risk",
+      "type": "score"
+    },
+    {
+      "record_id": 10,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 11,
+      "question_id": "discrepancy_severity",
+      "type": "score"
+    },
+    {
+      "record_id": 11,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 12,
+      "question_id": "severity",
+      "type": "score"
+    },
+    {
+      "record_id": 12,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 13,
+      "question_id": "risk",
+      "type": "score"
+    },
+    {
+      "record_id": 13,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 101,
+      "question_id": "risk",
+      "type": "score"
+    },
+    {
+      "record_id": 101,
+      "question_id": "urgency",
+      "type": "score"
+    },
+    {
+      "record_id": 102,
+      "question_id": "churn_risk",
+      "type": "score"
+    },
+    {
+      "record_id": 102,
+      "question_id": "urgency",
+      "type": "score"
+    }
+  ],
+  "operation": "explicit_Score_question_exclusion_only_no_probability_or_public_field_rewrite",
+  "weight_source": "original_soft_supervision_not_human_annotation_counts"
+}

@@ -1,0 +1,31 @@
+flowchart TD
+    request([用户提出需求]) --> clarify["需求澄清与初步分析<br/>决策目标、候选选项、评价标准、已有条件"]
+    clarify --> suitability{"是否为决策场景<br/>且初步适合 JEV？"}
+    suitability -->|信息不足| supplement["补充场景与约束"]
+    supplement --> clarify
+    suitability -->|不适合| alternative["说明判断依据<br/>建议其他处理路线"]
+    suitability -->|适合| roadmap["明确并确认整体流程<br/>本次路径、交付目标、资源与限制"]
+    roadmap --> hasData{"是否有自有数据？"}
+
+    hasData -->|有| ownEval["整理并固定评测集<br/>标签、覆盖范围、指标、数据隔离"]
+    ownEval --> ownSearch["搜寻资料"]
+    ownSearch --> ownTrainData["整理训练数据"]
+
+    hasData -->|没有，只有场景| scenarioSearch["搜寻资料"]
+    scenarioSearch --> scenarioData["整理数据<br/>独立评测集与候选训练数据"]
+    scenarioData --> trainChoice{"用户是否选择训练？"}
+
+    ownTrainData --> train["完成训练<br/>产出模型与训练记录"]
+    trainChoice -->|训练| train
+    trainChoice -->|不训练| existing["选定已有模型或免训练方案"]
+    train --> evaluation["评测与对比<br/>使用独立评测集及已确认的指标"]
+    existing --> evaluation
+    evaluation --> report["性能报告与 insight<br/>指标、错误案例、适用边界、改进建议"]
+    report --> delivery([交付报告及可追溯产物])
+
+    classDef stage fill:#EFF6FF,stroke:#3B82F6,color:#172B4D;
+    classDef choice fill:#FFF7ED,stroke:#D97706,color:#7C2D12;
+    classDef result fill:#ECFDF5,stroke:#059669,color:#064E3B;
+    class clarify,supplement,roadmap,ownEval,ownSearch,ownTrainData,scenarioSearch,scenarioData,train,existing,evaluation stage;
+    class suitability,hasData,trainChoice choice;
+    class alternative,report,delivery result;

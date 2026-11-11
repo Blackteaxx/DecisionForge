@@ -1,0 +1,19 @@
+benchmark: typed_decisions
+benchmark_version: 1-single-question
+data:
+  path: ./typed-decisions-test-sample.jsonl
+  splits: [test]
+model:
+  adapter: unsloth_local
+  # Training example's saved adapter/head/calibration; can also point to its merged/ folder.
+  path: ../../../outputs/train/qwen35-4b-smoke/model
+  load_in_4bit: true
+  precision: auto
+  max_seq_length: 16384
+  load_timeout: 600
+  local_files_only: true
+execution:
+  concurrency: 1
+  timeout: 300
+  max_attempts: 1
+output: ../../../outputs/eval/qwen35-4b-local

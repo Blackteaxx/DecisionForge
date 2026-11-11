@@ -1,0 +1,29 @@
+backend: unsloth
+finetuning: full
+data:
+  path: ../data/typed-decisions-sample.jsonl
+  on_truncated: error
+model:
+  name: Qwen/Qwen3-1.7B
+  max_seq_length: 16384
+  load_in_4bit: false
+lora: null
+distributed:
+  strategy: ddp
+  world_size: 2
+training:
+  num_train_epochs: null
+  max_steps: 20
+  batch_size: 1
+  gradient_accumulation_steps: 2
+  learning_rate: 0.00002
+  head_learning_rate: 0.0001
+  warmup_steps: 0
+  precision: auto
+  logging_steps: 1
+  save_steps: 5
+calibration:
+  enabled: true
+output:
+  directory: ../../../outputs/train/unsloth-full-ddp
+  save_merged: false

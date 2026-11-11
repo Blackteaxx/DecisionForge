@@ -1,0 +1,27 @@
+backend: swift
+finetuning: lora
+model:
+  name: autotrust/JEV-27B-VL
+  revision: 9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a
+  load_in_4bit: false
+  max_seq_length: 4096
+swift:
+  model_type: jev
+  decision_subsample_options: false
+  adapter: autotrust/JEV-27B-VL
+  adapter_revision: 9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a
+data:
+  path: data/multimodal.jsonl
+training:
+  num_train_epochs: 1.0
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001
+  head_learning_rate: 0.0001
+  warmup_steps: 0
+  precision: bf16
+  gradient_checkpointing: true
+calibration:
+  enabled: true
+output:
+  directory: ../../../outputs/train/swift-jev

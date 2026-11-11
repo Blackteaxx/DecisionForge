@@ -1,0 +1,16 @@
+# Complete canonical benchmark; no sample limit or catalog reduction.
+benchmark: typed_decisions
+benchmark_version: 1-single-question
+data:
+  path: ../../../../data/benchmarks/typed_decisions/processed/test.jsonl
+model:
+  adapter: laya_local
+  path: ../../../../outputs/train/laya-typed-decisions-full/model
+  device: cuda:0
+  precision: fp16
+  load_timeout: 900
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 300.0
+output: ../../../../outputs/eval/laya-typed-decisions-full/typed_decisions

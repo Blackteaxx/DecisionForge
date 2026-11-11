@@ -1,0 +1,32 @@
+benchmark: clinc150_oos
+benchmark_version: '1'
+data:
+  path: ../../../data/benchmarks/clinc150_oos/processed/test.jsonl
+  splits:
+  - test
+model:
+  adapter: jev
+  base_url: http://127.0.0.1:30000
+  model: qwen35-4b
+  api_key_env: null
+  provenance:
+    method: llm2jev
+    upstream_repo: https://github.com/Yinsongxu/LLM2Jev
+    upstream_revision: f2bdad648e7a34bfce64401fb0f7c44bc13209ae
+    backbone_model: Qwen/Qwen3.5-4B
+    backbone_revision: 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a
+    serving_backend: sglang
+    precision: bf16
+    dependencies:
+      sglang: 0.5.12.post1
+      torch: 2.11.0+cu129
+      transformers: 5.6.0
+    settings:
+      enable_thinking: false
+      submission: staged
+execution:
+  concurrency: 1
+  timeout: 180
+  max_attempts: 2
+  backoff: 1
+output: ../../../outputs/eval/llm2jev/clinc150-oos

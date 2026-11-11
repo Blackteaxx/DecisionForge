@@ -1,0 +1,858 @@
+{
+  "target_source": "single teacher temperature=0.7, average of three samples; not human labels",
+  "records": [
+    {
+      "record_id": 1,
+      "source_id": "tr_agent_trace_observability_000000",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 2,
+      "source_id": "tr_customer_service_000000",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 3,
+      "source_id": "tr_invoice_processing_000000",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 4,
+      "source_id": "tr_security_incidents_000000",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 5,
+      "source_id": "tr_agent_trace_observability_000001",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 6,
+      "source_id": "tr_customer_service_000001",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 7,
+      "source_id": "tr_invoice_processing_000001",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 8,
+      "source_id": "tr_security_incidents_000001",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 9,
+      "source_id": "tr_agent_trace_observability_000002",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 10,
+      "source_id": "tr_customer_service_000002",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 11,
+      "source_id": "tr_invoice_processing_000002",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 12,
+      "source_id": "tr_security_incidents_000002",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 13,
+      "source_id": "tr_agent_trace_observability_000003",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 14,
+      "source_id": "tr_customer_service_000003",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 15,
+      "source_id": "tr_invoice_processing_000003",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 16,
+      "source_id": "tr_security_incidents_000003",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 17,
+      "source_id": "tr_agent_trace_observability_000004",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 18,
+      "source_id": "tr_customer_service_000004",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 19,
+      "source_id": "tr_invoice_processing_000004",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 20,
+      "source_id": "tr_security_incidents_000004",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 21,
+      "source_id": "tr_agent_trace_observability_000005",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 22,
+      "source_id": "tr_customer_service_000005",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 23,
+      "source_id": "tr_invoice_processing_000005",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 24,
+      "source_id": "tr_security_incidents_000005",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 25,
+      "source_id": "tr_agent_trace_observability_000006",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 26,
+      "source_id": "tr_customer_service_000006",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 27,
+      "source_id": "tr_invoice_processing_000006",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 28,
+      "source_id": "tr_security_incidents_000006",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 29,
+      "source_id": "tr_agent_trace_observability_000007",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 30,
+      "source_id": "tr_customer_service_000007",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 31,
+      "source_id": "tr_invoice_processing_000007",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 32,
+      "source_id": "tr_security_incidents_000007",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 33,
+      "source_id": "tr_agent_trace_observability_000008",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 34,
+      "source_id": "tr_customer_service_000008",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 35,
+      "source_id": "tr_invoice_processing_000008",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 36,
+      "source_id": "tr_security_incidents_000008",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 37,
+      "source_id": "tr_agent_trace_observability_000009",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 38,
+      "source_id": "tr_customer_service_000009",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 39,
+      "source_id": "tr_invoice_processing_000009",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 40,
+      "source_id": "tr_security_incidents_000009",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 41,
+      "source_id": "tr_agent_trace_observability_000010",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 42,
+      "source_id": "tr_customer_service_000010",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 43,
+      "source_id": "tr_invoice_processing_000010",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 44,
+      "source_id": "tr_security_incidents_000010",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 45,
+      "source_id": "tr_agent_trace_observability_000011",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 46,
+      "source_id": "tr_customer_service_000011",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 47,
+      "source_id": "tr_invoice_processing_000011",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 48,
+      "source_id": "tr_security_incidents_000011",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 49,
+      "source_id": "tr_agent_trace_observability_000012",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 50,
+      "source_id": "tr_customer_service_000012",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 51,
+      "source_id": "tr_invoice_processing_000012",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 52,
+      "source_id": "tr_security_incidents_000012",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 53,
+      "source_id": "tr_agent_trace_observability_000013",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 54,
+      "source_id": "tr_customer_service_000013",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 55,
+      "source_id": "tr_invoice_processing_000013",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 56,
+      "source_id": "tr_security_incidents_000013",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 57,
+      "source_id": "tr_agent_trace_observability_000014",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 58,
+      "source_id": "tr_customer_service_000014",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 59,
+      "source_id": "tr_invoice_processing_000014",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 60,
+      "source_id": "tr_security_incidents_000014",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 61,
+      "source_id": "tr_agent_trace_observability_000015",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 62,
+      "source_id": "tr_customer_service_000015",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 63,
+      "source_id": "tr_invoice_processing_000015",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 64,
+      "source_id": "tr_security_incidents_000015",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 65,
+      "source_id": "tr_agent_trace_observability_000016",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 66,
+      "source_id": "tr_customer_service_000020",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 67,
+      "source_id": "tr_invoice_processing_000016",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 68,
+      "source_id": "tr_security_incidents_000016",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 69,
+      "source_id": "tr_agent_trace_observability_000017",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 70,
+      "source_id": "tr_customer_service_000021",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 71,
+      "source_id": "tr_invoice_processing_000017",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 72,
+      "source_id": "tr_security_incidents_000017",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 73,
+      "source_id": "tr_agent_trace_observability_000018",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 74,
+      "source_id": "tr_customer_service_000022",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 75,
+      "source_id": "tr_invoice_processing_000018",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 76,
+      "source_id": "tr_security_incidents_000018",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 77,
+      "source_id": "tr_agent_trace_observability_000019",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 78,
+      "source_id": "tr_customer_service_000023",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 79,
+      "source_id": "tr_invoice_processing_000019",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 80,
+      "source_id": "tr_security_incidents_000019",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 81,
+      "source_id": "tr_agent_trace_observability_000020",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 82,
+      "source_id": "tr_customer_service_000024",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 83,
+      "source_id": "tr_invoice_processing_000020",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 84,
+      "source_id": "tr_security_incidents_000020",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 85,
+      "source_id": "tr_agent_trace_observability_000021",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 86,
+      "source_id": "tr_customer_service_000025",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 87,
+      "source_id": "tr_invoice_processing_000021",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 88,
+      "source_id": "tr_security_incidents_000021",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 89,
+      "source_id": "tr_agent_trace_observability_000022",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 90,
+      "source_id": "tr_customer_service_000026",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 91,
+      "source_id": "tr_invoice_processing_000022",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 92,
+      "source_id": "tr_security_incidents_000022",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 93,
+      "source_id": "tr_agent_trace_observability_000023",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 94,
+      "source_id": "tr_customer_service_000027",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 95,
+      "source_id": "tr_invoice_processing_000023",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 96,
+      "source_id": "tr_security_incidents_000023",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 97,
+      "source_id": "tr_agent_trace_observability_000024",
+      "workflow": "agent_trace_observability",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 98,
+      "source_id": "tr_customer_service_000032",
+      "workflow": "customer_service",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 99,
+      "source_id": "tr_invoice_processing_000024",
+      "workflow": "invoice_processing",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 100,
+      "source_id": "tr_security_incidents_000024",
+      "workflow": "security_incidents",
+      "source_split": "train",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 101,
+      "source_id": "agent_trace_observability_000000",
+      "workflow": "agent_trace_observability",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 102,
+      "source_id": "customer_service_000000",
+      "workflow": "customer_service",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 103,
+      "source_id": "invoice_processing_000000",
+      "workflow": "invoice_processing",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 104,
+      "source_id": "security_incidents_000000",
+      "workflow": "security_incidents",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 105,
+      "source_id": "agent_trace_observability_000001",
+      "workflow": "agent_trace_observability",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 106,
+      "source_id": "customer_service_000001",
+      "workflow": "customer_service",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 107,
+      "source_id": "invoice_processing_000001",
+      "workflow": "invoice_processing",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 108,
+      "source_id": "security_incidents_000001",
+      "workflow": "security_incidents",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 109,
+      "source_id": "agent_trace_observability_000002",
+      "workflow": "agent_trace_observability",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 110,
+      "source_id": "customer_service_000002",
+      "workflow": "customer_service",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 111,
+      "source_id": "invoice_processing_000002",
+      "workflow": "invoice_processing",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 112,
+      "source_id": "security_incidents_000002",
+      "workflow": "security_incidents",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 113,
+      "source_id": "agent_trace_observability_000003",
+      "workflow": "agent_trace_observability",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 114,
+      "source_id": "customer_service_000003",
+      "workflow": "customer_service",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 115,
+      "source_id": "invoice_processing_000003",
+      "workflow": "invoice_processing",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 116,
+      "source_id": "security_incidents_000003",
+      "workflow": "security_incidents",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 117,
+      "source_id": "agent_trace_observability_000004",
+      "workflow": "agent_trace_observability",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 118,
+      "source_id": "customer_service_000004",
+      "workflow": "customer_service",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 119,
+      "source_id": "invoice_processing_000004",
+      "workflow": "invoice_processing",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    },
+    {
+      "record_id": 120,
+      "source_id": "security_incidents_000004",
+      "workflow": "security_incidents",
+      "source_split": "test",
+      "note": "soft distributions retained; rounding normalized within 1e-5; Choice/Score derived summary fields recomputed for v3 contract"
+    }
+  ],
+  "dataset": "LocalLLaMA/typed-decisions",
+  "config": "all",
+  "revision": "e039ebffcc280174dd354227424fb2b249f191de",
+  "license": "Apache-2.0",
+  "source_url": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions/tree/e039ebffcc280174dd354227424fb2b249f191de",
+  "selection": "Round-robin sorted workflows, retaining per-workflow source order; first 100 train and 20 test cases.",
+  "counts": {
+    "records": 120,
+    "questions": 600,
+    "train": 100,
+    "test": 20
+  },
+  "conversion_script": "examples/training/prepare_typed_decisions.py"
+}

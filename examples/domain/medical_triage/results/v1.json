@@ -1,0 +1,5140 @@
+{
+  "schema_version": "medical.complete-comparison.v1",
+  "status": "completed",
+  "created_at": "2026-10-28T10:16:58.371508+00:00",
+  "cells": [
+    {
+      "method": "trained",
+      "dataset": "care",
+      "status": "completed",
+      "sample_sha256": "f97aec02d98e5f6ec8ea90f20e472261e078af71e6b92479456a7e7c435c2168",
+      "counts": {
+        "planned": 135,
+        "attempted": 135,
+        "completed": 135,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 135,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 135,
+        "strict_valid": 135,
+        "renormalized": 0,
+        "probability_valid": 135,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.7037037037037037,
+          "correct": 95,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6917514408679551,
+          "per_class": {
+            "A": {
+              "tp": 23,
+              "fp": 5,
+              "fn": 14,
+              "support": 37,
+              "precision": 0.8214285714285714,
+              "recall": 0.6216216216216216,
+              "f1": 0.7076923076923077
+            },
+            "B": {
+              "tp": 12,
+              "fp": 7,
+              "fn": 12,
+              "support": 24,
+              "precision": 0.631578947368421,
+              "recall": 0.5,
+              "f1": 0.5581395348837209
+            },
+            "C": {
+              "tp": 41,
+              "fp": 24,
+              "fn": 7,
+              "support": 48,
+              "precision": 0.6307692307692307,
+              "recall": 0.8541666666666666,
+              "f1": 0.7256637168141593
+            },
+            "D": {
+              "tp": 19,
+              "fp": 4,
+              "fn": 7,
+              "support": 26,
+              "precision": 0.8260869565217391,
+              "recall": 0.7307692307692307,
+              "f1": 0.7755102040816326
+            }
+          },
+          "labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.4962446237813663,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.19963409051594988,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 2,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": 0.3591464826090489,
+              "mean_correctness": 0.5
+            },
+            {
+              "n": 4,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": 0.45210291016989207,
+              "mean_correctness": 0.5
+            },
+            {
+              "n": 7,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5572018102294833,
+              "mean_correctness": 0.7142857142857143
+            },
+            {
+              "n": 13,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6508785933223323,
+              "mean_correctness": 0.7692307692307693
+            },
+            {
+              "n": 9,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.760547227770085,
+              "mean_correctness": 0.2222222222222222
+            },
+            {
+              "n": 21,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8640634994175359,
+              "mean_correctness": 0.5238095238095238
+            },
+            {
+              "n": 79,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9601124388942859,
+              "mean_correctness": 0.810126582278481
+            }
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "A": 3,
+          "B": 12,
+          "C": 8,
+          "D": 1
+        },
+        "A": {
+          "A": 23,
+          "D": 2,
+          "B": 2,
+          "C": 10
+        },
+        "C": {
+          "C": 41,
+          "B": 5,
+          "A": 1,
+          "D": 1
+        },
+        "D": {
+          "D": 19,
+          "A": 1,
+          "C": 6
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.6194029850746269,
+          0.7857142857142857
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "89a68151-1c83-455a-aa20-48ab2e908058",
+            "started_at": "2026-10-28T08:26:15.398727+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T08:26:31.076445+00:00",
+            "window_seconds": 15.676759733818471,
+            "attempts": 135,
+            "completed_samples": 135,
+            "scoring_valid_samples": 135,
+            "success_qps": 8.611473435340923,
+            "attempts_per_second": 8.611473435340923
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 135,
+          "p50_ms": 132.06366915255785,
+          "p95_ms": 141.40469916164875
+        },
+        "successful_response_latency_ms": {
+          "n": 135,
+          "p50_ms": 132.06366915255785,
+          "p95_ms": 141.40469916164875
+        },
+        "sample_elapsed_ms": {
+          "n": 135,
+          "p50_ms": 9748.362773098052,
+          "p95_ms": 15016.132742352784
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 45261,
+          "output_tokens": 0,
+          "known_attempts": 135,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 135,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "local_compute_unpriced",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "trained_unsloth",
+        "declared": null,
+        "declaration_verified": false,
+        "actual_models": [
+          "historical-store/training/calibration-001/run/model"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "local_calibrated_softmax"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/trained-care-full-001/run",
+        "report": "historical-store/evaluation/trained-care-full-001/run/reports/13dfc757-5a7d-4265-9d28-43544d0c5d22/metrics.json",
+        "predictions": "historical-store/evaluation/trained-care-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/trained-care-full-001/run/attempts.jsonl",
+        "prediction_sha256": "3ea8d965d85da5635cbfa5585003bbb9d3f62761a4ccc826a22ea74aea7eb010"
+      }
+    },
+    {
+      "method": "trained",
+      "dataset": "synth",
+      "status": "completed",
+      "sample_sha256": "f932bd891c563931e54f720b8fab38cf0d555c1b1ce816c803df1c43661dcd59",
+      "counts": {
+        "planned": 869,
+        "attempted": 869,
+        "completed": 869,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 869,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 869,
+        "strict_valid": 869,
+        "renormalized": 0,
+        "probability_valid": 869,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6766398158803222,
+          "correct": 588,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6749853923177567,
+          "per_class": {
+            "A": {
+              "tp": 325,
+              "fp": 169,
+              "fn": 112,
+              "support": 437,
+              "precision": 0.6578947368421053,
+              "recall": 0.7437070938215103,
+              "f1": 0.6981740064446831
+            },
+            "B": {
+              "tp": 263,
+              "fp": 112,
+              "fn": 169,
+              "support": 432,
+              "precision": 0.7013333333333334,
+              "recall": 0.6087962962962963,
+              "f1": 0.6517967781908303
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5101292727018039,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.22405668779133425,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 44,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5398631727990562,
+              "mean_correctness": 0.5
+            },
+            {
+              "n": 54,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6555836126150274,
+              "mean_correctness": 0.4444444444444444
+            },
+            {
+              "n": 71,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7515138892387467,
+              "mean_correctness": 0.5070422535211268
+            },
+            {
+              "n": 115,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.856490532292828,
+              "mean_correctness": 0.5391304347826087
+            },
+            {
+              "n": 585,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9772578968490141,
+              "mean_correctness": 0.7589743589743589
+            }
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "B": 263,
+          "A": 169
+        },
+        "A": {
+          "B": 112,
+          "A": 325
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "7ee09084-8948-4470-84be-39471b526e49",
+            "started_at": "2026-10-28T08:27:08.588464+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T08:28:41.866868+00:00",
+            "window_seconds": 93.27705595269799,
+            "attempts": 869,
+            "completed_samples": 869,
+            "scoring_valid_samples": 869,
+            "success_qps": 9.316331772313667,
+            "attempts_per_second": 9.316331772313667
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 869,
+          "p50_ms": 72.73180224001408,
+          "p95_ms": 143.73048804700375
+        },
+        "successful_response_latency_ms": {
+          "n": 869,
+          "p50_ms": 72.73180224001408,
+          "p95_ms": 143.73048804700375
+        },
+        "sample_elapsed_ms": {
+          "n": 869,
+          "p50_ms": 56136.26611139625,
+          "p95_ms": 89635.04131436348
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 956717,
+          "output_tokens": 0,
+          "known_attempts": 869,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 869,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "local_compute_unpriced",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "trained_unsloth",
+        "declared": null,
+        "declaration_verified": false,
+        "actual_models": [
+          "historical-store/training/calibration-001/run/model"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "local_calibrated_softmax"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/trained-synth-full-001/run",
+        "report": "historical-store/evaluation/trained-synth-full-001/run/reports/ecfbe12c-c7d7-4e91-bc79-e843a5125ab1/metrics.json",
+        "predictions": "historical-store/evaluation/trained-synth-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/trained-synth-full-001/run/attempts.jsonl",
+        "prediction_sha256": "9f06d950701161f2afe9f18e3e0b4872c371f235094dc9fb14350f5a5f76bb23"
+      }
+    },
+    {
+      "method": "trained",
+      "dataset": "reddit",
+      "status": "completed",
+      "sample_sha256": "0e3f48cf83ad196cb61291e3134836261c650e0c22e8ff27126b4211fc777021",
+      "counts": {
+        "planned": 1502,
+        "attempted": 1502,
+        "completed": 1502,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 1502,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 1502,
+        "strict_valid": 1502,
+        "renormalized": 0,
+        "probability_valid": 1502,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.7922769640479361,
+          "correct": 1190,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.7921704700272479,
+          "per_class": {
+            "A": {
+              "tp": 612,
+              "fp": 185,
+              "fn": 127,
+              "support": 739,
+              "precision": 0.767879548306148,
+              "recall": 0.8281461434370772,
+              "f1": 0.796875
+            },
+            "B": {
+              "tp": 578,
+              "fp": 127,
+              "fn": 185,
+              "support": 763,
+              "precision": 0.8198581560283688,
+              "recall": 0.7575360419397117,
+              "f1": 0.7874659400544959
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.33786865558244905,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.13554502309467864,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 62,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5519977086486979,
+              "mean_correctness": 0.5645161290322581
+            },
+            {
+              "n": 63,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6575761779125525,
+              "mean_correctness": 0.5396825396825397
+            },
+            {
+              "n": 68,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7463171083008353,
+              "mean_correctness": 0.6029411764705882
+            },
+            {
+              "n": 142,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8554666877732644,
+              "mean_correctness": 0.5633802816901409
+            },
+            {
+              "n": 1167,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9804278923630466,
+              "mean_correctness": 0.856898029134533
+            }
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "A": {
+          "A": 612,
+          "B": 127
+        },
+        "B": {
+          "A": 185,
+          "B": 578
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "11562202-69de-4be8-be31-f03d08f8f820",
+            "started_at": "2026-10-28T08:29:18.708641+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T08:31:33.616271+00:00",
+            "window_seconds": 134.90645657479763,
+            "attempts": 1502,
+            "completed_samples": 1502,
+            "scoring_valid_samples": 1502,
+            "success_qps": 11.133640584260917,
+            "attempts_per_second": 11.133640584260917
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 1502,
+          "p50_ms": 50.89915217831731,
+          "p95_ms": 136.7077031172812
+        },
+        "successful_response_latency_ms": {
+          "n": 1502,
+          "p50_ms": 50.89915217831731,
+          "p95_ms": 136.7077031172812
+        },
+        "sample_elapsed_ms": {
+          "n": 1502,
+          "p50_ms": 80978.74864377081,
+          "p95_ms": 130267.02551431954
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 953366,
+          "output_tokens": 0,
+          "known_attempts": 1502,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 1502,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "local_compute_unpriced",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "trained_unsloth",
+        "declared": null,
+        "declaration_verified": false,
+        "actual_models": [
+          "historical-store/training/calibration-001/run/model"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "local_calibrated_softmax"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/trained-reddit-full-001/run",
+        "report": "historical-store/evaluation/trained-reddit-full-001/run/reports/27cba47e-1f83-4ef6-8a87-ab943d318177/metrics.json",
+        "predictions": "historical-store/evaluation/trained-reddit-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/trained-reddit-full-001/run/attempts.jsonl",
+        "prediction_sha256": "4fc61c31e58ed4d44f9047656cc5ac40f8009752ea46587dab0db0a1dc8eff64"
+      }
+    },
+    {
+      "method": "jev",
+      "dataset": "care",
+      "status": "completed",
+      "sample_sha256": "f97aec02d98e5f6ec8ea90f20e472261e078af71e6b92479456a7e7c435c2168",
+      "counts": {
+        "planned": 135,
+        "attempted": 135,
+        "completed": 135,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 135,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 135,
+        "strict_valid": 135,
+        "renormalized": 0,
+        "probability_valid": 135,
+        "choice_argmax_disagreements": 3
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6074074074074074,
+          "correct": 82,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5966340335041344,
+          "per_class": {
+            "A": {
+              "tp": 27,
+              "fp": 30,
+              "fn": 10,
+              "support": 37,
+              "precision": 0.47368421052631576,
+              "recall": 0.7297297297297297,
+              "f1": 0.574468085106383
+            },
+            "B": {
+              "tp": 9,
+              "fp": 5,
+              "fn": 15,
+              "support": 24,
+              "precision": 0.6428571428571429,
+              "recall": 0.375,
+              "f1": 0.47368421052631576
+            },
+            "C": {
+              "tp": 22,
+              "fp": 2,
+              "fn": 26,
+              "support": 48,
+              "precision": 0.9166666666666666,
+              "recall": 0.4583333333333333,
+              "f1": 0.6111111111111112
+            },
+            "D": {
+              "tp": 24,
+              "fp": 16,
+              "fn": 2,
+              "support": 26,
+              "precision": 0.6,
+              "recall": 0.9230769230769231,
+              "f1": 0.7272727272727273
+            }
+          },
+          "labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5424014814814815,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.10607407407407402,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 5,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": 0.352,
+              "mean_correctness": 0.4
+            },
+            {
+              "n": 16,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": 0.45062500000000005,
+              "mean_correctness": 0.4375
+            },
+            {
+              "n": 27,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5448148148148148,
+              "mean_correctness": 0.48148148148148145
+            },
+            {
+              "n": 21,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6276190476190474,
+              "mean_correctness": 0.6190476190476191
+            },
+            {
+              "n": 14,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7485714285714286,
+              "mean_correctness": 0.5
+            },
+            {
+              "n": 16,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.844375,
+              "mean_correctness": 0.5625
+            },
+            {
+              "n": 36,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9719444444444443,
+              "mean_correctness": 0.8611111111111112
+            }
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "A": 11,
+          "B": 9,
+          "C": 1,
+          "D": 3
+        },
+        "A": {
+          "A": 27,
+          "D": 8,
+          "C": 1,
+          "B": 1
+        },
+        "C": {
+          "A": 17,
+          "C": 22,
+          "D": 5,
+          "B": 4
+        },
+        "D": {
+          "D": 24,
+          "A": 2
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.5333333333333333,
+          0.6771653543307087
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "12fb58f4-1e8d-44df-9e22-a62e1e757c0f",
+            "started_at": "2026-10-28T08:25:44.390202+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 90.0,
+              "concurrency": 4,
+              "max_attempts": 3,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T08:25:58.777743+00:00",
+            "window_seconds": 14.386960359290242,
+            "attempts": 135,
+            "completed_samples": 135,
+            "scoring_valid_samples": 135,
+            "success_qps": 9.383497043753584,
+            "attempts_per_second": 9.383497043753584
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 135,
+          "p50_ms": 361.2466286867857,
+          "p95_ms": 661.7436738219112
+        },
+        "successful_response_latency_ms": {
+          "n": 135,
+          "p50_ms": 361.2466286867857,
+          "p95_ms": 661.7436738219112
+        },
+        "sample_elapsed_ms": {
+          "n": 135,
+          "p50_ms": 7559.16647426784,
+          "p95_ms": 13683.78000818193
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 72099,
+          "output_tokens": 6075,
+          "known_attempts": 135,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": 0.003028158,
+        "missing_cost_attempts": 0,
+        "price_per_1000_decisions_usd": 0.0224308,
+        "cost_basis": "reported_usage_cost",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "native",
+        "declared": null,
+        "declaration_verified": false,
+        "actual_models": [
+          "typesafe/jev-1.14-20261014"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "native"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/jev-care-full-001/run",
+        "report": "historical-store/evaluation/jev-care-full-001/run/reports/d0f40724-5fe9-479b-bb49-15ef407c0905/metrics.json",
+        "predictions": "historical-store/evaluation/jev-care-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/jev-care-full-001/run/attempts.jsonl",
+        "prediction_sha256": "730086da60261be807aa88fc4503cfcd45de41b7ed4b381b387e81c788a60a4b"
+      }
+    },
+    {
+      "method": "jev",
+      "dataset": "synth",
+      "status": "completed",
+      "sample_sha256": "f932bd891c563931e54f720b8fab38cf0d555c1b1ce816c803df1c43661dcd59",
+      "counts": {
+        "planned": 869,
+        "attempted": 869,
+        "completed": 869,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 869,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 869,
+        "strict_valid": 869,
+        "renormalized": 0,
+        "probability_valid": 869,
+        "choice_argmax_disagreements": 1
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6559263521288837,
+          "correct": 570,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6557056860087163,
+          "per_class": {
+            "A": {
+              "tp": 274,
+              "fp": 136,
+              "fn": 163,
+              "support": 437,
+              "precision": 0.6682926829268293,
+              "recall": 0.6270022883295194,
+              "f1": 0.6469893742621016
+            },
+            "B": {
+              "tp": 296,
+              "fp": 163,
+              "fn": 136,
+              "support": 432,
+              "precision": 0.644880174291939,
+              "recall": 0.6851851851851852,
+              "f1": 0.6644219977553311
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.4722149597238205,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.15907940161104792,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 114,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5498245614035085,
+              "mean_correctness": 0.5
+            },
+            {
+              "n": 118,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.646949152542373,
+              "mean_correctness": 0.5423728813559322
+            },
+            {
+              "n": 121,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7471900826446284,
+              "mean_correctness": 0.5041322314049587
+            },
+            {
+              "n": 155,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8472258064516127,
+              "mean_correctness": 0.6064516129032258
+            },
+            {
+              "n": 361,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9625761772853203,
+              "mean_correctness": 0.814404432132964
+            }
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "B": 296,
+          "A": 136
+        },
+        "A": {
+          "A": 274,
+          "B": 163
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "84202de4-9e8a-4b78-829d-fcf2b5f34ba4",
+            "started_at": "2026-10-28T08:26:04.459485+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 90.0,
+              "concurrency": 4,
+              "max_attempts": 3,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T08:27:33.211031+00:00",
+            "window_seconds": 88.75081168394536,
+            "attempts": 869,
+            "completed_samples": 869,
+            "scoring_valid_samples": 869,
+            "success_qps": 9.791459745682511,
+            "attempts_per_second": 9.791459745682511
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 869,
+          "p50_ms": 377.1935533732176,
+          "p95_ms": 584.8545712418852
+        },
+        "successful_response_latency_ms": {
+          "n": 869,
+          "p50_ms": 377.1935533732176,
+          "p95_ms": 584.8545712418852
+        },
+        "sample_elapsed_ms": {
+          "n": 869,
+          "p50_ms": 45389.36543883756,
+          "p95_ms": 84685.18485445528
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 1139185,
+          "output_tokens": 26939,
+          "known_attempts": 869,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": 0.04784577,
+        "missing_cost_attempts": 0,
+        "price_per_1000_decisions_usd": 0.05505842347525892,
+        "cost_basis": "reported_usage_cost",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "native",
+        "declared": null,
+        "declaration_verified": false,
+        "actual_models": [
+          "typesafe/jev-1.14-20261014"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "native"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/jev-synth-full-001/run",
+        "report": "historical-store/evaluation/jev-synth-full-001/run/reports/7e0c7eae-47a9-420a-ad8c-3d8f2e3bdd09/metrics.json",
+        "predictions": "historical-store/evaluation/jev-synth-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/jev-synth-full-001/run/attempts.jsonl",
+        "prediction_sha256": "6ca93a6964d75f299a85170d72c602ea6bdc567c13ac08348b61fbf429ab8309"
+      }
+    },
+    {
+      "method": "jev",
+      "dataset": "reddit",
+      "status": "completed",
+      "sample_sha256": "0e3f48cf83ad196cb61291e3134836261c650e0c22e8ff27126b4211fc777021",
+      "counts": {
+        "planned": 1502,
+        "attempted": 1502,
+        "completed": 1502,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 1502,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 1502,
+        "strict_valid": 1502,
+        "renormalized": 0,
+        "probability_valid": 1502,
+        "choice_argmax_disagreements": 2
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.8035952063914781,
+          "correct": 1207,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.8032266932056832,
+          "per_class": {
+            "A": {
+              "tp": 571,
+              "fp": 127,
+              "fn": 168,
+              "support": 739,
+              "precision": 0.8180515759312321,
+              "recall": 0.7726657645466847,
+              "f1": 0.7947112038970077
+            },
+            "B": {
+              "tp": 636,
+              "fp": 168,
+              "fn": 127,
+              "support": 763,
+              "precision": 0.7910447761194029,
+              "recall": 0.8335517693315858,
+              "f1": 0.8117421825143587
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.2881249001331558,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.08491344873502324,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 114,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5526315789473688,
+              "mean_correctness": 0.47368421052631576
+            },
+            {
+              "n": 104,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6423076923076922,
+              "mean_correctness": 0.625
+            },
+            {
+              "n": 123,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7469105691056908,
+              "mean_correctness": 0.6747967479674797
+            },
+            {
+              "n": 173,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8480346820809244,
+              "mean_correctness": 0.6589595375722543
+            },
+            {
+              "n": 988,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9778947368421103,
+              "mean_correctness": 0.9018218623481782
+            }
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "A": {
+          "A": 571,
+          "B": 168
+        },
+        "B": {
+          "B": 636,
+          "A": 127
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "6a49aa9c-5054-42d2-a04b-81ce75597525",
+            "started_at": "2026-10-28T08:27:39.796847+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 90.0,
+              "concurrency": 4,
+              "max_attempts": 3,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T08:32:26.957186+00:00",
+            "window_seconds": 287.15955386776477,
+            "attempts": 1506,
+            "completed_samples": 1502,
+            "scoring_valid_samples": 1502,
+            "success_qps": 5.230541626665369,
+            "attempts_per_second": 5.2444711649520945
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 1506,
+          "p50_ms": 360.30402034521103,
+          "p95_ms": 624.4276736397296
+        },
+        "successful_response_latency_ms": {
+          "n": 1502,
+          "p50_ms": 360.2195724379271,
+          "p95_ms": 623.2880993979052
+        },
+        "sample_elapsed_ms": {
+          "n": 1502,
+          "p50_ms": 75313.3507289458,
+          "p95_ms": 182750.9249611292
+        },
+        "failed_attempts": 4,
+        "timeout_attempts": 4,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 1245287,
+          "output_tokens": 46562,
+          "known_attempts": 1502,
+          "missing_attempts": 4,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": 0.052302054,
+        "missing_cost_attempts": 4,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "reported_usage_cost",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "native",
+        "declared": null,
+        "declaration_verified": false,
+        "actual_models": [
+          "typesafe/jev-1.14-20261014"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "native"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/jev-reddit-full-001/run",
+        "report": "historical-store/evaluation/jev-reddit-full-001/run/reports/fcec58f1-ce67-4b49-8e2e-0d608cbd5d5b/metrics.json",
+        "predictions": "historical-store/evaluation/jev-reddit-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/jev-reddit-full-001/run/attempts.jsonl",
+        "prediction_sha256": "6050cc0835dd11a6d5292234ca4da84899deb709125ec50e9fdddcda0f5cfbca"
+      }
+    },
+    {
+      "method": "llm2jev",
+      "dataset": "care",
+      "status": "completed",
+      "sample_sha256": "f97aec02d98e5f6ec8ea90f20e472261e078af71e6b92479456a7e7c435c2168",
+      "counts": {
+        "planned": 135,
+        "attempted": 135,
+        "completed": 135,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 135,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 135,
+        "strict_valid": 135,
+        "renormalized": 0,
+        "probability_valid": 135,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5777777777777777,
+          "correct": 78,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5158292238660092,
+          "per_class": {
+            "A": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 35,
+              "support": 37,
+              "precision": 0.5,
+              "recall": 0.05405405405405406,
+              "f1": 0.0975609756097561
+            },
+            "B": {
+              "tp": 13,
+              "fp": 8,
+              "fn": 11,
+              "support": 24,
+              "precision": 0.6190476190476191,
+              "recall": 0.5416666666666666,
+              "f1": 0.5777777777777777
+            },
+            "C": {
+              "tp": 41,
+              "fp": 34,
+              "fn": 7,
+              "support": 48,
+              "precision": 0.5466666666666666,
+              "recall": 0.8541666666666666,
+              "f1": 0.6666666666666666
+            },
+            "D": {
+              "tp": 22,
+              "fp": 13,
+              "fn": 4,
+              "support": 26,
+              "precision": 0.6285714285714286,
+              "recall": 0.8461538461538461,
+              "f1": 0.7213114754098361
+            }
+          },
+          "labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5697594310728463,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.15101839260211966,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 5,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": 0.29295436723351603,
+              "mean_correctness": 0.2
+            },
+            {
+              "n": 52,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": 0.3620982458272325,
+              "mean_correctness": 0.36538461538461536
+            },
+            {
+              "n": 57,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": 0.4399389884601211,
+              "mean_correctness": 0.6666666666666666
+            },
+            {
+              "n": 10,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5388637399156085,
+              "mean_correctness": 0.9
+            },
+            {
+              "n": 6,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.642029182038845,
+              "mean_correctness": 1.0
+            },
+            {
+              "n": 3,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7760713160300489,
+              "mean_correctness": 1.0
+            },
+            {
+              "n": 2,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8013156350795698,
+              "mean_correctness": 1.0
+            },
+            {
+              "n": 0,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": null,
+              "mean_correctness": null
+            }
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "A": 2,
+          "B": 13,
+          "C": 7,
+          "D": 2
+        },
+        "A": {
+          "C": 24,
+          "D": 7,
+          "B": 4,
+          "A": 2
+        },
+        "C": {
+          "C": 41,
+          "B": 3,
+          "D": 4
+        },
+        "D": {
+          "D": 22,
+          "C": 3,
+          "B": 1
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.49295774647887325,
+          0.6595744680851063
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "062e6f33-e9a8-48e5-bc3d-63946fd99f28",
+            "started_at": "2026-10-28T07:02:51.846859+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 1.0,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T07:03:07.975401+00:00",
+            "window_seconds": 16.127807836979628,
+            "attempts": 135,
+            "completed_samples": 135,
+            "scoring_valid_samples": 135,
+            "success_qps": 8.37063544931736,
+            "attempts_per_second": 8.37063544931736
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 135,
+          "p50_ms": 101.6135411337018,
+          "p95_ms": 123.19671018049121
+        },
+        "successful_response_latency_ms": {
+          "n": 135,
+          "p50_ms": 101.6135411337018,
+          "p95_ms": 123.19671018049121
+        },
+        "sample_elapsed_ms": {
+          "n": 135,
+          "p50_ms": 9688.410140573978,
+          "p95_ms": 15481.393691059202
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 152289,
+          "output_tokens": 0,
+          "known_attempts": 135,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 135,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "unknown",
+        "candidate_tasks": {
+          "known_total": 540,
+          "known_attempts": 135,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "llm2jev",
+        "declared": {
+          "method": "llm2jev",
+          "upstream_repo": "https://github.com/Yinsongxu/LLM2Jev",
+          "upstream_revision": "f2bdad648e7a34bfce64401fb0f7c44bc13209ae",
+          "backbone_model": "Qwen/Qwen3.5-9B",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "serving_backend": "transformers",
+          "dependencies": {
+            "torch": "2.11.0+cu130",
+            "transformers": "5.17.0",
+            "fastapi": "0.153.0",
+            "uvicorn": "0.54.0"
+          },
+          "precision": "bf16",
+          "settings": {
+            "enable_thinking": false,
+            "batch_size": 4
+          }
+        },
+        "declaration_verified": false,
+        "actual_models": [
+          "qwen35-9b"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "llm2jev_yes_no_logits"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/llm2jev-care-full-001/run",
+        "report": "historical-store/evaluation/llm2jev-care-full-001/run/reports/2040da67-5be8-4d5f-8918-17f2fb2f6060/metrics.json",
+        "predictions": "historical-store/evaluation/llm2jev-care-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/llm2jev-care-full-001/run/attempts.jsonl",
+        "prediction_sha256": "e5dbff27af728bf1ac9ed6e53fc35576671b7389fd075ff719a827796f61f0d6"
+      }
+    },
+    {
+      "method": "llm2jev",
+      "dataset": "synth",
+      "status": "completed",
+      "sample_sha256": "f932bd891c563931e54f720b8fab38cf0d555c1b1ce816c803df1c43661dcd59",
+      "counts": {
+        "planned": 869,
+        "attempted": 869,
+        "completed": 869,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 869,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 869,
+        "strict_valid": 869,
+        "renormalized": 0,
+        "probability_valid": 869,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6317606444188723,
+          "correct": 549,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5999631726741242,
+          "per_class": {
+            "A": {
+              "tp": 397,
+              "fp": 280,
+              "fn": 40,
+              "support": 437,
+              "precision": 0.5864106351550961,
+              "recall": 0.9084668192219679,
+              "f1": 0.7127468581687613
+            },
+            "B": {
+              "tp": 152,
+              "fp": 40,
+              "fn": 280,
+              "support": 432,
+              "precision": 0.7916666666666666,
+              "recall": 0.35185185185185186,
+              "f1": 0.48717948717948717
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.43538134545363166,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.03655039417635609,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 292,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5469203346020693,
+              "mean_correctness": 0.4726027397260274
+            },
+            {
+              "n": 317,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.649547642543389,
+              "mean_correctness": 0.6656151419558359
+            },
+            {
+              "n": 228,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7434917936101133,
+              "mean_correctness": 0.7631578947368421
+            },
+            {
+              "n": 31,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8192188339152913,
+              "mean_correctness": 0.8064516129032258
+            },
+            {
+              "n": 1,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9114973865646688,
+              "mean_correctness": 1.0
+            }
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "B": 152,
+          "A": 280
+        },
+        "A": {
+          "A": 397,
+          "B": 40
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "dcecf98b-e28a-4bc9-8871-770536f52218",
+            "started_at": "2026-10-28T07:03:09.176349+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 1.0,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T07:05:25.187221+00:00",
+            "window_seconds": 136.00968185905367,
+            "attempts": 869,
+            "completed_samples": 869,
+            "scoring_valid_samples": 869,
+            "success_qps": 6.38925103067693,
+            "attempts_per_second": 6.38925103067693
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 869,
+          "p50_ms": 149.3261819705367,
+          "p95_ms": 186.14458199590442
+        },
+        "successful_response_latency_ms": {
+          "n": 869,
+          "p50_ms": 149.3261819705367,
+          "p95_ms": 186.14458199590442
+        },
+        "sample_elapsed_ms": {
+          "n": 869,
+          "p50_ms": 69807.64877330512,
+          "p95_ms": 129210.35605110227
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 1850866,
+          "output_tokens": 0,
+          "known_attempts": 869,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 869,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "unknown",
+        "candidate_tasks": {
+          "known_total": 1738,
+          "known_attempts": 869,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "llm2jev",
+        "declared": {
+          "method": "llm2jev",
+          "upstream_repo": "https://github.com/Yinsongxu/LLM2Jev",
+          "upstream_revision": "f2bdad648e7a34bfce64401fb0f7c44bc13209ae",
+          "backbone_model": "Qwen/Qwen3.5-9B",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "serving_backend": "transformers",
+          "dependencies": {
+            "torch": "2.11.0+cu130",
+            "transformers": "5.17.0",
+            "fastapi": "0.153.0",
+            "uvicorn": "0.54.0"
+          },
+          "precision": "bf16",
+          "settings": {
+            "enable_thinking": false,
+            "batch_size": 4
+          }
+        },
+        "declaration_verified": false,
+        "actual_models": [
+          "qwen35-9b"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "llm2jev_yes_no_logits"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/llm2jev-synth-full-001/run",
+        "report": "historical-store/evaluation/llm2jev-synth-full-001/run/reports/23719570-92a0-413e-99ee-3e2c57f3be71/metrics.json",
+        "predictions": "historical-store/evaluation/llm2jev-synth-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/llm2jev-synth-full-001/run/attempts.jsonl",
+        "prediction_sha256": "ca59248977fb5e90b04a3ddbf6304ba1d9670ba577754e9ab2f1653724f25882"
+      }
+    },
+    {
+      "method": "llm2jev",
+      "dataset": "reddit",
+      "status": "completed",
+      "sample_sha256": "0e3f48cf83ad196cb61291e3134836261c650e0c22e8ff27126b4211fc777021",
+      "counts": {
+        "planned": 1502,
+        "attempted": 1502,
+        "completed": 1502,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 1502,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 1502,
+        "strict_valid": 1502,
+        "renormalized": 0,
+        "probability_valid": 1502,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.7609853528628495,
+          "correct": 1143,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.7598115617117132,
+          "per_class": {
+            "A": {
+              "tp": 624,
+              "fp": 244,
+              "fn": 115,
+              "support": 739,
+              "precision": 0.7188940092165899,
+              "recall": 0.8443843031123139,
+              "f1": 0.776602364654636
+            },
+            "B": {
+              "tp": 519,
+              "fp": 115,
+              "fn": 244,
+              "support": 763,
+              "precision": 0.8186119873817035,
+              "recall": 0.6802096985583224,
+              "f1": 0.7430207587687903
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.33673944022893093,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.03981428297865167,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 262,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5534259384596532,
+              "mean_correctness": 0.549618320610687
+            },
+            {
+              "n": 339,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6519697340181078,
+              "mean_correctness": 0.7138643067846607
+            },
+            {
+              "n": 487,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7505091799604822,
+              "mean_correctness": 0.8008213552361396
+            },
+            {
+              "n": 353,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8433732865355259,
+              "mean_correctness": 0.8696883852691218
+            },
+            {
+              "n": 61,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9175420036485299,
+              "mean_correctness": 0.9836065573770492
+            }
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "A": {
+          "A": 624,
+          "B": 115
+        },
+        "B": {
+          "A": 244,
+          "B": 519
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "47f9b6aa-88b0-46e2-a186-08c2cb7fc0f4",
+            "started_at": "2026-10-28T09:17:20.157064+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 1.0,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T09:19:49.551479+00:00",
+            "window_seconds": 149.39329722803086,
+            "attempts": 1502,
+            "completed_samples": 1502,
+            "scoring_valid_samples": 1502,
+            "success_qps": 10.053998592101344,
+            "attempts_per_second": 10.053998592101344
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 1502,
+          "p50_ms": 89.89699557423592,
+          "p95_ms": 153.77236790955067
+        },
+        "successful_response_latency_ms": {
+          "n": 1502,
+          "p50_ms": 89.89699557423592,
+          "p95_ms": 153.77236790955067
+        },
+        "sample_elapsed_ms": {
+          "n": 1502,
+          "p50_ms": 79139.45049419999,
+          "p95_ms": 142789.3510790076
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 1798588,
+          "output_tokens": 0,
+          "known_attempts": 1502,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 1502,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "unknown",
+        "candidate_tasks": {
+          "known_total": 3004,
+          "known_attempts": 1502,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "llm2jev",
+        "declared": {
+          "method": "llm2jev",
+          "upstream_repo": "https://github.com/Yinsongxu/LLM2Jev",
+          "upstream_revision": "f2bdad648e7a34bfce64401fb0f7c44bc13209ae",
+          "backbone_model": "Qwen/Qwen3.5-9B",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "serving_backend": "transformers",
+          "dependencies": {
+            "torch": "2.11.0+cu130",
+            "transformers": "5.17.0",
+            "fastapi": "0.153.0",
+            "uvicorn": "0.54.0"
+          },
+          "precision": "bf16",
+          "settings": {
+            "enable_thinking": false,
+            "batch_size": 4
+          }
+        },
+        "declaration_verified": false,
+        "actual_models": [
+          "qwen35-9b"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "llm2jev_yes_no_logits"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/llm2jev-reddit-full-001/run",
+        "report": "historical-store/evaluation/llm2jev-reddit-full-001/run/reports/72d0a423-1f85-486b-b8b6-6aea6e87416f/metrics.json",
+        "predictions": "historical-store/evaluation/llm2jev-reddit-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/llm2jev-reddit-full-001/run/attempts.jsonl",
+        "prediction_sha256": "c934b6b2129eb750085232648c162eaad0d8daa56da4062d167af565e5cea871"
+      }
+    },
+    {
+      "method": "anyjev",
+      "dataset": "care",
+      "status": "completed",
+      "sample_sha256": "f97aec02d98e5f6ec8ea90f20e472261e078af71e6b92479456a7e7c435c2168",
+      "counts": {
+        "planned": 135,
+        "attempted": 135,
+        "completed": 135,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 135,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 135,
+        "strict_valid": 135,
+        "renormalized": 0,
+        "probability_valid": 135,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5481481481481482,
+          "correct": 74,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5100230037184093,
+          "per_class": {
+            "A": {
+              "tp": 5,
+              "fp": 1,
+              "fn": 32,
+              "support": 37,
+              "precision": 0.8333333333333334,
+              "recall": 0.13513513513513514,
+              "f1": 0.23255813953488372
+            },
+            "B": {
+              "tp": 13,
+              "fp": 8,
+              "fn": 11,
+              "support": 24,
+              "precision": 0.6190476190476191,
+              "recall": 0.5416666666666666,
+              "f1": 0.5777777777777777
+            },
+            "C": {
+              "tp": 31,
+              "fp": 21,
+              "fn": 17,
+              "support": 48,
+              "precision": 0.5961538461538461,
+              "recall": 0.6458333333333334,
+              "f1": 0.62
+            },
+            "D": {
+              "tp": 25,
+              "fp": 31,
+              "fn": 1,
+              "support": 26,
+              "precision": 0.44642857142857145,
+              "recall": 0.9615384615384616,
+              "f1": 0.6097560975609756
+            }
+          },
+          "labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6359350581045883,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.11707386235413036,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 2,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": 0.2912679175898946,
+              "mean_correctness": 0.5
+            },
+            {
+              "n": 12,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": 0.3621868904697523,
+              "mean_correctness": 0.3333333333333333
+            },
+            {
+              "n": 22,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": 0.4477623798487498,
+              "mean_correctness": 0.36363636363636365
+            },
+            {
+              "n": 28,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5563881950200524,
+              "mean_correctness": 0.5357142857142857
+            },
+            {
+              "n": 17,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6495077851219436,
+              "mean_correctness": 0.5882352941176471
+            },
+            {
+              "n": 17,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7466734997067103,
+              "mean_correctness": 0.6470588235294118
+            },
+            {
+              "n": 11,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8619686971566588,
+              "mean_correctness": 0.45454545454545453
+            },
+            {
+              "n": 26,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9767263553579243,
+              "mean_correctness": 0.7692307692307693
+            }
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "B": 13,
+          "D": 4,
+          "A": 1,
+          "C": 6
+        },
+        "A": {
+          "A": 5,
+          "C": 15,
+          "D": 14,
+          "B": 3
+        },
+        "C": {
+          "C": 31,
+          "D": 13,
+          "B": 4
+        },
+        "D": {
+          "D": 25,
+          "B": 1
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.47058823529411764,
+          0.6333333333333333
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "87d361b6-9714-4405-95e7-7a78b795811c",
+            "started_at": "2026-10-28T09:11:07.254706+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T09:11:22.120158+00:00",
+            "window_seconds": 14.864237112924457,
+            "attempts": 135,
+            "completed_samples": 135,
+            "scoring_valid_samples": 135,
+            "success_qps": 9.08220172851101,
+            "attempts_per_second": 9.08220172851101
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 135,
+          "p50_ms": 103.80798950791359,
+          "p95_ms": 122.22583768889308
+        },
+        "successful_response_latency_ms": {
+          "n": 135,
+          "p50_ms": 103.80798950791359,
+          "p95_ms": 122.22583768889308
+        },
+        "sample_elapsed_ms": {
+          "n": 135,
+          "p50_ms": 8264.121889136732,
+          "p95_ms": 14196.870301757008
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "known_attempts": 0,
+          "missing_attempts": 135,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 135,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "local_compute_unpriced",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "anyjev_l0",
+        "declaration_verified": false,
+        "confidence_basis": "maximum_candidate_probability",
+        "declared": {
+          "upstream_repo": "https://github.com/nokia-applied-research/AnyJev",
+          "upstream_revision": "35311c58955716cb8955ce1368a665988bc63735",
+          "backbone_model": "Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "training_free": true,
+          "precision": "bfloat16",
+          "settings": {
+            "level": "L0",
+            "prior": "content_free",
+            "prior_strength": 1.0,
+            "adaptive_shifts": false,
+            "max_permutations": null,
+            "combine": "logmean",
+            "cf_probes": [
+              "N/A",
+              "",
+              "[MASK]"
+            ],
+            "record_content_free": false,
+            "system": "You are a decision function. You will be given a state and one question. Reply with the answer label only: no words, no punctuation, no explanation.",
+            "shared_prefix": false,
+            "shared_min_prefix_tokens": 256,
+            "canonical_order": false
+          }
+        },
+        "actual_models": [
+          "Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "anyjev_l0_label_free_corrected_next_token_logits"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/anyjev-care-full-002/run",
+        "report": "historical-store/evaluation/anyjev-care-full-002/run/reports/47e9269a-a8cf-4e52-8ceb-c512094f1379/metrics.json",
+        "predictions": "historical-store/evaluation/anyjev-care-full-002/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/anyjev-care-full-002/run/attempts.jsonl",
+        "prediction_sha256": "51d35d0ce082604ad90ece8a8ef2618baf5b83cbc71cc1c291bb196e0a10219b"
+      }
+    },
+    {
+      "method": "anyjev",
+      "dataset": "synth",
+      "status": "completed",
+      "sample_sha256": "f932bd891c563931e54f720b8fab38cf0d555c1b1ce816c803df1c43661dcd59",
+      "counts": {
+        "planned": 869,
+        "attempted": 869,
+        "completed": 869,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 869,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 869,
+        "strict_valid": 869,
+        "renormalized": 0,
+        "probability_valid": 869,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6536248561565017,
+          "correct": 568,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6312631719918518,
+          "per_class": {
+            "A": {
+              "tp": 391,
+              "fp": 255,
+              "fn": 46,
+              "support": 437,
+              "precision": 0.6052631578947368,
+              "recall": 0.8947368421052632,
+              "f1": 0.7220683287165282
+            },
+            "B": {
+              "tp": 177,
+              "fp": 46,
+              "fn": 255,
+              "support": 432,
+              "precision": 0.7937219730941704,
+              "recall": 0.4097222222222222,
+              "f1": 0.5404580152671755
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.4353291635969388,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.08352797062999485,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 201,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5532921278357867,
+              "mean_correctness": 0.5024875621890548
+            },
+            {
+              "n": 162,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6446603535150875,
+              "mean_correctness": 0.5555555555555556
+            },
+            {
+              "n": 167,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7508840673412976,
+              "mean_correctness": 0.6526946107784432
+            },
+            {
+              "n": 203,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.848570525151442,
+              "mean_correctness": 0.7438423645320197
+            },
+            {
+              "n": 136,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9358945269212411,
+              "mean_correctness": 0.8602941176470589
+            }
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "B": 177,
+          "A": 255
+        },
+        "A": {
+          "A": 391,
+          "B": 46
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "4db234eb-c837-4f75-a4af-8bbba3c78d47",
+            "started_at": "2026-10-28T09:11:48.926899+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T09:14:04.592338+00:00",
+            "window_seconds": 135.6645560991019,
+            "attempts": 869,
+            "completed_samples": 869,
+            "scoring_valid_samples": 869,
+            "success_qps": 6.405505055905702,
+            "attempts_per_second": 6.405505055905702
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 869,
+          "p50_ms": 151.304773055017,
+          "p95_ms": 186.33423410356045
+        },
+        "successful_response_latency_ms": {
+          "n": 869,
+          "p50_ms": 151.304773055017,
+          "p95_ms": 186.33423410356045
+        },
+        "sample_elapsed_ms": {
+          "n": 869,
+          "p50_ms": 69379.21853363514,
+          "p95_ms": 128861.75557952373
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "known_attempts": 0,
+          "missing_attempts": 869,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 869,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "local_compute_unpriced",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "anyjev_l0",
+        "declaration_verified": false,
+        "confidence_basis": "maximum_candidate_probability",
+        "declared": {
+          "upstream_repo": "https://github.com/nokia-applied-research/AnyJev",
+          "upstream_revision": "35311c58955716cb8955ce1368a665988bc63735",
+          "backbone_model": "Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "training_free": true,
+          "precision": "bfloat16",
+          "settings": {
+            "level": "L0",
+            "prior": "content_free",
+            "prior_strength": 1.0,
+            "adaptive_shifts": false,
+            "max_permutations": null,
+            "combine": "logmean",
+            "cf_probes": [
+              "N/A",
+              "",
+              "[MASK]"
+            ],
+            "record_content_free": false,
+            "system": "You are a decision function. You will be given a state and one question. Reply with the answer label only: no words, no punctuation, no explanation.",
+            "shared_prefix": false,
+            "shared_min_prefix_tokens": 256,
+            "canonical_order": false
+          }
+        },
+        "actual_models": [
+          "Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "anyjev_l0_label_free_corrected_next_token_logits"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/anyjev-synth-full-002/run",
+        "report": "historical-store/evaluation/anyjev-synth-full-002/run/reports/45a84a9b-0de7-48a0-af6a-b11a181e9c1b/metrics.json",
+        "predictions": "historical-store/evaluation/anyjev-synth-full-002/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/anyjev-synth-full-002/run/attempts.jsonl",
+        "prediction_sha256": "a16d0123073595fea6f854870774ef8c4a0bca8ebcda29e7c8bad8f33170f5b5"
+      }
+    },
+    {
+      "method": "anyjev",
+      "dataset": "reddit",
+      "status": "completed",
+      "sample_sha256": "0e3f48cf83ad196cb61291e3134836261c650e0c22e8ff27126b4211fc777021",
+      "counts": {
+        "planned": 1502,
+        "attempted": 1502,
+        "completed": 1502,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 1502,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 1502,
+        "strict_valid": 1502,
+        "renormalized": 0,
+        "probability_valid": 1502,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.7470039946737683,
+          "correct": 1122,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.7430638585977902,
+          "per_class": {
+            "A": {
+              "tp": 654,
+              "fp": 295,
+              "fn": 85,
+              "support": 739,
+              "precision": 0.6891464699683878,
+              "recall": 0.8849797023004059,
+              "f1": 0.7748815165876777
+            },
+            "B": {
+              "tp": 468,
+              "fp": 85,
+              "fn": 295,
+              "support": 763,
+              "precision": 0.8462929475587704,
+              "recall": 0.6133682830930537,
+              "f1": 0.7112462006079028
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.3550379847393441,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.060669632008139164,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 201,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5498683149786504,
+              "mean_correctness": 0.582089552238806
+            },
+            {
+              "n": 237,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6498784178532793,
+              "mean_correctness": 0.6075949367088608
+            },
+            {
+              "n": 234,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": 0.7505384838371729,
+              "mean_correctness": 0.6794871794871795
+            },
+            {
+              "n": 291,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8554627898114716,
+              "mean_correctness": 0.7800687285223368
+            },
+            {
+              "n": 539,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9481678228249905,
+              "mean_correctness": 0.8812615955473099
+            }
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "A": {
+          "A": 654,
+          "B": 85
+        },
+        "B": {
+          "A": 295,
+          "B": 468
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "527b211d-9ba7-49f1-bdf4-7b227a477689",
+            "started_at": "2026-10-28T09:14:31.967056+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T09:17:04.264152+00:00",
+            "window_seconds": 152.29610055312514,
+            "attempts": 1502,
+            "completed_samples": 1502,
+            "scoring_valid_samples": 1502,
+            "success_qps": 9.8623667614921,
+            "attempts_per_second": 9.8623667614921
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 1502,
+          "p50_ms": 91.43647318705916,
+          "p95_ms": 154.32453295215964
+        },
+        "successful_response_latency_ms": {
+          "n": 1502,
+          "p50_ms": 91.43647318705916,
+          "p95_ms": 154.32453295215964
+        },
+        "sample_elapsed_ms": {
+          "n": 1502,
+          "p50_ms": 80733.0671697855,
+          "p95_ms": 145497.39800812677
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "known_attempts": 0,
+          "missing_attempts": 1502,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 1502,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "local_compute_unpriced",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "anyjev_l0",
+        "declaration_verified": false,
+        "confidence_basis": "maximum_candidate_probability",
+        "declared": {
+          "upstream_repo": "https://github.com/nokia-applied-research/AnyJev",
+          "upstream_revision": "35311c58955716cb8955ce1368a665988bc63735",
+          "backbone_model": "Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "training_free": true,
+          "precision": "bfloat16",
+          "settings": {
+            "level": "L0",
+            "prior": "content_free",
+            "prior_strength": 1.0,
+            "adaptive_shifts": false,
+            "max_permutations": null,
+            "combine": "logmean",
+            "cf_probes": [
+              "N/A",
+              "",
+              "[MASK]"
+            ],
+            "record_content_free": false,
+            "system": "You are a decision function. You will be given a state and one question. Reply with the answer label only: no words, no punctuation, no explanation.",
+            "shared_prefix": false,
+            "shared_min_prefix_tokens": 256,
+            "canonical_order": false
+          }
+        },
+        "actual_models": [
+          "Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "anyjev_l0_label_free_corrected_next_token_logits"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/anyjev-reddit-full-002/run",
+        "report": "historical-store/evaluation/anyjev-reddit-full-002/run/reports/12a0fac5-69c1-4f72-9af8-815c51c77867/metrics.json",
+        "predictions": "historical-store/evaluation/anyjev-reddit-full-002/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/anyjev-reddit-full-002/run/attempts.jsonl",
+        "prediction_sha256": "9c79d71883b31b0cba4949ebf989fa0d7fa22d499c75a44764929e916b178930"
+      }
+    },
+    {
+      "method": "chat",
+      "dataset": "care",
+      "status": "completed",
+      "sample_sha256": "f97aec02d98e5f6ec8ea90f20e472261e078af71e6b92479456a7e7c435c2168",
+      "counts": {
+        "planned": 135,
+        "attempted": 135,
+        "completed": 135,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 135,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 135,
+        "strict_valid": 135,
+        "renormalized": 0,
+        "probability_valid": 135,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5555555555555556,
+          "correct": 75,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.48103931916512144,
+          "per_class": {
+            "A": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 37,
+              "support": 37,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "B": {
+              "tp": 12,
+              "fp": 5,
+              "fn": 12,
+              "support": 24,
+              "precision": 0.7058823529411765,
+              "recall": 0.5,
+              "f1": 0.5853658536585366
+            },
+            "C": {
+              "tp": 43,
+              "fp": 44,
+              "fn": 5,
+              "support": 48,
+              "precision": 0.4942528735632184,
+              "recall": 0.8958333333333334,
+              "f1": 0.6370370370370371
+            },
+            "D": {
+              "tp": 20,
+              "fp": 11,
+              "fn": 6,
+              "support": 26,
+              "precision": 0.6451612903225806,
+              "recall": 0.7692307692307693,
+              "f1": 0.7017543859649122
+            }
+          },
+          "labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.7735674074074075,
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.35140740740740856,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 34,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8500000000000005,
+              "mean_correctness": 0.3235294117647059
+            },
+            {
+              "n": 101,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9261386138613875,
+              "mean_correctness": 0.6336633663366337
+            }
+          ],
+          "eligible": 135,
+          "used": 135,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "B": 12,
+          "C": 11,
+          "D": 1
+        },
+        "A": {
+          "C": 27,
+          "D": 7,
+          "B": 3
+        },
+        "C": {
+          "C": 43,
+          "B": 2,
+          "D": 3
+        },
+        "D": {
+          "D": 20,
+          "C": 6
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.4765625,
+          0.6384615384615384
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "4f98c970-2e1d-4de0-bf21-de44159aaa05",
+            "started_at": "2026-10-28T09:20:08.737555+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T09:23:52.358022+00:00",
+            "window_seconds": 223.61962704267353,
+            "attempts": 135,
+            "completed_samples": 135,
+            "scoring_valid_samples": 135,
+            "success_qps": 0.6037037168219489,
+            "attempts_per_second": 0.6037037168219489
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 135,
+          "p50_ms": 1613.873342052102,
+          "p95_ms": 1844.307447783649
+        },
+        "successful_response_latency_ms": {
+          "n": 135,
+          "p50_ms": 1613.873342052102,
+          "p95_ms": 1844.307447783649
+        },
+        "sample_elapsed_ms": {
+          "n": 135,
+          "p50_ms": 115650.11379122734,
+          "p95_ms": 212828.81280789152
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 96786,
+          "output_tokens": 9352,
+          "known_attempts": 135,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 135,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "unknown",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "chat_baseline",
+        "declared": {
+          "method": "chat_baseline",
+          "upstream_repo": null,
+          "upstream_revision": null,
+          "backbone_model": "Qwen/Qwen3.5-9B",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "serving_backend": "transformers",
+          "dependencies": {
+            "torch": "2.11.0+cu130",
+            "transformers": "5.17.0",
+            "fastapi": "0.153.0",
+            "uvicorn": "0.54.0"
+          },
+          "precision": "bf16",
+          "settings": {
+            "enable_thinking": false,
+            "temperature": 0,
+            "max_tokens": 2048,
+            "response_format": "text"
+          }
+        },
+        "declaration_verified": false,
+        "actual_models": [
+          "qwen35-9b"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "llm_self_reported"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/chat-care-full-001/run",
+        "report": "historical-store/evaluation/chat-care-full-001/run/reports/2fad2b1b-40a0-4a52-8b2f-861a9be318e2/metrics.json",
+        "predictions": "historical-store/evaluation/chat-care-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/chat-care-full-001/run/attempts.jsonl",
+        "prediction_sha256": "9f40f3d9702c21fc80a19cbb9dc2f3747b864d75f72fb6234ecf9e614f6d03d4"
+      }
+    },
+    {
+      "method": "chat",
+      "dataset": "synth",
+      "status": "completed",
+      "sample_sha256": "f932bd891c563931e54f720b8fab38cf0d555c1b1ce816c803df1c43661dcd59",
+      "counts": {
+        "planned": 869,
+        "attempted": 869,
+        "completed": 869,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 869,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 869,
+        "strict_valid": 869,
+        "renormalized": 0,
+        "probability_valid": 869,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6455696202531646,
+          "correct": 561,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6357048748353096,
+          "per_class": {
+            "A": {
+              "tp": 209,
+              "fp": 80,
+              "fn": 228,
+              "support": 437,
+              "precision": 0.7231833910034602,
+              "recall": 0.4782608695652174,
+              "f1": 0.5757575757575758
+            },
+            "B": {
+              "tp": 352,
+              "fp": 228,
+              "fn": 80,
+              "support": 432,
+              "precision": 0.6068965517241379,
+              "recall": 0.8148148148148148,
+              "f1": 0.6956521739130435
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.6438794016110472,
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.3056616800920727,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 869,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9512313003452372,
+              "mean_correctness": 0.6455696202531646
+            }
+          ],
+          "eligible": 869,
+          "used": 869,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "B": {
+          "B": 352,
+          "A": 80
+        },
+        "A": {
+          "A": 209,
+          "B": 228
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "2e538869-cde0-4bf5-b8f8-c6b9c9cec6ff",
+            "started_at": "2026-10-28T09:23:53.497922+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T09:43:03.928433+00:00",
+            "window_seconds": 1150.4296072721481,
+            "attempts": 869,
+            "completed_samples": 869,
+            "scoring_valid_samples": 869,
+            "success_qps": 0.7553699891821608,
+            "attempts_per_second": 0.7553699891821608
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 869,
+          "p50_ms": 1293.061682023108,
+          "p95_ms": 1332.3211628943682
+        },
+        "successful_response_latency_ms": {
+          "n": 869,
+          "p50_ms": 1293.061682023108,
+          "p95_ms": 1332.3211628943682
+        },
+        "sample_elapsed_ms": {
+          "n": 869,
+          "p50_ms": 586863.0612101406,
+          "p95_ms": 1093935.7827596364
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 1258596,
+          "output_tokens": 46057,
+          "known_attempts": 869,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 869,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "unknown",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "chat_baseline",
+        "declared": {
+          "method": "chat_baseline",
+          "upstream_repo": null,
+          "upstream_revision": null,
+          "backbone_model": "Qwen/Qwen3.5-9B",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "serving_backend": "transformers",
+          "dependencies": {
+            "torch": "2.11.0+cu130",
+            "transformers": "5.17.0",
+            "fastapi": "0.153.0",
+            "uvicorn": "0.54.0"
+          },
+          "precision": "bf16",
+          "settings": {
+            "enable_thinking": false,
+            "temperature": 0,
+            "max_tokens": 2048,
+            "response_format": "text"
+          }
+        },
+        "declaration_verified": false,
+        "actual_models": [
+          "qwen35-9b"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "llm_self_reported"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/chat-synth-full-001/run",
+        "report": "historical-store/evaluation/chat-synth-full-001/run/reports/8c5acff8-5620-438d-80c7-78f2a2174969/metrics.json",
+        "predictions": "historical-store/evaluation/chat-synth-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/chat-synth-full-001/run/attempts.jsonl",
+        "prediction_sha256": "1e49a93781bb051a26f1883c4c05deffa0f35cba9f4dae51944e0f2396f36d65"
+      }
+    },
+    {
+      "method": "chat",
+      "dataset": "reddit",
+      "status": "completed",
+      "sample_sha256": "0e3f48cf83ad196cb61291e3134836261c650e0c22e8ff27126b4211fc777021",
+      "counts": {
+        "planned": 1502,
+        "attempted": 1502,
+        "completed": 1502,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 1502,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 1502,
+        "strict_valid": 1502,
+        "renormalized": 0,
+        "probability_valid": 1502,
+        "choice_argmax_disagreements": 0
+      },
+      "metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.737017310252996,
+          "correct": 1107,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.73586982120494,
+          "per_class": {
+            "A": {
+              "tp": 504,
+              "fp": 160,
+              "fn": 235,
+              "support": 739,
+              "precision": 0.7590361445783133,
+              "recall": 0.6820027063599459,
+              "f1": 0.7184604419101924
+            },
+            "B": {
+              "tp": 603,
+              "fp": 235,
+              "fn": 160,
+              "support": 763,
+              "precision": 0.7195704057279236,
+              "recall": 0.7903014416775884,
+              "f1": 0.7532792004996877
+            }
+          },
+          "labels": [
+            "A",
+            "B"
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.4790102529960053,
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.21864846870841234,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 1502,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9556657789614084,
+              "mean_correctness": 0.737017310252996
+            }
+          ],
+          "eligible": 1502,
+          "used": 1502,
+          "failed": 0,
+          "coverage": 1.0,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "confusion": {
+        "A": {
+          "B": 235,
+          "A": 504
+        },
+        "B": {
+          "A": 160,
+          "B": 603
+        }
+      },
+      "error_kinds": {},
+      "accuracy_uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      },
+      "performance": {
+        "sessions": [
+          {
+            "id": "bacf42e4-fdd5-4885-b164-6dc26b3d7e65",
+            "started_at": "2026-10-28T09:43:05.981571+00:00",
+            "status": "completed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T10:14:57.412334+00:00",
+            "window_seconds": 1911.4296682151034,
+            "attempts": 1502,
+            "completed_samples": 1502,
+            "scoring_valid_samples": 1502,
+            "success_qps": 0.7857992501511031,
+            "attempts_per_second": 0.7857992501511031
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 1502,
+          "p50_ms": 1253.6398600786924,
+          "p95_ms": 1299.0932759828866
+        },
+        "successful_response_latency_ms": {
+          "n": 1502,
+          "p50_ms": 1253.6398600786924,
+          "p95_ms": 1299.0932759828866
+        },
+        "sample_elapsed_ms": {
+          "n": 1502,
+          "p50_ms": 967313.02951416,
+          "p95_ms": 1817353.6423538812
+        },
+        "failed_attempts": 0,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": 1471450,
+          "output_tokens": 79606,
+          "known_attempts": 1502,
+          "missing_attempts": 0,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 1502,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "unknown",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "prediction_provenance": {
+        "method": "chat_baseline",
+        "declared": {
+          "method": "chat_baseline",
+          "upstream_repo": null,
+          "upstream_revision": null,
+          "backbone_model": "Qwen/Qwen3.5-9B",
+          "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "serving_backend": "transformers",
+          "dependencies": {
+            "torch": "2.11.0+cu130",
+            "transformers": "5.17.0",
+            "fastapi": "0.153.0",
+            "uvicorn": "0.54.0"
+          },
+          "precision": "bf16",
+          "settings": {
+            "enable_thinking": false,
+            "temperature": 0,
+            "max_tokens": 2048,
+            "response_format": "text"
+          }
+        },
+        "declaration_verified": false,
+        "actual_models": [
+          "qwen35-9b"
+        ],
+        "unresolved_model_predictions": 0,
+        "probability_sources": [
+          "llm_self_reported"
+        ]
+      },
+      "artifacts": {
+        "run": "historical-store/evaluation/chat-reddit-full-001/run",
+        "report": "historical-store/evaluation/chat-reddit-full-001/run/reports/a40ec1e6-7a88-4783-a65c-2c048e79eb29/metrics.json",
+        "predictions": "historical-store/evaluation/chat-reddit-full-001/run/predictions.jsonl",
+        "attempts": "historical-store/evaluation/chat-reddit-full-001/run/attempts.jsonl",
+        "prediction_sha256": "c321e63c8688be19065c60adff94f6d5b34f751a2d1bcc7b30e5f056646c0749"
+      }
+    }
+  ],
+  "expected": {
+    "care": {
+      "count": 135,
+      "sample_sha256": "f97aec02d98e5f6ec8ea90f20e472261e078af71e6b92479456a7e7c435c2168"
+    },
+    "synth": {
+      "count": 869,
+      "sample_sha256": "f932bd891c563931e54f720b8fab38cf0d555c1b1ce816c803df1c43661dcd59"
+    },
+    "reddit": {
+      "count": 1502,
+      "sample_sha256": "0e3f48cf83ad196cb61291e3134836261c650e0c22e8ff27126b4211fc777021"
+    }
+  },
+  "calibration_manifest": "historical-store/training/calibration-001/run/manifest.json",
+  "selection": {
+    "checkpoint": "historical-store/training/joint-001/run/checkpoints/checkpoint-200",
+    "step": 200,
+    "split": "validation",
+    "status": "completed",
+    "tasks": {
+      "triage_action": {
+        "accuracy": 0.9327731092436975,
+        "brier": 0.1181591040487097,
+        "count": 238,
+        "data_sha256": "93bf7d8270f1b5b67b49719867d4ab660307ef76a176ee0ef46eefc57e9a0537"
+      },
+      "message_priority": {
+        "accuracy": 0.9903846153846154,
+        "brier": 0.01274958187142845,
+        "count": 208,
+        "data_sha256": "b6b7b650a7dbf5204d018865a7e6966ba1ad59cda01826fc2ace4dbfe92da66b"
+      }
+    },
+    "validation_run": "historical-store/evaluation/validation-selection-001/checkpoint-200/run",
+    "selection_score": 0.9615788623141565,
+    "tie_break_brier": 0.06545434296006908,
+    "selection_rule": "equal_task_accuracy_then_brier_then_earliest_step"
+  },
+  "benchmark_extension": {
+    "distribution": "dforge-medical-triage-benchmark",
+    "version": "0.1.0",
+    "benchmark": "medical_decisions",
+    "benchmark_version": "1",
+    "files": {
+      "README.md": "1e410e5b7cde2aaf71792dbe8a7ff418fb9289296be452748ecbd3a6563a2f43",
+      "medical_triage_benchmark/__init__.py": "2f7e5e898b38052b45fab5c6fb01d8c754c75a3b94c4c65c0bf21fe681d73c62",
+      "medical_triage_benchmark/benchmark.py": "c803d5678d46e7c899270aa284c09a8315567578e6ed5feef614f2731652a033",
+      "medical_triage_benchmark/metrics.py": "49d9e6c9983f2c706cc6e3814aa3a2f3ebb65b83a4b9d84bd03587d3569d516b",
+      "pyproject.toml": "ab7891c11f3aea481e3cd88380848167b55cbc5ef36db30c9591cc8af635a841"
+    },
+    "versioned_source": "historical-source/examples/domain/medical_triage_joint/benchmark_ext",
+    "archived_copy": "historical-task/benchmark_ext",
+    "verification": "evaluation/benchmark-ext-validation/verification.json"
+  },
+  "accuracy_differences": [
+    {
+      "dataset": "care",
+      "contrast": "trained minus jev",
+      "accuracy_difference": 0.0962962962962963,
+      "uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.0,
+          0.19230769230769232
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      }
+    },
+    {
+      "dataset": "care",
+      "contrast": "trained minus llm2jev",
+      "accuracy_difference": 0.1259259259259259,
+      "uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.03968253968253968,
+          0.21374045801526717
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      }
+    },
+    {
+      "dataset": "care",
+      "contrast": "trained minus anyjev",
+      "accuracy_difference": 0.15555555555555556,
+      "uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.058823529411764705,
+          0.2517985611510791
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      }
+    },
+    {
+      "dataset": "care",
+      "contrast": "trained minus chat",
+      "accuracy_difference": 0.14814814814814814,
+      "uncertainty": {
+        "groups": 62,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": [
+          0.05970149253731343,
+          0.23622047244094488
+        ],
+        "reason": null,
+        "method": "95% percentile cluster bootstrap, resampling complete connected components"
+      }
+    },
+    {
+      "dataset": "synth",
+      "contrast": "trained minus jev",
+      "accuracy_difference": 0.020713463751438434,
+      "uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      }
+    },
+    {
+      "dataset": "synth",
+      "contrast": "trained minus llm2jev",
+      "accuracy_difference": 0.04487917146144994,
+      "uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      }
+    },
+    {
+      "dataset": "synth",
+      "contrast": "trained minus anyjev",
+      "accuracy_difference": 0.023014959723820484,
+      "uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      }
+    },
+    {
+      "dataset": "synth",
+      "contrast": "trained minus chat",
+      "accuracy_difference": 0.031070195627157654,
+      "uncertainty": {
+        "groups": 2,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      }
+    },
+    {
+      "dataset": "reddit",
+      "contrast": "trained minus jev",
+      "accuracy_difference": -0.011318242343541944,
+      "uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      }
+    },
+    {
+      "dataset": "reddit",
+      "contrast": "trained minus llm2jev",
+      "accuracy_difference": 0.031291611185086554,
+      "uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      }
+    },
+    {
+      "dataset": "reddit",
+      "contrast": "trained minus anyjev",
+      "accuracy_difference": 0.045272969374167776,
+      "uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      }
+    },
+    {
+      "dataset": "reddit",
+      "contrast": "trained minus chat",
+      "accuracy_difference": 0.05525965379494008,
+      "uncertainty": {
+        "groups": 1,
+        "replicates": 2000,
+        "seed": 3407,
+        "unit": "connected patient component",
+        "interval": null,
+        "reason": "Fewer than 20 independent patient components; pair count cannot substitute for group count"
+      }
+    }
+  ],
+  "conditions": [
+    "LLM2Jev baseline inference began before final model selection; existing outcomes were retained and later submissions deferred. No training or checkpoint-selection choices use those scores; see protocol_deviations.",
+    "Jev is an external-system comparison; local methods use the frozen Qwen3.5-9B BF16 backbone.",
+    "Accuracy and macro-F1 retain every planned row; failed decisions count as errors. Probability metrics separately report valid coverage.",
+    "Latency is measured at the adapter; HTTP/local software paths and binary candidate counts differ. GPU and API costs without verified prices remain unknown.",
+    "Connected-patient components define resampling units. Synth/Reddit have too few components for reliable independent-patient intervals.",
+    "AnyJev uses the upstream shared_prefix=false complete-prompt path for Qwen3.5 hybrid-cache compatibility. L0/content-free/full rotations remain unchanged. The original partial failed run, its quality/failures, elapsed time and unknown cost are retained separately in execution_recoveries."
+  ],
+  "protocol_deviations": [
+    {
+      "reason": "Approved plan requires final checkpoint selection before public test inference. Sequence was started early; retain existing outcomes as a protocol deviation and defer remaining submissions. No model/training hyperparameter choices may use these baseline results.",
+      "sequence_pid": 1670,
+      "start_ticks": "759029385",
+      "action": "SIGSTOP applied to owned sequence only; already-submitted Synth child may finish; do not resume until validation selection is frozen.",
+      "selection_frozen": true,
+      "selection": "historical-task/training/selection-001/selection.json",
+      "selection_sha256": "ed35b522b063e1a79bc542c687cc0d6c32a67edd89f3a72b3199c46bdafd9d7c",
+      "frozen_at": "2026-10-28T08:25:40.170405+00:00",
+      "resumed_at": "2026-10-28T09:17:19.159064+00:00"
+    }
+  ],
+  "execution_recoveries": [
+    {
+      "schema_version": "medical.execution-recovery.v1",
+      "method": "anyjev",
+      "original_failed_run": "historical-store/evaluation/anyjev-care-full-001/run",
+      "original_report": "historical-store/evaluation/anyjev-care-full-001/run/reports/3a4957f5-8eb0-4bf4-8d49-949536e5f15a/metrics.json",
+      "original_counts": {
+        "planned": 135,
+        "attempted": 22,
+        "completed": 22,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 113,
+        "transport_failed": 1,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 22,
+        "excluded": 0,
+        "coverage": 0.16296296296296298,
+        "scoring_valid": 21,
+        "strict_valid": 21,
+        "renormalized": 0,
+        "probability_valid": 21,
+        "choice_argmax_disagreements": 0
+      },
+      "original_performance": {
+        "sessions": [
+          {
+            "id": "d4f7b9bf-cfdc-46da-8867-b626c80d4ae9",
+            "started_at": "2026-10-28T08:32:00.778938+00:00",
+            "status": "model_failed",
+            "execution": {
+              "timeout": 300.0,
+              "concurrency": 1,
+              "max_attempts": 1,
+              "backoff": 0.5,
+              "max_retry_delay": 60.0
+            },
+            "finished_at": "2026-10-28T08:32:04.167763+00:00",
+            "window_seconds": 3.3877233248203993,
+            "attempts": 22,
+            "completed_samples": 22,
+            "scoring_valid_samples": 21,
+            "success_qps": 6.198853326109008,
+            "attempts_per_second": 6.494036817828484
+          }
+        ],
+        "attempt_latency_ms": {
+          "n": 22,
+          "p50_ms": 107.56308445706964,
+          "p95_ms": 125.56687691248953
+        },
+        "successful_response_latency_ms": {
+          "n": 21,
+          "p50_ms": 107.7074334025383,
+          "p95_ms": 125.69159176200628
+        },
+        "sample_elapsed_ms": {
+          "n": 22,
+          "p50_ms": 2079.1549063287675,
+          "p95_ms": 3131.827209284529
+        },
+        "failed_attempts": 1,
+        "timeout_attempts": 0,
+        "unknown_attempts": 0,
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "known_attempts": 0,
+          "missing_attempts": 22,
+          "basis": "sum_of_reported_usage_only"
+        },
+        "reported_cost_usd": null,
+        "missing_cost_attempts": 22,
+        "price_per_1000_decisions_usd": null,
+        "cost_basis": "local_compute_unpriced",
+        "candidate_tasks": {
+          "known_total": 0,
+          "known_attempts": 0,
+          "basis": "logical_binary_tasks_per_http_attempt_not_measured_kernels"
+        }
+      },
+      "original_metrics": {
+        "medical_accuracy": {
+          "name": "medical_accuracy",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.1037037037037037,
+          "correct": 14,
+          "eligible": 135,
+          "used": 21,
+          "failed": 114,
+          "coverage": 0.15555555555555556,
+          "denominator": "all_planned_labeled_samples",
+          "reason": null,
+          "prediction_rule": "native_choice"
+        },
+        "medical_macro_f1": {
+          "name": "medical_macro_f1",
+          "version": "1",
+          "direction": "higher",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.17706148018648019,
+          "per_class": {
+            "A": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 35,
+              "support": 37,
+              "precision": 1.0,
+              "recall": 0.05405405405405406,
+              "f1": 0.10256410256410256
+            },
+            "B": {
+              "tp": 3,
+              "fp": 3,
+              "fn": 21,
+              "support": 24,
+              "precision": 0.5,
+              "recall": 0.125,
+              "f1": 0.2
+            },
+            "C": {
+              "tp": 6,
+              "fp": 1,
+              "fn": 42,
+              "support": 48,
+              "precision": 0.8571428571428571,
+              "recall": 0.125,
+              "f1": 0.21818181818181817
+            },
+            "D": {
+              "tp": 3,
+              "fp": 3,
+              "fn": 23,
+              "support": 26,
+              "precision": 0.5,
+              "recall": 0.11538461538461539,
+              "f1": 0.1875
+            }
+          },
+          "labels": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "eligible": 135,
+          "used": 21,
+          "failed": 114,
+          "coverage": 0.15555555555555556,
+          "denominator": "all_planned_labeled_samples_fixed_classes",
+          "reason": null,
+          "prediction_rule": "native_choice",
+          "zero_division": 0
+        },
+        "medical_brier": {
+          "name": "medical_brier",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {},
+          "value": 0.5602376209304116,
+          "eligible": 135,
+          "used": 21,
+          "failed": 114,
+          "coverage": 0.15555555555555556,
+          "denominator": "valid_probability_predictions",
+          "reason": null
+        },
+        "medical_ece": {
+          "name": "medical_ece",
+          "version": "1",
+          "direction": "lower",
+          "unit": "ratio",
+          "parameters": {
+            "bins": 10
+          },
+          "value": 0.2536222232421741,
+          "bins": [
+            {
+              "n": 0,
+              "lo": 0.0,
+              "hi": 0.1,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 0,
+              "lo": 0.1,
+              "hi": 0.2,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 1,
+              "lo": 0.2,
+              "hi": 0.3,
+              "mean_probability": 0.2954383608346335,
+              "mean_correctness": 1.0
+            },
+            {
+              "n": 3,
+              "lo": 0.3,
+              "hi": 0.4,
+              "mean_probability": 0.37523160326454225,
+              "mean_correctness": 0.3333333333333333
+            },
+            {
+              "n": 5,
+              "lo": 0.4,
+              "hi": 0.5,
+              "mean_probability": 0.4491302303657977,
+              "mean_correctness": 0.8
+            },
+            {
+              "n": 5,
+              "lo": 0.5,
+              "hi": 0.6,
+              "mean_probability": 0.5370824768704303,
+              "mean_correctness": 0.6
+            },
+            {
+              "n": 2,
+              "lo": 0.6,
+              "hi": 0.7,
+              "mean_probability": 0.6123158755561222,
+              "mean_correctness": 1.0
+            },
+            {
+              "n": 0,
+              "lo": 0.7,
+              "hi": 0.8,
+              "mean_probability": null,
+              "mean_correctness": null
+            },
+            {
+              "n": 2,
+              "lo": 0.8,
+              "hi": 0.9,
+              "mean_probability": 0.8563926743340906,
+              "mean_correctness": 0.5
+            },
+            {
+              "n": 3,
+              "lo": 0.9,
+              "hi": 1.0,
+              "mean_probability": 0.9795733925839553,
+              "mean_correctness": 0.6666666666666666
+            }
+          ],
+          "eligible": 135,
+          "used": 21,
+          "failed": 114,
+          "coverage": 0.15555555555555556,
+          "denominator": "valid_native_choice_and_probability",
+          "reason": null,
+          "confidence_rule": "probability_of_native_choice"
+        }
+      },
+      "error": "LinearAttentionLayer has no batch_repeat_interleave in Transformers5.17 shared-prefix KV-cache expansion",
+      "reproduction": "artificial nonmedical long color-state probe (not public test content): auto failed with the same error; shared_prefix=false completed",
+      "correction": "Pass official AnyJev Decider shared_prefix=False and use its original complete-prompt next-token-logprob path. No library/weight patches or dependency upgrades.",
+      "invariants": [
+        "same frozen Qwen3.5-9B BF16 weights",
+        "same complete frozen test rows and targets",
+        "L0/content_free/full K rotations/logmean unchanged",
+        "no output repair or test-score-conditioned model/hyperparameter choice"
+      ],
+      "new_full_runs": [
+        "historical-store/evaluation/anyjev-care-full-002/run",
+        "historical-store/evaluation/anyjev-synth-full-002/run",
+        "historical-store/evaluation/anyjev-reddit-full-002/run"
+      ],
+      "reporting": "Final quality matrix uses complete corrected runs. Original22outcomes (21valid/1error) and113unattempted remain visible here, with separate original partial quality and measured time/unknown cost; no prior outcomes deleted.",
+      "probe_runs": [
+        "historical-store/evaluation/anyjev-cache-auto-probe-001/run",
+        "historical-store/evaluation/anyjev-cache-flat-probe-001/run"
+      ],
+      "previous_successful_prediction_comparison": {
+        "count": 21,
+        "same_choices": 21,
+        "maximum_probability_delta": 0.0
+      }
+    }
+  ]
+}

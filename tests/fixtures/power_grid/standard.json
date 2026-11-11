@@ -1,0 +1,80 @@
+[
+  {
+    "group_id": "power_grid_01",
+    "mode": "choice",
+    "question": "What is the combined active power demand of a 40 MW feeder and a 20 MW feeder?",
+    "answer": "60 MW",
+    "context": "A training substation supplies two feeders. Their simultaneous active power demands are 40 MW and 20 MW; ignore losses.",
+    "options": ["60 MW", "20 MW", "40 MW", "80 MW"]
+  },
+  {
+    "group_id": "power_grid_02",
+    "mode": "choice",
+    "question": "How much additional active power is needed to balance 75 MW of generation against 90 MW of demand?",
+    "answer": "15 MW",
+    "context": "In an isolated training grid, generation is 75 MW and demand is 90 MW. There is no storage, import, or network loss."
+  },
+  {
+    "group_id": "power_grid_03",
+    "mode": "choice",
+    "question": "What is the loading percentage of a 100 MVA transformer carrying 70 MVA?",
+    "answer": "70%",
+    "context": "",
+    "options": ["30%", "70%", "100%", "170%"]
+  },
+  {
+    "group_id": "power_grid_04",
+    "mode": "choice",
+    "question": "How much energy does a feeder deliver at a constant active power of 12 MW for 2 hours?",
+    "answer": "24 MWh",
+    "context": ""
+  },
+  {
+    "group_id": "power_grid_05",
+    "mode": "choice",
+    "question": "How many megawatts of active power are lost when 50 MW enters a line and 48 MW leaves it?",
+    "answer": "2 MW",
+    "context": "The sending-end meter reads 50 MW and the receiving-end meter reads 48 MW at the same instant. No branches connect between the meters.",
+    "options": ["2 MW", "48 MW", "50 MW", "98 MW"]
+  },
+  {
+    "group_id": "power_grid_06",
+    "mode": "choice",
+    "question": "How much additional active power can a generator supply before reaching its 80 MW limit if it currently supplies 55 MW?",
+    "answer": "25 MW",
+    "context": "A training generator has an active power limit of 80 MW and an operating output of 55 MW. Ignore ramp-rate and other operating constraints.",
+    "options": ["25 MW"]
+  },
+  {
+    "group_id": "power_grid_07",
+    "mode": "choice",
+    "question": "What is the voltage magnitude in per unit for a measured voltage of 11 kV on a 10 kV voltage base?",
+    "answer": "1.1 p.u.",
+    "context": "",
+    "options": ["0.9 p.u.", "1.0 p.u.", "1.1 p.u.", "11.0 p.u."]
+  },
+  {
+    "group_id": "power_grid_08",
+    "mode": "choice",
+    "question": "What is the average active power when a meter records 18 MWh delivered over 3 hours?",
+    "answer": "6 MW",
+    "context": "",
+    "options": ["6 MW"]
+  },
+  {
+    "group_id": "power_grid_09",
+    "mode": "choice",
+    "question": "What is the active power demand after a 100 MW load is reduced by 10 MW?",
+    "answer": "90 MW",
+    "context": "A demand-response exercise starts with a 100 MW load. The exercise removes 10 MW, and all other loads remain unchanged.",
+    "options": ["10 MW", "90 MW", "100 MW", "110 MW"]
+  },
+  {
+    "group_id": "power_grid_10",
+    "mode": "choice",
+    "question": "What is the total active power output of three generators each producing 15 MW?",
+    "answer": "45 MW",
+    "context": "",
+    "options": []
+  }
+]

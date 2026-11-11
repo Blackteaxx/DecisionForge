@@ -1,0 +1,17 @@
+benchmark: demo
+benchmark_version: '1'
+data:
+  path: ../../../eval/samples.jsonl
+model:
+  adapter: unsloth_local
+  path: ../../../../outputs/train/qwen35-4b-full/model
+  load_in_4bit: true
+  precision: auto
+  max_seq_length: 16384
+  load_timeout: 600
+  local_files_only: true
+execution:
+  concurrency: 1
+  timeout: 60
+  max_attempts: 1
+output: ../../../../outputs/eval/qwen35-4b-full/demo

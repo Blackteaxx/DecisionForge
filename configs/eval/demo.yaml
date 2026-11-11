@@ -1,0 +1,14 @@
+benchmark: demo
+benchmark_version: '1'
+data:
+  path: ../../examples/eval/samples.jsonl
+model:
+  adapter: jev
+  base_url: https://api.typesafe.ai
+  model: jev-latest
+  api_key_env: TYPESAFE_API_KEY
+execution:
+  concurrency: 1
+  timeout: 60
+  max_attempts: 1
+output: ../../outputs/eval/demo

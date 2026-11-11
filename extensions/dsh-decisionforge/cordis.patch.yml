@@ -1,0 +1,6 @@
+# Native bundle layer: enabled and removed by the dsh plugin manager.
+- id: ui-brand-official
+  disabled: true
+- insert:
+    - id: decisionforge
+      name: '@decisionforge/dsh-plugin'

@@ -1,0 +1,15 @@
+benchmark: generic
+data:
+  path: ../../../data/benchmarks/scienceqa_img/processed/test.jsonl
+  splits: [test]
+model:
+  adapter: swift_local
+  path: ../../../models/OmniJev
+  base_model: Qwen/Qwen3.5-4B
+  base_revision: 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a
+  adapter_revision: 91248107b7f5230bd5715db2e62e83c9a72fcd81
+execution:
+  timeout: 300
+  concurrency: 1
+  max_attempts: 1
+output: ../../../outputs/eval/swift-original

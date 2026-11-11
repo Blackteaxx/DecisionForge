@@ -1,0 +1,15 @@
+benchmark: banking77
+benchmark_version: '1'
+data:
+  path: ../../data/benchmarks/banking77/processed/test.jsonl
+  splits: [test]
+model:
+  base_url: https://openrouter.ai
+  endpoint_path: /api/alpha/decisions
+  model: typesafe/jev-1.13
+  api_key_env: OPENROUTER_API_KEY
+execution:
+  concurrency: 8
+  timeout: 60
+  max_attempts: 3
+output: ../../outputs/eval/banking77

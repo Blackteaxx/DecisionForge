@@ -1,0 +1,15 @@
+# Explicit audited C/N subset; never report as full benchmark coverage.
+benchmark: typed_decisions
+benchmark_version: 1-single-question
+data:
+  path: ../../../../data/local/openjev/typed_decisions-test-cn.jsonl
+model:
+  adapter: openjev_local
+  path: ../../../../outputs/train/openjev-typed-decisions-full/model
+  device: cuda:0
+  load_timeout: 900
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 300.0
+output: ../../../../outputs/eval/openjev-typed-decisions-full/typed_decisions

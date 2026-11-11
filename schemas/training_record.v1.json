@@ -1,0 +1,260 @@
+{
+    "$defs": {
+        "JEVQuestion": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "enum": [
+                        "choice",
+                        "noul",
+                        "score"
+                    ],
+                    "title": "Type",
+                    "type": "string"
+                },
+                "instructions": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        }
+                    ],
+                    "title": "Instructions"
+                },
+                "criteria": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "additionalProperties": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "object"
+                                    },
+                                    {
+                                        "items": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "array"
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "additionalProperties": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "object"
+                                    },
+                                    {
+                                        "items": {
+                                            "$ref": "#/$defs/JsonValue"
+                                        },
+                                        "type": "array"
+                                    }
+                                ]
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Criteria"
+                }
+            },
+            "required": [
+                "type",
+                "instructions"
+            ],
+            "title": "JEVQuestion",
+            "type": "object"
+        },
+        "JEVRequest": {
+            "additionalProperties": false,
+            "properties": {
+                "model": {
+                    "title": "Model",
+                    "type": "string"
+                },
+                "state": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        }
+                    ],
+                    "title": "State"
+                },
+                "questions": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/JEVQuestion"
+                    },
+                    "minProperties": 1,
+                    "title": "Questions",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "model",
+                "state",
+                "questions"
+            ],
+            "title": "JEVRequest",
+            "type": "object"
+        },
+        "JsonValue": {},
+        "Supervision": {
+            "additionalProperties": false,
+            "properties": {
+                "kind": {
+                    "enum": [
+                        "choice",
+                        "binary",
+                        "ordinal_level"
+                    ],
+                    "title": "Kind",
+                    "type": "string"
+                },
+                "value": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "integer"
+                        }
+                    ],
+                    "title": "Value"
+                },
+                "origin": {
+                    "enum": [
+                        "original_gt",
+                        "derived",
+                        "synthetic"
+                    ],
+                    "title": "Origin",
+                    "type": "string"
+                },
+                "evidence_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "title": "Evidence Ids",
+                    "type": "array"
+                },
+                "candidate_id": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Candidate Id"
+                },
+                "rubric_id": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Rubric Id"
+                }
+            },
+            "required": [
+                "kind",
+                "value",
+                "origin",
+                "evidence_ids"
+            ],
+            "title": "Supervision",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "schema_version": {
+            "const": "decisionforge.training.v1",
+            "default": "decisionforge.training.v1",
+            "title": "Schema Version",
+            "type": "string"
+        },
+        "record_id": {
+            "title": "Record Id",
+            "type": "string"
+        },
+        "group_id": {
+            "title": "Group Id",
+            "type": "string"
+        },
+        "request": {
+            "$ref": "#/$defs/JEVRequest"
+        },
+        "supervision": {
+            "additionalProperties": {
+                "$ref": "#/$defs/Supervision"
+            },
+            "title": "Supervision",
+            "type": "object"
+        },
+        "metadata": {
+            "additionalProperties": true,
+            "title": "Metadata",
+            "type": "object"
+        }
+    },
+    "required": [
+        "record_id",
+        "group_id",
+        "request",
+        "supervision",
+        "metadata"
+    ],
+    "title": "TrainingRecord",
+    "type": "object"
+}

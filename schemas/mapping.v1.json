@@ -1,0 +1,170 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "schema_version": {
+            "const": "mapping.v1",
+            "default": "mapping.v1",
+            "title": "Schema Version",
+            "type": "string"
+        },
+        "question": {
+            "title": "Question",
+            "type": "string"
+        },
+        "answer": {
+            "title": "Answer",
+            "type": "string"
+        },
+        "context": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Context"
+        },
+        "options": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Options"
+        },
+        "mode": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Mode"
+        },
+        "statement": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Statement"
+        },
+        "noul_label": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Noul Label"
+        },
+        "ranking_items": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Ranking Items"
+        },
+        "score_index": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Score Index"
+        },
+        "original_id": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Original Id"
+        },
+        "group_id": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Group Id"
+        },
+        "split": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Split"
+        },
+        "answer_encoding": {
+            "default": "text",
+            "enum": [
+                "text",
+                "key",
+                "index0",
+                "index1"
+            ],
+            "title": "Answer Encoding",
+            "type": "string"
+        },
+        "label_map": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "integer"
+                    }
+                ]
+            },
+            "title": "Label Map",
+            "type": "object"
+        }
+    },
+    "required": [
+        "question",
+        "answer"
+    ],
+    "title": "MappingSpec",
+    "type": "object"
+}

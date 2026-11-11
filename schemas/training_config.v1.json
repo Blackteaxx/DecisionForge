@@ -1,0 +1,715 @@
+{
+    "$defs": {
+        "CalibrationConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "enabled": {
+                    "default": true,
+                    "title": "Enabled",
+                    "type": "boolean"
+                }
+            },
+            "title": "CalibrationConfig",
+            "type": "object"
+        },
+        "DataConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "path": {
+                    "minLength": 1,
+                    "title": "Path",
+                    "type": "string"
+                },
+                "split_map": {
+                    "additionalProperties": {
+                        "enum": [
+                            "train",
+                            "validation",
+                            "calibration",
+                            "test"
+                        ],
+                        "type": "string"
+                    },
+                    "title": "Split Map",
+                    "type": "object"
+                },
+                "auto_holdout": {
+                    "$ref": "#/$defs/HoldoutConfig"
+                },
+                "on_skipped": {
+                    "default": "error",
+                    "enum": [
+                        "error",
+                        "allow"
+                    ],
+                    "title": "On Skipped",
+                    "type": "string"
+                },
+                "on_truncated": {
+                    "default": "error",
+                    "enum": [
+                        "error",
+                        "allow"
+                    ],
+                    "title": "On Truncated",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "path"
+            ],
+            "title": "DataConfig",
+            "type": "object"
+        },
+        "DistributedConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "strategy": {
+                    "default": "single",
+                    "enum": [
+                        "single",
+                        "ddp"
+                    ],
+                    "title": "Strategy",
+                    "type": "string"
+                },
+                "world_size": {
+                    "default": 1,
+                    "minimum": 1,
+                    "title": "World Size",
+                    "type": "integer"
+                },
+                "timeout_seconds": {
+                    "default": 1800,
+                    "minimum": 1,
+                    "title": "Timeout Seconds",
+                    "type": "integer"
+                }
+            },
+            "title": "DistributedConfig",
+            "type": "object"
+        },
+        "HoldoutConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "validation_fraction": {
+                    "default": 0.1,
+                    "exclusiveMaximum": 1,
+                    "minimum": 0,
+                    "title": "Validation Fraction",
+                    "type": "number"
+                },
+                "calibration_fraction": {
+                    "default": 0.1,
+                    "exclusiveMaximum": 1,
+                    "minimum": 0,
+                    "title": "Calibration Fraction",
+                    "type": "number"
+                }
+            },
+            "title": "HoldoutConfig",
+            "type": "object"
+        },
+        "LayaConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "init_checkpoint": {
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Init Checkpoint"
+                },
+                "head_max_length": {
+                    "default": 256,
+                    "minimum": 32,
+                    "title": "Head Max Length",
+                    "type": "integer"
+                },
+                "rl_samples": {
+                    "default": 4,
+                    "minimum": 2,
+                    "title": "Rl Samples",
+                    "type": "integer"
+                },
+                "sigma_start": {
+                    "default": 0.4,
+                    "exclusiveMinimum": 0,
+                    "title": "Sigma Start",
+                    "type": "number"
+                },
+                "sigma_end": {
+                    "default": 0.1,
+                    "exclusiveMinimum": 0,
+                    "title": "Sigma End",
+                    "type": "number"
+                },
+                "w_sph": {
+                    "default": 0.75,
+                    "minimum": 0,
+                    "title": "W Sph",
+                    "type": "number"
+                },
+                "w_rps": {
+                    "default": 1.0,
+                    "minimum": 0,
+                    "title": "W Rps",
+                    "type": "number"
+                },
+                "min_learning_rate": {
+                    "default": 1e-06,
+                    "minimum": 0,
+                    "title": "Min Learning Rate",
+                    "type": "number"
+                },
+                "gradient_clip": {
+                    "default": 1.0,
+                    "exclusiveMinimum": 0,
+                    "title": "Gradient Clip",
+                    "type": "number"
+                }
+            },
+            "title": "LayaConfig",
+            "type": "object"
+        },
+        "LoraConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "rank": {
+                    "default": 16,
+                    "minimum": 1,
+                    "title": "Rank",
+                    "type": "integer"
+                },
+                "alpha": {
+                    "default": 16,
+                    "minimum": 1,
+                    "title": "Alpha",
+                    "type": "integer"
+                },
+                "dropout": {
+                    "default": 0.0,
+                    "exclusiveMaximum": 1,
+                    "minimum": 0,
+                    "title": "Dropout",
+                    "type": "number"
+                }
+            },
+            "title": "LoraConfig",
+            "type": "object"
+        },
+        "ModelConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "default": "unsloth/Qwen3.5-4B",
+                    "minLength": 1,
+                    "title": "Name",
+                    "type": "string"
+                },
+                "revision": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Revision"
+                },
+                "max_seq_length": {
+                    "default": 2048,
+                    "minimum": 32,
+                    "title": "Max Seq Length",
+                    "type": "integer"
+                },
+                "load_in_4bit": {
+                    "default": true,
+                    "title": "Load In 4Bit",
+                    "type": "boolean"
+                }
+            },
+            "title": "ModelConfig",
+            "type": "object"
+        },
+        "OpenJevConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "init_checkpoint": {
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Init Checkpoint"
+                },
+                "reinforce_steps": {
+                    "anyOf": [
+                        {
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Reinforce Steps"
+                },
+                "reinforce_seed": {
+                    "anyOf": [
+                        {
+                            "maximum": 4294967295,
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Reinforce Seed"
+                },
+                "m": {
+                    "default": 4,
+                    "minimum": 2,
+                    "title": "M",
+                    "type": "integer"
+                },
+                "m_eval": {
+                    "default": 1,
+                    "minimum": 1,
+                    "title": "M Eval",
+                    "type": "integer"
+                },
+                "max_new_tokens": {
+                    "default": 128,
+                    "minimum": 1,
+                    "title": "Max New Tokens",
+                    "type": "integer"
+                },
+                "eval_every": {
+                    "anyOf": [
+                        {
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Eval Every"
+                },
+                "dev_cap": {
+                    "default": 199,
+                    "minimum": 1,
+                    "title": "Dev Cap",
+                    "type": "integer"
+                },
+                "test_cap": {
+                    "default": 400,
+                    "minimum": 1,
+                    "title": "Test Cap",
+                    "type": "integer"
+                }
+            },
+            "title": "OpenJevConfig",
+            "type": "object"
+        },
+        "OutputConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "directory": {
+                    "default": "outputs/train/my-run",
+                    "title": "Directory",
+                    "type": "string"
+                },
+                "checkpoint_directory": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Checkpoint Directory"
+                },
+                "save_merged": {
+                    "default": false,
+                    "title": "Save Merged",
+                    "type": "boolean"
+                }
+            },
+            "title": "OutputConfig",
+            "type": "object"
+        },
+        "SwiftConfig": {
+            "additionalProperties": false,
+            "description": "Pinned ms-swift decision integration. Only explicitly implemented model types pass.",
+            "properties": {
+                "model_type": {
+                    "default": "omnijev",
+                    "enum": [
+                        "omnijev",
+                        "startlux",
+                        "clef",
+                        "thx02",
+                        "kev",
+                        "jev"
+                    ],
+                    "title": "Model Type",
+                    "type": "string"
+                },
+                "task_type": {
+                    "const": "decision",
+                    "default": "decision",
+                    "title": "Task Type",
+                    "type": "string"
+                },
+                "adapter": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Adapter"
+                },
+                "adapter_revision": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Adapter Revision"
+                },
+                "swift_revision": {
+                    "const": "680df5c670d7e8add906ac49381d603869410612",
+                    "default": "680df5c670d7e8add906ac49381d603869410612",
+                    "title": "Swift Revision",
+                    "type": "string"
+                },
+                "max_options": {
+                    "default": 255,
+                    "maximum": 255,
+                    "minimum": 2,
+                    "title": "Max Options",
+                    "type": "integer"
+                },
+                "max_score_levels": {
+                    "default": 10,
+                    "maximum": 10,
+                    "minimum": 2,
+                    "title": "Max Score Levels",
+                    "type": "integer"
+                },
+                "max_images": {
+                    "default": 32,
+                    "maximum": 64,
+                    "minimum": 0,
+                    "title": "Max Images",
+                    "type": "integer"
+                },
+                "max_pixels": {
+                    "default": 602112,
+                    "minimum": 1,
+                    "title": "Max Pixels",
+                    "type": "integer"
+                },
+                "decision_subsample_options": {
+                    "default": false,
+                    "title": "Decision Subsample Options",
+                    "type": "boolean"
+                },
+                "gradient_checkpointing": {
+                    "default": false,
+                    "title": "Gradient Checkpointing",
+                    "type": "boolean"
+                },
+                "freeze_vit": {
+                    "default": true,
+                    "title": "Freeze Vit",
+                    "type": "boolean"
+                },
+                "init_checkpoint": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Init Checkpoint"
+                },
+                "allow_none": {
+                    "default": false,
+                    "title": "Allow None",
+                    "type": "boolean"
+                },
+                "usage": {
+                    "anyOf": [
+                        {
+                            "const": "noncommercial_research",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Usage"
+                },
+                "packing": {
+                    "const": false,
+                    "default": false,
+                    "title": "Packing",
+                    "type": "boolean"
+                },
+                "padding_free": {
+                    "const": false,
+                    "default": false,
+                    "title": "Padding Free",
+                    "type": "boolean"
+                }
+            },
+            "title": "SwiftConfig",
+            "type": "object"
+        },
+        "TrainingConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "seed": {
+                    "default": 3407,
+                    "maximum": 4294967295,
+                    "minimum": 0,
+                    "title": "Seed",
+                    "type": "integer"
+                },
+                "num_train_epochs": {
+                    "anyOf": [
+                        {
+                            "exclusiveMinimum": 0,
+                            "type": "number"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": 2.0,
+                    "title": "Num Train Epochs"
+                },
+                "max_steps": {
+                    "anyOf": [
+                        {
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Max Steps"
+                },
+                "batch_size": {
+                    "default": 2,
+                    "minimum": 1,
+                    "title": "Batch Size",
+                    "type": "integer"
+                },
+                "gradient_accumulation_steps": {
+                    "default": 4,
+                    "minimum": 1,
+                    "title": "Gradient Accumulation Steps",
+                    "type": "integer"
+                },
+                "learning_rate": {
+                    "default": 0.0002,
+                    "exclusiveMinimum": 0,
+                    "title": "Learning Rate",
+                    "type": "number"
+                },
+                "head_learning_rate": {
+                    "default": 0.0001,
+                    "exclusiveMinimum": 0,
+                    "title": "Head Learning Rate",
+                    "type": "number"
+                },
+                "warmup_steps": {
+                    "default": 10,
+                    "minimum": 0,
+                    "title": "Warmup Steps",
+                    "type": "integer"
+                },
+                "weight_decay": {
+                    "default": 0.01,
+                    "minimum": 0,
+                    "title": "Weight Decay",
+                    "type": "number"
+                },
+                "lr_scheduler_type": {
+                    "default": "cosine",
+                    "enum": [
+                        "linear",
+                        "cosine",
+                        "constant",
+                        "constant_with_warmup"
+                    ],
+                    "title": "Lr Scheduler Type",
+                    "type": "string"
+                },
+                "precision": {
+                    "default": "auto",
+                    "enum": [
+                        "auto",
+                        "bf16",
+                        "fp16"
+                    ],
+                    "title": "Precision",
+                    "type": "string"
+                },
+                "gradient_checkpointing": {
+                    "default": true,
+                    "title": "Gradient Checkpointing",
+                    "type": "boolean"
+                },
+                "logging_steps": {
+                    "default": 10,
+                    "minimum": 1,
+                    "title": "Logging Steps",
+                    "type": "integer"
+                },
+                "save_steps": {
+                    "anyOf": [
+                        {
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": 100,
+                    "title": "Save Steps"
+                }
+            },
+            "title": "TrainingConfig",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "backend": {
+            "default": "unsloth",
+            "enum": [
+                "unsloth",
+                "laya",
+                "openjev",
+                "swift"
+            ],
+            "title": "Backend",
+            "type": "string"
+        },
+        "finetuning": {
+            "default": "lora",
+            "enum": [
+                "lora",
+                "full"
+            ],
+            "title": "Finetuning",
+            "type": "string"
+        },
+        "data": {
+            "$ref": "#/$defs/DataConfig"
+        },
+        "model": {
+            "$ref": "#/$defs/ModelConfig"
+        },
+        "lora": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/LoraConfig"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
+        "distributed": {
+            "$ref": "#/$defs/DistributedConfig"
+        },
+        "training": {
+            "$ref": "#/$defs/TrainingConfig"
+        },
+        "calibration": {
+            "$ref": "#/$defs/CalibrationConfig"
+        },
+        "output": {
+            "$ref": "#/$defs/OutputConfig"
+        },
+        "laya": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/LayaConfig"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
+        "openjev": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/OpenJevConfig"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
+        "swift": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/SwiftConfig"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        }
+    },
+    "required": [
+        "data"
+    ],
+    "title": "TrainConfig",
+    "type": "object"
+}

@@ -1,0 +1,37 @@
+benchmark: jevbench
+benchmark_version: b6b8fff7e345b98c060ad26c13308860ddc67004
+data:
+  path: ../../../../../data/benchmarks/jevbench/processed/public.jsonl
+  splits:
+  - public
+model:
+  adapter: jev
+  base_url: http://127.0.0.1:30000
+  model: qwen3-4b-instruct-2507
+  api_key_env: null
+  provenance:
+    method: llm2jev
+    upstream_repo: https://github.com/Yinsongxu/LLM2Jev
+    upstream_revision: f2bdad648e7a34bfce64401fb0f7c44bc13209ae
+    backbone_model: Qwen/Qwen3-4B-Instruct-2507
+    backbone_revision: cdbee75f17c01a7cc42f958dc650907174af0554
+    serving_backend: sglang
+    dependencies:
+      llm2jev: 0.1.0
+      sglang: 0.5.12.post1
+      torch: 2.11.0+cu129
+      transformers: 5.6.0
+      flashinfer-python: 0.6.11.post1
+    precision: bf16
+    settings:
+      enable_thinking: false
+      submission: staged
+      context_length: 32768
+      disable_cuda_graph: false
+      mem_fraction_static: 0.8
+execution:
+  timeout: 180.0
+  concurrency: 8
+  max_attempts: 2
+  backoff: 1.0
+output: ../../../../../outputs/eval/training-free/jevbench-public-llm2jev

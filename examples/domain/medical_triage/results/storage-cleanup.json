@@ -1,0 +1,101 @@
+{
+  "schema_version": "dforge.completed-storage-cleanup.v1",
+  "created_at": "2026-10-29T05:44:38.507038+00:00",
+  "authorization": "User requested cleanup of external checkpoint and large intermediate storage during delivery",
+  "scope": "Exact completed medical runs and completed prior native checkpoint mirrors; shared backbones, source worktrees, environments, datasets and predictions retained",
+  "v1_model_identity_verified_before": true,
+  "v1_model_identity_verified_after": true,
+  "estimated_unlinked_allocated_bytes": 49048614912,
+  "deleted_logical_bytes": 57765431909,
+  "entries": [
+    {
+      "store": "medical-issue22",
+      "path": "training/smoke-001/run/checkpoints",
+      "files": 32,
+      "logical_bytes": 4002279559,
+      "state": "removed"
+    },
+    {
+      "store": "medical-issue22",
+      "path": "training/smoke-001/run/model",
+      "files": 10,
+      "logical_bytes": 436739577,
+      "state": "removed"
+    },
+    {
+      "store": "medical-issue22",
+      "path": "training/joint-001/run/checkpoints",
+      "files": 112,
+      "logical_bytes": 14007982644,
+      "state": "removed"
+    },
+    {
+      "store": "medical-issue22",
+      "path": "training/joint-001/run/model",
+      "files": 10,
+      "logical_bytes": 436739577,
+      "state": "removed"
+    },
+    {
+      "store": "medical-issue22",
+      "path": "training/opt2-hard25/run/checkpoints",
+      "files": 112,
+      "logical_bytes": 14007982673,
+      "state": "removed"
+    },
+    {
+      "store": "medical-issue22",
+      "path": "training/opt2-hard25/run/model",
+      "files": 10,
+      "logical_bytes": 436739577,
+      "state": "removed"
+    },
+    {
+      "store": "medical-issue22",
+      "path": "training/opt2-hard50/run/checkpoints",
+      "files": 112,
+      "logical_bytes": 14007982656,
+      "state": "removed"
+    },
+    {
+      "store": "medical-issue22",
+      "path": "training/opt2-hard50/run/model",
+      "files": 10,
+      "logical_bytes": 436739577,
+      "state": "removed"
+    },
+    {
+      "store": "medical-issue22",
+      "path": "training/calibration-smoke-001/run/model",
+      "files": 10,
+      "logical_bytes": 436739591,
+      "state": "removed"
+    },
+    {
+      "store": "qwen35-4b-all-methods",
+      "path": "native-durable-mirrors/unsloth-lora/run/checkpoints",
+      "files": 16,
+      "logical_bytes": 794786302,
+      "state": "removed"
+    },
+    {
+      "store": "qwen35-4b-all-methods",
+      "path": "native-durable-mirrors/laya-qwen35/run/checkpoint_latest",
+      "files": 7,
+      "logical_bytes": 8760720176,
+      "state": "removed"
+    }
+  ],
+  "preserved": [
+    "medical training/calibration-001/run/model",
+    "medical training/opt2-control-calibration/run/model",
+    "medical training/opt2-treatment-calibration/run/model",
+    "all source data, generation journals and frozen training datasets",
+    "all original evaluation predictions, reports, configs, logs and usage",
+    "prior 4B final exported models and original result archives"
+  ],
+  "recovery_effect": "Deleted intermediate checkpoints/optimizer state cannot be resumed or reselected without retraining; calibrated v1 and selected follow-up inference exports remain available",
+  "storage_measurement": "Logical deleted bytes count hardlinks per directory; estimated unlinked allocation counts unique inodes only if all their links were deleted. Shared filesystem available space is not an experiment-specific measurement.",
+  "completed_at": "2026-10-29T05:44:39.898983+00:00",
+  "status": "completed"
+}

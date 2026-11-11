@@ -1,0 +1,372 @@
+{
+    "$defs": {
+        "HardTarget": {
+            "additionalProperties": false,
+            "properties": {
+                "kind": {
+                    "const": "hard",
+                    "title": "Kind",
+                    "type": "string"
+                },
+                "value": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "integer"
+                        }
+                    ],
+                    "title": "Value"
+                }
+            },
+            "required": [
+                "kind",
+                "value"
+            ],
+            "title": "HardTarget",
+            "type": "object"
+        },
+        "JsonValue": {},
+        "MediaAsset": {
+            "additionalProperties": false,
+            "properties": {
+                "path": {
+                    "minLength": 1,
+                    "title": "Path",
+                    "type": "string"
+                },
+                "sha256": {
+                    "pattern": "^[0-9a-f]{64}$",
+                    "title": "Sha256",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "path",
+                "sha256"
+            ],
+            "title": "MediaAsset",
+            "type": "object"
+        },
+        "Question": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "enum": [
+                        "choice",
+                        "noul",
+                        "score"
+                    ],
+                    "title": "Type",
+                    "type": "string"
+                },
+                "instructions": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Instructions"
+                },
+                "criteria": {
+                    "anyOf": [
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Criteria"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "title": "Question",
+            "type": "object"
+        },
+        "Request": {
+            "additionalProperties": false,
+            "properties": {
+                "images": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "$ref": "#/$defs/MediaAsset"
+                            },
+                            "minItems": 1,
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Images"
+                },
+                "videos": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "$ref": "#/$defs/VideoMosaic"
+                            },
+                            "maxItems": 1,
+                            "minItems": 1,
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Videos"
+                },
+                "state": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "items": {
+                                "$ref": "#/$defs/JsonValue"
+                            },
+                            "type": "array"
+                        }
+                    ],
+                    "title": "State"
+                },
+                "questions": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/Question"
+                    },
+                    "title": "Questions",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "state",
+                "questions"
+            ],
+            "title": "Request",
+            "type": "object"
+        },
+        "ScalarTarget": {
+            "additionalProperties": false,
+            "properties": {
+                "kind": {
+                    "const": "scalar",
+                    "title": "Kind",
+                    "type": "string"
+                },
+                "value": {
+                    "title": "Value",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "kind",
+                "value"
+            ],
+            "title": "ScalarTarget",
+            "type": "object"
+        },
+        "SoftTarget": {
+            "additionalProperties": false,
+            "properties": {
+                "kind": {
+                    "const": "soft",
+                    "title": "Kind",
+                    "type": "string"
+                },
+                "probabilities": {
+                    "additionalProperties": {
+                        "type": "number"
+                    },
+                    "title": "Probabilities",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "kind",
+                "probabilities"
+            ],
+            "title": "SoftTarget",
+            "type": "object"
+        },
+        "VideoMosaic": {
+            "additionalProperties": false,
+            "properties": {
+                "mosaic": {
+                    "$ref": "#/$defs/MediaAsset"
+                },
+                "n_frames": {
+                    "const": 16,
+                    "default": 16,
+                    "title": "N Frames",
+                    "type": "integer"
+                },
+                "cols": {
+                    "const": 4,
+                    "default": 4,
+                    "title": "Cols",
+                    "type": "integer"
+                },
+                "tile": {
+                    "const": 384,
+                    "default": 384,
+                    "title": "Tile",
+                    "type": "integer"
+                },
+                "timestamps": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "maxItems": 16,
+                    "minItems": 16,
+                    "title": "Timestamps",
+                    "type": "array"
+                },
+                "duration": {
+                    "minimum": 1,
+                    "title": "Duration",
+                    "type": "number"
+                },
+                "source_sha256": {
+                    "pattern": "^[0-9a-f]{64}$",
+                    "title": "Source Sha256",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "mosaic",
+                "timestamps",
+                "duration",
+                "source_sha256"
+            ],
+            "title": "VideoMosaic",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "schema_version": {
+            "const": "decisionforge.eval.v1",
+            "title": "Schema Version",
+            "type": "string"
+        },
+        "id": {
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+        },
+        "group_id": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "title": "Group Id"
+        },
+        "split": {
+            "minLength": 1,
+            "title": "Split",
+            "type": "string"
+        },
+        "subset": {
+            "minLength": 1,
+            "title": "Subset",
+            "type": "string"
+        },
+        "request": {
+            "$ref": "#/$defs/Request"
+        },
+        "target": {
+            "anyOf": [
+                {
+                    "discriminator": {
+                        "mapping": {
+                            "hard": "#/$defs/HardTarget",
+                            "scalar": "#/$defs/ScalarTarget",
+                            "soft": "#/$defs/SoftTarget"
+                        },
+                        "propertyName": "kind"
+                    },
+                    "oneOf": [
+                        {
+                            "$ref": "#/$defs/HardTarget"
+                        },
+                        {
+                            "$ref": "#/$defs/SoftTarget"
+                        },
+                        {
+                            "$ref": "#/$defs/ScalarTarget"
+                        }
+                    ]
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "title": "Target"
+        },
+        "metadata": {
+            "additionalProperties": {
+                "$ref": "#/$defs/JsonValue"
+            },
+            "title": "Metadata",
+            "type": "object"
+        }
+    },
+    "required": [
+        "schema_version",
+        "id",
+        "group_id",
+        "split",
+        "subset",
+        "request",
+        "target",
+        "metadata"
+    ],
+    "title": "Sample",
+    "type": "object"
+}

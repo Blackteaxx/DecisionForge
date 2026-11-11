@@ -1,0 +1,248 @@
+{
+  "status": "completed",
+  "scope": "optimization002 development and completed formal rounds; excludes unchanged v1 baselines",
+  "runs": [
+    {
+      "id": "hard-pilot-001",
+      "teacher": {
+        "attempts": 20,
+        "http_status_counts": {
+          "0": 9,
+          "200": 11
+        },
+        "cached_parsed_responses": 5,
+        "successful_response_reported_tokens": {
+          "prompt_tokens": 15616,
+          "completion_tokens": 94571,
+          "total_tokens": 110187
+        },
+        "missing_usage_attempts": 9,
+        "transport_errors": {
+          "RemoteProtocolError": 9
+        },
+        "reported_models": {
+          "deepseek-flash": 11
+        },
+        "sum_attempt_elapsed_seconds": 1140.7722695283592,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown transport outcomes can be billed"
+      },
+      "checker": {
+        "attempts": 8,
+        "completed_responses": 8,
+        "error_counts": {},
+        "known_input_tokens": 23232,
+        "known_output_tokens": 5200,
+        "elapsed_seconds": 17.6280945292674,
+        "accepted": 8,
+        "review": 0,
+        "cost_usd": null,
+        "cost_basis": "native reported or reserved cost; null is unknown"
+      }
+    },
+    {
+      "id": "hard-pilot-002",
+      "teacher": {
+        "attempts": 12,
+        "http_status_counts": {
+          "200": 12
+        },
+        "cached_parsed_responses": 12,
+        "successful_response_reported_tokens": {
+          "prompt_tokens": 17473,
+          "completion_tokens": 74005,
+          "total_tokens": 91478
+        },
+        "missing_usage_attempts": 0,
+        "transport_errors": {},
+        "reported_models": {
+          "deepseek-flash": 12
+        },
+        "sum_attempt_elapsed_seconds": 430.80041191820055,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown transport outcomes can be billed"
+      },
+      "checker": {
+        "attempts": 26,
+        "completed_responses": 23,
+        "error_counts": {
+          "APIConnectionError": 3
+        },
+        "known_input_tokens": 83080,
+        "known_output_tokens": 20216,
+        "elapsed_seconds": 187.79022637289017,
+        "accepted": 23,
+        "review": 1,
+        "cost_usd": null,
+        "cost_basis": "native reported or reserved cost; null is unknown"
+      }
+    },
+    {
+      "id": "hard-round-021",
+      "teacher": {
+        "attempts": 365,
+        "http_status_counts": {
+          "200": 339,
+          "0": 26
+        },
+        "cached_parsed_responses": 334,
+        "successful_response_reported_tokens": {
+          "prompt_tokens": 457958,
+          "completion_tokens": 2304206,
+          "total_tokens": 2762164
+        },
+        "missing_usage_attempts": 26,
+        "transport_errors": {
+          "RemoteProtocolError": 26
+        },
+        "reported_models": {
+          "deepseek-flash": 339
+        },
+        "sum_attempt_elapsed_seconds": 15151.913624358363,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown transport outcomes can be billed"
+      },
+      "checker": {
+        "attempts": 649,
+        "completed_responses": 645,
+        "error_counts": {
+          "APIConnectionError": 4
+        },
+        "known_input_tokens": 2258577,
+        "known_output_tokens": 528535,
+        "elapsed_seconds": 602.8770531760529,
+        "accepted": 643,
+        "review": 2,
+        "cost_usd": null,
+        "cost_basis": "native reported or reserved cost; null is unknown"
+      }
+    },
+    {
+      "id": "hard-round-022",
+      "teacher": {
+        "attempts": 361,
+        "http_status_counts": {
+          "200": 340,
+          "0": 21
+        },
+        "cached_parsed_responses": 338,
+        "successful_response_reported_tokens": {
+          "prompt_tokens": 460147,
+          "completion_tokens": 2280719,
+          "total_tokens": 2740866
+        },
+        "missing_usage_attempts": 21,
+        "transport_errors": {
+          "RemoteProtocolError": 20,
+          "ReadTimeout": 1
+        },
+        "reported_models": {
+          "deepseek-flash": 340
+        },
+        "sum_attempt_elapsed_seconds": 15053.814817475155,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown transport outcomes can be billed"
+      },
+      "checker": {
+        "attempts": 660,
+        "completed_responses": 648,
+        "error_counts": {
+          "APIConnectionError": 12
+        },
+        "known_input_tokens": 2273774,
+        "known_output_tokens": 517330,
+        "elapsed_seconds": 670.926080532372,
+        "accepted": 648,
+        "review": 0,
+        "cost_usd": null,
+        "cost_basis": "native reported or reserved cost; null is unknown"
+      }
+    },
+    {
+      "id": "hard-round-023",
+      "teacher": {
+        "attempts": 364,
+        "http_status_counts": {
+          "200": 338,
+          "0": 26
+        },
+        "cached_parsed_responses": 333,
+        "successful_response_reported_tokens": {
+          "prompt_tokens": 458488,
+          "completion_tokens": 2325827,
+          "total_tokens": 2784315
+        },
+        "missing_usage_attempts": 26,
+        "transport_errors": {
+          "RemoteProtocolError": 26
+        },
+        "reported_models": {
+          "deepseek-flash": 338
+        },
+        "sum_attempt_elapsed_seconds": 15152.485748200212,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown transport outcomes can be billed"
+      },
+      "checker": {
+        "attempts": 640,
+        "completed_responses": 631,
+        "error_counts": {
+          "APIConnectionError": 9
+        },
+        "known_input_tokens": 2207444,
+        "known_output_tokens": 525094,
+        "elapsed_seconds": 657.0718704699539,
+        "accepted": 630,
+        "review": 3,
+        "cost_usd": null,
+        "cost_basis": "native reported or reserved cost; null is unknown"
+      }
+    },
+    {
+      "id": "hard-round-024",
+      "teacher": {
+        "attempts": 361,
+        "http_status_counts": {
+          "200": 341,
+          "0": 20
+        },
+        "cached_parsed_responses": 340,
+        "successful_response_reported_tokens": {
+          "prompt_tokens": 462513,
+          "completion_tokens": 2276728,
+          "total_tokens": 2739241
+        },
+        "missing_usage_attempts": 20,
+        "transport_errors": {
+          "RemoteProtocolError": 20
+        },
+        "reported_models": {
+          "deepseek-flash": 341
+        },
+        "sum_attempt_elapsed_seconds": 14548.268292858731,
+        "cost_usd": null,
+        "cost_basis": "boyue_price_not_verified; unknown transport outcomes can be billed"
+      },
+      "checker": {
+        "attempts": 666,
+        "completed_responses": 648,
+        "error_counts": {
+          "APIConnectionError": 18
+        },
+        "known_input_tokens": 2265192,
+        "known_output_tokens": 513609,
+        "elapsed_seconds": 738.539394794032,
+        "accepted": 644,
+        "review": 7,
+        "cost_usd": null,
+        "cost_basis": "native reported or reserved cost; null is unknown"
+      }
+    }
+  ],
+  "development_native_jev_reported_usd": 0.000258552,
+  "development_native_jev_report": "historical-store/evaluation/hard-pilot-jev-001/run/reports/98e84644-2707-4772-8160-5290d7d15569/metrics.json",
+  "total_teacher_attempts": 1483,
+  "total_checker_attempts": 2649,
+  "complete_new_api_cost_usd": null,
+  "limitation": "Known tokens cover reported successful responses only. Missing/transport outcomes are not free and are not assigned zero tokens or cost."
+}

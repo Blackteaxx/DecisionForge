@@ -1,0 +1,19 @@
+{
+  "schema_version": "decisionforge.agent-task.v1",
+  "task_id": null,
+  "goal": null,
+  "created_at": null,
+  "updated_at": null,
+  "request": {"stages": [], "status": "pending", "fulfilled_at": null},
+  "outcome": {"status": "unknown", "criteria": [], "evidence": []},
+  "repository": {"path": null, "revision": null},
+  "decisions": [],
+  "authorizations": {"actions": [], "decision_refs": []},
+  "constraints": {"resource_refs": [], "budget_usd": null, "other": []},
+  "resources": [],
+  "stages": {},
+  "runs": [],
+  "artifacts": [],
+  "pending_decisions": [],
+  "events": []
+}

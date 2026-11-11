@@ -1,0 +1,18 @@
+name: Feature / 建议
+description: Propose an improvement / 提出改进建议
+title: '[Feature] '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem / 用户问题
+      description: Explain the task and current limitation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal and acceptance / 方案与验收
+      description: Describe the behavior, alternatives and a concrete success criterion.
+    validations:
+      required: true

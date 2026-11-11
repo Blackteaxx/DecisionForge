@@ -1,0 +1,29 @@
+backend: swift
+finetuning: lora
+data:
+  path: ../../../data/benchmarks/scienceqa_img/processed/training.jsonl
+  on_skipped: error
+  on_truncated: error
+model:
+  name: Qwen/Qwen3.5-4B
+  revision: 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a
+  load_in_4bit: false
+  max_seq_length: 4096
+swift:
+  model_type: omnijev
+  adapter: tinnel123/OmniJev
+  adapter_revision: 91248107b7f5230bd5715db2e62e83c9a72fcd81
+  swift_revision: 680df5c670d7e8add906ac49381d603869410612
+  decision_subsample_options: false
+  gradient_checkpointing: false
+training:
+  num_train_epochs: 1
+  max_steps: null
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001
+  head_learning_rate: 0.0001
+  precision: bf16
+  gradient_checkpointing: false
+output:
+  directory: ../../../outputs/train/swift-omnijev

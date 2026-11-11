@@ -1,0 +1,130 @@
+{
+  "dataset": [
+    {
+      "id": "power_grid_01",
+      "type": "choice",
+      "Prompt": "What is the combined active power demand of a 40 MW feeder and a 20 MW feeder?",
+      "Correct_Answer": "A",
+      "Passage": "A training substation supplies two feeders. Their simultaneous active power demands are 40 MW and 20 MW; ignore losses.",
+      "Choices": {
+        "A": "60 MW",
+        "B": "20 MW",
+        "C": "40 MW",
+        "D": "80 MW"
+      }
+    },
+    {
+      "id": "power_grid_02",
+      "type": "choice",
+      "legacy_packet": {
+        "quiz_payload": {
+          "query": "How much additional active power is needed to balance 75 MW of generation against 90 MW of demand?",
+          "response": "15 MW",
+          "background": "In an isolated training grid, generation is 75 MW and demand is 90 MW. There is no storage, import, or network loss."
+        }
+      }
+    },
+    {
+      "id": "power_grid_03",
+      "type": "choice",
+      "Q": "What is the loading percentage of a 100 MVA transformer carrying 70 MVA?",
+      "A": "B",
+      "OPTIONS": {
+        "A": "30%",
+        "B": "70%",
+        "C": "100%",
+        "D": "170%"
+      }
+    },
+    {
+      "id": "power_grid_04",
+      "type": "choice",
+      "legacy_packet": {
+        "quiz_payload": {
+          "prompt": "How much energy does a feeder deliver at a constant active power of 12 MW for 2 hours?",
+          "output": "24 MWh"
+        }
+      }
+    },
+    {
+      "id": "power_grid_05",
+      "type": "choice",
+      "legacy_packet": {
+        "quiz_payload": {
+          "QUERY": "How many megawatts of active power are lost when 50 MW enters a line and 48 MW leaves it?",
+          "REFERENCE_ANSWER": "2 MW",
+          "DOCUMENT": "The sending-end meter reads 50 MW and the receiving-end meter reads 48 MW at the same instant. No branches connect between the meters.",
+          "CANDIDATES": [
+            "2 MW",
+            "48 MW",
+            "50 MW",
+            "98 MW"
+          ]
+        }
+      }
+    },
+    {
+      "id": "power_grid_06",
+      "type": "choice",
+      "q": "How much additional active power can a generator supply before reaching its 80 MW limit if it currently supplies 55 MW?",
+      "correct_answer": "A",
+      "passage": "A training generator has an active power limit of 80 MW and an operating output of 55 MW. Ignore ramp-rate and other operating constraints.",
+      "choices": {
+        "A": "25 MW"
+      }
+    },
+    {
+      "id": "power_grid_07",
+      "type": "choice",
+      "legacy_packet": {
+        "quiz_payload": {
+          "Question": "What is the voltage magnitude in per unit for a measured voltage of 11 kV on a 10 kV voltage base?",
+          "Response": "C",
+          "Options": {
+            "A": "0.9 p.u.",
+            "B": "1.0 p.u.",
+            "C": "1.1 p.u.",
+            "D": "11.0 p.u."
+          }
+        }
+      }
+    },
+    {
+      "id": "power_grid_08",
+      "type": "choice",
+      "PROMPT": "What is the average active power when a meter records 18 MWh delivered over 3 hours?",
+      "OUTPUT": "6 MW",
+      "CHOICES": [
+        "6 MW"
+      ]
+    },
+    {
+      "id": "power_grid_09",
+      "type": "choice",
+      "legacy_packet": {
+        "quiz_payload": {
+          "query": "What is the active power demand after a 100 MW load is reduced by 10 MW?",
+          "answer": "B",
+          "article": "A demand-response exercise starts with a 100 MW load. The exercise removes 10 MW, and all other loads remain unchanged.",
+          "candidates": {
+            "A": "10 MW",
+            "B": "90 MW",
+            "C": "100 MW",
+            "D": "110 MW"
+          }
+        }
+      }
+    },
+    {
+      "id": "power_grid_10",
+      "type": "choice",
+      "legacy_packet": {
+        "quiz_payload": {
+          "Q": "What is the total active power output of three generators each producing 15 MW?",
+          "reference_answer": "45 MW",
+          "options": []
+        }
+      }
+    }
+  ]
+}

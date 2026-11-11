@@ -1,0 +1,7 @@
+This is a synthetic dispatch training note. All rules below apply only to these fictional scenarios.
+
+The evening shift recorded a 12 MW supply deficit. Reserve unit North can add 8 MW and reserve unit South can add 6 MW; both are available. The local exercise rule is to activate the smallest number of units that can cover the entire deficit. Operators may activate North, South, both, or neither. Partial coverage does not satisfy the rule. The shift log also mentions that the control room clock was repaired earlier in the day.
+
+In a separate feeder exercise, demand is 24 MW and the available supply is 20 MW. The exercise rule is to remove the smallest single interruptible block that eliminates the deficit. The available blocks are Workshop at 3 MW, Pumping at 4 MW, and Storage at 6 MW. Only one block may be removed. The hospital is not interruptible. The workshop manager left an unrelated note about the next staff meeting.
+
+The fictional maintenance policy assigns a transformer to immediate inspection when its reported temperature is at least 90 degrees Celsius. Temperatures from 80 degrees inclusive to below 90 require a repeat measurement during the same shift. Temperatures below 80 remain on routine monitoring. Transformer T7 has a confirmed reported temperature of 86 degrees Celsius. No other alarms or exceptions apply in this exercise.

@@ -1,0 +1,158 @@
+{
+  "sessions": [
+    {
+      "models": [
+        "gpt-6.1-sol"
+      ],
+      "first_event_at": "2026-10-28T05:27:37.203Z",
+      "last_event_at": "2026-10-29T03:03:37.146Z",
+      "event_span_seconds": 77759.943,
+      "recorded_completed_turns": 6,
+      "recorded_completed_turn_seconds": 37050.421,
+      "response_usage_records": 907,
+      "usage_basis": "sum_unique_response_usage_records",
+      "usage": {
+        "input_tokens": 223240148,
+        "cached_input_tokens": 220372736,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 964358,
+        "reasoning_output_tokens": 561667,
+        "total_tokens": 224204506
+      },
+      "last_cumulative_usage": {
+        "input_tokens": 221731704,
+        "cached_input_tokens": 218869248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 945192,
+        "reasoning_output_tokens": 561667,
+        "total_tokens": 222676896
+      },
+      "response_sum_matches_cumulative": false,
+      "cost_usd": null,
+      "limitations": [
+        "Input includes cached input; reasoning output is a subset of output. Do not add either twice.",
+        "Event span includes waiting and user gaps; retained completed-turn durations can be incomplete.",
+        "No verified account bill or provider price; token counters do not establish money spent."
+      ],
+      "role": "main"
+    },
+    {
+      "models": [
+        "gpt-6.1-sol"
+      ],
+      "first_event_at": "2026-10-28T05:32:56.246Z",
+      "last_event_at": "2026-10-28T05:33:27.200Z",
+      "event_span_seconds": 30.954,
+      "recorded_completed_turns": 1,
+      "recorded_completed_turn_seconds": 30.99,
+      "response_usage_records": 6,
+      "usage_basis": "sum_unique_response_usage_records",
+      "usage": {
+        "input_tokens": 189534,
+        "cached_input_tokens": 155264,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1383,
+        "reasoning_output_tokens": 640,
+        "total_tokens": 190917
+      },
+      "last_cumulative_usage": {
+        "input_tokens": 189534,
+        "cached_input_tokens": 155264,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1383,
+        "reasoning_output_tokens": 640,
+        "total_tokens": 190917
+      },
+      "response_sum_matches_cumulative": true,
+      "cost_usd": null,
+      "limitations": [
+        "Input includes cached input; reasoning output is a subset of output. Do not add either twice.",
+        "Event span includes waiting and user gaps; retained completed-turn durations can be incomplete.",
+        "No verified account bill or provider price; token counters do not establish money spent."
+      ],
+      "role": "design_review"
+    },
+    {
+      "models": [
+        "gpt-6-astra"
+      ],
+      "first_event_at": "2026-10-28T08:05:18.661Z",
+      "last_event_at": "2026-10-28T08:09:07.448Z",
+      "event_span_seconds": 228.787,
+      "recorded_completed_turns": 1,
+      "recorded_completed_turn_seconds": 228.833,
+      "response_usage_records": 17,
+      "usage_basis": "sum_unique_response_usage_records",
+      "usage": {
+        "input_tokens": 1103861,
+        "cached_input_tokens": 1027328,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4365,
+        "reasoning_output_tokens": 1007,
+        "total_tokens": 1108226
+      },
+      "last_cumulative_usage": {
+        "input_tokens": 1103861,
+        "cached_input_tokens": 1027328,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4365,
+        "reasoning_output_tokens": 1007,
+        "total_tokens": 1108226
+      },
+      "response_sum_matches_cumulative": true,
+      "cost_usd": null,
+      "limitations": [
+        "Input includes cached input; reasoning output is a subset of output. Do not add either twice.",
+        "Event span includes waiting and user gaps; retained completed-turn durations can be incomplete.",
+        "No verified account bill or provider price; token counters do not establish money spent."
+      ],
+      "role": "implementation_review"
+    },
+    {
+      "models": [
+        "gpt-6-astra"
+      ],
+      "first_event_at": "2026-10-28T12:24:03.281Z",
+      "last_event_at": "2026-10-28T12:27:55.429Z",
+      "event_span_seconds": 232.148,
+      "recorded_completed_turns": 1,
+      "recorded_completed_turn_seconds": 232.214,
+      "response_usage_records": 12,
+      "usage_basis": "sum_unique_response_usage_records",
+      "usage": {
+        "input_tokens": 645602,
+        "cached_input_tokens": 589056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4153,
+        "reasoning_output_tokens": 1262,
+        "total_tokens": 649755
+      },
+      "last_cumulative_usage": {
+        "input_tokens": 645602,
+        "cached_input_tokens": 589056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4153,
+        "reasoning_output_tokens": 1262,
+        "total_tokens": 649755
+      },
+      "response_sum_matches_cumulative": true,
+      "cost_usd": null,
+      "limitations": [
+        "Input includes cached input; reasoning output is a subset of output. Do not add either twice.",
+        "Event span includes waiting and user gaps; retained completed-turn durations can be incomplete.",
+        "No verified account bill or provider price; token counters do not establish money spent."
+      ],
+      "role": "optimization_review"
+    }
+  ],
+  "aggregate_usage": {
+    "input_tokens": 225179145,
+    "cached_input_tokens": 222144384,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 974259,
+    "reasoning_output_tokens": 564576,
+    "total_tokens": 226153404
+  },
+  "cost_usd": null,
+  "scope": "Historical issue22 implementation, optimization and report-selection session, including three direct review agents; excludes scope-issue drafting and current delivery cleanup."
+}

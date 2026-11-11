@@ -1,0 +1,264 @@
+{
+  "source_commit": "9fb9125c032e38ad1ad5fc21fa67558f78e03270",
+  "started_at": "2026-10-12T05:47:38.419023+00:00",
+  "completed_at": "2026-10-12T06:36:00.858132+00:00",
+  "training_config": {
+    "backend": "unsloth",
+    "data": {
+      "path": "data/local/typed-decisions-training.jsonl",
+      "split_map": {
+        "train": "train",
+        "validation": "validation",
+        "calibration": "calibration",
+        "test": "test"
+      },
+      "auto_holdout": {
+        "validation_fraction": 0.1,
+        "calibration_fraction": 0.1
+      },
+      "on_skipped": "error",
+      "on_truncated": "error"
+    },
+    "model": {
+      "name": "Qwen/Qwen3.5-4B",
+      "revision": null,
+      "max_seq_length": 16384,
+      "load_in_4bit": true
+    },
+    "lora": {
+      "rank": 16,
+      "alpha": 16,
+      "dropout": 0.0
+    },
+    "training": {
+      "seed": 3407,
+      "num_train_epochs": 2,
+      "max_steps": null,
+      "batch_size": 2,
+      "gradient_accumulation_steps": 4,
+      "learning_rate": 0.0002,
+      "head_learning_rate": 0.0001,
+      "warmup_steps": 10,
+      "weight_decay": 0.01,
+      "lr_scheduler_type": "cosine",
+      "precision": "auto",
+      "gradient_checkpointing": true,
+      "logging_steps": 50,
+      "save_steps": 100
+    },
+    "calibration": {
+      "enabled": true
+    },
+    "output": {
+      "directory": "outputs/train/qwen35-4b-full",
+      "save_merged": true
+    }
+  },
+  "benchmarks": {
+    "typed_decisions": {
+      "counts": {
+        "planned": 2000,
+        "attempted": 2000,
+        "completed": 2000,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 2000,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 2000,
+        "strict_valid": 2000,
+        "renormalized": 0
+      },
+      "metrics": {
+        "gold_accuracy": {
+          "value": 0.7895,
+          "used": 2000,
+          "eligible": 2000,
+          "direction": "higher",
+          "version": "1"
+        },
+        "soft_accuracy": {
+          "value": 0.6100627132439702,
+          "used": 2000,
+          "eligible": 2000,
+          "direction": "higher",
+          "version": "1"
+        },
+        "soft_brier": {
+          "value": 0.12733540652860686,
+          "used": 2000,
+          "eligible": 2000,
+          "direction": "lower",
+          "version": "1"
+        },
+        "soft_kl": {
+          "value": 0.39529389771972545,
+          "used": 2000,
+          "eligible": 2000,
+          "direction": "lower",
+          "version": "1"
+        },
+        "gold_ece": {
+          "value": 0.02439833094615617,
+          "used": 2000,
+          "eligible": 2000,
+          "direction": "lower",
+          "version": "1"
+        },
+        "soft_ece": {
+          "value": 0.20295717426075363,
+          "used": 2000,
+          "eligible": 2000,
+          "direction": "lower",
+          "version": "1"
+        },
+        "mae": {
+          "value": 0.2833514804989601,
+          "used": 800,
+          "eligible": 800,
+          "direction": "lower",
+          "version": "1"
+        }
+      },
+      "report": "outputs/eval/qwen35-4b-full/typed_decisions/reports/1736f006-39b5-4b21-a93b-d6b5f6a4cc35",
+      "source_version": "e039ebffcc280174dd354227424fb2b249f191de"
+    },
+    "jevbench": {
+      "counts": {
+        "planned": 231,
+        "attempted": 231,
+        "completed": 231,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 231,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 231,
+        "strict_valid": 231,
+        "renormalized": 0
+      },
+      "metrics": {
+        "accuracy": {
+          "value": 0.7402597402597403,
+          "used": 231,
+          "eligible": 231,
+          "direction": "higher",
+          "version": "1"
+        },
+        "brier": {
+          "value": 0.39912127900439776,
+          "used": 231,
+          "eligible": 231,
+          "direction": "lower",
+          "version": "1"
+        },
+        "ece": {
+          "value": 0.1467123274663263,
+          "used": 231,
+          "eligible": 231,
+          "direction": "lower",
+          "version": "1"
+        },
+        "mae": {
+          "value": 0.3094687804914595,
+          "used": 18,
+          "eligible": 18,
+          "direction": "lower",
+          "version": "1"
+        },
+        "group_agreement": {
+          "value": 0.9722222222222222,
+          "used": 36,
+          "eligible": 36,
+          "direction": "higher",
+          "version": "1"
+        }
+      },
+      "report": "outputs/eval/qwen35-4b-full/jevbench/reports/4e330a94-104a-4096-976c-2126921ecaaa",
+      "source_version": "b6b8fff7e345b98c060ad26c13308860ddc67004"
+    },
+    "banking77": {
+      "counts": {
+        "planned": 3080,
+        "attempted": 3080,
+        "completed": 3080,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 3080,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 3080,
+        "strict_valid": 3080,
+        "renormalized": 0
+      },
+      "metrics": {
+        "macro_f1": {
+          "value": 0.6532963346187622,
+          "used": 3080,
+          "eligible": 3080,
+          "direction": "higher",
+          "version": "1"
+        },
+        "native_accuracy": {
+          "value": 0.6681818181818182,
+          "used": 3080,
+          "eligible": 3080,
+          "direction": "higher",
+          "version": "1"
+        }
+      },
+      "report": "outputs/eval/qwen35-4b-full/banking77/reports/a9d25db0-997c-4d9e-9cfb-f488a60a6935",
+      "source_version": "57ec275d8078af65b7731c2a98be812d844a6d6b"
+    },
+    "clinc150_oos": {
+      "counts": {
+        "planned": 5500,
+        "attempted": 5500,
+        "completed": 5500,
+        "incomplete": 0,
+        "unknown_outcomes": 0,
+        "unattempted": 0,
+        "transport_failed": 0,
+        "protocol_failed": 0,
+        "scoring_invalid": 0,
+        "scorable": 5500,
+        "excluded": 0,
+        "coverage": 1.0,
+        "scoring_valid": 5500,
+        "strict_valid": 5500,
+        "renormalized": 0
+      },
+      "metrics": {
+        "macro_f1": {
+          "value": 0.7701138298001515,
+          "used": 5500,
+          "eligible": 5500,
+          "direction": "higher",
+          "version": "1"
+        },
+        "native_accuracy": {
+          "value": 0.7581818181818182,
+          "used": 5500,
+          "eligible": 5500,
+          "direction": "higher",
+          "version": "1"
+        }
+      },
+      "report": "outputs/eval/qwen35-4b-full/clinc150_oos/reports/ef28c697-9d2c-41f5-ad86-44149829e5ad",
+      "source_version": "155b9c710419136e17307b80d0a13e68cd46b4ec"
+    }
+  },
+  "archive_note": "Machine-specific paths are replaced with example-relative locations; measured values are unchanged."
+}

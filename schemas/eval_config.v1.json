@@ -1,0 +1,864 @@
+{
+    "$defs": {
+        "AnyJevModelConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "adapter": {
+                    "const": "anyjev_local",
+                    "title": "Adapter",
+                    "type": "string"
+                },
+                "model": {
+                    "minLength": 1,
+                    "title": "Model",
+                    "type": "string"
+                },
+                "revision": {
+                    "anyOf": [
+                        {
+                            "pattern": "^[0-9a-f]{40}$",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Revision"
+                },
+                "precision": {
+                    "default": "bfloat16",
+                    "enum": [
+                        "bfloat16",
+                        "float16",
+                        "float32"
+                    ],
+                    "title": "Precision",
+                    "type": "string"
+                },
+                "device": {
+                    "default": "cuda:0",
+                    "pattern": "^cuda(?::[0-9]+)?$",
+                    "title": "Device",
+                    "type": "string"
+                },
+                "max_seq_length": {
+                    "default": 16384,
+                    "maximum": 131072,
+                    "minimum": 32,
+                    "title": "Max Seq Length",
+                    "type": "integer"
+                },
+                "batch_size": {
+                    "default": 16,
+                    "maximum": 256,
+                    "minimum": 1,
+                    "title": "Batch Size",
+                    "type": "integer"
+                },
+                "load_timeout": {
+                    "default": 600,
+                    "exclusiveMinimum": 0,
+                    "maximum": 3600,
+                    "title": "Load Timeout",
+                    "type": "number"
+                },
+                "level": {
+                    "const": "L0",
+                    "default": "L0",
+                    "title": "Level",
+                    "type": "string"
+                },
+                "prior": {
+                    "const": "content_free",
+                    "default": "content_free",
+                    "title": "Prior",
+                    "type": "string"
+                },
+                "adaptive_shifts": {
+                    "const": false,
+                    "default": false,
+                    "title": "Adaptive Shifts",
+                    "type": "boolean"
+                },
+                "shared_prefix": {
+                    "default": "auto",
+                    "enum": [
+                        "auto",
+                        false
+                    ],
+                    "title": "Shared Prefix"
+                },
+                "max_permutations": {
+                    "default": null,
+                    "title": "Max Permutations",
+                    "type": "null"
+                },
+                "combine": {
+                    "const": "logmean",
+                    "default": "logmean",
+                    "title": "Combine",
+                    "type": "string"
+                },
+                "training_free": {
+                    "const": true,
+                    "default": true,
+                    "title": "Training Free",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "adapter",
+                "model"
+            ],
+            "title": "AnyJevModelConfig",
+            "type": "object"
+        },
+        "ChatModelConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "adapter": {
+                    "const": "chat_api",
+                    "default": "chat_api",
+                    "title": "Adapter",
+                    "type": "string"
+                },
+                "base_url": {
+                    "default": "https://api.openai.com",
+                    "title": "Base Url",
+                    "type": "string"
+                },
+                "endpoint_path": {
+                    "const": "/v1/chat/completions",
+                    "default": "/v1/chat/completions",
+                    "title": "Endpoint Path",
+                    "type": "string"
+                },
+                "model": {
+                    "minLength": 1,
+                    "title": "Model",
+                    "type": "string"
+                },
+                "api_key_env": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "OPENAI_API_KEY",
+                    "title": "Api Key Env"
+                },
+                "provenance": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ModelProvenance"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null
+                },
+                "max_tokens": {
+                    "default": 4096,
+                    "maximum": 131072,
+                    "minimum": 1,
+                    "title": "Max Tokens",
+                    "type": "integer"
+                },
+                "temperature": {
+                    "default": 0,
+                    "maximum": 2,
+                    "minimum": 0,
+                    "title": "Temperature",
+                    "type": "number"
+                },
+                "response_format": {
+                    "default": "text",
+                    "enum": [
+                        "text",
+                        "json_object",
+                        "json_schema"
+                    ],
+                    "title": "Response Format",
+                    "type": "string"
+                },
+                "serving": {
+                    "$ref": "#/$defs/ChatServingConfig"
+                }
+            },
+            "required": [
+                "model"
+            ],
+            "title": "ChatModelConfig",
+            "type": "object"
+        },
+        "ChatServingConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "enable_thinking": {
+                    "anyOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Enable Thinking"
+                }
+            },
+            "title": "ChatServingConfig",
+            "type": "object"
+        },
+        "DataConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "path": {
+                    "title": "Path",
+                    "type": "string"
+                },
+                "splits": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Splits"
+                },
+                "subsets": {
+                    "anyOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Subsets"
+                },
+                "limit": {
+                    "anyOf": [
+                        {
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Limit"
+                }
+            },
+            "required": [
+                "path"
+            ],
+            "title": "DataConfig",
+            "type": "object"
+        },
+        "ExecutionConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "timeout": {
+                    "default": 60,
+                    "exclusiveMinimum": 0,
+                    "title": "Timeout",
+                    "type": "number"
+                },
+                "concurrency": {
+                    "default": 1,
+                    "maximum": 256,
+                    "minimum": 1,
+                    "title": "Concurrency",
+                    "type": "integer"
+                },
+                "max_attempts": {
+                    "default": 1,
+                    "maximum": 20,
+                    "minimum": 1,
+                    "title": "Max Attempts",
+                    "type": "integer"
+                },
+                "backoff": {
+                    "default": 0.5,
+                    "maximum": 60,
+                    "minimum": 0,
+                    "title": "Backoff",
+                    "type": "number"
+                },
+                "max_retry_delay": {
+                    "default": 60,
+                    "maximum": 3600,
+                    "minimum": 0,
+                    "title": "Max Retry Delay",
+                    "type": "number"
+                }
+            },
+            "title": "ExecutionConfig",
+            "type": "object"
+        },
+        "JsonValue": {},
+        "LayaModelConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "adapter": {
+                    "const": "laya_local",
+                    "title": "Adapter",
+                    "type": "string"
+                },
+                "path": {
+                    "minLength": 1,
+                    "title": "Path",
+                    "type": "string"
+                },
+                "device": {
+                    "default": "cuda:0",
+                    "pattern": "^cuda(?::[0-9]+)?$",
+                    "title": "Device",
+                    "type": "string"
+                },
+                "precision": {
+                    "default": "auto",
+                    "enum": [
+                        "auto",
+                        "fp16"
+                    ],
+                    "title": "Precision",
+                    "type": "string"
+                },
+                "load_timeout": {
+                    "default": 600,
+                    "exclusiveMinimum": 0,
+                    "maximum": 3600,
+                    "title": "Load Timeout",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "adapter",
+                "path"
+            ],
+            "title": "LayaModelConfig",
+            "type": "object"
+        },
+        "LocalModelConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "adapter": {
+                    "const": "unsloth_local",
+                    "title": "Adapter",
+                    "type": "string"
+                },
+                "path": {
+                    "minLength": 1,
+                    "title": "Path",
+                    "type": "string"
+                },
+                "load_in_4bit": {
+                    "default": true,
+                    "title": "Load In 4Bit",
+                    "type": "boolean"
+                },
+                "precision": {
+                    "default": "auto",
+                    "enum": [
+                        "auto",
+                        "bf16",
+                        "fp16"
+                    ],
+                    "title": "Precision",
+                    "type": "string"
+                },
+                "max_seq_length": {
+                    "default": 16384,
+                    "maximum": 32768,
+                    "minimum": 32,
+                    "title": "Max Seq Length",
+                    "type": "integer"
+                },
+                "load_timeout": {
+                    "default": 600,
+                    "exclusiveMinimum": 0,
+                    "maximum": 3600,
+                    "title": "Load Timeout",
+                    "type": "number"
+                },
+                "local_files_only": {
+                    "default": true,
+                    "title": "Local Files Only",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "adapter",
+                "path"
+            ],
+            "title": "LocalModelConfig",
+            "type": "object"
+        },
+        "ModelConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "adapter": {
+                    "const": "jev",
+                    "default": "jev",
+                    "title": "Adapter",
+                    "type": "string"
+                },
+                "base_url": {
+                    "default": "https://api.typesafe.ai",
+                    "title": "Base Url",
+                    "type": "string"
+                },
+                "endpoint_path": {
+                    "default": "/v1/systemone",
+                    "enum": [
+                        "/v1/systemone",
+                        "/api/alpha/decisions"
+                    ],
+                    "title": "Endpoint Path",
+                    "type": "string"
+                },
+                "model": {
+                    "default": "jev-latest",
+                    "minLength": 1,
+                    "title": "Model",
+                    "type": "string"
+                },
+                "api_key_env": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": "TYPESAFE_API_KEY",
+                    "title": "Api Key Env"
+                },
+                "provenance": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ModelProvenance"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null
+                }
+            },
+            "title": "ModelConfig",
+            "type": "object"
+        },
+        "ModelProvenance": {
+            "additionalProperties": false,
+            "description": "User declarations, never proof of the service's loaded weights.",
+            "properties": {
+                "method": {
+                    "enum": [
+                        "native",
+                        "chat_baseline",
+                        "llm2jev"
+                    ],
+                    "title": "Method",
+                    "type": "string"
+                },
+                "upstream_repo": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Upstream Repo"
+                },
+                "upstream_revision": {
+                    "anyOf": [
+                        {
+                            "pattern": "^[0-9a-f]{40}$",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Upstream Revision"
+                },
+                "backbone_model": {
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Backbone Model"
+                },
+                "backbone_revision": {
+                    "anyOf": [
+                        {
+                            "pattern": "^[0-9a-f]{40}$",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Backbone Revision"
+                },
+                "serving_backend": {
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Serving Backend"
+                },
+                "dependencies": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "title": "Dependencies",
+                    "type": "object"
+                },
+                "precision": {
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Precision"
+                },
+                "settings": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/JsonValue"
+                    },
+                    "title": "Settings",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "method"
+            ],
+            "title": "ModelProvenance",
+            "type": "object"
+        },
+        "OpenJevModelConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "adapter": {
+                    "const": "openjev_local",
+                    "title": "Adapter",
+                    "type": "string"
+                },
+                "path": {
+                    "minLength": 1,
+                    "title": "Path",
+                    "type": "string"
+                },
+                "device": {
+                    "default": "cuda:0",
+                    "pattern": "^cuda(?::[0-9]+)?$",
+                    "title": "Device",
+                    "type": "string"
+                },
+                "precision": {
+                    "const": "bf16",
+                    "default": "bf16",
+                    "title": "Precision",
+                    "type": "string"
+                },
+                "max_seq_length": {
+                    "anyOf": [
+                        {
+                            "minimum": 32,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Max Seq Length"
+                },
+                "max_new_tokens": {
+                    "anyOf": [
+                        {
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Max New Tokens"
+                },
+                "seed": {
+                    "default": 3407,
+                    "maximum": 4294967295,
+                    "minimum": 0,
+                    "title": "Seed",
+                    "type": "integer"
+                },
+                "load_timeout": {
+                    "default": 600,
+                    "exclusiveMinimum": 0,
+                    "maximum": 3600,
+                    "title": "Load Timeout",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "adapter",
+                "path"
+            ],
+            "title": "OpenJevModelConfig",
+            "type": "object"
+        },
+        "SwiftModelConfig": {
+            "additionalProperties": false,
+            "properties": {
+                "adapter": {
+                    "enum": [
+                        "swift_local",
+                        "swift_chat_local"
+                    ],
+                    "title": "Adapter",
+                    "type": "string"
+                },
+                "path": {
+                    "minLength": 1,
+                    "title": "Path",
+                    "type": "string"
+                },
+                "model_type": {
+                    "default": "omnijev",
+                    "enum": [
+                        "omnijev",
+                        "startlux",
+                        "clef",
+                        "thx02",
+                        "kev",
+                        "jev"
+                    ],
+                    "title": "Model Type",
+                    "type": "string"
+                },
+                "base_model": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Base Model"
+                },
+                "base_revision": {
+                    "anyOf": [
+                        {
+                            "pattern": "^[0-9a-f]{40}$",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Base Revision"
+                },
+                "adapter_revision": {
+                    "anyOf": [
+                        {
+                            "pattern": "^[0-9a-f]{40}$",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Adapter Revision"
+                },
+                "usage": {
+                    "anyOf": [
+                        {
+                            "const": "noncommercial_research",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "title": "Usage"
+                },
+                "allow_none": {
+                    "default": false,
+                    "title": "Allow None",
+                    "type": "boolean"
+                },
+                "device": {
+                    "default": "cuda:0",
+                    "pattern": "^cuda(?::[0-9]+)?$",
+                    "title": "Device",
+                    "type": "string"
+                },
+                "precision": {
+                    "const": "bf16",
+                    "default": "bf16",
+                    "title": "Precision",
+                    "type": "string"
+                },
+                "max_seq_length": {
+                    "default": 4096,
+                    "minimum": 32,
+                    "title": "Max Seq Length",
+                    "type": "integer"
+                },
+                "calibrated": {
+                    "default": true,
+                    "title": "Calibrated",
+                    "type": "boolean"
+                },
+                "load_timeout": {
+                    "default": 600,
+                    "exclusiveMinimum": 0,
+                    "maximum": 3600,
+                    "title": "Load Timeout",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "adapter",
+                "path"
+            ],
+            "title": "SwiftModelConfig",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "benchmark": {
+            "default": "generic",
+            "title": "Benchmark",
+            "type": "string"
+        },
+        "benchmark_version": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Benchmark Version"
+        },
+        "data": {
+            "$ref": "#/$defs/DataConfig"
+        },
+        "model": {
+            "discriminator": {
+                "mapping": {
+                    "anyjev_local": "#/$defs/AnyJevModelConfig",
+                    "chat_api": "#/$defs/ChatModelConfig",
+                    "jev": "#/$defs/ModelConfig",
+                    "laya_local": "#/$defs/LayaModelConfig",
+                    "openjev_local": "#/$defs/OpenJevModelConfig",
+                    "swift_chat_local": "#/$defs/SwiftModelConfig",
+                    "swift_local": "#/$defs/SwiftModelConfig",
+                    "unsloth_local": "#/$defs/LocalModelConfig"
+                },
+                "propertyName": "adapter"
+            },
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/ModelConfig"
+                },
+                {
+                    "$ref": "#/$defs/LocalModelConfig"
+                },
+                {
+                    "$ref": "#/$defs/LayaModelConfig"
+                },
+                {
+                    "$ref": "#/$defs/OpenJevModelConfig"
+                },
+                {
+                    "$ref": "#/$defs/SwiftModelConfig"
+                },
+                {
+                    "$ref": "#/$defs/AnyJevModelConfig"
+                },
+                {
+                    "$ref": "#/$defs/ChatModelConfig"
+                }
+            ],
+            "title": "Model"
+        },
+        "execution": {
+            "$ref": "#/$defs/ExecutionConfig"
+        },
+        "metrics": {
+            "additionalProperties": {
+                "additionalProperties": {
+                    "$ref": "#/$defs/JsonValue"
+                },
+                "type": "object"
+            },
+            "title": "Metrics",
+            "type": "object"
+        },
+        "output": {
+            "default": "outputs/eval",
+            "title": "Output",
+            "type": "string"
+        }
+    },
+    "required": [
+        "data"
+    ],
+    "title": "EvalConfig",
+    "type": "object"
+}

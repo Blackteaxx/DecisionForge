@@ -1,0 +1,19 @@
+benchmark: banking77
+benchmark_version: '1'
+data:
+  path: ../../../../data/benchmarks/banking77/processed/test.jsonl
+  splits:
+  - test
+model:
+  adapter: unsloth_local
+  path: ../../../../outputs/train/qwen35-4b-full/model
+  load_in_4bit: true
+  precision: auto
+  max_seq_length: 16384
+  load_timeout: 600
+  local_files_only: true
+execution:
+  concurrency: 1
+  timeout: 300
+  max_attempts: 1
+output: ../../../../outputs/eval/qwen35-4b-full/banking77

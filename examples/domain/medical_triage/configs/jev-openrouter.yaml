@@ -1,0 +1,16 @@
+benchmark: medical_decisions
+benchmark_version: '1'
+data:
+  path: ../data/benchmarks/care.jsonl
+  splits: [test]
+model:
+  adapter: jev
+  base_url: https://openrouter.ai
+  endpoint_path: /api/alpha/decisions
+  model: typesafe/jev-1.14
+  api_key_env: OPENROUTER_API_KEY
+execution:
+  concurrency: 4
+  timeout: 90
+  max_attempts: 3
+output: ../outputs/evaluation/jev-care/run

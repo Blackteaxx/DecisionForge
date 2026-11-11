@@ -1,0 +1,67 @@
+project:
+  name: decisionforge
+  schema_version: decisionforge.training.v1
+  language: preserve_source
+input:
+  type: auto
+  path: ../examples/standard.json
+  records_path: null
+  mapping_spec: null
+  extract_context: true
+  generate_qa_from_text: true
+  max_generated_questions: 5
+  preserve_source_split: true
+  default_split: train
+task:
+  domain_profile: general_qa
+  modes:
+  - auto
+  difficulty: 0.5
+llm:
+  provider: openai
+  api: responses
+  model: ${OPENAI_MODEL}
+  analyzer_model: null
+  generator_model: null
+  verifier_model: null
+  base_url: null
+  api_key_env: OPENAI_API_KEY
+  structured_output: strict
+  capabilities:
+    structured_outputs: true
+    temperature: false
+    reasoning_effort: false
+  temperature: null
+  reasoning_effort: null
+  max_output_tokens: 6000
+  max_input_chars: 100000
+  timeout_seconds: 90
+  pricing: {}
+choice:
+  target_option_count: 4
+score:
+  default_levels: 5
+noul:
+  labels:
+  - 1
+  - 0
+context:
+  generate_if_missing: false
+  relevance: 0.5
+verification:
+  max_semantic_repairs: 2
+execution:
+  concurrency: 4
+  llm_concurrency: 8
+  max_transport_attempts: 3
+  max_llm_calls_per_record: 24
+  budget_limit_usd: null
+  on_budget_exhausted: checkpoint_and_stop
+  cache: true
+  resume: true
+  seed: 42
+output:
+  directory: ../outputs/run_001
+  include_audit: false
+  export_requests: false
+  jev_model: jev-latest

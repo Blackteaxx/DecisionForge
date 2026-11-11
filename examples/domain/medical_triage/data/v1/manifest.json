@@ -1,0 +1,75 @@
+{
+  "schema_version": "medical.frozen-dataset.v1",
+  "version": "v1",
+  "training_input": "training.json",
+  "training_input_roles": "The original training input includes train, validation and calibration; each record keeps its original split. Only train contributes to optimization.",
+  "records": 6065,
+  "source_families": 309,
+  "patient_source_connected_groups": 269,
+  "roles": {
+    "train": {
+      "records": 5024,
+      "groups": 218,
+      "tasks": {
+        "message_priority": 2374,
+        "triage_action": 2650
+      }
+    },
+    "validation": {
+      "records": 446,
+      "groups": 23,
+      "tasks": {
+        "message_priority": 208,
+        "triage_action": 238
+      }
+    },
+    "calibration": {
+      "records": 595,
+      "groups": 28,
+      "tasks": {
+        "message_priority": 266,
+        "triage_action": 329
+      }
+    }
+  },
+  "files": {
+    "calibration.jsonl": {
+      "sha256": "f3abc9d4b72d69ec677a0b28a504b0a2dee3c45fb70ccea2a9556bc0e1dfecce",
+      "bytes": 615001
+    },
+    "examples.json": {
+      "sha256": "1e8654fa5fe4171c97d1dc775a85f00165d8d54bbd75c8d3ad7b0f00bd7fdeb2",
+      "bytes": 2254
+    },
+    "provenance.jsonl": {
+      "sha256": "8e1bccc183d59ecc0b683fa2e54957e6fae0b34608408d3cab6db587f0c1ec5b",
+      "bytes": 4484459
+    },
+    "sources.jsonl": {
+      "sha256": "1a480d016a87ac2ea9c58d2d9deaa703e623c6771ebf9ff172018d659d18178a",
+      "bytes": 1084870
+    },
+    "training.json": {
+      "sha256": "1c60d6d832ead5b11a78e45cc0a64810747548dcf66248121ed0208b7eb0442d",
+      "bytes": 7545471
+    },
+    "validation.jsonl": {
+      "sha256": "64b963a251b2824c2a89af7848c51e9c0132d4acb4cdb4277b8bf5fa3deb6c27",
+      "bytes": 457938
+    }
+  },
+  "source_snapshot": "MedlinePlus/NLM health-topic XML 2026-10-27, English full-summary only",
+  "teacher": "deepseek-flash",
+  "checker": "deepseek-flash",
+  "clinical_human_adjudication": false,
+  "admission": {
+    "checker_accepted_before_global_quarantine": 6088,
+    "review": 37,
+    "global_quarantine": 23,
+    "final_records": 6065,
+    "label_changes": 0,
+    "role_reassignments": 0
+  },
+  "provenance": "provenance.jsonl links every record to sources.jsonl by source_id; source text identity matches configs/sources.lock.json.",
+  "excluded": "Public benchmark raw data, paid response bodies, private paths, credentials, models and runtime logs are not included."
+}

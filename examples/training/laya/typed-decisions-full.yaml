@@ -1,0 +1,56 @@
+# Full canonical Typed Decisions preparation; see ../data/FULL.md.
+backend: laya
+finetuning: full
+data:
+  path: ../../../data/local/typed-decisions-frozen-roles.v3.jsonl
+  split_map:
+    train: train
+    validation: validation
+    calibration: calibration
+    test: test
+  auto_holdout:
+    validation_fraction: 0.1
+    calibration_fraction: 0.1
+  on_skipped: error
+  on_truncated: error
+model:
+  name: convaiinnovations/laya
+  revision: 7b928d828b7b0e022f929d9bd2e44165aa270148
+  max_seq_length: 8192
+  load_in_4bit: false
+lora: null
+distributed:
+  strategy: single
+  world_size: 1
+  timeout_seconds: 1800
+training:
+  seed: 3407
+  num_train_epochs: 1.0
+  max_steps: null
+  batch_size: 16
+  gradient_accumulation_steps: 1
+  learning_rate: 2.5e-05
+  head_learning_rate: 0.0001
+  warmup_steps: 0
+  weight_decay: 0.01
+  lr_scheduler_type: cosine
+  precision: fp16
+  gradient_checkpointing: true
+  logging_steps: 10
+  save_steps: null
+calibration:
+  enabled: true
+output:
+  directory: ../../../outputs/train/laya-typed-decisions-full
+  save_merged: false
+laya:
+  init_checkpoint: null
+  head_max_length: 4096
+  rl_samples: 4
+  sigma_start: 0.4
+  sigma_end: 0.1
+  w_sph: 0.75
+  w_rps: 1.0
+  min_learning_rate: 1.0e-06
+  gradient_clip: 1.0
+openjev: null

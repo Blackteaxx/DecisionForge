@@ -1,0 +1,19 @@
+flowchart TD
+    enter([进入当前阶段]) --> proposal["展示本阶段策略与关键参数<br/>目标、输入、方法、资源、预期产物"]
+    proposal --> decision{"等待用户决定"}
+    decision -->|修改| revise["更新策略与参数"]
+    revise --> proposal
+    decision -->|接受| execute["记录确认并执行本阶段"]
+    decision -->|暂停或取消| pause([保存当前状态，停止推进])
+    execute --> check{"阶段完成且产物可用？"}
+    check -->|是| summary["展示阶段结果与证据"]
+    summary --> next([进入下一阶段的确认流程])
+    check -->|否| adjust["说明问题并提出调整方案"]
+    adjust --> proposal
+
+    classDef stage fill:#EFF6FF,stroke:#3B82F6,color:#172B4D;
+    classDef choice fill:#FFF7ED,stroke:#D97706,color:#7C2D12;
+    classDef result fill:#ECFDF5,stroke:#059669,color:#064E3B;
+    class proposal,revise,execute,summary,adjust stage;
+    class decision,check choice;
+    class next,pause result;

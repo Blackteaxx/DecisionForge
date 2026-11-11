@@ -1,0 +1,15 @@
+# Explicit audited C/N subset; never report as full benchmark coverage.
+benchmark: jevbench
+benchmark_version: b6b8fff7e345b98c060ad26c13308860ddc67004
+data:
+  path: ../../../../data/local/openjev/jevbench-public-cn.jsonl
+model:
+  adapter: openjev_local
+  path: ../../../../outputs/train/openjev-typed-decisions-full/model
+  device: cuda:0
+  load_timeout: 900
+execution:
+  concurrency: 1
+  max_attempts: 1
+  timeout: 300.0
+output: ../../../../outputs/eval/openjev-typed-decisions-full/jevbench

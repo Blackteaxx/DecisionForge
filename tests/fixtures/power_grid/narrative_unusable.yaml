@@ -1,0 +1,14 @@
+project:
+  language: en
+input:
+  type: txt
+  path: narrative_unusable.txt
+  generate_qa_from_text: true
+  max_generated_questions: 3
+task:
+  domain_profile: power_grid
+  modes: [choice]
+llm:
+  model: ${OPENAI_MODEL}
+output:
+  directory: ../../../outputs/domain/power_grid/narrative_unusable
