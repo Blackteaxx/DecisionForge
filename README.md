@@ -8,17 +8,21 @@
 <p align="center"><strong>每个场景，都值得一个决策模型</strong></p>
 
 <p align="center">
-  <a href="https://blackteaxx.github.io/DecisionForge/">Demo</a> ·
-  <a href="docs/zh/quickstart.md">快速开始</a> ·
-  <a href="#文档">文档</a> ·
-  <a href="README.en.md">English</a>
+  <a href="https://blackteaxx.github.io/DecisionForge/"><img src="https://img.shields.io/badge/DEMO-GITHUB%20PAGES-F97316?style=for-the-badge&logo=githubpages&logoColor=white" alt="Demo"></a>
+  <a href="docs/zh/quickstart.md"><img src="https://img.shields.io/badge/%E6%96%87%E6%A1%A3-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B-4F46E5?style=for-the-badge" alt="Docs"></a>
+  <a href="#快速上手"><img src="https://img.shields.io/badge/AGENT-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20dsh-0E7490?style=for-the-badge" alt="Agent"></a>
+  <img src="https://img.shields.io/badge/PYTHON-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.11+">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-7C3AED?style=for-the-badge" alt="Apache-2.0"></a>
+  <a href="README.en.md"><img src="https://img.shields.io/badge/README-English-555555?style=for-the-badge" alt="README-English"></a>
 </p>
 
 <p align="center">
+  <a href="https://blackteaxx.github.io/DecisionForge/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/performance/overview-zh-dark.svg">
     <img src="docs/assets/performance/overview-zh-light.svg" alt="DecisionForge 自训模型与 Jev、LLM2Jev、AnyJev、Chat 在 7 个领域、15 项基准上的平均准确率对比" width="100%">
   </picture>
+  </a>
 </p>
 
 ## DecisionForge 能做什么

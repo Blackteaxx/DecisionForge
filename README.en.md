@@ -8,17 +8,21 @@
 <p align="center"><strong>Every scenario deserves its own decision model.</strong></p>
 
 <p align="center">
-  <a href="https://blackteaxx.github.io/DecisionForge/">Demo</a> ·
-  <a href="docs/en/quickstart.md">Quick start</a> ·
-  <a href="#documentation">Docs</a> ·
-  <a href="README.md">中文</a>
+  <a href="https://blackteaxx.github.io/DecisionForge/"><img src="https://img.shields.io/badge/DEMO-GITHUB%20PAGES-F97316?style=for-the-badge&logo=githubpages&logoColor=white" alt="Demo"></a>
+  <a href="docs/en/quickstart.md"><img src="https://img.shields.io/badge/DOCS-QUICK%20START-4F46E5?style=for-the-badge" alt="Docs"></a>
+  <a href="#quick-start"><img src="https://img.shields.io/badge/AGENT-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20dsh-0E7490?style=for-the-badge" alt="Agent"></a>
+  <img src="https://img.shields.io/badge/PYTHON-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.11+">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-7C3AED?style=for-the-badge" alt="Apache-2.0"></a>
+  <a href="README.md"><img src="https://img.shields.io/badge/README-%E4%B8%AD%E6%96%87-555555?style=for-the-badge" alt="README-%E4%B8%AD%E6%96%87"></a>
 </p>
 
 <p align="center">
+  <a href="https://blackteaxx.github.io/DecisionForge/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/performance/overview-en-dark.svg">
     <img src="docs/assets/performance/overview-en-light.svg" alt="Mean accuracy of DecisionForge-trained models versus Jev, LLM2Jev, AnyJev and Chat across 7 domains and 15 benchmarks" width="100%">
   </picture>
+  </a>
 </p>
 
 ## What DecisionForge does
