@@ -53,7 +53,7 @@
   "icon": "./lib/logo.png",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Oscar-dzy/Autojev-data.git",
+    "url": "git+https://github.com/Blackteaxx/DecisionForge.git",
     "directory": "extensions/dsh-decisionforge"
   }
 }

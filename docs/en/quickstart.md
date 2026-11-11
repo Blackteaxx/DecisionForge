@@ -5,8 +5,8 @@
 Install uv, then run these commands from the repository root. Python >=3.11 is required; the pinned environment uses 3.12 and some training extras require <3.13.
 
 ```bash
-git clone https://github.com/Oscar-dzy/Autojev-data.git
-cd Autojev-data
+git clone https://github.com/Blackteaxx/DecisionForge.git
+cd DecisionForge
 uv sync
 uv run dforge data inspect --config configs/offline.yaml
 ```

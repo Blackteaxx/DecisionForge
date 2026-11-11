@@ -8,7 +8,7 @@
 <p align="center"><strong>每个场景，都值得一个决策模型</strong></p>
 
 <p align="center">
-  <a href="https://oscar-dzy.github.io/Autojev-data/">Demo</a> ·
+  <a href="https://blackteaxx.github.io/DecisionForge/">Demo</a> ·
   <a href="docs/zh/quickstart.md">快速开始</a> ·
   <a href="#文档">文档</a> ·
   <a href="README.en.md">English</a>
@@ -32,15 +32,15 @@ DecisionForge 把一个决策场景变成可用、可评测的决策模型：从
 | **评测** | HTTP 服务与本地模型；自训模型、免训练方法（LLM2Jev、AnyJev）和外部基线在同一评测集上对比，支持离线重评分和 benchmark 插件 |
 | **Agent Skills** | 五个项目 skills 串起需求澄清、数据、训练、评测与分析；每个阶段先给方案、等你确认再执行 |
 
-上图七个领域的完整结果、表格和两次真实任务的 agent 回放见 [Demo](https://oscar-dzy.github.io/Autojev-data/)；医疗分诊任务的数据、配置与复现说明见 [examples/domain/medical_triage](examples/domain/medical_triage/README.md)。
+上图七个领域的完整结果、表格和两次真实任务的 agent 回放见 [Demo](https://blackteaxx.github.io/DecisionForge/)；医疗分诊任务的数据、配置与复现说明见 [examples/domain/medical_triage](examples/domain/medical_triage/README.md)。
 
 ## 快速上手
 
 最快的方式是让 agent 带你完成整个流程。先获取仓库：
 
 ```bash
-git clone https://github.com/Oscar-dzy/Autojev-data.git
-cd Autojev-data
+git clone https://github.com/Blackteaxx/DecisionForge.git
+cd DecisionForge
 ```
 
 ### 方式一：使用你自己的 coding agent

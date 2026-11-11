@@ -8,7 +8,7 @@
 <p align="center"><strong>Every scenario deserves its own decision model.</strong></p>
 
 <p align="center">
-  <a href="https://oscar-dzy.github.io/Autojev-data/">Demo</a> ·
+  <a href="https://blackteaxx.github.io/DecisionForge/">Demo</a> ·
   <a href="docs/en/quickstart.md">Quick start</a> ·
   <a href="#documentation">Docs</a> ·
   <a href="README.md">中文</a>
@@ -32,15 +32,15 @@ DecisionForge turns a decision scenario into a usable, evaluated decision model.
 | **Evaluation** | HTTP services and local models. Trained models, training-free methods (LLM2Jev, AnyJev) and external baselines are compared on the same evaluation set, with offline rescoring and benchmark plugins |
 | **Agent Skills** | Five project skills connect requirements, data, training, evaluation and analysis. Each stage presents a plan and waits for your confirmation before running |
 
-Full results, tables and replays of two real agent tasks for the seven domains above are in the [demo](https://oscar-dzy.github.io/Autojev-data/). Data, configuration and reproduction notes for the medical triage task are in [examples/domain/medical_triage](examples/domain/medical_triage/README.md).
+Full results, tables and replays of two real agent tasks for the seven domains above are in the [demo](https://blackteaxx.github.io/DecisionForge/). Data, configuration and reproduction notes for the medical triage task are in [examples/domain/medical_triage](examples/domain/medical_triage/README.md).
 
 ## Quick start
 
 The fastest route is to let an agent guide you through the workflow. Clone the repository first:
 
 ```bash
-git clone https://github.com/Oscar-dzy/Autojev-data.git
-cd Autojev-data
+git clone https://github.com/Blackteaxx/DecisionForge.git
+cd DecisionForge
 ```
 
 ### Option 1: your own coding agent

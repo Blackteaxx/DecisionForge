@@ -25,4 +25,4 @@ dsh web
 
 停用恢复官方品牌并移除指南；不删除聊天记录或 DecisionForge 任务。浏览器标题和 favicon 仍由上游提供。
 
-[DecisionForge 项目](https://github.com/Oscar-dzy/Autojev-data) · [完整接入教程](https://github.com/Oscar-dzy/Autojev-data/blob/main/docs/zh/agent.md)
+[DecisionForge 项目](https://github.com/Blackteaxx/DecisionForge) · [完整接入教程](https://github.com/Blackteaxx/DecisionForge/blob/main/docs/zh/agent.md)

@@ -104,8 +104,8 @@ dforge = "decisionforge.cli:main"
 decisionforge = "decisionforge.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/Oscar-dzy/Autojev-data"
-Repository = "https://github.com/Oscar-dzy/Autojev-data"
+Homepage = "https://github.com/Blackteaxx/DecisionForge"
+Repository = "https://github.com/Blackteaxx/DecisionForge"
 
 [dependency-groups]
 dev = ["pytest>=8.3,<10", "pytest-asyncio>=1,<2", "ruff>=0.11,<1"]

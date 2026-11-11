@@ -19,4 +19,4 @@ uv run python demo/scripts/build_trajectories.py /path/to/trajectory-export
 
 `curation.py` 记录编辑规则和明确的旧→新命令替换表；生成器对全部字符串进行脱敏和迁移。性能数字来自原始任务结果，本次品牌迁移不改动这些数字。
 
-`.github/workflows/pages.yml` 支持 main 推送和手动发布。预期地址为 <https://oscar-dzy.github.io/Autojev-data/>。当前仓库私有，公开访问验收在仓库公开、启用 Pages 后进行；非默认分支部署还需允许对应的 Pages environment 分支。
+`.github/workflows/pages.yml` 支持 main 推送和手动发布。预期地址为 <https://blackteaxx.github.io/DecisionForge/>。首次发布前需在仓库 Settings → Pages 中将来源设为 GitHub Actions；非默认分支部署还需允许对应的 Pages environment 分支。

@@ -15,4 +15,4 @@ dsh web
 
 Requires Node >=24.9.0 and pnpm. Tested against dsh 0.2.2-rc.1 only. Use the same profile and `DSH_HOME` for installation and startup. The package has not been published to npm; install a built tarball rather than its registry name. Browser title and favicon remain upstream-owned.
 
-[DecisionForge repository](https://github.com/Oscar-dzy/Autojev-data) · [Full setup guide](https://github.com/Oscar-dzy/Autojev-data/blob/main/docs/zh/agent.md)
+[DecisionForge repository](https://github.com/Blackteaxx/DecisionForge) · [Full setup guide](https://github.com/Blackteaxx/DecisionForge/blob/main/docs/zh/agent.md)

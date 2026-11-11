@@ -5,8 +5,8 @@
 安装 uv 后，在仓库根目录执行。要求 Python >=3.11；锁定环境使用 3.12，部分训练组要求 <3.13。
 
 ```bash
-git clone https://github.com/Oscar-dzy/Autojev-data.git
-cd Autojev-data
+git clone https://github.com/Blackteaxx/DecisionForge.git
+cd DecisionForge
 uv sync
 uv run dforge data inspect --config configs/offline.yaml
 ```
