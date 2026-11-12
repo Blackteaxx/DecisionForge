@@ -16,13 +16,6 @@
   --df-ember: #F97316;
   --df-accent-soft: #eeedfb;
 
-  /* method palette — validated categorical slots 1–5 (light surface) */
-  --m-lora: #2a78d6;
-  --m-jev: #eb6834;
-  --m-llm2jev: #1baf7a;
-  --m-anyjev: #eda100;
-  --m-chat: #e87ba4;
-
   --df-sans: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
   --df-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
   --df-wrap: 1240px;
@@ -413,6 +406,7 @@ code { font-family: var(--df-mono); font-size: .86em; background: var(--df-bg-2)
 @media(prefers-color-scheme:dark) {
   :root { color-scheme:dark; --df-primary:#A5B4FC; --df-primary-2:#C4B5FD; --df-ember:#FB923C; --df-ink:#F4F4F5; --df-muted:#A1A1AA; --df-bg:#18171C; --df-border:#3A3842; --df-bg-2:#232129; --df-bg-3:#2D2A34; --df-surface:#201E25; --df-ink-2:#CBCBD1; --df-ink-4:#88858F; --df-line-2:#514D5C; --df-accent-soft:#2E2948; }
   .wordmark.light { display:none; } .wordmark.dark { display:block; }
+  .grid-line { stroke:var(--df-border); }
   .topbar.solid { background:rgba(24,23,28,.92); }
   .hero::after { background:linear-gradient(90deg,var(--df-bg),rgba(24,23,28,.92) 30%,rgba(24,23,28,0) 62%),linear-gradient(0deg,var(--df-bg),rgba(24,23,28,0) 30%); }
 }
