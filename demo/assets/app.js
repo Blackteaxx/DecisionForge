@@ -320,7 +320,23 @@
     $("#perf-title").innerHTML = C.performance.title;
     $("#perf-body").textContent = C.performance.body;
     const methods = C.methods;
+    const palette = window.DFORGE_METHOD_PALETTE;
+    const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
     const colorVar = (m) => `var(--m-${m.id})`;
+    const paintVar = (m) => `var(--m-${m.id}-paint)`;
+    const gradients = methods.filter((m) => palette.light[m.id].length === 2);
+    function updateMethodColors() {
+      const colors = darkMode.matches ? palette.dark : palette.light;
+      const style = document.documentElement.style;
+      for (const { id } of methods) {
+        const [start, end] = colors[id];
+        style.setProperty(`--m-${id}`, start);
+        style.setProperty(`--m-${id}-end`, end || start);
+        style.setProperty(`--m-${id}-paint`, end ? `linear-gradient(${start}, ${end})` : start);
+      }
+    }
+    updateMethodColors();
+    darkMode.addEventListener("change", updateMethodColors);
     const all = C.domains.flatMap((d) => d.benchmarks.map((b) => ({ d, b })));
     const wins = all.filter(({ b }) => b.scores[0] === Math.max(...b.scores)).length;
     const avgGap = all.reduce((a, { b }) => a + (b.scores[0] - b.scores[1]), 0) / all.length;
@@ -335,7 +351,7 @@
     let focus = null;
     methods.forEach((m) => {
       const b = h("button", { "aria-pressed": "false", title: `突出显示 ${m.label}` },
-        `<span class="sw" style="background:${colorVar(m)}"></span>${m.label} <small>${esc(m.note)}</small>`);
+        `<span class="sw" style="background:${paintVar(m)}"></span>${m.label} <small>${esc(m.note)}</small>`);
       b.addEventListener("click", () => {
         focus = focus === m.id ? null : m.id;
         root.classList.toggle("focus", !!focus);
@@ -357,17 +373,21 @@
       if (d.trajectory) head.appendChild(h("button", { class: "replay-link", onclick: () => openTrajectory(d.trajectory, "evaluation") }, t("回放这次任务 →")));
       dom.appendChild(head);
       const row = h("div", { class: "bench-row", style: `--df-n:${d.benchmarks.length}` });
-      for (const b of d.benchmarks) row.appendChild(benchCard(d, b));
+      for (const [i, b] of d.benchmarks.entries()) row.appendChild(benchCard(d, b, i));
       dom.appendChild(row);
       chart.appendChild(dom);
     }
 
-    function benchCard(d, b) {
+    function benchCard(d, b, benchmarkIndex) {
       const W = 236, H = 148, top = 20, base = 124, left = 22;
       const plotH = base - top, bw = 22, gap = 12;
       const x0 = left + (W - left - (5 * bw + 4 * gap)) / 2;
       const best = Math.max(...b.scores);
       let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(b.name)}：${methods.map((m, i) => `${m.label} ${b.scores[i]}`).join("，")}">`;
+      const gradientId = (m) => `perf-${d.id}-${benchmarkIndex}-${m.id}`;
+      svg += `<defs>${gradients.map((m) => `<linearGradient id="${gradientId(m)}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:${colorVar(m)}"/><stop offset="1" style="stop-color:var(--m-${m.id}-end)"/>
+      </linearGradient>`).join("")}</defs>`;
       [0, 50, 100].forEach((v) => {
         const y = base - (v / 100) * plotH;
         svg += `<line class="${v === 0 ? "base-line" : "grid-line"}" x1="${left}" x2="${W}" y1="${y}" y2="${y}"/>`;
@@ -378,7 +398,8 @@
         const hgt = Math.max(1.5, (v / 100) * plotH);
         const x = x0 + i * (bw + gap), y = base - hgt, r = Math.min(3, hgt);
         const path = `M${x},${base} V${y + r} Q${x},${y} ${x + r},${y} H${x + bw - r} Q${x + bw},${y} ${x + bw},${y + r} V${base} Z`;
-        svg += `<path class="bar" data-m="${m.id}" d="${path}" fill="${colorVar(m)}"/>`;
+        const fill = gradients.includes(m) ? `url(#${gradientId(m)})` : colorVar(m);
+        svg += `<path class="bar" data-m="${m.id}" d="${path}" fill="${fill}"/>`;
         svg += `<text class="bar-val ${v === best ? "best" : ""}" data-m="${m.id}" x="${x + bw / 2}" y="${y - 4}" text-anchor="middle">${v.toFixed(2)}</text>`;
         svg += `<text class="bar-key" x="${x + bw / 2}" y="${base + 13}" text-anchor="middle">${m.short}</text>`;
         svg += `<rect class="hit" data-i="${i}" x="${x - gap / 2}" y="${top - 14}" width="${bw + gap}" height="${base - top + 30}" fill="transparent"/>`;
@@ -397,7 +418,7 @@
           const extra = b.secondary ? `<div class="tt-row"><span>${esc(b.secondary.label)}</span><b>${b.secondary.scores[i].toFixed(2)}</b></div>` : "";
           const inv = b.invalid ? `<div class="tt-row"><span>${t("无效输出")}</span><b>${b.invalid[i]}</b></div>` : "";
           tip.innerHTML = `<div class="tt-title">${esc(b.name)}</div>
-            <div class="tt-row"><i style="background:${colorVar(m)}"></i><span>${esc(m.label)}</span><b>${b.scores[i].toFixed(2)}%</b></div>
+            <div class="tt-row"><i style="background:${paintVar(m)}"></i><span>${esc(m.label)}</span><b>${b.scores[i].toFixed(2)}%</b></div>
             ${extra}${inv}<div class="tt-sub">第 ${rank} / 5 · ${esc(d.title)}</div>`;
           tip.hidden = false;
           const rr = root.getBoundingClientRect(), hr = hit.getBoundingClientRect();
@@ -914,7 +935,7 @@
       const dlt = r.ours - r.jev;
       return `<div class="res"><div class="lbl">${esc(r.label)}</div>
         <div class="ours">${r.ours.toFixed(2)}<small>%</small></div>
-        <div class="bars"><i style="width:${r.ours}%;background:var(--m-lora)"></i><i style="width:${r.jev}%;background:var(--m-jev)"></i></div>
+        <div class="bars"><i style="width:${r.ours}%;background:var(--m-lora-paint)"></i><i style="width:${r.jev}%;background:var(--m-jev-paint)"></i></div>
         <div class="vs">Jev ${r.jev.toFixed(2)} · <span class="delta ${dlt >= 0 ? "up" : "down"}">${dlt >= 0 ? "+" : ""}${dlt.toFixed(2)}</span></div></div>`;
     }).join("");
     $("#traj-head").innerHTML = `
